@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="770.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.gtJava.controller.TelaController">
+   <children>
+      <Button fx:id="BtnSalvar" layoutX="97.0" layoutY="121.0" mnemonicParsing="false" onAction="#btnSalvar" text="Salvar" />
+      <Button fx:id="BtnEditar" layoutX="165.0" layoutY="121.0" mnemonicParsing="false" onAction="#btnEditar" text="Editar" />
+      <Button fx:id="BtnExcluir" layoutX="231.0" layoutY="121.0" mnemonicParsing="false" onAction="#btnExcluir" text="Excluir" />
+      <TableView fx:id="table" layoutX="9.0" layoutY="169.0" prefHeight="426.0" prefWidth="184.0">
+        <columns>
+          <TableColumn fx:id="colAno" prefWidth="56.0" text="Ano" />
+          <TableColumn fx:id="colValor" prefWidth="127.0" text="Valor" />
+        </columns>
+      </TableView>
+      <TextField fx:id="txtAno" layoutX="35.0" layoutY="84.0" />
+      <TextField fx:id="txtValor" layoutX="201.0" layoutY="84.0" />
+      <Label layoutX="35.0" layoutY="67.0" text="Ano" />
+      <Label layoutX="203.0" layoutY="67.0" text="Valor Reflorestamento" />
+      <Label layoutX="156.0" layoutY="23.0" text="Cadastro">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="519.0" layoutY="76.0" text="Escolha uma opção para filtrar" />
+      <LineChart fx:id="grafico" layoutX="200.0" layoutY="161.0" prefHeight="435.0" prefWidth="566.0" title="Reflorestamento do Brasil">
+        <xAxis>
+          <CategoryAxis label="Anos" side="BOTTOM" fx:id="xAno" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis fx:id="yValor" label="Valor de Reflorestamento (%)" side="LEFT" />
+        </yAxis>
+      </LineChart>
+      <ComboBox fx:id="comboFiltro" layoutX="519.0" layoutY="93.0" prefWidth="150.0">
+          
+      </ComboBox>
+   </children>
+</Pane>

@@ -1,0 +1,133 @@
+/* ==============================
+   RESET E PADRÕES GERAIS
+================================= */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* ==============================
+   LINKS
+================================= */
+a {
+  color: white;
+  text-decoration: none;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+/* ==============================
+   LOGO
+================================= */
+.logo {
+  color: white;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  text-decoration: none;
+}
+
+/* ==============================
+   NAVEGAÇÃO
+================================= */
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #237f11;
+  padding: 15px 40px;
+  height: 6vh;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-list li {
+  letter-spacing: 3px;
+  margin-left: 18px;
+}
+
+.nav-list a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.nav-list a:hover {
+  text-decoration-color: greenyellow;
+}
+
+body {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+summary {
+  letter-spacing: 0.5px;
+}
+
+/* ==============================
+   SEÇÃO FAQ
+================================= */
+.faq {
+  padding: 40px;
+  max-width: 800px;
+  margin: auto;
+}
+
+details {
+  background: #f7f7f7;
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+summary {
+  font-weight: bold;
+}
+
+details[open] {
+  background-color: #e3f9e5; /* verde-claro suave */
+  
+}
+
+details {
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: all 0.3s;
+}
+
+details:hover {
+  transform: scale(1.01);
+}
+
+
+/* ==============================
+   BOTÃO VOLTAR
+================================= */
+.voltar {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.btn-voltar {
+  display: inline-block;
+  background-color: #237f11;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.btn-voltar:hover {
+  background-color: #237f11;
+}

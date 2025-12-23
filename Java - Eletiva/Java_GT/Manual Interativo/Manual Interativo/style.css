@@ -1,0 +1,64 @@
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+
+.logo {
+  color: white;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  text-decoration: none;
+}
+
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: green;
+  padding: 15px 40px;
+  height: 6vh;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-list li {
+  letter-spacing: 3px;
+  margin-left: 18px;
+}
+
+.nav-list a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.nav-list a:hover {
+  text-decoration-color: greenyellow;
+}
+
+
+main {
+  background: url("fundo_projeto.jpg") no-repeat center center;
+  background-size: cover;
+  height: 92vh;
+}

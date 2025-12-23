@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ - Manual Interativo</title>
+  <link rel="stylesheet" href="style-faq.css">
+</head>
+<body>
+
+  <!-- 🔹 Navbar igual ao index -->
+  <header>
+    <nav>
+      <a class="logo" href="index.html">Projeto Final</a>
+      <ul class="nav-list">
+        <li><a href="manual-portugues.html">Manual em Português</a></li>
+        <li><a href="manual-ingles.html">Manual em Inglês</a></li>
+        <li><a href="manual-espanhol.html">Manual em Espanhol</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- 🔹 Conteúdo do FAQ -->
+
+  <section class="faq">
+  <h1>Perguntas Frequentes (FAQ)</h1>
+
+  <details>
+    <summary>Qual é o objetivo do sistema de reflorestamento?</summary>
+    <p>O sistema ajuda a acompanhar os valores de reflorestamento ao longo dos anos no Brasil. Com ele é possível cadastrar, editar, excluir e consultar registros, além de gerar gráficos que mostram como o reflorestamento tem evoluído.</p>
+  </details>
+
+  <details>
+    <summary>Como cadastrar um novo valor de reflorestamento?</summary>
+    <p>Para cadastrar, informe o ano e o valor desejado e clique em <strong>Salvar</strong>. É importante lembrar que só podem ser cadastrados anos que ainda não tenham registros no sistema.</p>
+  </details>
+
+  <details>
+    <summary>Por que aparece a mensagem dizendo que o ano já existe?</summary>
+    <p>Isso acontece porque cada ano pode ter apenas um registro de reflorestamento, o sistema bloqueia duplicidades para evitar erros e manter os dados organizados.</p>
+  </details>
+
+  <details>
+    <summary>Posso editar um valor de reflorestamento já cadastrado?</summary>
+    <p>Sim, na tela principal, clique na linha do dado que deseja alterar, atualize as informações e pressione <strong>Editar</strong>,as alterações são salvas automaticamente.</p>
+  </details>
+
+  <details>
+    <summary>Posso alterar o ano de um registro já existente?</summary>
+    <p>Não, o ano funciona como um identificador único do registro. Se for necessário corrigir, exclua o registro incorreto e cadastre novamente com o ano certo.</p>
+  </details>
+
+  <details>
+    <summary>Como excluir um valor cadastrado?</summary>
+    <p>Selecione a linha correspondente e clique em <strong>Excluir</strong> para remover o registro da listagem.</p>
+  </details>
+
+  <details>
+    <summary>Como realizar uma pesquisa pelos dados de reflorestamento?</summary>
+    <p>É possível visualizar todos os registros, apenas os dos últimos 5 anos ou os dos últimos 10 anos, basta escolher o filtro desejado para o sistema exibir os resultados correspondentes.</p>
+  </details>
+
+  <details>
+    <summary>Posso acompanhar o progresso do reflorestamento?</summary>
+    <p>Sim, O sistema gera automaticamente um <strong>gráfico de linhas</strong> que mostra a variação dos valores ao longo dos anos. Cada ponto representa o valor de um ano específico, permitindo ver se houve aumento ou redução nas áreas reflorestadas, o  gráfico se atualiza conforme o filtro selecionado (todos os anos, últimos 5 ou 10).</p>
+  </details>
+</section>
+
+
+   
+    <div class="voltar">
+      <a href="index.html" class="btn-voltar">⬅ Voltar ao Início</a>
+    </div>
+  </main>
+
+</body>
+</html>
