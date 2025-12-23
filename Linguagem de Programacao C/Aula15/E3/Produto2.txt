@@ -1,0 +1,5 @@
+Banana 6 1.99
+Laranja 10 2.90
+Pera 5 2.00
+Uva 1 7.00
+Caju 3 4.00
