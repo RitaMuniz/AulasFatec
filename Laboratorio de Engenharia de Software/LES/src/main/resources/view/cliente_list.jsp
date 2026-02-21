@@ -6,12 +6,10 @@
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">
 </head>
 <body>
-    <h1>Olá!</h1>
-    <p>Tela principal</p>
+    <h1>Listar Clientes da Livraria</h1>
 
      <div class="sidebar">
          <a href="index.jsp">Home</a>
-        <a href="cliente?action=list">Listar Clientes</a>
         <a href="cliente?action=form">Cadastrar Cliente</a>
      </div>
 
