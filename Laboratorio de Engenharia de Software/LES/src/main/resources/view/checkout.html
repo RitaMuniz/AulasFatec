@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Finalizar Compra</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="logo">Livraria</div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="livros.html">Livros</a>
+        <a href="login.html">Login</a>
+        <a href="carrinho.html">Carrinho</a>
+    </nav>
+</header>
+
+<div class="container">
+
+    <h2>Finalizar Compra</h2>
+
+    <br>
+
+    <div style="display:flex; gap:40px; align-items:flex-start;">
+
+        <!-- FORMULÁRIO -->
+        <div style="flex:2; background:#FFFFFF; padding:30px; border-radius:10px;">
+
+            <h3>Endereço de Entrega</h3>
+
+            <input type="text" placeholder="CEP" style="width:100%; padding:12px; margin:10px 0;">
+            <input type="text" placeholder="Rua" style="width:100%; padding:12px; margin:10px 0;">
+            <input type="text" placeholder="Número" style="width:100%; padding:12px; margin:10px 0;">
+            <input type="text" placeholder="Bairro" style="width:100%; padding:12px; margin:10px 0;">
+            <input type="text" placeholder="Cidade" style="width:100%; padding:12px; margin:10px 0;">
+
+            <br><br>
+
+            <h3>Forma de Pagamento</h3>
+
+            <div style="margin:10px 0;">
+                <input type="radio" name="pagamento"> Cartão de Crédito
+            </div>
+
+            <div style="margin:10px 0;">
+                <input type="radio" name="pagamento"> Pix
+            </div>
+
+            <div style="margin:10px 0;">
+                <input type="radio" name="pagamento"> Boleto
+            </div>
+
+        </div>
+
+        <!-- RESUMO -->
+        <div style="flex:1; background:#FFFFFF; padding:30px; border-radius:10px;">
+
+            <h3>Resumo do Pedido</h3>
+
+            <p>Clean Code (2x)</p>
+            <p>Subtotal: R$ 159,80</p>
+
+            <hr style="margin:15px 0;">
+
+            <h3>Total: R$ 159,80</h3>
+
+            <br><br>
+
+            <a href="confirmacao.html" class="btn" style="width:100%; text-align:center;">
+                Confirmar Compra
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

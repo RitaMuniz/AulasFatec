@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Status do Pedido</title>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+
+<style>
+@font-face {
+    font-family: 'Open Sauce';
+    src: local('Arial');
+}
+
+body {
+    margin: 0;
+    font-family: 'Open Sauce', sans-serif;
+    background-color: #edebe9;
+}
+
+header {
+    background-color: #97483d;
+    padding: 20px;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-family: 'DM Serif Display', serif;
+    margin: 0;
+}
+
+header a {
+    color: #FFFFFF;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+.container {
+    width: 80%;
+    margin: 40px auto;
+}
+
+h2 {
+    font-family: 'DM Serif Display', serif;
+}
+
+.status-bar {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0;
+}
+
+.step {
+    text-align: center;
+    flex: 1;
+}
+
+.circle {
+    width: 30px;
+    height: 30px;
+    background-color: #97483d;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+}
+
+.inactive .circle {
+    background-color: #ccc;
+}
+
+.card {
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+button {
+    background-color: #97483d;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+footer {
+    background-color: #000000;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 20px;
+    margin-top: 60px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Livraria</h1>
+    <div>
+        <a href="index.html">Início</a>
+        <a href="livros.html">Livros</a>
+        <a href="pedidos.html">Meus Pedidos</a>
+    </div>
+</header>
+
+<div class="container">
+
+    <h2>Pedido #0001</h2>
+
+    <div class="status-bar">
+        <div class="step">
+            <div class="circle"></div>
+            Confirmado
+        </div>
+        <div class="step">
+            <div class="circle"></div>
+            Separando
+        </div>
+        <div class="step">
+            <div class="circle"></div>
+            Enviado
+        </div>
+        <div class="step inactive">
+            <div class="circle"></div>
+            Entregue
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>Itens do Pedido</h3>
+        <p>Livro: Dom Casmurro</p>
+        <p>Quantidade: 1</p>
+        <p>Valor: R$ 39,90</p>
+    </div>
+
+    <div class="card">
+        <h3>Solicitar Devolução</h3>
+
+        <form onsubmit="mostrarMensagem(); return false;">
+            <p>
+                <input type="radio" name="motivo" required> Produto danificado<br>
+                <input type="radio" name="motivo"> Arrependimento<br>
+                <input type="radio" name="motivo"> Pedido incorreto
+            </p>
+            <button type="submit">Enviar Solicitação</button>
+        </form>
+
+        <p id="mensagem" style="margin-top:20px; font-weight:bold;"></p>
+    </div>
+
+</div>
+
+<footer>
+    © 2026 Livraria - Todos os direitos reservados
+</footer>
+
+<script>
+function mostrarMensagem() {
+    document.getElementById("mensagem").innerHTML =
+        "Sua solicitação foi enviada. Nossa equipe entrará em contato.";
+}
+</script>
+
+</body>
+</html>
