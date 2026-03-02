@@ -2,6 +2,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Livros</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -17,24 +18,96 @@
     </nav>
 </header>
 
-<div class="container">
-    <h2>Catálogo Completo</h2>
+<main class="container">
+
+    <!-- FILTRO -->
+    <section style="margin-bottom:60px;">
+        <h2 style="margin-bottom:20px;">Filtrar Livros</h2>
+
+        <div class="grid">
+            <input type="text" placeholder="Buscar por título">
+
+            <select>
+                <option>Categoria</option>
+                <option>Tecnologia</option>
+                <option>Arquitetura</option>
+                <option>Design</option>
+            </select>
+
+            <a href="#" class="btn">Buscar</a>
+        </div>
+    </section>
+
+    <!-- CATÁLOGO -->
+    <h2 style="margin-bottom:30px;">Catálogo Completo</h2>
+
     <div class="grid">
+
+        <!-- Livro 1 -->
         <div class="card">
-            <img src="https://via.placeholder.com/200x250">
+            <img src="https://via.placeholder.com/200x250" alt="Arquitetura Limpa">
+
             <h3>Arquitetura Limpa</h3>
+
+            <p style="font-size:14px; margin-top:5px;">
+                Código: LIV003
+            </p>
+
+            <p style="font-size:14px;">
+                Categoria: Arquitetura
+            </p>
+
+            <p style="font-size:14px; color:green;">
+                Disponível: 10 unidades
+            </p>
+
             <p class="preco">R$ 89,90</p>
-            <a href="detalhe.html" class="btn">Ver Detalhes</a>
+
+            <div style="margin-top:10px;">
+                <a href="detalhe.html" class="btn">Ver Detalhes</a>
+            </div>
+
+            <div style="margin-top:10px;">
+                <a href="carrinho.html" class="btn">Adicionar ao Carrinho</a>
+            </div>
         </div>
 
+        <!-- Livro 2 -->
         <div class="card">
-            <img src="https://m.media-amazon.com/images/I/81Rnac2Fq+L._SY342_.jpg">
+            <img src="https://via.placeholder.com/200x250" alt="Design Patterns">
+
             <h3>Design Patterns</h3>
+
+            <p style="font-size:14px; margin-top:5px;">
+                Código: LIV004
+            </p>
+
+            <p style="font-size:14px;">
+                Categoria: Tecnologia
+            </p>
+
+            <p style="font-size:14px; color:green;">
+                Disponível: 6 unidades
+            </p>
+
             <p class="preco">R$ 119,90</p>
-            <a href="detalhe.html" class="btn">Ver Detalhes</a>
+
+            <div style="margin-top:10px;">
+                <a href="detalhe.html" class="btn">Ver Detalhes</a>
+            </div>
+
+            <div style="margin-top:10px;">
+                <a href="carrinho.html" class="btn">Adicionar ao Carrinho</a>
+            </div>
         </div>
+
     </div>
-</div>
+
+</main>
+
+<footer>
+    © 2026 Livraria
+</footer>
 
 </body>
 </html>

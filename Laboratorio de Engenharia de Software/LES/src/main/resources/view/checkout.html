@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Finalizar Compra</title>
+    <title>Checkout</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -19,14 +19,12 @@
 
 <div class="container">
 
-    <h2>Finalizar Compra</h2>
+    <h2 style="margin-bottom:40px;">Finalizar Compra</h2>
 
-    <br>
+    <div class="grid" style="grid-template-columns: 2fr 1fr; align-items:start;">
 
-    <div style="display:flex; gap:40px; align-items:flex-start;">
-
-        <!-- FORMULÁRIO -->
-        <div style="flex:2; background:#FFFFFF; padding:30px; border-radius:10px;">
+        <!-- ENDEREÇO + PAGAMENTO -->
+        <div class="card" style="text-align:left;">
 
             <h3>Endereço de Entrega</h3>
 
@@ -40,36 +38,46 @@
 
             <h3>Forma de Pagamento</h3>
 
-            <div style="margin:10px 0;">
-                <input type="radio" name="pagamento"> Cartão de Crédito
-            </div>
+            <select style="width:100%; padding:12px; margin:10px 0;">
+                <option>Cartão de Crédito</option>
+                <option>Pix</option>
+                <option>Boleto</option>
+            </select>
 
-            <div style="margin:10px 0;">
-                <input type="radio" name="pagamento"> Pix
-            </div>
+            <select style="width:100%; padding:12px; margin:10px 0;">
+                <option>1x sem juros</option>
+                <option>2x sem juros</option>
+                <option>3x sem juros</option>
+            </select>
 
-            <div style="margin:10px 0;">
-                <input type="radio" name="pagamento"> Boleto
-            </div>
+            <input type="text" placeholder="Cupom Promocional" style="width:100%; padding:12px; margin:10px 0;">
+            <input type="text" placeholder="Cupom de Troca" style="width:100%; padding:12px; margin:10px 0;">
 
         </div>
 
         <!-- RESUMO -->
-        <div style="flex:1; background:#FFFFFF; padding:30px; border-radius:10px;">
+        <div class="card">
 
             <h3>Resumo do Pedido</h3>
 
-            <p>Clean Code (2x)</p>
-            <p>Subtotal: R$ 159,80</p>
+            <p>Engenharia de Software (1x)</p>
+            <p>Subtotal: R$ 120,00</p>
+            <p>Frete: R$ 15,00</p>
+            <p>Desconto: R$ 0,00</p>
 
             <hr style="margin:15px 0;">
 
-            <h3>Total: R$ 159,80</h3>
+            <h3>Total</h3>
+            <p class="preco" style="font-size:22px;">R$ 135,00</p>
 
-            <br><br>
+            <br>
 
-            <a href="confirmacao.html" class="btn" style="width:100%; text-align:center;">
-                Confirmar Compra
+            <a href="carrinho.html" class="btn" style="margin-right:10px;">
+                Voltar
+            </a>
+
+            <a href="confirmacao.html" class="btn">
+                Confirmar Pedido
             </a>
 
         </div>
@@ -77,6 +85,10 @@
     </div>
 
 </div>
+
+<footer>
+    © 2026 - Projeto LES
+</footer>
 
 </body>
 </html>

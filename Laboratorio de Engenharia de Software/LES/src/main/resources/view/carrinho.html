@@ -2,6 +2,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrinho</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -17,39 +18,69 @@
     </nav>
 </header>
 
-<div class="container">
-    <h2>Seu Carrinho</h2>
+<main class="container">
 
-    <table class="table">
+    <h2 style="margin-bottom:30px;">Seu Carrinho</h2>
+
+    <table class="table" style="width:100%; border-collapse:collapse;">
+
+        <thead>
         <tr>
             <th>Livro</th>
+            <th>Preço Unitário</th>
             <th>Quantidade</th>
-            <th>Preço</th>
             <th>Subtotal</th>
+            <th>Ação</th>
         </tr>
+        </thead>
+
+        <tbody>
         <tr>
-            <td>Clean Code</td>
-            <td>2</td>
+            <td>
+                <strong>Clean Code</strong><br>
+                Código: LIV005
+            </td>
+
             <td>R$ 79,90</td>
+
+            <td>
+                <input type="number" value="2" min="1" style="width:60px; padding:5px;">
+            </td>
+
             <td>R$ 159,80</td>
+
+            <td>
+                <a href="#" class="btn">Remover</a>
+            </td>
         </tr>
+        </tbody>
+
     </table>
 
-    <br>
+    <div style="margin-top:40px; text-align:right;">
 
-    <h3>Total: R$ 159,80</h3>
+        <h3>Total:</h3>
+        <p class="preco" style="font-size:24px;">R$ 159,80</p>
 
-    <br><br>
+    </div>
 
-    <a href="livros.html" class="btn" style="margin-right:15px;">
-        Continuar Comprando
-    </a>
+    <div style="margin-top:40px; display:flex; justify-content:space-between;">
 
-    <a href="checkout.html" class="btn">
-        Finalizar Compra
-    </a>
+        <a href="livros.html" class="btn">
+            Continuar Comprando
+        </a>
 
-</div>
+        <a href="checkout.html" class="btn">
+            Finalizar Compra
+        </a>
+
+    </div>
+
+</main>
+
+<footer>
+    © 2026 Livraria
+</footer>
 
 </body>
 </html>

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<title>Admin - Relatórios</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/admin.css">
+    <meta charset="UTF-8">
+    <title>Admin - Relatórios</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/admin.css">
 </head>
 
 <body>
@@ -19,46 +19,113 @@
 
 <div class="layout">
 
-<aside class="sidebar">
-    <h2>Admin</h2>
-    <nav>
-        <a href="admin.html">Dashboard</a>
-        <a href="admin-pedidos.html">Pedidos</a>
-        <a href="admin-livros.html">Livros</a>
-        <a href="admin-clientes.html">Clientes</a>
-        <a href="admin-devolucoes.html">Devoluções</a>
-        <a href="admin-relatorios.html" class="active">Relatórios</a>
-    </nav>
-</aside>
+    <aside class="sidebar">
+        <h2>Admin</h2>
+        <nav>
+            <a href="admin.html">Dashboard</a>
+            <a href="admin-pedidos.html">Pedidos</a>
+            <a href="admin-livros.html">Livros</a>
+            <a href="admin-clientes.html">Clientes</a>
+            <a href="admin-devolucoes.html">Devoluções</a>
+            <a href="admin-relatorios.html" class="active">Relatórios</a>
+        </nav>
+    </aside>
 
-<main class="content">
+    <main class="content">
 
-<h2>Relatório Geral</h2>
+        <h2>Relatório Geral</h2>
 
-<div class="dashboard">
+        <!-- FILTRO -->
+        <form>
+            <div class="form-grid">
+                <div>
+                    <label>Data Inicial</label>
+                    <input type="date">
+                </div>
 
-    <div class="card">
-        <h3>Livros Mais Vendidos</h3>
-        <p>Dom Casmurro</p>
-    </div>
+                <div>
+                    <label>Data Final</label>
+                    <input type="date">
+                </div>
+            </div>
 
-    <div class="card">
-        <h3>Clientes Ativos</h3>
-        <p>32</p>
-    </div>
+            <div class="form-actions">
+                <button type="submit">Gerar Relatório</button>
+                <a href="admin-relatorios.html" class="btn-cancelar">Limpar</a>
+            </div>
+        </form>
 
-    <div class="card">
-        <h3>Pedidos no Mês</h3>
-        <p>58</p>
-    </div>
+        <!-- CARDS RESUMO -->
+        <div class="dashboard">
 
-</div>
+            <div class="card">
+                <h3>Faturamento Total</h3>
+                <p>R$ 8.950,00</p>
+            </div>
 
-</main>
+            <div class="card">
+                <h3>Total de Pedidos</h3>
+                <p>58</p>
+            </div>
+
+            <div class="card">
+                <h3>Clientes Ativos</h3>
+                <p>32</p>
+            </div>
+
+            <div class="card">
+                <h3>Livro Mais Vendido</h3>
+                <p>Dom Casmurro</p>
+            </div>
+
+        </div>
+
+        <h2>Relatório de Vendas</h2>
+
+        <table>
+            <thead>
+            <tr>
+                <th>Pedido</th>
+                <th>Cliente</th>
+                <th>Data</th>
+                <th>Valor</th>
+                <th>Status</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>#0008</td>
+                <td>Maria Silva</td>
+                <td>18/02/2026</td>
+                <td>R$ 189,90</td>
+                <td>Enviado</td>
+            </tr>
+            <tr>
+                <td>#0009</td>
+                <td>João Souza</td>
+                <td>19/02/2026</td>
+                <td>R$ 79,90</td>
+                <td>Pago</td>
+            </tr>
+            <tr>
+                <td>#0010</td>
+                <td>Ana Costa</td>
+                <td>20/02/2026</td>
+                <td>R$ 249,80</td>
+                <td>Pendente</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <br>
+
+        <button>Exportar PDF</button>
+
+    </main>
 </div>
 
 <footer>
-Área Administrativa - Livraria © 2026
+    Área Administrativa - Livraria © 2026
 </footer>
 
 </body>

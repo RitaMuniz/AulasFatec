@@ -2,6 +2,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalhes do Livro</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -17,30 +18,55 @@
     </nav>
 </header>
 
-    <div class="container" style="display:flex; gap:50px; align-items:flex-start;">
-    
-    <img src="https://via.placeholder.com/300x400">
+<main class="container">
 
-    <div>
-        <h2>Clean Code</h2>
-        <p>Autor: Robert C. Martin</p>
-        <p class="preco">R$ 79,90</p>
-        <p>
-            Um guia essencial sobre boas práticas de programação,
-            código limpo e desenvolvimento profissional.
-        </p>
+    <div class="grid" style="align-items:start; gap:50px;">
 
-        <br>
+        <!-- IMAGEM -->
+        <div>
+            <img src="https://m.media-amazon.com/images/I/81Rnac2Fq+L._SY342_.jpg" alt="Clean Code">
+        </div>
 
-        <label><strong>Quantidade:</strong></label><br>
-        <input type="number" value="1" min="1" style="width:80px; padding:8px; margin:10px 0;">
+        <!-- INFORMAÇÕES -->
+        <div>
 
-        <br>
+            <h2>Clean Code</h2>
 
-        <a href="carrinho.html" class="btn">Adicionar ao Carrinho</a>
+            <p><strong>Código:</strong> LIV005</p>
+            <p><strong>ISBN:</strong> 978-0132350884</p>
+            <p><strong>Autor:</strong> Robert C. Martin</p>
+            <p><strong>Categoria:</strong> Programação</p>
+
+            <p style="color:green;"><strong>Disponível:</strong> 8 unidades</p>
+
+            <p class="preco">R$ 79,90</p>
+
+            <p>
+                Um guia essencial sobre boas práticas de programação,
+                código limpo e desenvolvimento profissional. A obra apresenta
+                princípios fundamentais para escrever software sustentável,
+                legível e de alta qualidade.
+            </p>
+
+            <div style="margin-top:20px;">
+                <label><strong>Quantidade:</strong></label><br>
+                <input type="number" value="1" min="1" style="width:80px; padding:8px; margin:10px 0;">
+            </div>
+
+            <div style="margin-top:20px;">
+                <a href="carrinho.html" class="btn">Adicionar ao Carrinho</a>
+                <a href="livros.html" class="btn" style="margin-left:10px;">Voltar</a>
+            </div>
+
+        </div>
+
     </div>
 
-</div>
+</main>
+
+<footer>
+    © 2026 Livraria
+</footer>
 
 </body>
 </html>

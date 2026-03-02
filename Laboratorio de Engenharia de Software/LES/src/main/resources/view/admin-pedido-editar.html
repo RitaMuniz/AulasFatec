@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<title>Editar Pedido</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/admin.css">
+    <meta charset="UTF-8">
+    <title>Editar Pedido</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/admin.css">
 </head>
 
 <body>
@@ -19,103 +19,114 @@
 
 <div class="layout">
 
-<aside class="sidebar">
-    <h2>Admin</h2>
-    <nav>
-        <a href="admin.html">Dashboard</a>
-        <a href="admin-pedidos.html" class="active">Pedidos</a>
-        <a href="admin-livros.html">Livros</a>
-        <a href="admin-clientes.html">Clientes</a>
-        <a href="admin-devolucoes.html">Devoluções</a>
-        <a href="admin-relatorios.html">Relatórios</a>
-    </nav>
-</aside>
+    <aside class="sidebar">
+        <h2>Admin</h2>
+        <nav>
+            <a href="admin.html">Dashboard</a>
+            <a href="admin-pedidos.html" class="active">Pedidos</a>
+            <a href="admin-livros.html">Livros</a>
+            <a href="admin-clientes.html">Clientes</a>
+            <a href="admin-devolucoes.html">Devoluções</a>
+            <a href="admin-relatorios.html">Relatórios</a>
+        </nav>
+    </aside>
 
-<main class="content">
+    <main class="content">
 
-<form>
+        <form method="post">
 
-<h2>Informações do Cliente</h2>
+            <input type="hidden" name="pedido_id" value="0001">
 
-<div class="form-grid">
-    <div>
-        <label>Nome:</label>
-        <input type="text" value="Maria Silva">
-    </div>
+            <h2>Dados do Cliente</h2>
 
-    <div>
-        <label>Email:</label>
-        <input type="email" value="maria@email.com">
-    </div>
+            <div class="form-grid">
+                <div>
+                    <label>Nome:</label>
+                    <input type="text" value="Maria Silva" readonly>
+                </div>
 
-    <div>
-        <label>Telefone:</label>
-        <input type="text" value="(11) 99999-9999">
-    </div>
-</div>
+                <div>
+                    <label>Email:</label>
+                    <input type="email" value="maria@email.com" readonly>
+                </div>
 
-<h2>Informações do Pedido</h2>
+                <div>
+                    <label>Telefone:</label>
+                    <input type="text" value="(11) 99999-9999" readonly>
+                </div>
+            </div>
 
-<label>Status:</label>
-<select>
-    <option>Confirmado</option>
-    <option selected>Separando</option>
-    <option>Enviado</option>
-    <option>Entregue</option>
-    <option>Cancelado</option>
-</select>
+            <h2>Informações do Pedido</h2>
 
-<label>Forma de Pagamento:</label>
-<select>
-    <option selected>Cartão de Crédito</option>
-    <option>Boleto</option>
-    <option>Pix</option>
-</select>
+            <label>Status:</label>
+            <select name="status">
+                <option>Confirmado</option>
+                <option selected>Separando</option>
+                <option>Enviado</option>
+                <option>Entregue</option>
+                <option>Cancelado</option>
+            </select>
 
-<h2>Itens do Pedido</h2>
+            <label>Forma de Pagamento:</label>
+            <select name="forma_pagamento">
+                <option selected>Cartão de Crédito</option>
+                <option>Boleto</option>
+                <option>Pix</option>
+            </select>
 
-<table>
-    <thead>
-        <tr>
-            <th>Livro</th>
-            <th>Quantidade</th>
-            <th>Preço Unitário</th>
-            <th>Subtotal</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>O Pequeno Príncipe</td>
-            <td><input type="number" value="1"></td>
-            <td>R$ 39,90</td>
-            <td>R$ 39,90</td>
-        </tr>
-        <tr>
-            <td>Dom Casmurro</td>
-            <td><input type="number" value="2"></td>
-            <td>R$ 75,00</td>
-            <td>R$ 150,00</td>
-        </tr>
-    </tbody>
-</table>
+            <h2>Itens do Pedido</h2>
 
-<h2>Total Geral</h2>
-<p><strong>R$ 189,90</strong></p>
+            <table>
+                <thead>
+                <tr>
+                    <th>Livro</th>
+                    <th>Quantidade</th>
+                    <th>Preço Unitário</th>
+                    <th>Subtotal</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        O Pequeno Príncipe
+                        <input type="hidden" name="livro_id[]" value="10">
+                    </td>
+                    <td>
+                        <input type="number" name="quantidade[]" value="1" min="1">
+                    </td>
+                    <td>R$ 39,90</td>
+                    <td>R$ 39,90</td>
+                </tr>
 
-<br><br>
+                <tr>
+                    <td>
+                        Dom Casmurro
+                        <input type="hidden" name="livro_id[]" value="15">
+                    </td>
+                    <td>
+                        <input type="number" name="quantidade[]" value="2" min="1">
+                    </td>
+                    <td>R$ 75,00</td>
+                    <td>R$ 150,00</td>
+                </tr>
+                </tbody>
+            </table>
 
-<div class="form-actions">
-    <button type="submit">Salvar Alterações</button>
-    <a href="admin-pedidos.html" class="btn-cancelar">Cancelar</a>
-</div>
+            <h2>Total Geral</h2>
+            <p><strong>R$ 189,90</strong></p>
 
-</form>
+            <div class="form-actions">
+                <button type="submit">Salvar Alterações</button>
+                <a href="admin-pedidos.html" class="btn-cancelar">Cancelar</a>
+            </div>
 
-</main>
+        </form>
+
+    </main>
 </div>
 
 <footer>
-Área Administrativa - Livraria © 2026
+    Área Administrativa - Livraria © 2026
 </footer>
 
 </body>

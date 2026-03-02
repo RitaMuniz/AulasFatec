@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<title>Admin - Livros</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/admin.css">
+    <meta charset="UTF-8">
+    <title>Admin - Livros</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/admin.css">
 </head>
+
 <body>
 
 <header class="topbar">
@@ -17,50 +18,136 @@
 </header>
 
 <div class="layout">
-<aside class="sidebar">
-    <h2>Admin</h2>
-    <nav>
-        <a href="admin.html">Dashboard</a>
-        <a href="admin-pedidos.html">Pedidos</a>
-        <a href="admin-livros.html" class="active">Livros</a>
-        <a href="admin-clientes.html">Clientes</a>
-        <a href="admin-devolucoes.html">Devoluções</a>
-        <a href="admin-relatorios.html">Relatórios</a>
-    </nav>
-</aside>
 
-<main class="content">
+    <aside class="sidebar">
+        <h2>Admin</h2>
+        <nav>
+            <a href="admin.html">Dashboard</a>
+            <a href="admin-pedidos.html">Pedidos</a>
+            <a href="admin-livros.html" class="active">Livros</a>
+            <a href="admin-clientes.html">Clientes</a>
+            <a href="admin-devolucoes.html">Devoluções</a>
+            <a href="admin-relatorios.html">Relatórios</a>
+        </nav>
+    </aside>
 
-<h2>Novo Livro</h2>
+    <main class="content">
 
-<form>
-<input type="text" placeholder="Título">
-<input type="text" placeholder="Autor">
-<input type="number" placeholder="Preço">
-<button type="submit">Cadastrar</button>
-</form>
+        <h2>Cadastrar Novo Livro</h2>
 
-<h2>Lista de Livros</h2>
+        <form method="post">
 
-<table>
-<tr>
-<th>Título</th>
-<th>Autor</th>
-<th>Preço</th>
-<th>Ação</th>
-</tr>
-<tr>
-<td>Dom Casmurro</td>
-<td>Machado de Assis</td>
-<td>R$ 39,90</td>
-<td><button>Excluir</button></td>
-</tr>
-</table>
+            <div class="form-grid">
+                <div>
+                    <label>Título</label>
+                    <input type="text" name="titulo" required>
+                </div>
 
-</main>
+                <div>
+                    <label>Autor</label>
+                    <input type="text" name="autor" required>
+                </div>
+
+                <div>
+                    <label>ISBN</label>
+                    <input type="text" name="isbn">
+                </div>
+
+                <div>
+                    <label>Categoria</label>
+                    <input type="text" name="categoria">
+                </div>
+
+                <div>
+                    <label>Preço (R$)</label>
+                    <input type="number" name="preco" step="0.01" min="0" required>
+                </div>
+
+                <div>
+                    <label>Estoque</label>
+                    <input type="number" name="estoque" min="0" required>
+                </div>
+
+                <div>
+                    <label>Status</label>
+                    <select name="status">
+                        <option selected>Ativo</option>
+                        <option>Inativo</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit">Cadastrar Livro</button>
+                <a href="admin-livros.html" class="btn-cancelar">Limpar</a>
+            </div>
+
+        </form>
+
+        <h2>Lista de Livros</h2>
+
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Título</th>
+                <th>Autor</th>
+                <th>Categoria</th>
+                <th>Preço</th>
+                <th>Estoque</th>
+                <th>Status</th>
+                <th>Ações</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr>
+                <td>01</td>
+                <td>Dom Casmurro</td>
+                <td>Machado de Assis</td>
+                <td>Literatura</td>
+                <td>R$ 39,90</td>
+                <td>12</td>
+                <td>Ativo</td>
+                <td class="acoes">
+                    <a href="admin-livro-editar.html" class="btn-editar">Editar</a>
+                    <button class="btn-excluir" onclick="return confirmarExclusao()">
+                        Excluir
+                    </button>
+                </td>
+            </tr>
+
+            <tr>
+                <td>02</td>
+                <td>O Cortiço</td>
+                <td>Aluísio Azevedo</td>
+                <td>Romance</td>
+                <td>R$ 75,00</td>
+                <td>5</td>
+                <td>Ativo</td>
+                <td class="acoes">
+                    <a href="admin-livro-editar.html" class="btn-editar">Editar</a>
+                    <button class="btn-excluir" onclick="return confirmarExclusao()">
+                        Excluir
+                    </button>
+                </td>
+            </tr>
+
+            </tbody>
+        </table>
+
+    </main>
 </div>
 
-<footer>Área Administrativa - Livraria © 2026</footer>
+<footer>
+    Área Administrativa - Livraria © 2026
+</footer>
+
+<script>
+    function confirmarExclusao() {
+        return confirm("Deseja realmente excluir este livro?");
+    }
+</script>
 
 </body>
 </html>

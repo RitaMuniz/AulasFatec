@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<title>Admin - Pedidos</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/admin.css">
+    <meta charset="UTF-8">
+    <title>Admin - Pedidos</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/admin.css">
 </head>
 
 <body>
@@ -19,95 +19,112 @@
 
 <div class="layout">
 
-<aside class="sidebar">
-    <h2>Admin</h2>
-    <nav>
-        <a href="admin.html">Dashboard</a>
-        <a href="admin-pedidos.html" class="active">Pedidos</a>
-        <a href="admin-livros.html">Livros</a>
-        <a href="admin-clientes.html">Clientes</a>
-        <a href="admin-devolucoes.html">Devoluções</a>
-        <a href="admin-relatorios.html">Relatórios</a>
-    </nav>
-</aside>
+    <aside class="sidebar">
+        <h2>Admin</h2>
+        <nav>
+            <a href="admin.html">Dashboard</a>
+            <a href="admin-pedidos.html" class="active">Pedidos</a>
+            <a href="admin-livros.html">Livros</a>
+            <a href="admin-clientes.html">Clientes</a>
+            <a href="admin-devolucoes.html">Devoluções</a>
+            <a href="admin-relatorios.html">Relatórios</a>
+        </nav>
+    </aside>
 
-<main class="content">
+    <main class="content">
 
-<h2>Pesquisar Pedido</h2>
+        <h2>Pesquisar Pedido</h2>
 
-<form>
-    <input type="text" placeholder="Buscar por número ou cliente">
-    <button type="submit">Pesquisar</button>
-</form>
+        <form>
+            <div class="form-grid">
+                <div>
+                    <label>Buscar por número ou cliente</label>
+                    <input type="text" name="busca" placeholder="Ex: #0001 ou Maria Silva">
+                </div>
+            </div>
 
-<h2>Lista de Pedidos</h2>
+            <div class="form-actions">
+                <button type="submit">Pesquisar</button>
+                <a href="admin-pedidos.html" class="btn-cancelar">Limpar</a>
+            </div>
+        </form>
 
-<table>
-    <thead>
-        <tr>
-            <th>Pedido</th>
-            <th>Cliente</th>
-            <th>Data</th>
-            <th>Valor Total</th>
-            <th>Status</th>
-            <th>Ações</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>#0001</td>
-            <td>Maria Silva</td>
-            <td>22/02/2026</td>
-            <td>R$ 189,90</td>
-            <td>
-                <select>
-                    <option>Confirmado</option>
-                    <option selected>Separando</option>
-                    <option>Enviado</option>
-                    <option>Entregue</option>
-                    <option>Cancelado</option>
-                </select>
-            </td>
-            <td class="acoes">
-                <a href="admin-pedido-detalhe.html" class="btn-visualizar">Visualizar</a>
-                <a href="admin-pedido-editar.html" class="btn-editar">Editar</a>
-                <button class="btn-excluir" onclick="confirm('Deseja realmente excluir este pedido?')">
-                    Excluir
-                </button>
-            </td>
-        </tr>
+        <h2>Lista de Pedidos</h2>
 
-        <tr>
-            <td>#0002</td>
-            <td>João Souza</td>
-            <td>21/02/2026</td>
-            <td>R$ 79,90</td>
-            <td>
-                <select>
-                    <option>Confirmado</option>
-                    <option>Separando</option>
-                    <option selected>Enviado</option>
-                    <option>Entregue</option>
-                    <option>Cancelado</option>
-                </select>
-            </td>
-            <td class="acoes">
-                <a href="admin-pedido-detalhe.html" class="btn-visualizar">Visualizar</a>
-                <a href="admin-pedido-editar.html" class="btn-editar">Editar</a>
-                <button class="btn-excluir" onclick="confirm('Deseja realmente excluir este pedido?')">
-                    Excluir
-                </button>
-            </td>
-        </tr>
-    </tbody>
-</table>
+        <table>
+            <thead>
+            <tr>
+                <th>Pedido</th>
+                <th>Cliente</th>
+                <th>Data</th>
+                <th>Valor Total</th>
+                <th>Status</th>
+                <th>Ações</th>
+            </tr>
+            </thead>
+            <tbody>
 
-</main>
+            <tr>
+                <td>#0001</td>
+                <td>Maria Silva</td>
+                <td>22/02/2026</td>
+                <td>R$ 189,90</td>
+                <td>
+                    <select name="status_0001">
+                        <option>Confirmado</option>
+                        <option selected>Separando</option>
+                        <option>Enviado</option>
+                        <option>Entregue</option>
+                        <option>Cancelado</option>
+                    </select>
+                </td>
+                <td class="acoes">
+                    <a href="admin-pedido-detalhe.html" class="btn-visualizar">Visualizar</a>
+                    <a href="admin-pedido-editar.html" class="btn-editar">Editar</a>
+                    <button class="btn-excluir" onclick="return confirmarExclusao()">
+                        Excluir
+                    </button>
+                </td>
+            </tr>
+
+            <tr>
+                <td>#0002</td>
+                <td>João Souza</td>
+                <td>21/02/2026</td>
+                <td>R$ 79,90</td>
+                <td>
+                    <select name="status_0002">
+                        <option>Confirmado</option>
+                        <option>Separando</option>
+                        <option selected>Enviado</option>
+                        <option>Entregue</option>
+                        <option>Cancelado</option>
+                    </select>
+                </td>
+                <td class="acoes">
+                    <a href="admin-pedido-detalhe.html" class="btn-visualizar">Visualizar</a>
+                    <a href="admin-pedido-editar.html" class="btn-editar">Editar</a>
+                    <button class="btn-excluir" onclick="return confirmarExclusao()">
+                        Excluir
+                    </button>
+                </td>
+            </tr>
+
+            </tbody>
+        </table>
+
+    </main>
 </div>
 
 <footer>
-Área Administrativa - Livraria © 2026
+    Área Administrativa - Livraria © 2026
 </footer>
+
+<script>
+    function confirmarExclusao() {
+        return confirm("Deseja realmente excluir este pedido?");
+    }
+</script>
 
 </body>
 </html>
