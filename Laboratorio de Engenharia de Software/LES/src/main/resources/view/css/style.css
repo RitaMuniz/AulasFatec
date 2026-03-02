@@ -127,6 +127,13 @@ h1, h2, h3 {
     border: 1px solid #ccc;
 }
 
+.form-box select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+}
+
 footer {
     text-align: center;
     padding: 30px;

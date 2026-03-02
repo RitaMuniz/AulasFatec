@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Cadastro de Cliente</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="container">
+
+  <h1 style="text-align:center; margin-bottom:30px;">
+    Cadastro de Cliente
+  </h1>
+
+  <div class="form-box">
+
+    <form action="ClienteServlet" method="post">
+
+      <label for="genero">Gênero:</label>
+      <select id="genero" name="genero" required style="width:100%; padding:12px; margin-bottom:15px; border:1px solid #ccc;">
+        <option value="">Selecione</option>
+        <option value="F">Feminino</option>
+        <option value="M">Masculino</option>
+        <option value="O">Outro</option>
+        <option value="N">Prefiro não informar</option>
+      </select>
+
+      <label for="nome">Nome Completo:</label>
+      <input type="text" id="nome" name="nome" required>
+
+      <label for="dataNasc">Data de Nascimento:</label>
+      <input type="date" id="dataNasc" name="dataNasc" required>
+
+      <label for="cpf">CPF:</label>
+      <input type="text" id="cpf" name="cpf" maxlength="14" required>
+
+      <label for="telefone">Telefone:</label>
+      <input type="tel" id="telefone" name="telefone" required>
+
+      <label for="email">E-mail:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="senha">Senha:</label>
+      <input type="password" id="senha" name="senha" required>
+
+      <div style="margin-top:20px; display:flex; gap:10px; justify-content:center;">
+        <button type="submit" class="btn">Cadastrar</button>
+        <button type="reset" class="btn">Limpar</button>
+      </div>
+
+    </form>
+
+  </div>
+
+  <div style="text-align:center; margin-top:40px;">
+    <h2>Outras Informações</h2>
+
+    <p>Após o cadastro, você poderá adicionar:</p>
+
+    <div style="margin-top:20px; display:flex; gap:15px; justify-content:center;">
+      <a href="enderecos.html" class="btn">Gerenciar Endereços</a>
+      <a href="cartoes.html" class="btn">Gerenciar Cartões</a>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  Livraria © 2026
+</footer>
+
+</body>
+</html>

@@ -10,7 +10,7 @@ body {
     color: #000;
 }
 
-/* TOPO */
+
 
 .topbar {
     background-color: #013a63;
@@ -31,14 +31,14 @@ body {
     text-decoration: underline;
 }
 
-/* LAYOUT */
+
 
 .layout {
     display: flex;
     min-height: 85vh;
 }
 
-/* SIDEBAR */
+
 
 .sidebar {
     width: 240px;
@@ -65,7 +65,7 @@ body {
     background-color: #013a63;
 }
 
-/* CONTEÚDO */
+
 
 .content {
     flex: 1;
@@ -73,7 +73,7 @@ body {
     margin-left: 30px;
 }
 
-/* DASHBOARD */
+
 
 .dashboard {
     display: flex;
@@ -93,7 +93,7 @@ body {
     margin-bottom: 10px;
 }
 
-/* TABELA */
+
 
 table {
     width: 100%;
@@ -112,7 +112,7 @@ th {
     color: #fff;
 }
 
-/* BOTÕES */
+
 
 button {
     padding: 6px 12px;
@@ -127,7 +127,7 @@ button:hover {
     opacity: 0.9;
 }
 
-/* FORMULÁRIOS */
+
 
 form {
     background-color: #fff;
@@ -168,7 +168,7 @@ form select {
     gap: 20px;
 }
 
-/* RODAPÉ */
+
 
 footer {
     background-color: #013a63;
@@ -177,7 +177,7 @@ footer {
     padding: 20px;
 }
 
-/* Botão tabela */
+
 
 .btn-link {
     display: inline-block;

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Meus Endereços</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="navbar">
+    <div class="logo">Minha Livraria</div>
+    <div>
+        <a href="index.html">Home</a>
+        <a href="perfilCliente.html">Perfil</a>
+        <a href="login.html">Sair</a>
+    </div>
+</div>
+
+<div class="container">
+    <h1>Gerenciar Endereços</h1>
+
+    <div class="form-box">
+        <h2>Novo Endereço</h2>
+
+        <form action="EnderecoServlet" method="post">
+
+            <input type="text" name="tipoResidencia" placeholder="Tipo de Residência (Casa, Apartamento...)" required>
+
+            <input type="text" name="tipoLogradouro" placeholder="Tipo de Logradouro (Rua, Av., Travessa...)" required>
+
+            <input type="text" name="logradouro" placeholder="Logradouro" required>
+
+            <input type="text" name="numero" placeholder="Número" required>
+
+            <input type="text" name="bairro" placeholder="Bairro" required>
+
+            <input type="text" name="cep" placeholder="CEP" required>
+
+            <input type="text" name="cidade" placeholder="Cidade" required>
+
+            <input type="text" name="estado" placeholder="Estado" required>
+
+            <input type="text" name="pais" placeholder="País" required>
+
+            <button type="submit" class="btn">Adicionar Endereço</button>
+        </form>
+    </div>
+
+    <h2>Endereços Cadastrados</h2>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Logradouro</th>
+            <th>Nº</th>
+            <th>Cidade</th>
+            <th>Estado</th>
+            <th>Ações</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <tr>
+            <td>Rua das Flores</td>
+            <td>123</td>
+            <td>São Paulo</td>
+            <td>SP</td>
+            <td>
+                <a href="#" class="btn">Editar</a>
+                <a href="#" class="btn">Excluir</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+
+<footer>
+    © 2026 Livraria
+</footer>
+
+</body>
+</html>
