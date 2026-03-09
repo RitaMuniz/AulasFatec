@@ -16,6 +16,20 @@ public class ClienteController extends HttpServlet {
     protected void doGet (HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String action = req.getParameter("action");
 
+        try {
+            if(action.equals("submit")) {
+
+            }
+            if (action.equals("reset")) {
+
+
+            }
+        } catch (Exception e) {
+            req.setAttribute("erro", e.getMessage());
+        }
+
+
+
     }
 
     protected void doPost (HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
