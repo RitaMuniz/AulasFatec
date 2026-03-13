@@ -1,9 +1,9 @@
 package projetoLivraria.model;
 
-public class Estados {
+public class Estado {
     private String nome;
     private String uf;
-    private Paises paises;
+    private Pais paises;
 
     public String getNome() {
         return nome;
@@ -21,11 +21,11 @@ public class Estados {
         this.uf = uf;
     }
 
-    public Paises getPaises() {
+    public Pais getPaises() {
         return paises;
     }
 
-    public void setPaises(Paises paises) {
+    public void setPaises(Pais paises) {
         this.paises = paises;
     }
 }

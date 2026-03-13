@@ -4,13 +4,13 @@ public class Enderecos {
 
     private TipoLogradouro tipoLogradouro;
     private String logradouro;
-    private String tipoResidencia;
+    private TipoResidencia tipoResidencia;
     private String numero;
     private String bairro;
     private String cep;
-    private Cidades cidades;
-    private Estados estados;
-    private Paises paises;
+    private Cidade cidade;
+    private Estado estado;
+    private Pais pais;
 
     public TipoLogradouro getTipoLogradouro() {
         return tipoLogradouro;
@@ -28,11 +28,11 @@ public class Enderecos {
         this.logradouro = logradouro;
     }
 
-    public String getTipoResidencia() {
+    public TipoResidencia getTipoResidencia() {
         return tipoResidencia;
     }
 
-    public void setTipoResidencia(String tipoResidencia) {
+    public void setTipoResidencia(TipoResidencia tipoResidencia) {
         this.tipoResidencia = tipoResidencia;
     }
 
@@ -60,27 +60,27 @@ public class Enderecos {
         this.cep = cep;
     }
 
-    public Cidades getCidades() {
-        return cidades;
+    public Cidade getCidade() {
+        return cidade;
     }
 
-    public void setCidades(Cidades cidades) {
-        this.cidades = cidades;
+    public void setCidade(Cidade cidade) {
+        this.cidade = cidade;
     }
 
-    public Estados getEstados() {
-        return estados;
+    public Estado getEstado() {
+        return estado;
     }
 
-    public void setEstados(Estados estados) {
-        this.estados = estados;
+    public void setEstado(Estado estado) {
+        this.estado = estado;
     }
 
-    public Paises getPaises() {
-        return paises;
+    public Pais getPais() {
+        return pais;
     }
 
-    public void setPaises(Paises paises) {
-        this.paises = paises;
+    public void setPais(Pais pais) {
+        this.pais = pais;
     }
 }

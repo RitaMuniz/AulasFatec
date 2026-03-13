@@ -27,9 +27,6 @@ public class ClienteController extends HttpServlet {
         } catch (Exception e) {
             req.setAttribute("erro", e.getMessage());
         }
-
-
-
     }
 
     protected void doPost (HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

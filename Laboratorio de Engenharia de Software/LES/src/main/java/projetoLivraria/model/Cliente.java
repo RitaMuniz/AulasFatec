@@ -2,7 +2,7 @@ package projetoLivraria.model;
 
 import java.util.Date;
 
-public class Clientes {
+public class Cliente {
 
     private String name;
     private String genero;

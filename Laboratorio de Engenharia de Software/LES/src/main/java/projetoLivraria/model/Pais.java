@@ -1,6 +1,6 @@
 package projetoLivraria.model;
 
-public class Paises {
+public class Pais {
     private String nome;
     private String sigla;
 

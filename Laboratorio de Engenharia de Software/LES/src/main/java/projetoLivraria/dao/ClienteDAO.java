@@ -1,36 +1,36 @@
 package projetoLivraria.dao;
 
-import projetoLivraria.model.Clientes;
+import projetoLivraria.model.Cliente;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ClienteDAO {
 
-    public Clientes salvar(Clientes c) throws Exception {
+    public Cliente salvar(Cliente c) throws Exception {
         String sql = "";
 
         return c;
 
     }
 
-    public Clientes editar(Clientes c) throws Exception {
+    public Cliente editar(Cliente c) throws Exception {
         String sql = "";
 
         return c;
 
     }
 
-    public Clientes excluir(Clientes c) throws Exception {
+    public Cliente excluir(Cliente c) throws Exception {
         String sql = "";
 
         return c;
 
     }
 
-    public List<Clientes> listarTodos() throws Exception {
+    public List<Cliente> listarTodos() throws Exception {
         String sql = "";
-        List<Clientes> lista = new ArrayList<>();
+        List<Cliente> lista = new ArrayList<>();
 
         return lista;
     }
