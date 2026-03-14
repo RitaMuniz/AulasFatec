@@ -2,7 +2,7 @@ package projetoLivraria.model;
 
 public class Cidade {
     private String nome;
-    private Estado estados;
+    private Estado estado;
     private Pais paises;
 
     public String getNome() {
@@ -13,12 +13,12 @@ public class Cidade {
         this.nome = nome;
     }
 
-    public Estado getEstados() {
-        return estados;
+    public Estado getEstado() {
+        return estado;
     }
 
-    public void setEstados(Estado estados) {
-        this.estados = estados;
+    public void setEstado(Estado estado) {
+        this.estado = estado;
     }
 
     public Pais getPaises() {

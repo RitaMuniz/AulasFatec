@@ -1,18 +1,15 @@
 package projetoLivraria.model;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class Cliente {
 
-    private String name;
+    private String nome;
     private String genero;
-    private Date dataNasc;
+    private java.sql.Date dataNascimento;
     private String cpf;
-    private String telefone;
     private String email;
     private String senha;
-    private Enderecos enderecos;
-    private Cartoes cartoes;
 
     public String getGenero() {
         return genero;
@@ -22,12 +19,12 @@ public class Cliente {
         this.genero = genero;
     }
 
-    public Date getDataNasc() {
-        return dataNasc;
+    public java.sql.Date getDataNascimento() {
+        return dataNascimento;
     }
 
-    public void setDataNasc(Date dataNasc) {
-        this.dataNasc = dataNasc;
+    public void setDataNascimento(Date dataNascimento) {
+        this.dataNascimento = dataNascimento;
     }
 
     public String getCpf() {
@@ -36,14 +33,6 @@ public class Cliente {
 
     public void setCpf(String cpf) {
         this.cpf = cpf;
-    }
-
-    public String getTelefone() {
-        return telefone;
-    }
-
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
     }
 
     public String getEmail() {
@@ -62,27 +51,11 @@ public class Cliente {
         this.senha = senha;
     }
 
-    public Enderecos getEnderecos() {
-        return enderecos;
+    public String getNome() {
+        return nome;
     }
 
-    public void setEnderecos(Enderecos enderecos) {
-        this.enderecos = enderecos;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Cartoes getCartoes() {
-        return cartoes;
-    }
-
-    public void setCartoes(Cartoes cartoes) {
-        this.cartoes = cartoes;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 }

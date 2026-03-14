@@ -1,7 +1,8 @@
 package projetoLivraria.model;
 
-public class Enderecos {
+public class Endereco {
 
+    private Cliente cliente;
     private TipoLogradouro tipoLogradouro;
     private String logradouro;
     private TipoResidencia tipoResidencia;
@@ -11,6 +12,14 @@ public class Enderecos {
     private Cidade cidade;
     private Estado estado;
     private Pais pais;
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
 
     public TipoLogradouro getTipoLogradouro() {
         return tipoLogradouro;

@@ -1,12 +1,12 @@
 package projetoLivraria.model;
 
-public class Cartoes {
+public class Cartao {
     private String nomeCartao;
     private String nomeCompleto;
     private String bandeira;
     private String cvv;
 
-    public Cartoes(String nomeCartao, String nomeCompleto, String bandeira, String cvv) {
+    public Cartao(String nomeCartao, String nomeCompleto, String bandeira, String cvv) {
         this.nomeCartao = nomeCartao;
         this.nomeCompleto = nomeCompleto;
         this.bandeira = bandeira;
