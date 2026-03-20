@@ -1,4 +1,4 @@
-package projetoLivraria.dao;
+package projetoLivraria.uteis;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -7,7 +7,8 @@ import java.sql.Statement;
 
 public class ConexaoSQL {
 
-    private static final String URL = "jdbc:sqlite:/LES/livraria.db";
+    private static final String URL = "jdbc:sqlite:" +
+            System.getProperty("user.home") + "/livraria.db";
 
     private static ConexaoSQL instance;
 
@@ -30,8 +31,7 @@ public class ConexaoSQL {
 
     public static void criarTabelasSeNaoExistirem() {
 
-        String sqlCliente =
-                """
+        String sqlCliente = """
                 CREATE TABLE IF NOT EXISTS cliente (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
                     nome TEXT NOT NULL,
@@ -45,8 +45,7 @@ public class ConexaoSQL {
                 );
                 """;
 
-        String sqlTelefone =
-                """
+        String sqlTelefone = """
                 CREATE TABLE IF NOT EXISTS telefone (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
                     cliente_id INTEGER NOT NULL,
@@ -64,8 +63,7 @@ public class ConexaoSQL {
                 );
                 """;
 
-        String sqlEstado =
-                """
+        String sqlEstado = """
                 CREATE TABLE IF NOT EXISTS estado (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
                     nome TEXT NOT NULL,
@@ -74,8 +72,7 @@ public class ConexaoSQL {
                 );
                 """;
 
-        String sqlCidade =
-                """
+        String sqlCidade = """
                 CREATE TABLE IF NOT EXISTS cidade (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
                     nome TEXT NOT NULL,
@@ -84,8 +81,7 @@ public class ConexaoSQL {
                 );
                 """;
 
-        String sqlEndereco =
-                """
+        String sqlEndereco = """
                 CREATE TABLE IF NOT EXISTS endereco (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
                     cliente_id INTEGER NOT NULL,
@@ -285,7 +281,7 @@ public class ConexaoSQL {
 //            stmt.execute(sqlTroca);
 //            stmt.execute(sqlLog);
 
-            System.out.println("Tabelas verificadas/criadas com sucesso.");
+            System.out.println("Tabelas verificadas/criadas com sucesso. Banco em: " + System.getProperty("user.home") + "/livraria.db");
 
         } catch (SQLException e) {
             e.printStackTrace();
