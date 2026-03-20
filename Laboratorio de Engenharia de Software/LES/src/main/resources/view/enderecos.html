@@ -7,77 +7,113 @@
 </head>
 <body>
 
-<div class="navbar">
-    <div class="logo">Minha Livraria</div>
-    <div>
+<header class="navbar">
+    <div class="logo">Livraria</div>
+    <nav>
         <a href="index.html">Home</a>
-        <a href="perfilCliente.html">Perfil</a>
+        <a href="cliente.html">Perfil</a>
         <a href="login.html">Sair</a>
-    </div>
-</div>
+    </nav>
+</header>
 
-<div class="container">
-    <h1>Gerenciar Endereços</h1>
+<div class="container" style="max-width:640px; margin:40px auto;">
 
-    <div class="form-box">
-        <h2>Novo Endereço</h2>
+    <h1 style="margin-bottom:30px;">Gerenciar Endereços</h1>
 
-        <form action="EnderecoServlet" method="post">
+    <div class="form-box" style="margin-bottom:40px;">
+        <h2 style="margin-bottom:20px;">Novo Endereço</h2>
 
-            <input type="text" name="tipoResidencia" placeholder="Tipo de Residência (Casa, Apartamento...)" required>
+        <form action="/endereco" method="post">
+            <input type="hidden" name="action" value="adicionar">
+            <input type="hidden" name="clienteId" value=""><!-- preencher via JSP -->
 
-            <input type="text" name="tipoLogradouro" placeholder="Tipo de Logradouro (Rua, Av., Travessa...)" required>
+            <label for="tipoEndereco">Tipo de Endereço</label>
+            <select id="tipoEndereco" name="tipoEndereco" required style="width:100%; padding:12px; margin-bottom:15px; border:1px solid #ccc; border-radius:6px;">
+                <option value="ENTREGA">Entrega</option>
+                <option value="COBRANCA">Cobrança</option>
+            </select>
 
-            <input type="text" name="logradouro" placeholder="Logradouro" required>
+            <label for="tipoResidencia">Tipo de Residência</label>
+            <input type="text" id="tipoResidencia" name="tipoResidencia" placeholder="Casa, Apartamento, etc." required>
 
-            <input type="text" name="numero" placeholder="Número" required>
+            <label for="tipoLogradouro">Tipo de Logradouro</label>
+            <input type="text" id="tipoLogradouro" name="tipoLogradouro" placeholder="Rua, Avenida, etc." required>
 
-            <input type="text" name="bairro" placeholder="Bairro" required>
+            <label for="logradouro">Logradouro</label>
+            <input type="text" id="logradouro" name="logradouro" placeholder="Nome da rua/avenida" required>
 
-            <input type="text" name="cep" placeholder="CEP" required>
+            <label for="numero">Número</label>
+            <input type="text" id="numero" name="numeroEndereco" placeholder="123" required>
 
-            <input type="text" name="cidade" placeholder="Cidade" required>
+            <label for="bairro">Bairro</label>
+            <input type="text" id="bairro" name="bairro" placeholder="Seu bairro" required>
 
-            <input type="text" name="estado" placeholder="Estado" required>
+            <label for="cep">CEP</label>
+            <input type="text" id="cep" name="cep" placeholder="00000-000" maxlength="9" required>
 
-            <input type="text" name="pais" placeholder="País" required>
+            <label for="observacoes">Observações (opcional)</label>
+            <input type="text" id="observacoes" name="observacoes" placeholder="Complemento, referência...">
 
-            <button type="submit" class="btn">Adicionar Endereço</button>
+            <input type="hidden" name="cidadeId" value="1">
+
+            <button type="submit" class="btn" style="margin-top:10px; width:100%;">Adicionar Endereço</button>
         </form>
     </div>
 
-    <h2>Endereços Cadastrados</h2>
+    <h2 style="margin-bottom:20px;">Endereços Cadastrados</h2>
 
     <table class="table">
         <thead>
         <tr>
+            <th>Tipo</th>
             <th>Logradouro</th>
             <th>Nº</th>
-            <th>Cidade</th>
-            <th>Estado</th>
+            <th>Bairro</th>
+            <th>CEP</th>
             <th>Ações</th>
         </tr>
         </thead>
         <tbody>
-
+        <!--
+            loop JSP:
+            <c:forEach var="e" items="${enderecos}">
+              <tr>
+                <td>${e.tipoEndereco}</td>
+                <td>${e.logradouro}</td>
+                <td>${e.numero}</td>
+                <td>${e.bairro}</td>
+                <td>${e.cep}</td>
+                <td>
+                  <a href="/endereco?action=editar&id=${e.id}" class="btn">Editar</a>
+                  <form action="/endereco" method="post" style="display:inline">
+                    <input type="hidden" name="action" value="excluir">
+                    <input type="hidden" name="id" value="${e.id}">
+                    <button type="submit" class="btn" style="background:#b00020;">Excluir</button>
+                  </form>
+                </td>
+              </tr>
+            </c:forEach>
+        -->
         <tr>
+            <td>Entrega</td>
             <td>Rua das Flores</td>
             <td>123</td>
-            <td>São Paulo</td>
-            <td>SP</td>
+            <td>Centro</td>
+            <td>00000-000</td>
             <td>
                 <a href="#" class="btn">Editar</a>
-                <a href="#" class="btn">Excluir</a>
+                <a href="#" class="btn" style="background:#b00020;">Excluir</a>
             </td>
         </tr>
         </tbody>
     </table>
 
+    <div style="margin-top:30px; text-align:center;">
+        <a href="cliente.html" class="btn">Voltar ao Perfil</a>
+    </div>
 </div>
 
-<footer>
-    © 2026 Livraria
-</footer>
+<footer>Livraria © 2026</footer>
 
 </body>
 </html>
