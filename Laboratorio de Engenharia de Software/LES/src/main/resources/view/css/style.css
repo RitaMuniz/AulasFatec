@@ -18,6 +18,26 @@
     box-sizing: border-box;
 }
 
+header {
+    background-color: var(--primary);
+    padding: 20px;
+    color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-family: 'DM Serif Display', serif;
+    margin: 0;
+}
+
+header a {
+    color: var(--white);
+    text-decoration: none;
+    margin-left: 20px;
+}
+
 body {
     background-color: var(--bg);
     font-family: 'Open Sauce', Arial, sans-serif;
@@ -73,12 +93,23 @@ h1, h2, h3 {
     padding: 20px;
     border-radius: 10px;
     text-align: center;
+    margin-bottom: 30px;
 }
 
 .card img {
     width: 100%;
     height: 250px;
     object-fit: cover;
+}
+
+.pedido-card {
+    background-color: #FFFFFF;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .preco {
@@ -134,7 +165,50 @@ h1, h2, h3 {
     border: 1px solid #ccc;
 }
 
+.status-bar {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0;
+}
+
+.status {
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.step {
+    text-align: center;
+    flex: 1;
+}
+
+.circle {
+    width: 30px;
+    height: 30px;
+    background-color: var(--primary);
+    border-radius: 50%;
+    margin: 0 auto 10px;
+}
+
+.inactive .circle {
+    background-color: var(--white);
+}
+
+button {
+    background-color: var(--primary);
+    color: var(--white);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
 footer {
+    background-color: var(--black);
+    color: var(--white);
     text-align: center;
     padding: 30px;
     margin-top: 60px;
