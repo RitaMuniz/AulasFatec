@@ -4,12 +4,29 @@ import java.sql.Date;
 
 public class Cliente {
 
+    private int id;
     private String nome;
     private String genero;
-    private java.sql.Date dataNascimento;
+    private Date dataNascimento;
     private String cpf;
     private String email;
     private String senha;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 
     public String getGenero() {
         return genero;
@@ -19,7 +36,7 @@ public class Cliente {
         this.genero = genero;
     }
 
-    public java.sql.Date getDataNascimento() {
+    public Date getDataNascimento() {
         return dataNascimento;
     }
 
@@ -49,13 +66,5 @@ public class Cliente {
 
     public void setSenha(String senha) {
         this.senha = senha;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
     }
 }

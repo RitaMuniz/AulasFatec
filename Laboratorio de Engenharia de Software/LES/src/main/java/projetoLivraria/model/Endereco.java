@@ -2,30 +2,39 @@ package projetoLivraria.model;
 
 public class Endereco {
 
-    private Cliente cliente;
-    private TipoLogradouro tipoLogradouro;
+    private int id;
+    private int clienteId;
+    private String tipoLogradouro;
     private String logradouro;
-    private TipoResidencia tipoResidencia;
+    private String tipoResidencia;
     private String numero;
     private String bairro;
     private String cep;
-    private Cidade cidade;
-    private Estado estado;
-    private Pais pais;
+    private int cidadeId;
+    private String observacoes;
+    private String tipoEndereco; // "ENTREGA" ou "COBRANCA"
 
-    public Cliente getCliente() {
-        return cliente;
+    public int getId() {
+        return id;
     }
 
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public TipoLogradouro getTipoLogradouro() {
+    public int getClienteId() {
+        return clienteId;
+    }
+
+    public void setClienteId(int clienteId) {
+        this.clienteId = clienteId;
+    }
+
+    public String getTipoLogradouro() {
         return tipoLogradouro;
     }
 
-    public void setTipoLogradouro(TipoLogradouro tipoLogradouro) {
+    public void setTipoLogradouro(String tipoLogradouro) {
         this.tipoLogradouro = tipoLogradouro;
     }
 
@@ -37,11 +46,11 @@ public class Endereco {
         this.logradouro = logradouro;
     }
 
-    public TipoResidencia getTipoResidencia() {
+    public String getTipoResidencia() {
         return tipoResidencia;
     }
 
-    public void setTipoResidencia(TipoResidencia tipoResidencia) {
+    public void setTipoResidencia(String tipoResidencia) {
         this.tipoResidencia = tipoResidencia;
     }
 
@@ -69,27 +78,27 @@ public class Endereco {
         this.cep = cep;
     }
 
-    public Cidade getCidade() {
-        return cidade;
+    public int getCidadeId() {
+        return cidadeId;
     }
 
-    public void setCidade(Cidade cidade) {
-        this.cidade = cidade;
+    public void setCidadeId(int cidadeId) {
+        this.cidadeId = cidadeId;
     }
 
-    public Estado getEstado() {
-        return estado;
+    public String getObservacoes() {
+        return observacoes;
     }
 
-    public void setEstado(Estado estado) {
-        this.estado = estado;
+    public void setObservacoes(String observacoes) {
+        this.observacoes = observacoes;
     }
 
-    public Pais getPais() {
-        return pais;
+    public String getTipoEndereco() {
+        return tipoEndereco;
     }
 
-    public void setPais(Pais pais) {
-        this.pais = pais;
+    public void setTipoEndereco(String tipoEndereco) {
+        this.tipoEndereco = tipoEndereco;
     }
 }

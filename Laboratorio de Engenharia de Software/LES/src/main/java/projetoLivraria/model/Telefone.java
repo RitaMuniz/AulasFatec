@@ -1,9 +1,10 @@
 package projetoLivraria.model;
 
 public class Telefone {
+
     private int id;
+    private int clienteId;
     private String tipo;
-    private Cliente cliente;
     private String ddd;
     private String numero;
 
@@ -15,20 +16,20 @@ public class Telefone {
         this.id = id;
     }
 
+    public int getClienteId() {
+        return clienteId;
+    }
+
+    public void setClienteId(int clienteId) {
+        this.clienteId = clienteId;
+    }
+
     public String getTipo() {
         return tipo;
     }
 
     public void setTipo(String tipo) {
         this.tipo = tipo;
-    }
-
-    public Cliente getCliente() {
-        return cliente;
-    }
-
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
     }
 
     public String getDdd() {
