@@ -1,7 +1,7 @@
 package service;
 
 import projetoLivraria.dao.ClienteDAO;
-import projetoLivraria.dao.ConexaoSQL;
+import projetoLivraria.uteis.ConexaoSQL;
 import projetoLivraria.dao.EnderecoDAO;
 import projetoLivraria.dao.TelefoneDAO;
 import projetoLivraria.model.Cliente;
