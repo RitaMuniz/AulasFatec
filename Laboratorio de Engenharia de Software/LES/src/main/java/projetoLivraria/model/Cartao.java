@@ -1,47 +1,38 @@
 package projetoLivraria.model;
 
 public class Cartao {
-    private String nomeCartao;
-    private String nomeCompleto;
-    private String bandeira;
+    private int id;
+    private int clienteId;
+    private String numero;
+    private String nomeImpresso;
+    private int bandeiraId;
+    private String bandeiraNome; // para exibição, não vai ao banco
+    private String validade;
     private String cvv;
 
-    public Cartao(String nomeCartao, String nomeCompleto, String bandeira, String cvv) {
-        this.nomeCartao = nomeCartao;
-        this.nomeCompleto = nomeCompleto;
-        this.bandeira = bandeira;
-        this.cvv = cvv;
-    }
+    public Cartao() {}
 
-    public String getNomeCartao() {
-        return nomeCartao;
-    }
+    public int getId() { return id; }
+    public void setId(int id) { this.id = id; }
 
-    public void setNomeCartao(String nomeCartao) {
-        this.nomeCartao = nomeCartao;
-    }
+    public int getClienteId() { return clienteId; }
+    public void setClienteId(int clienteId) { this.clienteId = clienteId; }
 
-    public String getNomeCompleto() {
-        return nomeCompleto;
-    }
+    public String getNumero() { return numero; }
+    public void setNumero(String numero) { this.numero = numero; }
 
-    public void setNomeCompleto(String nomeCompleto) {
-        this.nomeCompleto = nomeCompleto;
-    }
+    public String getNomeImpresso() { return nomeImpresso; }
+    public void setNomeImpresso(String nomeImpresso) { this.nomeImpresso = nomeImpresso; }
 
-    public String getBandeira() {
-        return bandeira;
-    }
+    public int getBandeiraId() { return bandeiraId; }
+    public void setBandeiraId(int bandeiraId) { this.bandeiraId = bandeiraId; }
 
-    public void setBandeira(String bandeira) {
-        this.bandeira = bandeira;
-    }
+    public String getBandeiraNome() { return bandeiraNome; }
+    public void setBandeiraNome(String bandeiraNome) { this.bandeiraNome = bandeiraNome; }
 
-    public String getCvv() {
-        return cvv;
-    }
+    public String getValidade() { return validade; }
+    public void setValidade(String validade) { this.validade = validade; }
 
-    public void setCvv(String cvv) {
-        this.cvv = cvv;
-    }
+    public String getCvv() { return cvv; }
+    public void setCvv(String cvv) { this.cvv = cvv; }
 }

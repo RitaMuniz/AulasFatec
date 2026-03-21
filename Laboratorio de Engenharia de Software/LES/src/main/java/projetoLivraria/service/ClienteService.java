@@ -17,20 +17,16 @@ public class ClienteService {
     private final EnderecoDAO enderecoDAO = new EnderecoDAO();
     private final TelefoneDAO telefoneDAO = new TelefoneDAO();
 
-    // Cadastra cliente, telefone e endereço em uma única transação
     public Cliente cadastrarCliente(Cliente cliente, Telefone telefone, Endereco endereco) throws Exception {
         Connection conn = ConexaoSQL.getInstance().getConnection();
         try {
             conn.setAutoCommit(false);
 
-            // 1. Insere o cliente e obtém o id gerado
             cliente = clienteDAO.inserir(conn, cliente);
 
-            // 2. Vincula o telefone ao cliente recém-criado
             telefone.setClienteId(cliente.getId());
             telefoneDAO.inserir(conn, telefone);
 
-            // 3. Vincula o endereço ao cliente recém-criado
             endereco.setClienteId(cliente.getId());
             enderecoDAO.inserir(conn, endereco);
 

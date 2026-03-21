@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -18,7 +19,14 @@
 
     <h2 style="text-align:center; margin-bottom:24px;">Entrar</h2>
 
-    <form action="/login" method="post">
+    <%-- Exibe mensagem de erro se vier do LoginController --%>
+    <% if (request.getAttribute("erro") != null) { %>
+    <p style="color:#b00020; text-align:center; margin-bottom:16px;">
+        <%= request.getAttribute("erro") %>
+    </p>
+    <% } %>
+
+    <form action="${pageContext.request.contextPath}/login" method="post">
 
         <label for="email">E-mail</label>
         <input type="email" id="email" name="email" placeholder="seu@email.com" required>

@@ -4,9 +4,8 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import projetoLivraria.model.Cliente;
-import projetoLivraria.model.Endereco;
-import projetoLivraria.model.Telefone;
 import projetoLivraria.service.ClienteService;
 
 import java.io.IOException;
@@ -31,14 +30,11 @@ public class ClienteController extends HttpServlet {
                     break;
 
                 case "buscar":
-                    int id = Integer.parseInt(req.getParameter("id"));
-                    Cliente cliente = service.buscarCliente(id);
-                    req.setAttribute("cliente", cliente);
-                    req.getRequestDispatcher("/view/cliente.html").forward(req, resp);
+                    req.getRequestDispatcher("/view/cliente.jsp").forward(req, resp);
                     break;
 
                 default:
-                    resp.sendRedirect("view/index.html");
+                    resp.sendRedirect(req.getContextPath() + "/view/index.html");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -59,17 +55,17 @@ public class ClienteController extends HttpServlet {
                     Cliente novoCliente = new Cliente();
                     novoCliente.setNome(req.getParameter("nome"));
                     novoCliente.setGenero(req.getParameter("genero"));
-                    novoCliente.setDataNascimento(Date.valueOf(req.getParameter("dataNascimento"))); // formato: YYYY-MM-DD
+                    novoCliente.setDataNascimento(Date.valueOf(req.getParameter("dataNascimento")));
                     novoCliente.setCpf(req.getParameter("cpf"));
                     novoCliente.setEmail(req.getParameter("email"));
                     novoCliente.setSenha(req.getParameter("senha"));
 
-                    Telefone telefone = new Telefone();
+                    projetoLivraria.model.Telefone telefone = new projetoLivraria.model.Telefone();
                     telefone.setTipo(req.getParameter("tipoTelefone"));
                     telefone.setDdd(req.getParameter("ddd"));
                     telefone.setNumero(req.getParameter("numeroTelefone"));
 
-                    Endereco endereco = new Endereco();
+                    projetoLivraria.model.Endereco endereco = new projetoLivraria.model.Endereco();
                     endereco.setTipoLogradouro(req.getParameter("tipoLogradouro"));
                     endereco.setLogradouro(req.getParameter("logradouro"));
                     endereco.setTipoResidencia(req.getParameter("tipoResidencia"));
@@ -77,7 +73,7 @@ public class ClienteController extends HttpServlet {
                     endereco.setBairro(req.getParameter("bairro"));
                     endereco.setCep(req.getParameter("cep"));
                     endereco.setObservacoes(req.getParameter("observacoes"));
-                    endereco.setTipoEndereco(req.getParameter("tipoEndereco")); // "ENTREGA" ou "COBRANCA"
+                    endereco.setTipoEndereco(req.getParameter("tipoEndereco"));
 
                     String cidadeIdStr = req.getParameter("cidadeId");
                     if (cidadeIdStr != null && !cidadeIdStr.isEmpty()) {
@@ -85,7 +81,7 @@ public class ClienteController extends HttpServlet {
                     }
 
                     service.cadastrarCliente(novoCliente, telefone, endereco);
-                    resp.sendRedirect(req.getContextPath() + "/view/login.html");
+                    resp.sendRedirect(req.getContextPath() + "/view/login.jsp");
                     break;
 
                 case "editar":
@@ -97,13 +93,24 @@ public class ClienteController extends HttpServlet {
                     clienteEdit.setEmail(req.getParameter("email"));
 
                     service.editarCliente(clienteEdit);
-                    resp.sendRedirect(req.getContextPath() + "/cliente?action=buscar&id=" + clienteEdit.getId());
+
+                    HttpSession session = req.getSession(false);
+                    if (session != null) {
+                        Cliente clienteAtualizado = service.buscarCliente(clienteEdit.getId());
+                        session.setAttribute("clienteLogado", clienteAtualizado);
+                    }
+
+                    resp.sendRedirect(req.getContextPath() + "/cliente?action=buscar");
                     break;
 
                 case "desativar":
                     int desativarId = Integer.parseInt(req.getParameter("id"));
                     service.desativarCliente(desativarId);
-                    resp.sendRedirect(req.getContextPath() + "/cliente?action=listar");
+
+                    HttpSession sessionDesativar = req.getSession(false);
+                    if (sessionDesativar != null) sessionDesativar.invalidate();
+
+                    resp.sendRedirect(req.getContextPath() + "/view/login.jsp");
                     break;
 
                 default:

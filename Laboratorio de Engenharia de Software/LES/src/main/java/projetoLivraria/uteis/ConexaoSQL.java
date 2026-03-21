@@ -99,26 +99,26 @@ public class ConexaoSQL {
                 );
                 """;
 
-//        String sqlBandeira =
-//                """
-//                CREATE TABLE IF NOT EXISTS bandeira (
-//                    id INTEGER PRIMARY KEY AUTOINCREMENT,
-//                    nome TEXT NOT NULL
-//                );
-//                """;
-//
-//        String sqlCartao = """
-//                CREATE TABLE IF NOT EXISTS cartao (
-//                    id INTEGER PRIMARY KEY AUTOINCREMENT,
-//                    cliente_id INTEGER NOT NULL,
-//                    numero TEXT NOT NULL,
-//                    nome_impresso TEXT NOT NULL,
-//                    bandeira_id INTEGER,
-//                    cvv TEXT,
-//                    FOREIGN KEY(cliente_id) REFERENCES cliente(id),
-//                    FOREIGN KEY(bandeira_id) REFERENCES bandeira(id)
-//                );
-//                """;
+        String sqlBandeira =
+                """
+                CREATE TABLE IF NOT EXISTS bandeira (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    nome TEXT NOT NULL
+                );
+                """;
+
+        String sqlCartao = """
+                CREATE TABLE IF NOT EXISTS cartao (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    cliente_id INTEGER NOT NULL,
+                    numero TEXT NOT NULL,
+                    nome_impresso TEXT NOT NULL,
+                    bandeira_id INTEGER,
+                    cvv TEXT,
+                    FOREIGN KEY(cliente_id) REFERENCES cliente(id),
+                    FOREIGN KEY(bandeira_id) REFERENCES bandeira(id)
+                );
+                """;
 //
 //        String sqlCategoria =
 //                """
@@ -267,8 +267,8 @@ public class ConexaoSQL {
             stmt.execute(sqlEstado);
             stmt.execute(sqlCidade);
             stmt.execute(sqlEndereco);
-//            stmt.execute(sqlBandeira);
-//            stmt.execute(sqlCartao);
+            stmt.execute(sqlBandeira);
+            stmt.execute(sqlCartao);
 //            stmt.execute(sqlCategoria);
 //            stmt.execute(sqlGrupoPrecificacao);
 //            stmt.execute(sqlLivro);

@@ -42,11 +42,14 @@ body {
     background-color: var(--bg);
     font-family: 'Open Sauce', Arial, sans-serif;
     color: var(--black);
+    margin: 0;
 }
 
 h1, h2, h3 {
     font-family: 'DM Serif Display', serif;
 }
+
+
 
 .navbar {
     background-color: var(--primary);
@@ -80,6 +83,8 @@ h1, h2, h3 {
 
 .container {
     padding: 60px;
+    width: 80%;
+    margin: 40px auto;
 }
 
 .grid {
@@ -102,8 +107,24 @@ h1, h2, h3 {
     object-fit: cover;
 }
 
+.pedidos-card h3 {
+    font-family: 'Open Sauce', sans-serif;
+    letter-spacing: -1px;
+}
+
+.pedidos-card {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    font-family: 'Open Sauce'; src: local('Arial');
+    font-family: 'Open Sauce', sans-serif;
+    margin: 40px auto;
+    line-height: 2;
+}
+
 .pedido-card {
-    background-color: #FFFFFF;
+    background-color: var(--white);
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 8px;
@@ -200,6 +221,7 @@ button {
     padding: 10px 20px;
     cursor: pointer;
     border-radius: 5px;
+    margin-top: 15px;
 }
 
 button:hover {
