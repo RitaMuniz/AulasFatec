@@ -12,8 +12,8 @@
 <header class="navbar">
     <div class="logo">Livraria</div>
     <nav>
-        <a href="index.html">Home</a>
-        <a href="/cliente?action=buscar">Perfil</a>
+        <a href="index.jsp">Home</a>
+        <a href="cliente?action=buscar">Perfil</a>
         <a href="/logout">Sair</a>
     </nav>
 </header>
@@ -126,7 +126,7 @@
     </c:choose>
 
     <div style="margin-top:30px; text-align:center;">
-        <a href="/cliente?action=buscar" class="btn">Voltar ao Perfil</a>
+        <a href="cliente?action=buscar" class="btn">Voltar ao Perfil</a>
     </div>
 </div>
 

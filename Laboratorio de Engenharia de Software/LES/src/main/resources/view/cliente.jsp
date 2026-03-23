@@ -4,7 +4,7 @@
     projetoLivraria.model.Cliente clienteLogado =
         (projetoLivraria.model.Cliente) session.getAttribute("clienteLogado");
     if (clienteLogado == null) {
-        response.sendRedirect(request.getContextPath() + "/login.jsp");
+        response.sendRedirect("/login.jsp");
         return;
     }
 %>
@@ -13,14 +13,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Meu Perfil</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
 <header class="navbar">
     <div class="logo">Livraria</div>
     <nav>
-        <a href="index.html">Home</a>
+        <a href="index.jsp">Home</a>
         <a href="livros.html">Livros</a>
         <a href="carrinho.html">Carrinho</a>
         <a href="logout">Sair</a>
@@ -76,8 +76,8 @@
     </div>
 
     <div style="display:flex; gap:15px; justify-content:center; flex-wrap:wrap;">
-        <a href="/endereco?action=listar" class="btn">Gerenciar Endereços</a>
-        <a href="/cartao?action=listar" class="btn">Gerenciar Cartões</a>
+        <a href="endereco?action=listar" class="btn">Gerenciar Endereços</a>
+        <a href="cartao?action=listar" class="btn">Gerenciar Cartões</a>
         <a href="pedidos.html" class="btn">Meus Pedidos</a>
     </div>
 

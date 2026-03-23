@@ -12,7 +12,7 @@
 <header class="navbar">
     <div class="logo">Livraria</div>
     <nav>
-        <a href="index.html">Home</a>
+        <a href="index.jsp">Home</a>
         <a href="cliente.html">Perfil</a>
         <a href="/logout">Sair</a>
     </nav>

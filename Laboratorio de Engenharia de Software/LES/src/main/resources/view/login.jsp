@@ -11,7 +11,7 @@
 <header class="navbar">
     <div class="logo">Livraria</div>
     <nav>
-        <a href="index.html">Home</a>
+        <a href="index.jsp">Home</a>
     </nav>
 </header>
 

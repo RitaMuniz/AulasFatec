@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -11,11 +12,15 @@
 <header class="navbar">
     <div class="logo">Livraria</div>
     <nav>
-        <a href="index.html">Home</a>
+        <a href="index.jsp">Home</a>
         <a href="livros.html">Livros</a>
-        <a href="cliente.jsp">Meu Perfil</a>
         <a href="carrinho.html">Carrinho</a>
-        <a href="login.jsp">Login</a>
+        <% if (session.getAttribute("clienteLogado") != null) { %>
+            <a href="cliente?action=buscar">Meu Perfil</a>
+            <a href="/logout">Sair</a>
+        <% } else { %>
+            <a href="login.jsp">Login</a>
+        <% } %>
     </nav>
 </header>
 
@@ -55,7 +60,7 @@
             <p style="font-size:14px; color:green;">Disponível: 12 unidades</p>
             <p class="preco">R$ 79,90</p>
             <div style="margin-top:10px;">
-                <a href="detalhe.html" class="btn">Ver Detalhes</a>
+                <a href="$detalhe.html" class="btn">Ver Detalhes</a>
             </div>
             <div style="margin-top:10px;">
                 <a href="carrinho.html" class="btn">Adicionar ao Carrinho</a>
