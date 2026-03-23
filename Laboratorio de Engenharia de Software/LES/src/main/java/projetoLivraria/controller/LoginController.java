@@ -24,11 +24,11 @@ public class LoginController extends HttpServlet {
         HttpSession session = req.getSession(false);
         if (session != null) {
             if (session.getAttribute("adminLogado") != null) {
-                resp.sendRedirect(req.getContextPath() + "/view/cliente?action=listar");
+                resp.sendRedirect(req.getContextPath() + "/view/admin.html");
                 return;
             }
             if (session.getAttribute("clienteLogado") != null) {
-                resp.sendRedirect(req.getContextPath() + "/view/admin.html");
+                resp.sendRedirect(req.getContextPath() + "/view/index.jsp");
                 return;
             }
         }
@@ -61,7 +61,7 @@ public class LoginController extends HttpServlet {
                 HttpSession session = req.getSession();
                 session.setAttribute("clienteLogado", cliente);
                 session.setMaxInactiveInterval(30 * 60);
-                resp.sendRedirect(req.getContextPath() + "/view/admin.html");
+                resp.sendRedirect(req.getContextPath() + "/view/index.jsp");
                 return;
             }
 
