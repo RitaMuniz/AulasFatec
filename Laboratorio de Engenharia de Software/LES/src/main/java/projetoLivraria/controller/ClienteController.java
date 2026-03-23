@@ -108,7 +108,7 @@ public class ClienteController extends HttpServlet {
                         session.setAttribute("clienteLogado", atualizado);
                     }
 
-                    resp.sendRedirect(req.getContextPath() + "/cliente?action=buscar");
+                    resp.sendRedirect(req.getContextPath() + "/view/admin.html");
                     break;
 
                 case "desativar":
@@ -124,13 +124,13 @@ public class ClienteController extends HttpServlet {
                             return;
                         }
                     }
-                    resp.sendRedirect(req.getContextPath() + "/cliente?action=listar");
+                    resp.sendRedirect(req.getContextPath() + "/view/admin.html");
                     break;
 
                 case "reativar":
                     int reativarId = Integer.parseInt(req.getParameter("id"));
                     service.reativarCliente(reativarId);
-                    resp.sendRedirect(req.getContextPath() + "/cliente?action=listar");
+                    resp.sendRedirect(req.getContextPath() + "/view/admin.html");
                     break;
 
                 default:

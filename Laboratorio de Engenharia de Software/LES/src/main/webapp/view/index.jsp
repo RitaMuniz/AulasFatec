@@ -19,7 +19,7 @@
             <a href="cliente?action=buscar">Meu Perfil</a>
             <a href="/logout">Sair</a>
         <% } else { %>
-            <a href="login.jsp">Login</a>
+            <a href="view/login.jsp">Login</a>
         <% } %>
     </nav>
 </header>
