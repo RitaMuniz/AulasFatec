@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Livraria</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/view/css/style.css">
 </head>
 <body>
 
@@ -16,8 +16,8 @@
         <a href="livros.html">Livros</a>
         <a href="carrinho.html">Carrinho</a>
         <% if (session.getAttribute("clienteLogado") != null) { %>
-            <a href="cliente?action=buscar">Meu Perfil</a>
-            <a href="/logout">Sair</a>
+            <a href="${pageContext.request.contextPath}/cliente?action=buscar">Meu Perfil</a>
+            <a href="${pageContext.request.contextPath}/logout">Sair</a>
         <% } else { %>
             <a href="view/login.jsp">Login</a>
         <% } %>

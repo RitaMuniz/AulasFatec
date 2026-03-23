@@ -1,3 +1,5 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="jakarta.tags.core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -25,7 +27,7 @@
             method="post" chama o doPost do ClienteController
             o campo hidden action=cadastrar instrui o switch dentro do doPost
         -->
-        <form action="/cliente" method="post">
+        <form action="${pageContext.request.contextPath}/cliente" method="post">
             <input type="hidden" name="action" value="cadastrar">
 
             <label for="nome">Nome Completo</label>

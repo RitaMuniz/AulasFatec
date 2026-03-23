@@ -13,7 +13,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Meu Perfil</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/view/css/style.css">
 </head>
 <body>
 

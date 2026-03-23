@@ -39,7 +39,7 @@
     </form>
 
     <p style="margin-top:20px; text-align:center;">
-        Não tem conta? <a href="cadastro.html">Criar conta</a>
+        Não tem conta? <a href="cadastro.jsp">Criar conta</a>
     </p>
 
 </div>
