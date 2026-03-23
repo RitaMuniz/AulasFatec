@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <title>Admin - Clientes</title>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/view/css/admin.css">
 </head>
 
 <body>
@@ -15,7 +15,7 @@
     <h1>Gerenciar Clientes</h1>
     <div>
         <a href="index.jsp">Ver Loja</a>
-        <a href="/logout">Sair</a>
+        <a href="${pageContext.request.contextPath}/logout">Sair</a>
     </div>
 </header>
 
@@ -27,7 +27,7 @@
             <a href="admin.html">Dashboard</a>
             <a href="admin-pedidos.html">Pedidos</a>
             <a href="admin-livros.html">Livros</a>
-            <a href="cliente?action=listar" class="active">Clientes</a>
+            <a href="${pageContext.request.contextPath}/cliente?action=listar" class="active">Clientes</a>
             <a href="admin-devolucoes.html">Devoluções</a>
             <a href="admin-relatorios.html">Relatórios</a>
         </nav>
@@ -37,7 +37,7 @@
 
         <h2>Pesquisar Cliente</h2>
 
-        <form action="/cliente" method="get">
+        <form action="${pageContext.request.contextPath}/cliente" method="get">
             <input type="hidden" name="action" value="listar">
             <div class="form-grid">
                 <div>
@@ -48,7 +48,7 @@
             </div>
             <div class="form-actions">
                 <button type="submit">Pesquisar</button>
-                <a href="cliente?action=listar" class="btn-cancelar">Limpar</a>
+                <a href="${pageContext.request.contextPath}/cliente?action=listar" class="btn-cancelar">Limpar</a>
             </div>
         </form>
 
@@ -85,7 +85,7 @@
                             <td class="acoes">
                                 <c:choose>
                                     <c:when test="${c.status == 'ATIVO'}">
-                                        <form action="/cliente"
+                                        <form action="${pageContext.request.contextPath}/cliente"
                                               method="post" style="display:inline;"
                                               onsubmit="return confirm('Desativar este cliente?')">
                                             <input type="hidden" name="action" value="desativar">
@@ -94,7 +94,7 @@
                                         </form>
                                     </c:when>
                                     <c:otherwise>
-                                        <form action="/cliente"
+                                        <form action="${pageContext.request.contextPath}/cliente"
                                               method="post" style="display:inline;"
                                               onsubmit="return confirm('Reativar este cliente?')">
                                             <input type="hidden" name="action" value="reativar">
