@@ -7,7 +7,7 @@ import java.sql.Statement;
 
 public class ConexaoSQL {
 
-    private static final String URL = "jdbc:sqlite:../../livraria.db";
+    private static final String URL = "jdbc:sqlite:livraria.db";
 
     private static ConexaoSQL instance;
 
