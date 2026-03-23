@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Meus Endereços</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/view/css/style.css">
 </head>
 <body>
 
@@ -13,8 +13,8 @@
     <div class="logo">Livraria</div>
     <nav>
         <a href="index.jsp">Home</a>
-        <a href="cliente?action=buscar">Perfil</a>
-        <a href="/logout">Sair</a>
+        <a href="${pageContext.request.contextPath}/cliente?action=buscar">Perfil</a>
+        <a href="${pageContext.request.contextPath}/logout">Sair</a>
     </nav>
 </header>
 
@@ -22,11 +22,10 @@
 
     <h1 style="margin-bottom:30px;">Gerenciar Endereços</h1>
 
-    <%-- Formulário: adicionar ou editar --%>
     <div class="form-box" style="margin-bottom:40px;">
         <h2 id="formTitulo" style="margin-bottom:20px;">Novo Endereço</h2>
 
-        <form id="formEndereco" action="/endereco" method="post">
+        <form id="formEndereco" action="${pageContext.request.contextPath}/endereco" method="post">
             <%-- action começa como "adicionar"; JS troca para "editar" se necessário --%>
             <input type="hidden" id="formAction" name="action" value="adicionar">
             <input type="hidden" id="formId" name="id" value="">
@@ -126,7 +125,7 @@
     </c:choose>
 
     <div style="margin-top:30px; text-align:center;">
-        <a href="cliente?action=buscar" class="btn">Voltar ao Perfil</a>
+        <a href="${pageContext.request.contextPath}/cliente?action=buscar" class="btn">Voltar ao Perfil</a>
     </div>
 </div>
 

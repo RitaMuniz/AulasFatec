@@ -19,7 +19,7 @@ public class EnderecoController extends HttpServlet {
     private Cliente getClienteLogado(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         HttpSession session = req.getSession(false);
         if (session == null || session.getAttribute("clienteLogado") == null) {
-            resp.sendRedirect(req.getContextPath() + "/src/main/webapp/view/login.jsp");
+            resp.sendRedirect(req.getContextPath() + "/view/login.jsp");
             return null;
         }
         return (Cliente) session.getAttribute("clienteLogado");
@@ -38,7 +38,7 @@ public class EnderecoController extends HttpServlet {
                 case "listar":
                     List<Endereco> enderecos = service.listarEnderecos(clienteLogado.getId());
                     req.setAttribute("enderecos", enderecos);
-                    req.getRequestDispatcher("/src/main/webapp/view/enderecos.jsp").forward(req, resp);
+                    req.getRequestDispatcher("/view/enderecos.jsp").forward(req, resp);
                     break;
 
                 default:
