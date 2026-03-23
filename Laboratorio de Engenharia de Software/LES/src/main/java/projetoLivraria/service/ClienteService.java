@@ -60,6 +60,15 @@ public class ClienteService {
         }
     }
 
+    public void reativarCliente(int id) throws Exception {
+        Connection conn = ConexaoSQL.getInstance().getConnection();
+        try {
+            clienteDAO.reativar(conn, id);
+        } finally {
+            conn.close();
+        }
+    }
+
     public Cliente buscarCliente(int id) throws Exception {
         Connection conn = ConexaoSQL.getInstance().getConnection();
         try {
@@ -82,6 +91,15 @@ public class ClienteService {
         Connection conn = ConexaoSQL.getInstance().getConnection();
         try {
             return clienteDAO.listarTodos(conn);
+        } finally {
+            conn.close();
+        }
+    }
+
+    public List<Cliente> buscarClientes(String termo) throws Exception {
+        Connection conn = ConexaoSQL.getInstance().getConnection();
+        try {
+            return clienteDAO.buscarPorTermo(conn, termo);
         } finally {
             conn.close();
         }
@@ -127,24 +145,6 @@ public class ClienteService {
         Connection conn = ConexaoSQL.getInstance().getConnection();
         try {
             return telefoneDAO.inserir(conn, telefone);
-        } finally {
-            conn.close();
-        }
-    }
-
-    public Telefone editarTelefone(Telefone telefone) throws Exception {
-        Connection conn = ConexaoSQL.getInstance().getConnection();
-        try {
-            return telefoneDAO.editar(conn, telefone);
-        } finally {
-            conn.close();
-        }
-    }
-
-    public void excluirTelefone(int id) throws Exception {
-        Connection conn = ConexaoSQL.getInstance().getConnection();
-        try {
-            telefoneDAO.excluir(conn, id);
         } finally {
             conn.close();
         }

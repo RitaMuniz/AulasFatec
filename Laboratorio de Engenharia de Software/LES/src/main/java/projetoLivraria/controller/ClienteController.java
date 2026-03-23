@@ -6,6 +6,8 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import projetoLivraria.model.Cliente;
+import projetoLivraria.model.Endereco;
+import projetoLivraria.model.Telefone;
 import projetoLivraria.service.ClienteService;
 
 import java.io.IOException;
@@ -24,9 +26,15 @@ public class ClienteController extends HttpServlet {
         try {
             switch (action) {
                 case "listar":
-                    List<Cliente> clientes = service.listarClientes();
+                    String busca = req.getParameter("busca");
+                    List<Cliente> clientes;
+                    if (busca != null && !busca.trim().isEmpty()) {
+                        clientes = service.buscarClientes(busca.trim());
+                    } else {
+                        clientes = service.listarClientes();
+                    }
                     req.setAttribute("clientes", clientes);
-                    req.getRequestDispatcher("/view/admin-clientes.html").forward(req, resp);
+                    req.getRequestDispatcher("/view/admin-clientes.jsp").forward(req, resp);
                     break;
 
                 case "buscar":
@@ -34,7 +42,7 @@ public class ClienteController extends HttpServlet {
                     break;
 
                 default:
-                    resp.sendRedirect(req.getContextPath() + "/view/index.html");
+                    resp.sendRedirect(req.getContextPath() + "/view/index.jsp");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -60,12 +68,12 @@ public class ClienteController extends HttpServlet {
                     novoCliente.setEmail(req.getParameter("email"));
                     novoCliente.setSenha(req.getParameter("senha"));
 
-                    projetoLivraria.model.Telefone telefone = new projetoLivraria.model.Telefone();
+                    Telefone telefone = new Telefone();
                     telefone.setTipo(req.getParameter("tipoTelefone"));
                     telefone.setDdd(req.getParameter("ddd"));
                     telefone.setNumero(req.getParameter("numeroTelefone"));
 
-                    projetoLivraria.model.Endereco endereco = new projetoLivraria.model.Endereco();
+                    Endereco endereco = new Endereco();
                     endereco.setTipoLogradouro(req.getParameter("tipoLogradouro"));
                     endereco.setLogradouro(req.getParameter("logradouro"));
                     endereco.setTipoResidencia(req.getParameter("tipoResidencia"));
@@ -96,8 +104,8 @@ public class ClienteController extends HttpServlet {
 
                     HttpSession session = req.getSession(false);
                     if (session != null) {
-                        Cliente clienteAtualizado = service.buscarCliente(clienteEdit.getId());
-                        session.setAttribute("clienteLogado", clienteAtualizado);
+                        Cliente atualizado = service.buscarCliente(clienteEdit.getId());
+                        session.setAttribute("clienteLogado", atualizado);
                     }
 
                     resp.sendRedirect(req.getContextPath() + "/cliente?action=buscar");
@@ -107,14 +115,26 @@ public class ClienteController extends HttpServlet {
                     int desativarId = Integer.parseInt(req.getParameter("id"));
                     service.desativarCliente(desativarId);
 
-                    HttpSession sessionDesativar = req.getSession(false);
-                    if (sessionDesativar != null) sessionDesativar.invalidate();
+                    HttpSession sessionDes = req.getSession(false);
+                    if (sessionDes != null) {
+                        Cliente logado = (Cliente) sessionDes.getAttribute("clienteLogado");
+                        if (logado != null && logado.getId() == desativarId) {
+                            sessionDes.invalidate();
+                            resp.sendRedirect(req.getContextPath() + "login.jsp");
+                            return;
+                        }
+                    }
+                    resp.sendRedirect(req.getContextPath() + "cliente?action=listar");
+                    break;
 
-                    resp.sendRedirect(req.getContextPath() + "/view/login.jsp");
+                case "reativar":
+                    int reativarId = Integer.parseInt(req.getParameter("id"));
+                    service.reativarCliente(reativarId);
+                    resp.sendRedirect(req.getContextPath() + "cliente?action=listar");
                     break;
 
                 default:
-                    resp.sendRedirect(req.getContextPath() + "/view/index.html");
+                    resp.sendRedirect(req.getContextPath() + "/view/index.jsp");
             }
         } catch (Exception e) {
             e.printStackTrace();

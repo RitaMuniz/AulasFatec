@@ -7,8 +7,7 @@ import java.sql.Statement;
 
 public class ConexaoSQL {
 
-    private static final String URL = "jdbc:sqlite:" +
-            System.getProperty("user.home") + "/livraria.db";
+    private static final String URL = "jdbc:sqlite:../../livraria.db";
 
     private static ConexaoSQL instance;
 
@@ -256,6 +255,14 @@ public class ConexaoSQL {
 //                    data DATETIME
 //                );
 //                """;
+        String sqlAdmin = """
+                CREATE TABLE IF NOT EXISTS admin (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    nome TEXT NOT NULL,
+                    email TEXT UNIQUE NOT NULL,
+                    senha TEXT NOT NULL
+                );
+                """;
 
 
         try (Connection c = getInstance().getConnection();
@@ -280,8 +287,9 @@ public class ConexaoSQL {
 //            stmt.execute(sqlPagamento);
 //            stmt.execute(sqlTroca);
 //            stmt.execute(sqlLog);
+            stmt.execute(sqlAdmin);
 
-            System.out.println("Tabelas verificadas/criadas com sucesso. Banco em: " + System.getProperty("user.home") + "/livraria.db");
+            System.out.println("Tabelas verificadas/criadas com sucesso. Banco em: java//livraria.db");
 
         } catch (SQLException e) {
             e.printStackTrace();

@@ -11,6 +11,7 @@ public class Cliente {
     private String cpf;
     private String email;
     private String senha;
+    private String status;
 
     public int getId() {
         return id;
@@ -66,5 +67,13 @@ public class Cliente {
 
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }
