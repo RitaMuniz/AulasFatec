@@ -114,6 +114,7 @@ public class ConexaoSQL {
                     nome_impresso TEXT NOT NULL,
                     bandeira_id INTEGER,
                     cvv TEXT,
+                    validade TEXT NOT NULL,
                     FOREIGN KEY(cliente_id) REFERENCES cliente(id),
                     FOREIGN KEY(bandeira_id) REFERENCES bandeira(id)
                 );

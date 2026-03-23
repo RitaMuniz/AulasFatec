@@ -9,15 +9,15 @@ import java.util.List;
 public class CartaoDAO {
 
     public Cartao inserir(Connection conn, Cartao c) throws Exception {
-        String sql = "INSERT INTO cartao (cliente_id, numero, nome_impresso, bandeira_id, validade, cvv) VALUES (?,?,?,?,?,?)";
+        String sql = "INSERT INTO cartao (cliente_id, numero, nome_impresso, bandeira_id, cvv, validade) VALUES (?,?,?,?,?,?)";
 
         PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
         stmt.setInt(1, c.getClienteId());
         stmt.setString(2, c.getNumero());
         stmt.setString(3, c.getNomeImpresso());
         stmt.setInt(4, c.getBandeiraId());
-        stmt.setString(5, c.getValidade());
-        stmt.setString(6, c.getCvv());
+        stmt.setString(5, c.getCvv());
+        stmt.setString(6, c.getValidade());
 
         stmt.executeUpdate();
 
@@ -35,7 +35,6 @@ public class CartaoDAO {
         stmt.executeUpdate();
     }
 
-    // JOIN com bandeira para trazer o nome junto
     public List<Cartao> listarPorCliente(Connection conn, int clienteId) throws Exception {
         String sql = """
             SELECT c.*, b.nome AS bandeira_nome
@@ -63,8 +62,8 @@ public class CartaoDAO {
         c.setNomeImpresso(rs.getString("nome_impresso"));
         c.setBandeiraId(rs.getInt("bandeira_id"));
         c.setBandeiraNome(rs.getString("bandeira_nome"));
-        c.setValidade(rs.getString("validade"));
         c.setCvv(rs.getString("cvv"));
+        c.setValidade(rs.getString("validade"));
         return c;
     }
 }

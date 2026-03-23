@@ -1,11 +1,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="jakarta.tags.core" prefix="c" %>
+<%@ taglib uri="jakarta.tags.functions" prefix="fn" %>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <title>Meus Cartões</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/view/css/style.css">
 </head>
 <body>
 
@@ -13,8 +14,8 @@
     <div class="logo">Livraria</div>
     <nav>
         <a href="index.jsp">Home</a>
-        <a href="cliente.html">Perfil</a>
-        <a href="/logout">Sair</a>
+        <a href="${pageContext.request.contextPath}/cliente?action=buscar">Perfil</a>
+        <a href="${pageContext.request.contextPath}/logout">Sair</a>
     </nav>
 </header>
 
@@ -26,7 +27,7 @@
     <div class="form-box" style="margin-bottom:40px;">
         <h2 style="margin-bottom:20px;">Novo Cartão</h2>
 
-        <form action="cartao" method="post">
+        <form action="${pageContext.request.contextPath}/cartao" method="post">
             <input type="hidden" name="action" value="adicionar">
 
             <label>Nome Impresso no Cartão</label>
@@ -78,7 +79,7 @@
                         <td>${c.bandeiraNome}</td>
                         <td>${c.validade}</td>
                         <td>
-                            <form action="cartao" method="post" style="display:inline;">
+                            <form action="${pageContext.request.contextPath}/cartao" method="post" style="display:inline;">
                                 <input type="hidden" name="action" value="excluir">
                                 <input type="hidden" name="id" value="${c.id}">
                                 <button type="submit" class="btn" style="background:#b00020;"
@@ -93,7 +94,7 @@
     </c:choose>
 
     <div style="margin-top:30px; text-align:center;">
-        <a href="cliente.html" class="btn">Voltar ao Perfil</a>
+        <a href="${pageContext.request.contextPath}/cliente?action=buscar" class="btn">Voltar ao Perfil</a>
     </div>
 </div>
 

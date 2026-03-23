@@ -19,7 +19,7 @@
             <a href="${pageContext.request.contextPath}/cliente?action=buscar">Meu Perfil</a>
             <a href="${pageContext.request.contextPath}/logout">Sair</a>
         <% } else { %>
-            <a href="view/login.jsp">Login</a>
+            <a href="login.jsp">Login</a>
         <% } %>
     </nav>
 </header>
