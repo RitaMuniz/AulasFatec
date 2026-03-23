@@ -24,7 +24,7 @@ public class CartaoController extends HttpServlet {
     private Cliente getClienteLogado(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         HttpSession session = req.getSession(false);
         if (session == null || session.getAttribute("clienteLogado") == null) {
-            resp.sendRedirect(req.getContextPath() + "/view/login.jsp");
+            resp.sendRedirect(req.getContextPath() + "/src/main/webapp/view/login.jsp");
             return null;
         }
         return (Cliente) session.getAttribute("clienteLogado");
@@ -48,7 +48,7 @@ public class CartaoController extends HttpServlet {
 
                     req.setAttribute("cartoes", cartoes);
                     req.setAttribute("bandeiras", bandeiras);
-                    req.getRequestDispatcher("/view/cartoes.jsp").forward(req, resp);
+                    req.getRequestDispatcher("/src/main/webapp/view/cartoes.jsp").forward(req, resp);
                     break;
 
                 default:

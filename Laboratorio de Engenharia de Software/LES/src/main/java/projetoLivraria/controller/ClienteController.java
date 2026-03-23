@@ -34,15 +34,15 @@ public class ClienteController extends HttpServlet {
                         clientes = service.listarClientes();
                     }
                     req.setAttribute("clientes", clientes);
-                    req.getRequestDispatcher("/view/admin-clientes.jsp").forward(req, resp);
+                    req.getRequestDispatcher("/src/main/webapp/view/admin-clientes.jsp").forward(req, resp);
                     break;
 
                 case "buscar":
-                    req.getRequestDispatcher("/view/cliente.jsp").forward(req, resp);
+                    req.getRequestDispatcher("/src/main/webapp/view/cliente.jsp").forward(req, resp);
                     break;
 
                 default:
-                    resp.sendRedirect(req.getContextPath() + "/view/index.jsp");
+                    resp.sendRedirect(req.getContextPath() + "/src/main/webapp/view/index.jsp");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -89,7 +89,7 @@ public class ClienteController extends HttpServlet {
                     }
 
                     service.cadastrarCliente(novoCliente, telefone, endereco);
-                    resp.sendRedirect(req.getContextPath() + "/view/login.jsp");
+                    resp.sendRedirect(req.getContextPath() + "/src/main/webapp/view/login.jsp");
                     break;
 
                 case "editar":
@@ -124,17 +124,17 @@ public class ClienteController extends HttpServlet {
                             return;
                         }
                     }
-                    resp.sendRedirect(req.getContextPath() + "cliente?action=listar");
+                    resp.sendRedirect(req.getContextPath() + "/cliente?action=listar");
                     break;
 
                 case "reativar":
                     int reativarId = Integer.parseInt(req.getParameter("id"));
                     service.reativarCliente(reativarId);
-                    resp.sendRedirect(req.getContextPath() + "cliente?action=listar");
+                    resp.sendRedirect(req.getContextPath() + "/cliente?action=listar");
                     break;
 
                 default:
-                    resp.sendRedirect(req.getContextPath() + "/view/index.jsp");
+                    resp.sendRedirect(req.getContextPath() + "/src/main/webapp/view/index.jsp");
             }
         } catch (Exception e) {
             e.printStackTrace();
