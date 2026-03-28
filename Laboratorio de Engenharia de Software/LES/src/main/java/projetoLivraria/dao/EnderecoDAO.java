@@ -11,23 +11,25 @@ public class EnderecoDAO {
     public Endereco inserir(Connection conn, Endereco e) throws Exception {
         String sql = "INSERT INTO endereco (cliente_id, tipo_residencia, tipo_logradouro, logradouro, numero, cep, bairro, cidade_id, observacoes, tipo_endereco) VALUES (?,?,?,?,?,?,?,?,?,?)";
 
-        PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-        stmt.setInt(1, e.getClienteId());
-        stmt.setString(2, e.getTipoResidencia());
-        stmt.setString(3, e.getTipoLogradouro());
-        stmt.setString(4, e.getLogradouro());
-        stmt.setString(5, e.getNumero());
-        stmt.setString(6, e.getCep());
-        stmt.setString(7, e.getBairro());
-        stmt.setInt(8, e.getCidadeId());
-        stmt.setString(9, e.getObservacoes());
-        stmt.setString(10, e.getTipoEndereco());
+        try (PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
+            stmt.setInt(1, e.getClienteId());
+            stmt.setString(2, e.getTipoResidencia());
+            stmt.setString(3, e.getTipoLogradouro());
+            stmt.setString(4, e.getLogradouro());
+            stmt.setString(5, e.getNumero());
+            stmt.setString(6, e.getCep());
+            stmt.setString(7, e.getBairro());
+            stmt.setInt(8, e.getCidadeId());
+            stmt.setString(9, e.getObservacoes());
+            stmt.setString(10, e.getTipoEndereco());
 
-        stmt.executeUpdate();
+            stmt.executeUpdate();
 
-        ResultSet rs = stmt.getGeneratedKeys();
-        if (rs.next()) {
-            e.setId(rs.getInt(1));
+            try (ResultSet rs = stmt.getGeneratedKeys()) {
+                if (rs.next()) {
+                    e.setId(rs.getInt(1));
+                }
+            }
         }
         return e;
     }
@@ -35,53 +37,59 @@ public class EnderecoDAO {
     public Endereco editar(Connection conn, Endereco e) throws Exception {
         String sql = "UPDATE endereco SET tipo_residencia=?, tipo_logradouro=?, logradouro=?, numero=?, cep=?, bairro=?, cidade_id=?, observacoes=?, tipo_endereco=? WHERE id=?";
 
-        PreparedStatement stmt = conn.prepareStatement(sql);
-        stmt.setString(1, e.getTipoResidencia());
-        stmt.setString(2, e.getTipoLogradouro());
-        stmt.setString(3, e.getLogradouro());
-        stmt.setString(4, e.getNumero());
-        stmt.setString(5, e.getCep());
-        stmt.setString(6, e.getBairro());
-        stmt.setInt(7, e.getCidadeId());
-        stmt.setString(8, e.getObservacoes());
-        stmt.setString(9, e.getTipoEndereco());
-        stmt.setInt(10, e.getId());
+        try (PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, e.getTipoResidencia());
+            stmt.setString(2, e.getTipoLogradouro());
+            stmt.setString(3, e.getLogradouro());
+            stmt.setString(4, e.getNumero());
+            stmt.setString(5, e.getCep());
+            stmt.setString(6, e.getBairro());
+            stmt.setInt(7, e.getCidadeId());
+            stmt.setString(8, e.getObservacoes());
+            stmt.setString(9, e.getTipoEndereco());
+            stmt.setInt(10, e.getId());
 
-        stmt.executeUpdate();
+            stmt.executeUpdate();
+        }
         return e;
     }
 
     public void excluir(Connection conn, int id) throws Exception {
         String sql = "DELETE FROM endereco WHERE id=?";
 
-        PreparedStatement stmt = conn.prepareStatement(sql);
-        stmt.setInt(1, id);
-        stmt.executeUpdate();
+        try (PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setInt(1, id);
+            stmt.executeUpdate();
+        }
     }
 
     public List<Endereco> listarPorCliente(Connection conn, int clienteId) throws Exception {
         String sql = "SELECT * FROM endereco WHERE cliente_id=?";
 
-        PreparedStatement stmt = conn.prepareStatement(sql);
-        stmt.setInt(1, clienteId);
+        try (PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setInt(1, clienteId);
 
-        ResultSet rs = stmt.executeQuery();
-        List<Endereco> lista = new ArrayList<>();
-        while (rs.next()) {
-            lista.add(mapear(rs));
+            try (ResultSet rs = stmt.executeQuery()) {
+                List<Endereco> lista = new ArrayList<>();
+                while (rs.next()) {
+                    lista.add(mapear(rs));
+                }
+                return lista;
+            }
         }
-        return lista;
     }
 
     public Endereco buscarPorId(Connection conn, int id) throws Exception {
         String sql = "SELECT * FROM endereco WHERE id=?";
 
-        PreparedStatement stmt = conn.prepareStatement(sql);
-        stmt.setInt(1, id);
+        try (PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setInt(1, id);
 
-        ResultSet rs = stmt.executeQuery();
-        if (rs.next()) {
-            return mapear(rs);
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    return mapear(rs);
+                }
+            }
         }
         return null;
     }

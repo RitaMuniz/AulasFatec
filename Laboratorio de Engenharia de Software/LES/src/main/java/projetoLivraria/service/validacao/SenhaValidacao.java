@@ -23,7 +23,14 @@ public class SenhaValidacao implements ValidacaoCliente {
 
         String senha = cliente.getSenha();
 
-        if (senha == null || senha.isEmpty()) return;
+        // idIgnorar == -1 indica cadastro: senha é obrigatória
+        if (senha == null || senha.isEmpty()) {
+            if (idIgnorar == -1) {
+                throw new ClienteException(ClienteException.Codigo.SENHA_FRACA,
+                        "A senha é obrigatória.");
+            }
+            return; // edição: senha vazia significa "não alterar"
+        }
 
         if (!SENHA_FORTE.matcher(senha).matches()) {
             throw new ClienteException(ClienteException.Codigo.SENHA_FRACA,

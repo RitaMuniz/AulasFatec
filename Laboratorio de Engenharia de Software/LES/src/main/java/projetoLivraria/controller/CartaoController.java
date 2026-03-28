@@ -41,14 +41,14 @@ public class CartaoController extends HttpServlet {
         try {
             switch (action) {
                 case "listar":
-                    Connection conn = ConexaoSQL.getInstance().getConnection();
-                    List<Cartao> cartoes = cartaoDAO.listarPorCliente(conn, clienteLogado.getId());
-                    List<Bandeira> bandeiras = bandeiraDAO.listarTodas(conn);
-                    conn.close();
+                    try (Connection conn = ConexaoSQL.getInstance().getConnection()) {
+                        List<Cartao> cartoes = cartaoDAO.listarPorCliente(conn, clienteLogado.getId());
+                        List<Bandeira> bandeiras = bandeiraDAO.listarTodas(conn);
 
-                    req.setAttribute("cartoes", cartoes);
-                    req.setAttribute("bandeiras", bandeiras);
-                    req.getRequestDispatcher("/view/cartoes.jsp").forward(req, resp);
+                        req.setAttribute("cartoes", cartoes);
+                        req.setAttribute("bandeiras", bandeiras);
+                        req.getRequestDispatcher("/view/cartoes.jsp").forward(req, resp);
+                    }
                     break;
 
                 default:
@@ -82,18 +82,18 @@ public class CartaoController extends HttpServlet {
                     novo.setValidade(req.getParameter("validade"));
                     novo.setCvv(req.getParameter("cvv"));
 
-                    Connection connAdd = ConexaoSQL.getInstance().getConnection();
-                    cartaoDAO.inserir(connAdd, novo);
-                    connAdd.close();
+                    try (Connection connAdd = ConexaoSQL.getInstance().getConnection()) {
+                        cartaoDAO.inserir(connAdd, novo);
+                    }
 
                     resp.sendRedirect(req.getContextPath() + "/cartao?action=listar");
                     break;
 
                 case "excluir":
                     int id = Integer.parseInt(req.getParameter("id"));
-                    Connection connDel = ConexaoSQL.getInstance().getConnection();
-                    cartaoDAO.excluir(connDel, id);
-                    connDel.close();
+                    try (Connection connDel = ConexaoSQL.getInstance().getConnection()) {
+                        cartaoDAO.excluir(connDel, id);
+                    }
 
                     resp.sendRedirect(req.getContextPath() + "/cartao?action=listar");
                     break;

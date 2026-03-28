@@ -132,7 +132,7 @@ public class ClienteController extends HttpServlet {
                     }
 
                     if (adminLogado != null) {
-                        resp.sendRedirect(req.getContextPath() + "/ClienteController?action=listar");
+                        resp.sendRedirect(req.getContextPath() + "/cliente?action=listar");
 
                     } else if (clienteLogado != null) {
                         resp.sendRedirect(req.getContextPath() + "/view/cliente.jsp");
@@ -175,14 +175,14 @@ public class ClienteController extends HttpServlet {
                             return;
                         }
                     }
-                    resp.sendRedirect(req.getContextPath() + "/view/admin-clientes.jsp");
+                    resp.sendRedirect(req.getContextPath() + "/cliente?action=listar");
                     break;
                 }
 
                 case "reativar": {
                     int reativarId = Integer.parseInt(req.getParameter("id"));
                     service.reativarCliente(reativarId);
-                    resp.sendRedirect(req.getContextPath() + "/ClienteController?action=listar");
+                    resp.sendRedirect(req.getContextPath() + "/cliente?action=listar");
                     break;
                 }
 
