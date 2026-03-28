@@ -4,7 +4,7 @@
     projetoLivraria.model.Cliente clienteLogado =
         (projetoLivraria.model.Cliente) session.getAttribute("clienteLogado");
     if (clienteLogado == null) {
-        response.sendRedirect("/login.jsp");
+        response.sendRedirect(request.getContextPath() + "/view/login.jsp");
         return;
     }
 %>
@@ -23,7 +23,7 @@
         <a href="index.jsp">Home</a>
         <a href="livros.html">Livros</a>
         <a href="carrinho.html">Carrinho</a>
-        <a href="logout">Sair</a>
+        <a href="${pageContext.request.contextPath}/logout">Sair</a>
     </nav>
 </header>
 
@@ -31,10 +31,17 @@
 
     <h1 style="margin-bottom:30px;">Meu Perfil</h1>
 
+    <% if (request.getParameter("sucesso") != null) { %>
+    <p style="color:green; text-align:center; margin-bottom:16px;">Dados atualizados com sucesso!</p>
+    <% } %>
+    <% if (request.getParameter("erro") != null) { %>
+    <p style="color:#b00020; text-align:center; margin-bottom:16px;"><%= request.getParameter("erro") %></p>
+    <% } %>
+
     <div class="form-box" style="margin-bottom:30px;">
         <h2 style="margin-bottom:20px;">Dados Pessoais</h2>
 
-        <form action="/cliente" method="post">
+        <form action="${pageContext.request.contextPath}/cliente" method="post">
             <input type="hidden" name="action" value="editar">
             <input type="hidden" name="id" value="<%= clienteLogado.getId() %>">
 
@@ -43,7 +50,7 @@
                    value="<%= clienteLogado.getNome() != null ? clienteLogado.getNome() : "" %>" required>
 
             <label for="genero">Gênero</label>
-            <select id="genero" name="genero" style="width:100%; padding:12px; margin-bottom:15px; border:1px solid #ccc; border-radius:6px;">
+            <select id="genero" name="genero" required style="width:100%; padding:12px; margin-bottom:15px; border:1px solid #ccc; border-radius:6px;">
                 <option value="">Selecione</option>
                 <option value="F" <%= "F".equals(clienteLogado.getGenero()) ? "selected" : "" %>>Feminino</option>
                 <option value="M" <%= "M".equals(clienteLogado.getGenero()) ? "selected" : "" %>>Masculino</option>
@@ -67,7 +74,7 @@
         <h2 style="margin-bottom:10px; color:#b00020;">Desativar Conta</h2>
         <p style="margin-bottom:16px; font-size:14px;">Ao desativar sua conta, você não poderá mais fazer login.</p>
 
-        <form action="/cliente" method="post"
+        <form action="${pageContext.request.contextPath}/cliente" method="post"
               onsubmit="return confirm('Tem certeza que deseja desativar sua conta?')">
             <input type="hidden" name="action" value="desativar">
             <input type="hidden" name="id" value="<%= clienteLogado.getId() %>">
@@ -76,8 +83,8 @@
     </div>
 
     <div style="display:flex; gap:15px; justify-content:center; flex-wrap:wrap;">
-        <a href="endereco?action=listar" class="btn">Gerenciar Endereços</a>
-        <a href="cartao?action=listar" class="btn">Gerenciar Cartões</a>
+        <a href="${pageContext.request.contextPath}/endereco?action=listar" class="btn">Gerenciar Endereços</a>
+        <a href="${pageContext.request.contextPath}/cartao?action=listar" class="btn">Gerenciar Cartões</a>
         <a href="pedidos.html" class="btn">Meus Pedidos</a>
     </div>
 

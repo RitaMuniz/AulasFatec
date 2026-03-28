@@ -19,10 +19,9 @@
 
     <h2 style="text-align:center; margin-bottom:24px;">Entrar</h2>
 
-    <%-- Exibe mensagem de erro se vier do LoginController --%>
-    <% if (request.getAttribute("erro") != null) { %>
+    <% if ("1".equals(request.getParameter("erro"))) { %>
     <p style="color:#b00020; text-align:center; margin-bottom:16px;">
-        <%= request.getAttribute("erro") %>
+        E-mail ou senha inválidos.
     </p>
     <% } %>
 

@@ -86,7 +86,6 @@ public class ClienteDAO {
         return lista;
     }
 
-    // Busca por nome, email ou CPF (parcial, case-insensitive)
     public List<Cliente> buscarPorTermo(Connection conn, String termo) throws Exception {
         String sql = "SELECT * FROM cliente WHERE " +
                 "LOWER(nome) LIKE ? OR LOWER(email) LIKE ? OR cpf LIKE ? " +
@@ -113,5 +112,17 @@ public class ClienteDAO {
         c.setSenha(rs.getString("senha"));
         c.setStatus(rs.getString("status"));
         return c;
+    }
+
+    public Cliente buscarPorCpf(Connection conn, String cpf) throws Exception {
+        String cpfLimpo = cpf.replaceAll("[^0-9]", "");
+        String sql = "SELECT * FROM cliente WHERE REPLACE(REPLACE(REPLACE(cpf,'.',''),'-',''),'/', '') = ?";
+        PreparedStatement stmt = conn.prepareStatement(sql);
+        stmt.setString(1, cpfLimpo);
+        ResultSet rs = stmt.executeQuery();
+        if (rs.next()) {
+            return mapear(rs);
+        }
+        return null;
     }
 }

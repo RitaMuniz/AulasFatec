@@ -5,9 +5,11 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import projetoLivraria.model.Admin;
 import projetoLivraria.model.Cliente;
 import projetoLivraria.model.Endereco;
 import projetoLivraria.model.Telefone;
+import projetoLivraria.service.ClienteException;
 import projetoLivraria.service.ClienteService;
 
 import java.io.IOException;
@@ -19,7 +21,9 @@ public class ClienteController extends HttpServlet {
     private final ClienteService service = new ClienteService();
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
+
         String action = req.getParameter("action");
         if (action == null) action = "listar";
 
@@ -46,12 +50,15 @@ public class ClienteController extends HttpServlet {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Erro ao processar requisição.");
+            resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR,
+                    "Erro ao processar requisição.");
         }
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
+
         req.setCharacterEncoding("UTF-8");
         String action = req.getParameter("action");
         if (action == null) action = "cadastrar";
@@ -59,7 +66,7 @@ public class ClienteController extends HttpServlet {
         try {
             switch (action) {
 
-                case "cadastrar":
+                case "cadastrar": {
                     Cliente novoCliente = new Cliente();
                     novoCliente.setNome(req.getParameter("nome"));
                     novoCliente.setGenero(req.getParameter("genero"));
@@ -73,26 +80,70 @@ public class ClienteController extends HttpServlet {
                     telefone.setDdd(req.getParameter("ddd"));
                     telefone.setNumero(req.getParameter("numeroTelefone"));
 
-                    Endereco endereco = new Endereco();
-                    endereco.setTipoLogradouro(req.getParameter("tipoLogradouro"));
-                    endereco.setLogradouro(req.getParameter("logradouro"));
-                    endereco.setTipoResidencia(req.getParameter("tipoResidencia"));
-                    endereco.setNumero(req.getParameter("numeroEndereco"));
-                    endereco.setBairro(req.getParameter("bairro"));
-                    endereco.setCep(req.getParameter("cep"));
-                    endereco.setObservacoes(req.getParameter("observacoes"));
-                    endereco.setTipoEndereco(req.getParameter("tipoEndereco"));
-
-                    String cidadeIdStr = req.getParameter("cidadeId");
-                    if (cidadeIdStr != null && !cidadeIdStr.isEmpty()) {
-                        endereco.setCidadeId(Integer.parseInt(cidadeIdStr));
+                    Endereco enderecoEntrega = new Endereco();
+                    enderecoEntrega.setTipoEndereco("ENTREGA");
+                    enderecoEntrega.setTipoLogradouro(req.getParameter("tipoLogradouro"));
+                    enderecoEntrega.setLogradouro(req.getParameter("logradouro"));
+                    enderecoEntrega.setTipoResidencia(req.getParameter("tipoResidencia"));
+                    enderecoEntrega.setNumero(req.getParameter("numeroEndereco"));
+                    enderecoEntrega.setBairro(req.getParameter("bairro"));
+                    enderecoEntrega.setCep(req.getParameter("cep"));
+                    enderecoEntrega.setObservacoes(req.getParameter("observacoes"));
+                    String cidadeId = req.getParameter("cidadeId");
+                    if (cidadeId != null && !cidadeId.isEmpty()) {
+                        enderecoEntrega.setCidadeId(Integer.parseInt(cidadeId));
                     }
 
-                    service.cadastrarCliente(novoCliente, telefone, endereco);
-                    resp.sendRedirect(req.getContextPath() + "/view/login.jsp");
-                    break;
+                    Endereco enderecoCobranca = new Endereco();
+                    enderecoCobranca.setTipoEndereco("COBRANCA");
+                    String logradouroCobranca = req.getParameter("logradouroCobranca");
+                    if (logradouroCobranca != null && !logradouroCobranca.trim().isEmpty()) {
+                        enderecoCobranca.setTipoLogradouro(req.getParameter("tipoLogradouroCobranca"));
+                        enderecoCobranca.setLogradouro(logradouroCobranca);
+                        enderecoCobranca.setTipoResidencia(req.getParameter("tipoResidenciaCobranca"));
+                        enderecoCobranca.setNumero(req.getParameter("numeroEnderecoCobranca"));
+                        enderecoCobranca.setBairro(req.getParameter("bairroCobranca"));
+                        enderecoCobranca.setCep(req.getParameter("cepCobranca"));
+                        enderecoCobranca.setObservacoes(req.getParameter("observacoesCobranca"));
+                        String cidadeIdCobranca = req.getParameter("cidadeIdCobranca");
+                        if (cidadeIdCobranca != null && !cidadeIdCobranca.isEmpty()) {
+                            enderecoCobranca.setCidadeId(Integer.parseInt(cidadeIdCobranca));
+                        }
+                    } else {
+                        enderecoCobranca.setTipoLogradouro(enderecoEntrega.getTipoLogradouro());
+                        enderecoCobranca.setLogradouro(enderecoEntrega.getLogradouro());
+                        enderecoCobranca.setTipoResidencia(enderecoEntrega.getTipoResidencia());
+                        enderecoCobranca.setNumero(enderecoEntrega.getNumero());
+                        enderecoCobranca.setBairro(enderecoEntrega.getBairro());
+                        enderecoCobranca.setCep(enderecoEntrega.getCep());
+                        enderecoCobranca.setObservacoes(enderecoEntrega.getObservacoes());
+                        enderecoCobranca.setCidadeId(enderecoEntrega.getCidadeId());
+                    }
 
-                case "editar":
+                    service.cadastrarCliente(novoCliente, telefone, enderecoEntrega, enderecoCobranca);
+                    HttpSession session = req.getSession(false);
+
+                    Cliente clienteLogado = null;
+                    Admin adminLogado = null;
+
+                    if (session != null) {
+                        clienteLogado = (Cliente) session.getAttribute("clienteLogado");
+                        adminLogado   = (Admin) session.getAttribute("adminLogado");
+                    }
+
+                    if (adminLogado != null) {
+                        resp.sendRedirect(req.getContextPath() + "/ClienteController?action=listar");
+
+                    } else if (clienteLogado != null) {
+                        resp.sendRedirect(req.getContextPath() + "/view/cliente.jsp");
+
+                    } else {
+                        resp.sendRedirect(req.getContextPath() + "/view/login.jsp");
+                    }
+                    break;
+                }
+
+                case "editar": {
                     Cliente clienteEdit = new Cliente();
                     clienteEdit.setId(Integer.parseInt(req.getParameter("id")));
                     clienteEdit.setNome(req.getParameter("nome"));
@@ -107,11 +158,11 @@ public class ClienteController extends HttpServlet {
                         Cliente atualizado = service.buscarCliente(clienteEdit.getId());
                         session.setAttribute("clienteLogado", atualizado);
                     }
-
-                    resp.sendRedirect(req.getContextPath() + "/view/admin.html");
+                    resp.sendRedirect(req.getContextPath() + "/view/cliente.jsp?sucesso=1");
                     break;
+                }
 
-                case "desativar":
+                case "desativar": {
                     int desativarId = Integer.parseInt(req.getParameter("id"));
                     service.desativarCliente(desativarId);
 
@@ -120,25 +171,43 @@ public class ClienteController extends HttpServlet {
                         Cliente logado = (Cliente) sessionDes.getAttribute("clienteLogado");
                         if (logado != null && logado.getId() == desativarId) {
                             sessionDes.invalidate();
-                            resp.sendRedirect(req.getContextPath() + "login.jsp");
+                            resp.sendRedirect(req.getContextPath() + "/view/login.jsp");
                             return;
                         }
                     }
-                    resp.sendRedirect(req.getContextPath() + "/view/admin.html");
+                    resp.sendRedirect(req.getContextPath() + "/view/admin-clientes.jsp");
                     break;
+                }
 
-                case "reativar":
+                case "reativar": {
                     int reativarId = Integer.parseInt(req.getParameter("id"));
                     service.reativarCliente(reativarId);
-                    resp.sendRedirect(req.getContextPath() + "/view/admin.html");
+                    resp.sendRedirect(req.getContextPath() + "/ClienteController?action=listar");
                     break;
+                }
 
                 default:
-                    resp.sendRedirect(req.getContextPath() + "/src/main/webapp/view/index.jsp");
+                    resp.sendRedirect(req.getContextPath() + "/view/index.jsp");
             }
+
+        } catch (ClienteException ce) {
+            String paginaOrigem = resolverPaginaOrigem(action);
+            req.setAttribute("erro", ce.getMessage());
+            req.setAttribute("erroCodigo", ce.getCodigo().name());
+            req.getRequestDispatcher(paginaOrigem).forward(req, resp);
+
         } catch (Exception e) {
             e.printStackTrace();
-            resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Erro ao processar requisição.");
+            resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR,
+                    "Erro interno ao processar requisição.");
         }
+    }
+
+    private String resolverPaginaOrigem(String action) {
+        return switch (action) {
+            case "cadastrar" -> "/view/cadastro.jsp";
+            case "editar"    -> "/view/cliente.jsp";
+            default          -> "/view/index.jsp";
+        };
     }
 }

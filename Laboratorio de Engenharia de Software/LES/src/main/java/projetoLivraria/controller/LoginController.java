@@ -32,7 +32,7 @@ public class LoginController extends HttpServlet {
                 return;
             }
         }
-        resp.sendRedirect(req.getContextPath() + "login.jsp");
+        resp.sendRedirect(req.getContextPath() + "/view/login.jsp");
     }
 
     @Override
@@ -58,6 +58,10 @@ public class LoginController extends HttpServlet {
 
             Cliente cliente = service.buscarClientePorEmail(email);
             if (cliente != null && cliente.getSenha().equals(senha)) {
+                if ("INATIVO".equalsIgnoreCase(cliente.getStatus())) {
+                    resp.sendRedirect(req.getContextPath() + "/view/login.jsp?erro=2");
+                    return;
+                }
                 HttpSession session = req.getSession();
                 session.setAttribute("clienteLogado", cliente);
                 session.setMaxInactiveInterval(30 * 60);
@@ -65,7 +69,7 @@ public class LoginController extends HttpServlet {
                 return;
             }
 
-            resp.sendRedirect(req.getContextPath() + "login.jsp?erro=1");
+            resp.sendRedirect(req.getContextPath() + "/view/login.jsp?erro=1");
 
         } catch (Exception e) {
             e.printStackTrace();
