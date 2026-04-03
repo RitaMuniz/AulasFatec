@@ -11,28 +11,31 @@ public class CartaoDAO {
     public Cartao inserir(Connection conn, Cartao c) throws Exception {
         String sql = "INSERT INTO cartao (cliente_id, numero, nome_impresso, bandeira_id, cvv, validade) VALUES (?,?,?,?,?,?)";
 
-        PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-        stmt.setInt(1, c.getClienteId());
-        stmt.setString(2, c.getNumero());
-        stmt.setString(3, c.getNomeImpresso());
-        stmt.setInt(4, c.getBandeiraId());
-        stmt.setString(5, c.getCvv());
-        stmt.setString(6, c.getValidade());
+        try (PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
+            stmt.setInt(1, c.getClienteId());
+            stmt.setString(2, c.getNumero());
+            stmt.setString(3, c.getNomeImpresso());
+            stmt.setInt(4, c.getBandeiraId());
+            stmt.setString(5, c.getCvv());
+            stmt.setString(6, c.getValidade());
 
-        stmt.executeUpdate();
+            stmt.executeUpdate();
 
-        ResultSet rs = stmt.getGeneratedKeys();
-        if (rs.next()) {
-            c.setId(rs.getInt(1));
+            try (ResultSet rs = stmt.getGeneratedKeys()) {
+                if (rs.next()) {
+                    c.setId(rs.getInt(1));
+                }
+            }
         }
         return c;
     }
 
     public void excluir(Connection conn, int id) throws Exception {
         String sql = "DELETE FROM cartao WHERE id=?";
-        PreparedStatement stmt = conn.prepareStatement(sql);
-        stmt.setInt(1, id);
-        stmt.executeUpdate();
+        try (PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setInt(1, id);
+            stmt.executeUpdate();
+        }
     }
 
     public List<Cartao> listarPorCliente(Connection conn, int clienteId) throws Exception {
@@ -43,15 +46,17 @@ public class CartaoDAO {
             WHERE c.cliente_id = ?
         """;
 
-        PreparedStatement stmt = conn.prepareStatement(sql);
-        stmt.setInt(1, clienteId);
+        try (PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setInt(1, clienteId);
 
-        ResultSet rs = stmt.executeQuery();
-        List<Cartao> lista = new ArrayList<>();
-        while (rs.next()) {
-            lista.add(mapear(rs));
+            try (ResultSet rs = stmt.executeQuery()) {
+                List<Cartao> lista = new ArrayList<>();
+                while (rs.next()) {
+                    lista.add(mapear(rs));
+                }
+                return lista;
+            }
         }
-        return lista;
     }
 
     private Cartao mapear(ResultSet rs) throws Exception {

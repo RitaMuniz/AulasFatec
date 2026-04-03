@@ -117,8 +117,7 @@ h1, h2, h3 {
     padding: 20px;
     border-radius: 10px;
     margin-bottom: 30px;
-    font-family: 'Open Sauce'; src: local('Arial');
-    font-family: 'Open Sauce', sans-serif;
+    font-family: 'Open Sauce', Arial, sans-serif;
     margin: 40px auto;
     line-height: 2;
 }

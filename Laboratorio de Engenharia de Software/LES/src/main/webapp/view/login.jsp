@@ -23,6 +23,10 @@
     <p style="color:#b00020; text-align:center; margin-bottom:16px;">
         E-mail ou senha inválidos.
     </p>
+    <% } else if ("2".equals(request.getParameter("erro"))) { %>
+    <p style="color:#b00020; text-align:center; margin-bottom:16px;">
+        Sua conta está inativa. Entre em contato com o suporte.
+    </p>
     <% } %>
 
     <form action="${pageContext.request.contextPath}/login" method="post">

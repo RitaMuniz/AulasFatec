@@ -60,7 +60,7 @@
             <p style="font-size:14px; color:green;">Disponível: 12 unidades</p>
             <p class="preco">R$ 79,90</p>
             <div style="margin-top:10px;">
-                <a href="$detalhe.html" class="btn">Ver Detalhes</a>
+                <a href="detalhe.html" class="btn">Ver Detalhes</a>
             </div>
             <div style="margin-top:10px;">
                 <a href="carrinho.html" class="btn">Adicionar ao Carrinho</a>

@@ -1,9 +1,18 @@
 package projetoLivraria.model;
 
 public class Cidade {
+    private int id;
     private String nome;
     private Estado estado;
-    private Pais paises;
+    private Pais pais;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getNome() {
         return nome;
@@ -21,11 +30,11 @@ public class Cidade {
         this.estado = estado;
     }
 
-    public Pais getPaises() {
-        return paises;
+    public Pais getPais() {
+        return pais;
     }
 
-    public void setPaises(Pais paises) {
-        this.paises = paises;
+    public void setPais(Pais pais) {
+        this.pais = pais;
     }
 }
