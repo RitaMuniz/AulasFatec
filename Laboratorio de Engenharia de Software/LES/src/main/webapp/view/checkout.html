@@ -1,94 +1,46 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<%@ page contentType="text/html;charset=UTF-8" %>
+
+<html>
 <head>
-    <meta charset="UTF-8">
     <title>Checkout</title>
-    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<header class="navbar">
-    <div class="logo">Livraria</div>
-    <nav>
-        <a href="index.jsp">Home</a>
-        <a href="livros.html">Livros</a>
-        <a href="login.jsp">Login</a>
-        <a href="carrinho.html">Carrinho</a>
-    </nav>
-</header>
+<h2>Finalizar Pedido</h2>
 
-<div class="container">
+<form action="pedido" method="POST">
 
-    <h2 style="margin-bottom:40px;">Finalizar Compra</h2>
+    ```
+    <h3>Endereço</h3>
+    <input type="number" name="endereco_id" placeholder="ID do endereço" required>
 
-    <div class="grid" style="grid-template-columns: 2fr 1fr; align-items:start;">
+    <br><br>
 
+    <h3>Pagamento</h3>
 
-        <div class="card" style="text-align:left;">
+    <h4>Cartão 1</h4>
+    <input type="number" name="cartao_id" placeholder="ID do cartão">
+    <input type="text" name="valor_cartao" placeholder="Valor">
 
-            <h3>Endereço de Entrega</h3>
+    <br><br>
 
-            <input type="text" placeholder="CEP" style="width:100%; padding:12px; margin:10px 0;">
-            <input type="text" placeholder="Rua" style="width:100%; padding:12px; margin:10px 0;">
-            <input type="text" placeholder="Número" style="width:100%; padding:12px; margin:10px 0;">
-            <input type="text" placeholder="Bairro" style="width:100%; padding:12px; margin:10px 0;">
-            <input type="text" placeholder="Cidade" style="width:100%; padding:12px; margin:10px 0;">
+    <h4>Cartão 2 (opcional)</h4>
+    <input type="number" name="cartao_id">
+    <input type="text" name="valor_cartao">
 
-            <br><br>
+    <br><br>
 
-            <h3>Forma de Pagamento</h3>
+    <h3>Cupom</h3>
+    <input type="number" name="cupom_id" placeholder="ID do cupom">
 
-            <select style="width:100%; padding:12px; margin:10px 0;">
-                <option>Cartão de Crédito</option>
-                <option>Pix</option>
-                <option>Boleto</option>
-            </select>
+    <br><br>
 
-            <select style="width:100%; padding:12px; margin:10px 0;">
-                <option>1x sem juros</option>
-                <option>2x sem juros</option>
-                <option>3x sem juros</option>
-            </select>
+    <input type="hidden" name="frete" value="20.00">
 
-            <input type="text" placeholder="Cupom Promocional" style="width:100%; padding:12px; margin:10px 0;">
-            <input type="text" placeholder="Cupom de Troca" style="width:100%; padding:12px; margin:10px 0;">
+    <button type="submit">Finalizar Pedido</button>
+    ```
 
-        </div>
-
-
-        <div class="card">
-
-            <h3>Resumo do Pedido</h3>
-
-            <p>Engenharia de Software (1x)</p>
-            <p>Subtotal: R$ 120,00</p>
-            <p>Frete: R$ 15,00</p>
-            <p>Desconto: R$ 0,00</p>
-
-            <hr style="margin:15px 0;">
-
-            <h3>Total</h3>
-            <p class="preco" style="font-size:22px;">R$ 135,00</p>
-
-            <br>
-
-            <a href="carrinho.html" class="btn" style="margin-right:10px;">
-                Voltar
-            </a>
-
-            <a href="confirmacao.html" class="btn">
-                Confirmar Pedido
-            </a>
-
-        </div>
-
-    </div>
-
-</div>
-
-<footer>
-    © 2026 - Projeto LES
-</footer>
+</form>
 
 </body>
 </html>

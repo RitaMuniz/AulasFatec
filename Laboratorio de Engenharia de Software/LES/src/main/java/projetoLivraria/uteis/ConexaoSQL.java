@@ -119,143 +119,143 @@ public class ConexaoSQL {
                     FOREIGN KEY(bandeira_id) REFERENCES bandeira(id)
                 );
                 """;
-//
-//        String sqlCategoria =
-//                """
-//                CREATE TABLE IF NOT EXISTS categoria (
-//                    id INTEGER PRIMARY KEY AUTOINCREMENT,
-//                    nome TEXT NOT NULL
-//                );
-//                """;
-//
-//        String sqlGrupoPrecificacao =
-//                """
-//                CREATE TABLE IF NOT EXISTS grupo_precificacao (
-//                    id INTEGER PRIMARY KEY AUTOINCREMENT,
-//                    nome TEXT NOT NULL,
-//                    margem_lucro REAL NOT NULL
-//                );
-//                """;
-//
-//        String sqlLivro =
-//                """
-//                CREATE TABLE IF NOT EXISTS livro (
-//                    id INTEGER PRIMARY KEY AUTOINCREMENT,
-//                    titulo TEXT NOT NULL,
-//                    autor TEXT,
-//                    editora TEXT,
-//                    ano INTEGER,
-//                    edicao TEXT,
-//                    isbn TEXT,
-//                    paginas INTEGER,
-//                    sinopse TEXT,
-//                    altura REAL,
-//                    largura REAL,
-//                    peso REAL,
-//                    profundidade REAL,
-//                    codigo_barras TEXT,
-//                    grupo_precificacao_id INTEGER,
-//                    status TEXT,
-//                    FOREIGN KEY(grupo_precificacao_id) REFERENCES grupo_precificacao(id)
-//                );
-//                """;
-//
-//        String sqlLivroCategoria =
-//                """
-//                CREATE TABLE IF NOT EXISTS livro_categoria (
-//                    livro_id INTEGER,
-//                    categoria_id INTEGER,
-//                    PRIMARY KEY (livro_id, categoria_id),
-//                    FOREIGN KEY(livro_id) REFERENCES livro(id),
-//                    FOREIGN KEY(categoria_id) REFERENCES categoria(id)
-//                );
-//                """;
-//
-//        String sqlEstoque =
-//                """
-//                CREATE TABLE IF NOT EXISTS estoque (
-//                    id INTEGER PRIMARY KEY AUTOINCREMENT,
-//                    livro_id INTEGER,
-//                    quantidade INTEGER,
-//                    custo REAL,
-//                    FOREIGN KEY(livro_id) REFERENCES livro(id)
-//                );
-//                """;
-//
-//        String sqlPedido =
-//                """
-//                CREATE TABLE IF NOT EXISTS pedido (
-//                    id INTEGER PRIMARY KEY AUTOINCREMENT,
-//                    cliente_id INTEGER,
-//                    endereco_entrega_id INTEGER,
-//                    data DATETIME,
-//                    valor_total REAL,
-//                    status TEXT,
-//                    FOREIGN KEY(cliente_id) REFERENCES cliente(id),
-//                    FOREIGN KEY(endereco_entrega_id) REFERENCES endereco(id)
-//                );
-//                """;
-//
-//        String sqlitensPedido =
-//                """
-//                CREATE TABLE IF NOT EXISTS item_pedido (
-//                    id INTEGER PRIMARY KEY AUTOINCREMENT,
-//                    pedido_id INTEGER,
-//                    livro_id INTEGER,
-//                    quantidade INTEGER,
-//                    preco REAL,
-//                    FOREIGN KEY(pedido_id) REFERENCES pedido(id),
-//                    FOREIGN KEY(livro_id) REFERENCES livro(id)
-//                );
-//                """;
-//
-//        String sqlCupom =
-//                """
-//                CREATE TABLE IF NOT EXISTS cupom (
-//                    id INTEGER PRIMARY KEY AUTOINCREMENT,
-//                    codigo TEXT UNIQUE,
-//                    valor REAL,
-//                    status TEXT,
-//                    cliente_id INTEGER,
-//                    FOREIGN KEY(cliente_id) REFERENCES cliente(id)
-//                );
-//                """;
-//
-//        String sqlPagamento =
-//                """
-//                CREATE TABLE  IF NOT EXISTS pagamento (
-//                    id INTEGER PRIMARY KEY AUTOINCREMENT,
-//                    pedido_id INTEGER,
-//                    cartao_id INTEGER,
-//                    cupom_id INTEGER,
-//                    valor REAL,
-//                    FOREIGN KEY(pedido_id) REFERENCES pedido(id),
-//                    FOREIGN KEY(cartao_id) REFERENCES cartao(id),
-//                    FOREIGN KEY(cupom_id) REFERENCES cupom(id)
-//                );
-//                """;
-//
-//        String sqlTroca =
-//                """
-//                CREATE TABLE IF NOT EXISTS troca (
-//                    id INTEGER PRIMARY KEY AUTOINCREMENT,
-//                    pedido_id INTEGER,
-//                    status TEXT,
-//                    data_solicitacao DATE,
-//                    data_recebimento DATE,
-//                    FOREIGN KEY(pedido_id) REFERENCES pedido(id)
-//                );
-//                """;
-//
-//        String sqlLog =
-//                """
-//                CREATE TABLE IF NOT EXISTS log (
-//                    id INTEGER PRIMARY KEY AUTOINCREMENT,
-//                    usuario TEXT,
-//                    acao TEXT,
-//                    data DATETIME
-//                );
-//                """;
+
+        String sqlCategoria =
+                """
+                CREATE TABLE IF NOT EXISTS categoria (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    nome TEXT NOT NULL
+                );
+                """;
+
+        String sqlGrupoPrecificacao =
+                """
+                CREATE TABLE IF NOT EXISTS grupo_precificacao (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    nome TEXT NOT NULL,
+                    margem_lucro REAL NOT NULL
+                );
+                """;
+
+        String sqlLivro =
+                """
+                CREATE TABLE IF NOT EXISTS livro (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    titulo TEXT NOT NULL,
+                    autor TEXT,
+                    editora TEXT,
+                    ano INTEGER,
+                    edicao TEXT,
+                    isbn TEXT,
+                    paginas INTEGER,
+                    sinopse TEXT,
+                    altura REAL,
+                    largura REAL,
+                    peso REAL,
+                    profundidade REAL,
+                    codigo_barras TEXT,
+                    grupo_precificacao_id INTEGER,
+                    status TEXT,
+                    FOREIGN KEY(grupo_precificacao_id) REFERENCES grupo_precificacao(id)
+                );
+                """;
+
+        String sqlLivroCategoria =
+                """
+                CREATE TABLE IF NOT EXISTS livro_categoria (
+                    livro_id INTEGER,
+                    categoria_id INTEGER,
+                    PRIMARY KEY (livro_id, categoria_id),
+                    FOREIGN KEY(livro_id) REFERENCES livro(id),
+                    FOREIGN KEY(categoria_id) REFERENCES categoria(id)
+                );
+                """;
+
+        String sqlEstoque =
+                """
+                CREATE TABLE IF NOT EXISTS estoque (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    livro_id INTEGER,
+                    quantidade INTEGER,
+                    custo REAL,
+                    FOREIGN KEY(livro_id) REFERENCES livro(id)
+                );
+                """;
+
+        String sqlPedido =
+                """
+                CREATE TABLE IF NOT EXISTS pedido (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    cliente_id INTEGER,
+                    endereco_entrega_id INTEGER,
+                    data DATETIME,
+                    valor_total REAL,
+                    status TEXT,
+                    FOREIGN KEY(cliente_id) REFERENCES cliente(id),
+                    FOREIGN KEY(endereco_entrega_id) REFERENCES endereco(id)
+                );
+                """;
+
+        String sqlitensPedido =
+                """
+                CREATE TABLE IF NOT EXISTS item_pedido (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    pedido_id INTEGER,
+                    livro_id INTEGER,
+                    quantidade INTEGER,
+                    preco REAL,
+                    FOREIGN KEY(pedido_id) REFERENCES pedido(id),
+                    FOREIGN KEY(livro_id) REFERENCES livro(id)
+                );
+                """;
+
+        String sqlCupom =
+                """
+                CREATE TABLE IF NOT EXISTS cupom (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    codigo TEXT UNIQUE,
+                    valor REAL,
+                    status TEXT,
+                    cliente_id INTEGER,
+                    FOREIGN KEY(cliente_id) REFERENCES cliente(id)
+                );
+                """;
+
+        String sqlPagamento =
+                """
+                CREATE TABLE  IF NOT EXISTS pagamento (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    pedido_id INTEGER,
+                    cartao_id INTEGER,
+                    cupom_id INTEGER,
+                    valor REAL,
+                    FOREIGN KEY(pedido_id) REFERENCES pedido(id),
+                    FOREIGN KEY(cartao_id) REFERENCES cartao(id),
+                    FOREIGN KEY(cupom_id) REFERENCES cupom(id)
+                );
+                """;
+
+        String sqlTroca =
+                """
+                CREATE TABLE IF NOT EXISTS troca (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    pedido_id INTEGER,
+                    status TEXT,
+                    data_solicitacao DATE,
+                    data_recebimento DATE,
+                    FOREIGN KEY(pedido_id) REFERENCES pedido(id)
+                );
+                """;
+
+        String sqlLog =
+                """
+                CREATE TABLE IF NOT EXISTS log (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    usuario TEXT,
+                    acao TEXT,
+                    data DATETIME
+                );
+                """;
         String sqlAdmin = """
                 CREATE TABLE IF NOT EXISTS admin (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -264,7 +264,6 @@ public class ConexaoSQL {
                     senha TEXT NOT NULL
                 );
                 """;
-
 
         try (Connection c = getInstance().getConnection();
              Statement stmt = c.createStatement()) {
@@ -277,17 +276,17 @@ public class ConexaoSQL {
             stmt.execute(sqlEndereco);
             stmt.execute(sqlBandeira);
             stmt.execute(sqlCartao);
-//            stmt.execute(sqlCategoria);
-//            stmt.execute(sqlGrupoPrecificacao);
-//            stmt.execute(sqlLivro);
-//            stmt.execute(sqlLivroCategoria);
-//            stmt.execute(sqlEstoque);
-//            stmt.execute(sqlPedido);
-//            stmt.execute(sqlitensPedido);
-//            stmt.execute(sqlCupom);
-//            stmt.execute(sqlPagamento);
-//            stmt.execute(sqlTroca);
-//            stmt.execute(sqlLog);
+            stmt.execute(sqlCategoria);
+            stmt.execute(sqlGrupoPrecificacao);
+            stmt.execute(sqlLivro);
+            stmt.execute(sqlLivroCategoria);
+            stmt.execute(sqlEstoque);
+            stmt.execute(sqlPedido);
+            stmt.execute(sqlitensPedido);
+            stmt.execute(sqlCupom);
+            stmt.execute(sqlPagamento);
+            stmt.execute(sqlTroca);
+            stmt.execute(sqlLog);
             stmt.execute(sqlAdmin);
 
             System.out.println("Tabelas verificadas/criadas com sucesso. Banco em: java//livraria.db");
