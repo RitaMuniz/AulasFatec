@@ -5,6 +5,9 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import projetoLivraria.dao.CidadeDAO;
+import projetoLivraria.dao.EstadoDAO;
+import projetoLivraria.dao.PaisDAO;
 import projetoLivraria.model.Admin;
 import projetoLivraria.model.Cliente;
 import projetoLivraria.model.Endereco;
@@ -19,6 +22,9 @@ import java.util.List;
 public class ClienteController extends HttpServlet {
 
     private final ClienteService service = new ClienteService();
+    private CidadeDAO cidadeDAO = new CidadeDAO();
+    private EstadoDAO estadoDAO = new EstadoDAO();
+    private PaisDAO paisDAO = new PaisDAO();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -38,7 +44,13 @@ public class ClienteController extends HttpServlet {
                         clientes = service.listarClientes();
                     }
                     req.setAttribute("clientes", clientes);
+                    req.setAttribute("estados", estadoDAO.listar());
                     req.getRequestDispatcher("/view/admin-clientes.jsp").forward(req, resp);
+                    break;
+
+                case "cadastro":
+                    req.setAttribute("estados", estadoDAO.listar());
+                    req.getRequestDispatcher("/view/cadastro.jsp").forward(req, resp);
                     break;
 
                 case "buscar":
@@ -89,9 +101,19 @@ public class ClienteController extends HttpServlet {
                     enderecoEntrega.setBairro(req.getParameter("bairro"));
                     enderecoEntrega.setCep(req.getParameter("cep"));
                     enderecoEntrega.setObservacoes(req.getParameter("observacoes"));
-                    String cidadeId = req.getParameter("cidadeId");
-                    if (cidadeId != null && !cidadeId.isEmpty()) {
-                        enderecoEntrega.setCidadeId(Integer.parseInt(cidadeId));
+
+                    String cidadeNomeEntrega = req.getParameter("cidadeNome");
+                    String estadoIdEntrega = req.getParameter("estadoIdEntrega");
+
+                    if (cidadeNomeEntrega != null && !cidadeNomeEntrega.isEmpty() &&
+                            estadoIdEntrega != null && !estadoIdEntrega.isEmpty()) {
+
+                        int cidadeIdEntrega = cidadeDAO.buscarOuCriar(
+                                cidadeNomeEntrega,
+                                Integer.parseInt(estadoIdEntrega)
+                        );
+
+                        enderecoEntrega.setCidadeId(cidadeIdEntrega);
                     }
 
                     Endereco enderecoCobranca = new Endereco();
@@ -105,9 +127,19 @@ public class ClienteController extends HttpServlet {
                         enderecoCobranca.setBairro(req.getParameter("bairroCobranca"));
                         enderecoCobranca.setCep(req.getParameter("cepCobranca"));
                         enderecoCobranca.setObservacoes(req.getParameter("observacoesCobranca"));
-                        String cidadeIdCobranca = req.getParameter("cidadeIdCobranca");
-                        if (cidadeIdCobranca != null && !cidadeIdCobranca.isEmpty()) {
-                            enderecoCobranca.setCidadeId(Integer.parseInt(cidadeIdCobranca));
+
+                        String cidadeNomeCobranca = req.getParameter("cidadeNomeCobranca");
+                        String estadoIdCobranca = req.getParameter("estadoIdCobranca");
+                        String paisIdCobranca = req.getParameter("paisIdCobranca");
+
+                        if (cidadeNomeCobranca != null && !cidadeNomeCobranca.isEmpty() &&
+                                estadoIdCobranca != null && !estadoIdCobranca.isEmpty()) {
+                            int cidadeIdCobranca = cidadeDAO.buscarOuCriar(
+                                    cidadeNomeCobranca,
+                                    Integer.parseInt(estadoIdCobranca)
+                            );
+
+                            enderecoCobranca.setCidadeId(cidadeIdCobranca);
                         }
                     } else {
                         enderecoCobranca.setTipoLogradouro(enderecoEntrega.getTipoLogradouro());

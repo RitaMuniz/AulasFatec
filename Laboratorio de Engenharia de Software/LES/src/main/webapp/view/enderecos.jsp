@@ -55,10 +55,19 @@
             <label>CEP</label>
             <input type="text" id="cep" name="cep" placeholder="00000-000" maxlength="9" required>
 
+            <label for="cidade">Cidade *</label>
+            <input type="text" id="cidade" name="cidadeNome" placeholder="Sua Cidade" required>
+
+            <label>Estado</label>
+            <select name="estadoId" required style="width:100%; padding:12px; margin-bottom:15px; border:1px solid #ccc; border-radius:6px;">
+                <option value="">Selecione</option>
+                <c:forEach var="e" items="${estados}">
+                    <option value="${e.id}">${e.nome}</option>
+                </c:forEach>
+            </select>
+
             <label>Observações (opcional)</label>
             <input type="text" id="observacoes" name="observacoes" placeholder="Complemento, referência...">
-
-            <input type="hidden" name="cidadeId" value="1">
 
             <div style="display:flex; gap:10px; margin-top:10px;">
                 <button type="submit" class="btn" style="flex:1;">Salvar Endereço</button>

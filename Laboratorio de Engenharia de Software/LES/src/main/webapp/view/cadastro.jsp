@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Cadastro</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/view/css/style.css">
 </head>
 <body>
 
@@ -107,10 +107,20 @@
             <label for="cep">CEP *</label>
             <input type="text" id="cep" name="cep" placeholder="00000-000" maxlength="9" required pattern="\d{5}-?\d{3}">
 
+            <label for="cidade">Cidade *</label>
+            <input type="text" id="cidadeEntrega" name="cidadeNome" placeholder="Sua Cidade" required>
+
+            <label>Estado</label>
+            <select name="estadoIdEntrega" required style="width:100%; padding:12px; margin-bottom:15px; border:1px solid #ccc; border-radius:6px;">
+                <option value="">Selecione</option>
+                <c:forEach var="e" items="${estados}">
+                    <option value="${e.id}">${e.nome}</option>
+                </c:forEach>
+            </select>
+
             <label for="observacoes">Observações (opcional)</label>
             <input type="text" id="observacoes" name="observacoes" placeholder="Complemento, referência...">
 
-            <input type="hidden" name="cidadeId" value="1">
 
             <hr style="margin:24px 0; border:none; border-top:1px solid #eee;">
 
@@ -145,10 +155,20 @@
                 <label for="cepCobranca">CEP *</label>
                 <input type="text" id="cepCobranca" name="cepCobranca" placeholder="00000-000" maxlength="9" required pattern="\d{5}-?\d{3}">
 
+                <label for="cidade">Cidade *</label>
+                <input type="text" id="cidadeCobranca" name="cidadeNomeCobranca" placeholder="Sua Cidade" required>
+
+                <label>Estado</label>
+                <select name="estadoIdCobranca" required style="width:100%; padding:12px; margin-bottom:15px; border:1px solid #ccc; border-radius:6px;">
+                    <option value="">Selecione</option>
+                    <c:forEach var="e" items="${estados}">
+                        <option value="${e.id}">${e.nome}</option>
+                    </c:forEach>
+                </select>
+
                 <label for="observacoesCobranca">Observações (opcional)</label>
                 <input type="text" id="observacoesCobranca" name="observacoesCobranca" placeholder="Complemento, referência...">
 
-                <input type="hidden" name="cidadeIdCobranca" value="1">
             </div>
 
             <button type="submit" class="btn" style="width:100%; margin-top:24px;">Cadastrar</button>

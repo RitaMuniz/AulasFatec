@@ -20,9 +20,9 @@
 <header class="navbar">
     <div class="logo">Livraria</div>
     <nav>
-        <a href="index.jsp">Home</a>
-        <a href="livros.html">Livros</a>
-        <a href="carrinho.html">Carrinho</a>
+        <a href="${pageContext.request.contextPath}/view/index.jsp">Home</a>
+        <a href="${pageContext.request.contextPath}/view/livros.html">Livros</a>
+        <a href="${pageContext.request.contextPath}/view/carrinho.html">Carrinho</a>
         <a href="${pageContext.request.contextPath}/logout">Sair</a>
     </nav>
 </header>
@@ -85,7 +85,7 @@
     <div style="display:flex; gap:15px; justify-content:center; flex-wrap:wrap;">
         <a href="${pageContext.request.contextPath}/endereco?action=listar" class="btn">Gerenciar Endereços</a>
         <a href="${pageContext.request.contextPath}/cartao?action=listar" class="btn">Gerenciar Cartões</a>
-        <a href="pedidos.html" class="btn">Meus Pedidos</a>
+        <a href="${pageContext.request.contextPath}/view/pedidos.html" class="btn">Meus Pedidos</a>
     </div>
 
 </div>

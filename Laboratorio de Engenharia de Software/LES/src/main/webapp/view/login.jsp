@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/view/css/style.css">
 </head>
 <body>
 
@@ -42,7 +42,7 @@
     </form>
 
     <p style="margin-top:20px; text-align:center;">
-        Não tem conta? <a href="cadastro.jsp">Criar conta</a>
+        Não tem conta? <a href="${pageContext.request.contextPath}/cliente?action=cadastro">Criar conta</a>
     </p>
 
 </div>

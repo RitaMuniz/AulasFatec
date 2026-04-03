@@ -5,6 +5,9 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import projetoLivraria.dao.CidadeDAO;
+import projetoLivraria.dao.EstadoDAO;
+import projetoLivraria.dao.PaisDAO;
 import projetoLivraria.model.Cliente;
 import projetoLivraria.model.Endereco;
 import projetoLivraria.service.ClienteService;
@@ -15,6 +18,9 @@ import java.util.List;
 public class EnderecoController extends HttpServlet {
 
     private final ClienteService service = new ClienteService();
+    private CidadeDAO cidadeDAO = new CidadeDAO();
+    private EstadoDAO estadoDAO = new EstadoDAO();
+    private PaisDAO paisDAO = new PaisDAO();
 
     private Cliente getClienteLogado(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         HttpSession session = req.getSession(false);
@@ -38,6 +44,8 @@ public class EnderecoController extends HttpServlet {
                 case "listar":
                     List<Endereco> enderecos = service.listarEnderecos(clienteLogado.getId());
                     req.setAttribute("enderecos", enderecos);
+                    req.setAttribute("estados", estadoDAO.listar());
+                    req.setAttribute("paises", paisDAO.listar());
                     req.getRequestDispatcher("/view/enderecos.jsp").forward(req, resp);
                     break;
 
@@ -75,9 +83,17 @@ public class EnderecoController extends HttpServlet {
                     novo.setCep(req.getParameter("cep"));
                     novo.setObservacoes(req.getParameter("observacoes"));
 
-                    String cidadeId = req.getParameter("cidadeId");
-                    if (cidadeId != null && !cidadeId.isEmpty()) {
-                        novo.setCidadeId(Integer.parseInt(cidadeId));
+                    String cidadeNome = req.getParameter("cidadeNome");
+                    String estadoId = req.getParameter("estadoId");
+
+                    if (cidadeNome != null && !cidadeNome.isEmpty() &&
+                            estadoId != null && !estadoId.isEmpty()) {
+                        int cidadeId = cidadeDAO.buscarOuCriar(
+                                cidadeNome,
+                                Integer.parseInt(estadoId)
+                        );
+
+                        novo.setCidadeId(cidadeId);
                     }
 
                     service.adicionarEndereco(novo);
@@ -97,9 +113,17 @@ public class EnderecoController extends HttpServlet {
                     edit.setCep(req.getParameter("cep"));
                     edit.setObservacoes(req.getParameter("observacoes"));
 
-                    String cidadeIdEdit = req.getParameter("cidadeId");
-                    if (cidadeIdEdit != null && !cidadeIdEdit.isEmpty()) {
-                        edit.setCidadeId(Integer.parseInt(cidadeIdEdit));
+                    String cidadeNomeEdit = req.getParameter("cidadeNome");
+                    String estadoIdEdit = req.getParameter("estadoId");
+
+                    if (cidadeNomeEdit != null && !cidadeNomeEdit.isEmpty() &&
+                            estadoIdEdit != null && !estadoIdEdit.isEmpty()) {
+                        int cidadeIdEdit = cidadeDAO.buscarOuCriar(
+                                cidadeNomeEdit,
+                                Integer.parseInt(estadoIdEdit)
+                        );
+
+                        edit.setCidadeId(cidadeIdEdit);
                     }
 
                     service.editarEndereco(edit);
