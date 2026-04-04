@@ -1,4 +1,13 @@
-<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho</title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/view/css/style.css">
+</head>
+<body>
 
 <html>
 <head>
@@ -12,9 +21,11 @@
 
     ```
     <h3>Endereço</h3>
-    <input type="number" name="endereco_id" placeholder="ID do endereço" required>
-
-    <br><br>
+    <select name="enderecoId">
+        <c:forEach var="e" items="${enderecos}">
+            <option value="${e.id}">${e.logradouro}</option>
+        </c:forEach>
+    </select>
 
     <h3>Pagamento</h3>
 

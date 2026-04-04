@@ -12,7 +12,7 @@
     <div class="logo">Livraria</div>
     <nav>
         <a href="index.jsp">Home</a>
-        <a href="livros.html">Livros</a>
+        <a href="livros.jsp">Livros</a>
         <a href="login.jsp">Login</a>
         <a href="carrinho.html">Carrinho</a>
     </nav>
@@ -30,7 +30,12 @@
 
         <div>
 
-            <h2>Clean Code</h2>
+            <h2>${livro.titulo}</h2>
+
+<!--            <form action="carrinho" method="post">-->
+<!--                <input type="hidden" name="livroId" value="${livro.id}">-->
+<!--                <button type="submit">Adicionar ao carrinho</button>-->
+<!--            </form>-->
 
             <p><strong>Código:</strong> LIV005</p>
             <p><strong>ISBN:</strong> 978-0132350884</p>
@@ -55,7 +60,7 @@
 
             <div style="margin-top:20px;">
                 <a href="carrinho.html" class="btn">Adicionar ao Carrinho</a>
-                <a href="livros.html" class="btn" style="margin-left:10px;">Voltar</a>
+                <a href="livros.jsp" class="btn" style="margin-left:10px;">Voltar</a>
             </div>
 
         </div>

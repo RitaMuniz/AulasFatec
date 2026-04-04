@@ -12,7 +12,7 @@
     <div class="logo">Livraria</div>
     <nav>
         <a href="index.jsp">Home</a>
-        <a href="livros.html">Livros</a>
+        <a href="livros.jsp">Livros</a>
         <a href="login.jsp">Login</a>
         <a href="carrinho.html">Carrinho</a>
     </nav>
@@ -66,7 +66,7 @@
 
     <div style="margin-top:40px; display:flex; justify-content:space-between;">
 
-        <a href="livros.html" class="btn">
+        <a href="livros.jsp" class="btn">
             Continuar Comprando
         </a>
 
