@@ -24,7 +24,7 @@
     <aside class="sidebar">
         <h2>Admin</h2>
         <nav>
-            <a href="${pageContext.request.contextPath}/view/admin.html">Dashboard</a>
+            <a href="${pageContext.request.contextPath}/view/admin.jsp">Dashboard</a>
             <a href="${pageContext.request.contextPath}/view/admin-pedidos.html">Pedidos</a>
             <a href="${pageContext.request.contextPath}/view/admin-livros.html">Livros</a>
             <a href="${pageContext.request.contextPath}/view/cliente?action=listar" class="active">Clientes</a>

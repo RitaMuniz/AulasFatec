@@ -1,33 +1,34 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Admin - Dashboard</title>
+    <title>Admin – Dashboard</title>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/view/css/admin.css">
 </head>
-
 <body>
 
 <header class="topbar">
     <h1>Painel Administrativo</h1>
     <div>
-        <a href="index.jsp">Ver Loja</a>
-        <a href="login.jsp">Sair</a>
+        <a href="${pageContext.request.contextPath}/view/index.jsp">Ver Loja</a>
+        <a href="${pageContext.request.contextPath}/logout">Sair</a>
     </div>
 </header>
 
 <div class="layout">
-
     <aside class="sidebar">
         <h2>Admin</h2>
         <nav>
-            <a href="admin.html" class="active">Dashboard</a>
-            <a href="admin-pedidos.html">Pedidos</a>
-            <a href="admin-livros.html">Livros</a>
-            <a href="admin-clientes.jsp">Clientes</a>
-            <a href="admin-devolucoes.html">Devoluções</a>
-            <a href="admin-relatorios.html">Relatórios</a>
+            <a href="${pageContext.request.contextPath}/admin" class="active">Dashboard</a>
+            <a href="${pageContext.request.contextPath}/admin/pedidos">Pedidos</a>
+            <a href="${pageContext.request.contextPath}/view/admin-livros.html">Livros</a>
+            <a href="${pageContext.request.contextPath}/view/admin-clientes.jsp">Clientes</a>
+            <a href="${pageContext.request.contextPath}/view/admin-devolucoes.html">Devoluções</a>
+            <a href="${pageContext.request.contextPath}/view/admin-relatorios.html">Relatórios</a>
         </nav>
     </aside>
 
@@ -36,15 +37,29 @@
         <div class="dashboard">
             <div class="card">
                 <h3>Total de Pedidos</h3>
-                <p>15</p>
+                <p>${pedidos.size()}</p>
             </div>
             <div class="card">
-                <h3>Pedidos Pendentes</h3>
-                <p>4</p>
+                <h3>Em Processamento</h3>
+                <p>
+                    <c:set var="emProcessamento" value="0"/>
+                    <c:forEach var="p" items="${pedidos}">
+                        <c:if test="${p.status == 'EM_PROCESSAMENTO' or p.status == 'SEPARANDO'}">
+                            <c:set var="emProcessamento" value="${emProcessamento + 1}"/>
+                        </c:if>
+                    </c:forEach>
+                    ${emProcessamento}
+                </p>
             </div>
             <div class="card">
-                <h3>Faturamento</h3>
-                <p>R$ 2.450,00</p>
+                <h3>Faturamento Total</h3>
+                <p>
+                    <c:set var="faturamento" value="0"/>
+                    <c:forEach var="p" items="${pedidos}">
+                        <c:set var="faturamento" value="${faturamento + p.total}"/>
+                    </c:forEach>
+                    R$ <fmt:formatNumber value="${faturamento}" minFractionDigits="2" maxFractionDigits="2"/>
+                </p>
             </div>
         </div>
 
@@ -62,35 +77,24 @@
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>#0001</td>
-                <td>Maria Silva</td>
-                <td>22/02/2026</td>
-                <td>R$ 189,90</td>
-                <td>Enviado</td>
-                <td>
-                    <a href="admin-pedido-detalhe.html" class="btn-link">Ver Pedido</a>
-                </td>
-            </tr>
-            <tr>
-                <td>#0002</td>
-                <td>João Souza</td>
-                <td>21/02/2026</td>
-                <td>R$ 79,90</td>
-                <td>Separando</td>
-                <td>
-                    <a href="admin-pedido-detalhe.html" class="btn-link">Ver Pedido</a>
-                </td>
-            </tr>
+            <c:forEach var="p" items="${pedidos}" end="9">
+                <tr>
+                    <td>#<fmt:formatNumber value="${p.id}" minIntegerDigits="4"/></td>
+                    <td>${not empty p.cliente ? p.cliente.nome : '—'}</td>
+                    <td><fmt:formatDate value="${p.dataCriacao}" pattern="dd/MM/yyyy"/></td>
+                    <td>R$ <fmt:formatNumber value="${p.total}" minFractionDigits="2" maxFractionDigits="2"/></td>
+                    <td>${p.status}</td>
+                    <td>
+                        <a href="${pageContext.request.contextPath}/admin/pedidos?id=${p.id}" class="btn-link">Ver Pedido</a>
+                    </td>
+                </tr>
+            </c:forEach>
             </tbody>
         </table>
 
     </main>
 </div>
 
-<footer>
-    Área Administrativa - Livraria © 2026
-</footer>
-
+<footer>Área Administrativa – Livraria © 2026</footer>
 </body>
 </html>
