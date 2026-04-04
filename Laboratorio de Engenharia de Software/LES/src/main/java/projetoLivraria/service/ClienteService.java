@@ -36,8 +36,8 @@ public class ClienteService {
     private List<ValidacaoCliente> strategiesEdicao() {
         return List.of(
                 new NomeValidacao(),
-                new SenhaValidacao(),   // só valida se senha vier preenchida
-                emailUnicoValidacao     // rejeita se e-mail já pertencer a outro cliente
+                new SenhaValidacao(),
+                emailUnicoValidacao
         );
     }
 
@@ -49,7 +49,6 @@ public class ClienteService {
         try {
             conn.setAutoCommit(false);
 
-            // Executa todas as strategies de cadastro
             executarValidacoes(strategiesCadastro(), conn, -1,
                     cliente, telefone, enderecoEntrega, enderecoCobranca);
 

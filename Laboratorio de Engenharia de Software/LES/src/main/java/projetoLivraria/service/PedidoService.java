@@ -30,14 +30,13 @@ public class PedidoService {
         List<ItemCarrinho> itens = carrinho.getItens();
         if (itens == null || itens.isEmpty()) {
             throw new Exception("Carrinho vazio.");
-        } // Subtotal
+        }
         BigDecimal subtotal = itens.stream()
                 .map(ItemCarrinho::getSubtotal)
                 .reduce(BigDecimal.ZERO, BigDecimal::add);
 
         BigDecimal totalBruto = subtotal.add(frete);
 
-        // Cupom
         BigDecimal desconto = BigDecimal.ZERO;
         if (cupom != null && cupom.getValor() != null) {
             desconto = cupom.getValor().min(totalBruto).setScale(2, RoundingMode.HALF_UP);
@@ -45,7 +44,6 @@ public class PedidoService {
 
         BigDecimal total = totalBruto.subtract(desconto).setScale(2, RoundingMode.HALF_UP);
 
-        // Validação cartões
         BigDecimal somaCartoes = BigDecimal.ZERO;
         if (valorCartao1 != null) somaCartoes = somaCartoes.add(valorCartao1);
         if (valorCartao2 != null) somaCartoes = somaCartoes.add(valorCartao2);
@@ -116,7 +114,6 @@ public class PedidoService {
                 pagamentoDAO.inserir(pag2, con);
             }
 
-            // 6. Finaliza carrinho
             carrinhoDAO.atualizarStatus(carrinho.getId(), "FINALIZADO", con);
 
             con.commit();
