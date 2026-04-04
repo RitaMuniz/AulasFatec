@@ -85,7 +85,7 @@
     <div style="display:flex; gap:15px; justify-content:center; flex-wrap:wrap;">
         <a href="${pageContext.request.contextPath}/endereco?action=listar" class="btn">Gerenciar Endereços</a>
         <a href="${pageContext.request.contextPath}/cartao?action=listar" class="btn">Gerenciar Cartões</a>
-        <a href="${pageContext.request.contextPath}/view/pedidos.html" class="btn">Meus Pedidos</a>
+        <a href="${pageContext.request.contextPath}/pedidos" class="btn">Meus Pedidos</a>
     </div>
 
 </div>

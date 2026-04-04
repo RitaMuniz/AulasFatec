@@ -96,6 +96,15 @@
         <url-pattern>/carrinho</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>PedidosController</servlet-name>
+        <servlet-class>projetoLivraria.controller.PedidosController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PedidosController</servlet-name>
+        <url-pattern>/pedidos</url-pattern>
+    </servlet-mapping>
+
 
     <welcome-file-list>
         <welcome-file>/view/index.jsp</welcome-file>
