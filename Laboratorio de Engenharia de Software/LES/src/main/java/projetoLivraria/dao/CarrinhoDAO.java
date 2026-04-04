@@ -72,8 +72,6 @@ public class CarrinhoDAO {
         }
     }
 
-    // ---- itens ----
-
     public void inserirItem(ItemCarrinho item, Connection con) throws SQLException {
         String sql = """
             INSERT INTO Item_carrinho (carrinho_id, livro_id, quantidade, preco_unitario, subtotal, status)
@@ -164,7 +162,7 @@ public class CarrinhoDAO {
         l.setId(rs.getInt("livro_id"));
         l.setTitulo(rs.getString("titulo"));
         l.setAutor(rs.getString("autor"));
-        l.setPrecoVenda(rs.getBigDecimal("preco_unitario")); // já vem do item
+        l.setPrecoVenda(rs.getBigDecimal("preco_unitario"));
         ic.setLivro(l);
 
         return ic;
