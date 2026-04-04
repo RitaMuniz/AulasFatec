@@ -12,7 +12,7 @@
 <header class="topbar">
     <h1>Detalhe do Pedido #0001</h1>
     <div>
-        <a href="admin-pedidos.html">Voltar</a>
+        <a href="admin-pedidos.jsp">Voltar</a>
         <a href="login.jsp">Sair</a>
     </div>
 </header>
@@ -22,8 +22,8 @@
     <aside class="sidebar">
         <h2>Admin</h2>
         <nav>
-            <a href="admin.html">Dashboard</a>
-            <a href="admin-pedidos.html" class="active">Pedidos</a>
+            <a href="admin.jsp">Dashboard</a>
+            <a href="admin-pedidos.jsp" class="active">Pedidos</a>
             <a href="admin-livros.html">Livros</a>
             <a href="admin-clientes.jsp">Clientes</a>
             <a href="admin-devolucoes.html">Devoluções</a>
