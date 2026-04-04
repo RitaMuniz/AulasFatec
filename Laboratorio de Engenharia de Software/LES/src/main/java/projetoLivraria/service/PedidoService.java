@@ -15,7 +15,6 @@ public class PedidoService {
     private final ItemPedidoDAO itemPedidoDAO = new ItemPedidoDAO();
     private final PagamentoDAO pagamentoDAO = new PagamentoDAO();
     private final CupomDAO cupomDAO = new CupomDAO();
-    private final CarrinhoDAO carrinhoDAO = new CarrinhoDAO();
 
     public int finalizarCompra(
             int clienteId,
@@ -113,8 +112,6 @@ public class PedidoService {
                 pag2.setValor(valorCartao2);
                 pagamentoDAO.inserir(pag2, con);
             }
-
-            carrinhoDAO.atualizarStatus(carrinho.getId(), "FINALIZADO", con);
 
             con.commit();
             return pedidoId;
