@@ -6,8 +6,8 @@ public class Cupom {
     private int id;
     private String codigo;
     private BigDecimal valor;
-    private String tipo;   // "CUPOM TROCA" ou "CUPOM PROMOCIONAL"
-    private String status; // "disponivel", "usado"
+    private String tipo;
+    private String status;
     private int clienteId;
 
     public Cupom() {}

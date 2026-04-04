@@ -11,7 +11,7 @@ public class ItemPedido {
     private Integer quantidade;
     private BigDecimal precoUnitario;
     private BigDecimal subtotal;
-    private String statusTroca; // SEM TROCA, EM TROCA, TROCA AUTORIZADA, TROCADO
+    private String statusTroca;
 
     public ItemPedido() {
     }

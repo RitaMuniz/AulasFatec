@@ -12,7 +12,7 @@ public class Endereco {
     private String cep;
     private int cidadeId;
     private String observacoes;
-    private String tipoEndereco; // "ENTREGA" ou "COBRANCA"
+    private String tipoEndereco;
 
     public int getId() {
         return id;

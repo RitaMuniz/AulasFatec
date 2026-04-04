@@ -6,7 +6,7 @@ public class Pagamento {
 
     private int id;
     private int pedidoId;
-    private String tipo; // CARTAO, CUPOM TROCA, CUPOM PROMOCIONAL, PIX, BOLETO
+    private String tipo;
     private BigDecimal valor;
     private Integer cartaoId;
     private Cartao cartao;

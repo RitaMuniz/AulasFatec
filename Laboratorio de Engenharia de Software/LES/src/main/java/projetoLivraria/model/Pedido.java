@@ -19,7 +19,7 @@ public class Pedido {
     private BigDecimal frete;
     private BigDecimal desconto;
     private BigDecimal total;
-    private String status; // EM PROCESSAMENTO, APROVADA, REPROVADA, EM TRANSPORTE, ENTREGUE, EM TROCA, TROCADO
+    private String status;
     private Timestamp dataCriacao;
     private Timestamp dataAtualizacao;
 
