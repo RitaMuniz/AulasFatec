@@ -21,8 +21,8 @@
     <div class="logo">Livraria</div>
     <nav>
         <a href="${pageContext.request.contextPath}/view/index.jsp">Home</a>
-        <a href="${pageContext.request.contextPath}/view/livros.html">Livros</a>
-        <a href="${pageContext.request.contextPath}/view/carrinho.html">Carrinho</a>
+        <a href="${pageContext.request.contextPath}/livros">Livros</a>
+        <a href="${pageContext.request.contextPath}/view/carrinho.jsp">Carrinho</a>
         <a href="${pageContext.request.contextPath}/logout">Sair</a>
     </nav>
 </header>

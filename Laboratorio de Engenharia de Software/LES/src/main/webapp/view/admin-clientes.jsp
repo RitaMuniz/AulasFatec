@@ -24,12 +24,12 @@
     <aside class="sidebar">
         <h2>Admin</h2>
         <nav>
-            <a href="admin.html">Dashboard</a>
-            <a href="admin-pedidos.html">Pedidos</a>
-            <a href="admin-livros.html">Livros</a>
-            <a href="${pageContext.request.contextPath}/cliente?action=listar" class="active">Clientes</a>
-            <a href="admin-devolucoes.html">Devoluções</a>
-            <a href="admin-relatorios.html">Relatórios</a>
+            <a href="${pageContext.request.contextPath}/view/admin.html">Dashboard</a>
+            <a href="${pageContext.request.contextPath}/view/admin-pedidos.html">Pedidos</a>
+            <a href="${pageContext.request.contextPath}/view/admin-livros.html">Livros</a>
+            <a href="${pageContext.request.contextPath}/view/cliente?action=listar" class="active">Clientes</a>
+            <a href="${pageContext.request.contextPath}/view/admin-devolucoes.html">Devoluções</a>
+            <a href="${pageContext.request.contextPath}/view/admin-relatorios.html">Relatórios</a>
         </nav>
     </aside>
 

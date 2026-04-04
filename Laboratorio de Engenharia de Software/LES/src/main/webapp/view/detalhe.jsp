@@ -1,77 +1,95 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalhes do Livro</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>${livro.titulo} – Livraria</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/view/css/style.css">
 </head>
 <body>
 
-<header class="navbar">
-    <div class="logo">Livraria</div>
-    <nav>
-        <a href="index.jsp">Home</a>
-        <a href="livros.jsp">Livros</a>
-        <a href="login.jsp">Login</a>
-        <a href="carrinho.html">Carrinho</a>
-    </nav>
+<header>
+    <h1>Livraria</h1>
+    <div>
+        <a href="${pageContext.request.contextPath}/view/index.jsp">Início</a>
+        <a href="${pageContext.request.contextPath}/livros">Livros</a>
+        <c:choose>
+            <c:when test="${not empty sessionScope.clienteLogado}">
+                <a href="${pageContext.request.contextPath}/view/cliente.jsp">${sessionScope.cliente.nome}</a>
+                <a href="${pageContext.request.contextPath}/logout">Sair</a>
+            </c:when>
+            <c:otherwise>
+                <a href="${pageContext.request.contextPath}/view/login.jsp">Login</a>
+            </c:otherwise>
+        </c:choose>
+        <a href="${pageContext.request.contextPath}/carrinho">
+            Carrinho
+            <c:if test="${not empty sessionScope.carrinho and sessionScope.carrinho.totalItens > 0}">
+                (${sessionScope.carrinho.totalItens})
+            </c:if>
+        </a>
+    </div>
 </header>
 
-<main class="container">
+<div class="container">
 
-    <div class="grid" style="align-items:start; gap:50px;">
+    <c:if test="${empty livro}">
+        <p>Livro não encontrado. <a href="${pageContext.request.contextPath}/livros">Voltar ao catálogo</a></p>
+    </c:if>
 
+    <c:if test="${not empty livro}">
+        <div class="grid" style="align-items:start; gap:50px;">
 
-        <div>
-            <img src="https://m.media-amazon.com/images/I/81Rnac2Fq+L._SY342_.jpg" alt="Clean Code">
-        </div>
+            <div>
+                <h2>${livro.titulo}</h2>
+                <p><strong>Autor:</strong> ${livro.autor}</p>
+                <p><strong>Editora:</strong> ${livro.editora}</p>
+                <c:if test="${not empty livro.isbn}">
+                    <p><strong>ISBN:</strong> ${livro.isbn}</p>
+                </c:if>
+                <c:if test="${not empty livro.ano}">
+                    <p><strong>Ano:</strong> ${livro.ano}</p>
+                </c:if>
+                <c:if test="${not empty livro.numeroPaginas}">
+                    <p><strong>Páginas:</strong> ${livro.numeroPaginas}</p>
+                </c:if>
 
+                <c:choose>
+                    <c:when test="${livro.estoque > 0}">
+                        <p style="color:green;"><strong>Disponível:</strong> ${livro.estoque} unidades</p>
+                    </c:when>
+                    <c:otherwise>
+                        <p style="color:red;"><strong>Produto indisponível</strong></p>
+                    </c:otherwise>
+                </c:choose>
 
-        <div>
+                <c:if test="${not empty livro.precoVenda}">
+                    <p class="preco">R$ <fmt:formatNumber value="${livro.precoVenda}" minFractionDigits="2" maxFractionDigits="2"/></p>
+                </c:if>
 
-            <h2>${livro.titulo}</h2>
+                <c:if test="${not empty livro.sinopse}">
+                    <p style="margin-top:15px;">${livro.sinopse}</p>
+                </c:if>
 
-<!--            <form action="carrinho" method="post">-->
-<!--                <input type="hidden" name="livroId" value="${livro.id}">-->
-<!--                <button type="submit">Adicionar ao carrinho</button>-->
-<!--            </form>-->
+                <c:if test="${livro.estoque > 0}">
+                    <form action="${pageContext.request.contextPath}/carrinho" method="post" style="margin-top:20px;">
+                        <input type="hidden" name="livroId" value="${livro.id}">
+                        <button type="submit" class="btn">Adicionar ao Carrinho</button>
+                    </form>
+                </c:if>
 
-            <p><strong>Código:</strong> LIV005</p>
-            <p><strong>ISBN:</strong> 978-0132350884</p>
-            <p><strong>Autor:</strong> Robert C. Martin</p>
-            <p><strong>Categoria:</strong> Programação</p>
-
-            <p style="color:green;"><strong>Disponível:</strong> 8 unidades</p>
-
-            <p class="preco">R$ 79,90</p>
-
-            <p>
-                Um guia essencial sobre boas práticas de programação,
-                código limpo e desenvolvimento profissional. A obra apresenta
-                princípios fundamentais para escrever software sustentável,
-                legível e de alta qualidade.
-            </p>
-
-            <div style="margin-top:20px;">
-                <label><strong>Quantidade:</strong></label><br>
-                <input type="number" value="1" min="1" style="width:80px; padding:8px; margin:10px 0;">
+                <a href="${pageContext.request.contextPath}/livros" class="btn" style="margin-top:10px; display:inline-block;">Voltar</a>
             </div>
 
-            <div style="margin-top:20px;">
-                <a href="carrinho.html" class="btn">Adicionar ao Carrinho</a>
-                <a href="livros.jsp" class="btn" style="margin-left:10px;">Voltar</a>
-            </div>
-
         </div>
+    </c:if>
 
-    </div>
+</div>
 
-</main>
-
-<footer>
-    © 2026 Livraria
-</footer>
-
+<footer>© 2026 Livraria</footer>
 </body>
 </html>

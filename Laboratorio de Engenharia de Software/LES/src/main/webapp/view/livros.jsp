@@ -1,113 +1,68 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Livros</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Livros – Livraria</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/view/css/style.css">
 </head>
 <body>
 
-<header class="navbar">
-    <div class="logo">Livraria</div>
-    <nav>
-        <a href="index.jsp">Home</a>
-        <a href="livros.html">Livros</a>
-        <a href="login.jsp">Login</a>
-        <a href="carrinho.html">Carrinho</a>
-    </nav>
+<header>
+    <h1>Livraria</h1>
+    <div>
+        <a href="${pageContext.request.contextPath}/view/index.jsp">Início</a>
+        <a href="${pageContext.request.contextPath}/livros">Livros</a>
+        <c:choose>
+            <c:when test="${not empty sessionScope.clienteLogado}">
+                <a href="${pageContext.request.contextPath}/view/cliente.jsp">${sessionScope.cliente.nome}</a>
+                <a href="${pageContext.request.contextPath}/logout">Sair</a>
+            </c:when>
+            <c:otherwise>
+                <a href="${pageContext.request.contextPath}/view/login.jsp">Login</a>
+            </c:otherwise>
+        </c:choose>
+        <a href="${pageContext.request.contextPath}/carrinho">
+            Carrinho
+            <c:if test="${not empty sessionScope.carrinho and sessionScope.carrinho.totalItens > 0}">
+                (${sessionScope.carrinho.totalItens})
+            </c:if>
+        </a>
+    </div>
 </header>
 
-<main class="container">
+<div class="container">
+    <h2>Catálogo</h2>
 
-    <!-- FILTRO -->
-    <section style="margin-bottom:60px;">
-        <h2 style="margin-bottom:20px;">Filtrar Livros</h2>
-
-        <div class="grid">
-            <input type="text" placeholder="Buscar por título">
-
-            <select>
-                <option>Categoria</option>
-                <option>Tecnologia</option>
-                <option>Arquitetura</option>
-                <option>Design</option>
-            </select>
-
-            <a href="#" class="btn">Buscar</a>
-        </div>
-    </section>
-
-    <!-- CATÁLOGO -->
-    <h2 style="margin-bottom:30px;">Catálogo Completo</h2>
+    <c:if test="${empty livros}">
+        <p>Nenhum livro disponível no momento.</p>
+    </c:if>
 
     <div class="grid">
-
-        <!-- Livro 1 -->
-        <div class="card">
-            <img src="https://via.placeholder.com/200x250" alt="Arquitetura Limpa">
-
-            <h3>Arquitetura Limpa</h3>
-
-            <p style="font-size:14px; margin-top:5px;">
-                Código: LIV003
-            </p>
-
-            <p style="font-size:14px;">
-                Categoria: Arquitetura
-            </p>
-
-            <p style="font-size:14px; color:green;">
-                Disponível: 10 unidades
-            </p>
-
-            <p class="preco">R$ 89,90</p>
-
-            <div style="margin-top:10px;">
-                <a href="detalhe.html" class="btn">Ver Detalhes</a>
+        <c:forEach var="l" items="${livros}">
+            <div class="card">
+                <h3>${l.titulo}</h3>
+                <p><strong>Autor:</strong> ${l.autor}</p>
+                <p><strong>Editora:</strong> ${l.editora}</p>
+                <c:if test="${l.estoque > 0}">
+                    <p style="color:green;"><strong>Disponível:</strong> ${l.estoque} un.</p>
+                </c:if>
+                <c:if test="${l.estoque <= 0}">
+                    <p style="color:red;"><strong>Indisponível</strong></p>
+                </c:if>
+                <c:if test="${not empty l.precoVenda}">
+                    <p class="preco">R$ <fmt:formatNumber value="${l.precoVenda}" minFractionDigits="2" maxFractionDigits="2"/></p>
+                </c:if>
+                <a href="${pageContext.request.contextPath}/livro?id=${l.id}" class="btn">Ver Detalhes</a>
             </div>
-
-            <div style="margin-top:10px;">
-                <a href="carrinho.html" class="btn">Adicionar ao Carrinho</a>
-            </div>
-        </div>
-
-        <!-- Livro 2 -->
-        <div class="card">
-            <img src="https://via.placeholder.com/200x250" alt="Design Patterns">
-
-            <h3>Design Patterns</h3>
-
-            <p style="font-size:14px; margin-top:5px;">
-                Código: LIV004
-            </p>
-
-            <p style="font-size:14px;">
-                Categoria: Tecnologia
-            </p>
-
-            <p style="font-size:14px; color:green;">
-                Disponível: 6 unidades
-            </p>
-
-            <p class="preco">R$ 119,90</p>
-
-            <div style="margin-top:10px;">
-                <a href="detalhe.html" class="btn">Ver Detalhes</a>
-            </div>
-
-            <div style="margin-top:10px;">
-                <a href="carrinho.html" class="btn">Adicionar ao Carrinho</a>
-            </div>
-        </div>
-
+        </c:forEach>
     </div>
+</div>
 
-</main>
-
-<footer>
-    © 2026 Livraria
-</footer>
-
+<footer>© 2026 Livraria</footer>
 </body>
 </html>

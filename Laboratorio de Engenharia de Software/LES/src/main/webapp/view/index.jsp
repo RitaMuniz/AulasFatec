@@ -12,9 +12,9 @@
 <header class="navbar">
     <div class="logo">Livraria</div>
     <nav>
-        <a href="index.jsp">Home</a>
-        <a href="livros.html">Livros</a>
-        <a href="carrinho.html">Carrinho</a>
+        <a href="${pageContext.request.contextPath}/view/index.jsp">Home</a>
+        <a href="${pageContext.request.contextPath}/livros">Livros</a>
+        <a href="${pageContext.request.contextPath}/view/carrinho.jsp">Carrinho</a>
         <% if (session.getAttribute("clienteLogado") != null) { %>
             <a href="${pageContext.request.contextPath}/cliente?action=buscar">Meu Perfil</a>
             <a href="${pageContext.request.contextPath}/logout">Sair</a>
