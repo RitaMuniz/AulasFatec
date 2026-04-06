@@ -15,6 +15,7 @@ public class PedidoService {
     private final ItemPedidoDAO itemPedidoDAO = new ItemPedidoDAO();
     private final PagamentoDAO pagamentoDAO = new PagamentoDAO();
     private final CupomDAO cupomDAO = new CupomDAO();
+    private final EstoqueDAO estoqueDAO = new EstoqueDAO();
 
     public int finalizarCompra(
             int clienteId,
@@ -30,6 +31,7 @@ public class PedidoService {
         if (itens == null || itens.isEmpty()) {
             throw new Exception("Carrinho vazio.");
         }
+
         BigDecimal subtotal = itens.stream()
                 .map(ItemCarrinho::getSubtotal)
                 .reduce(BigDecimal.ZERO, BigDecimal::add);
@@ -55,8 +57,17 @@ public class PedidoService {
         con.setAutoCommit(false);
 
         try {
+            // 1. Validar estoque de todos os itens antes de qualquer insert
+            for (ItemCarrinho ic : itens) {
+                int disponivel = estoqueDAO.buscarQuantidade(ic.getLivroId(), con);
+                if (ic.getQuantidade() > disponivel) {
+                    throw new Exception("Estoque insuficiente para o livro \"" +
+                            ic.getLivro().getTitulo() + "\". Disponível: " + disponivel +
+                            ", solicitado: " + ic.getQuantidade());
+                }
+            }
 
-            // 1. Pedido
+            // 2. Pedido
             Pedido pedido = new Pedido();
             pedido.setClienteId(clienteId);
             pedido.setEnderecoEntregaId(enderecoId);
@@ -68,9 +79,8 @@ public class PedidoService {
 
             int pedidoId = pedidoDAO.inserir(pedido, con);
 
-            // 2. Itens + estoque
+            // 3. Itens + decremento de estoque
             for (ItemCarrinho ic : itens) {
-
                 ItemPedido item = new ItemPedido();
                 item.setPedidoId(pedidoId);
                 item.setLivroId(ic.getLivroId());
@@ -78,9 +88,10 @@ public class PedidoService {
                 item.setPrecoUnitario(ic.getPrecoUnitario());
 
                 itemPedidoDAO.inserir(item, con);
+                estoqueDAO.decrementar(ic.getLivroId(), ic.getQuantidade(), con);
             }
 
-            // 3. Cupom
+            // 4. Cupom
             if (cupom != null && desconto.compareTo(BigDecimal.ZERO) > 0) {
                 Pagamento pagCupom = new Pagamento();
                 pagCupom.setPedidoId(pedidoId);
@@ -92,7 +103,7 @@ public class PedidoService {
                 cupomDAO.marcarComoUsado(cupom.getId(), con);
             }
 
-            // 4. Cartão 1
+            // 5. Cartão 1
             if (cartao1Id != null && valorCartao1 != null && valorCartao1.compareTo(BigDecimal.ZERO) > 0) {
                 Pagamento pag1 = new Pagamento();
                 pag1.setPedidoId(pedidoId);
@@ -101,15 +112,18 @@ public class PedidoService {
                 pag1.setTipo("CARTAO");
                 pag1.setParcelas(1);
                 pag1.setStatus("APROVADO");
-
                 pagamentoDAO.inserir(pag1, con);
             }
-            // 5. Cartão 2
+
+            // 6. Cartão 2
             if (cartao2Id != null && valorCartao2 != null && valorCartao2.compareTo(BigDecimal.ZERO) > 0) {
                 Pagamento pag2 = new Pagamento();
                 pag2.setPedidoId(pedidoId);
                 pag2.setCartaoId(cartao2Id);
                 pag2.setValor(valorCartao2);
+                pag2.setTipo("CARTAO");
+                pag2.setParcelas(1);
+                pag2.setStatus("APROVADO");
                 pagamentoDAO.inserir(pag2, con);
             }
 
@@ -119,6 +133,8 @@ public class PedidoService {
         } catch (Exception e) {
             con.rollback();
             throw e;
+        } finally {
+            con.close();
         }
     }
 }

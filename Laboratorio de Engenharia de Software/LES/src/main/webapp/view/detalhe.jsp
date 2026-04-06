@@ -18,7 +18,7 @@
         <a href="${pageContext.request.contextPath}/view/index.jsp">Início</a>
         <a href="${pageContext.request.contextPath}/livros">Livros</a>
         <c:choose>
-            <c:when test="${not empty sessionScope.clienteLogado}">
+            <c:when test="${not empty sessionScope.cliente}">
                 <a href="${pageContext.request.contextPath}/view/cliente.jsp">${sessionScope.cliente.nome}</a>
                 <a href="${pageContext.request.contextPath}/logout">Sair</a>
             </c:when>
@@ -43,6 +43,12 @@
 
     <c:if test="${not empty livro}">
         <div class="grid" style="align-items:start; gap:50px;">
+
+            <div>
+                <c:if test="${not empty livro.imagemUrl}">
+                    <img src="${livro.imagemUrl}" alt="${livro.titulo}" style="width:100%; max-width:280px; border-radius:6px; box-shadow:0 2px 8px rgba(0,0,0,0.15);">
+                </c:if>
+            </div>
 
             <div>
                 <h2>${livro.titulo}</h2>
@@ -78,6 +84,12 @@
                 <c:if test="${livro.estoque > 0}">
                     <form action="${pageContext.request.contextPath}/carrinho" method="post" style="margin-top:20px;">
                         <input type="hidden" name="livroId" value="${livro.id}">
+                        <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px;">
+                            <label><strong>Quantidade:</strong></label>
+                            <input type="number" name="quantidade" value="1" min="1" max="${livro.estoque}"
+                                   style="width:70px; padding:8px; border:1px solid #ccc; border-radius:4px;">
+                            <small style="color:#888;">máx. ${livro.estoque}</small>
+                        </div>
                         <button type="submit" class="btn">Adicionar ao Carrinho</button>
                     </form>
                 </c:if>

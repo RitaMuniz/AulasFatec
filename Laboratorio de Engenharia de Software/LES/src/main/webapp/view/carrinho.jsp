@@ -63,7 +63,15 @@
                                 R$ <fmt:formatNumber value="${item.precoUnitario}" minFractionDigits="2" maxFractionDigits="2"/>
                             </td>
                             <td style="padding:12px; border-bottom:1px solid #eee; text-align:center;">
-                                ${item.quantidade}
+                                <form action="${pageContext.request.contextPath}/carrinho" method="post"
+                                      style="display:flex; align-items:center; justify-content:center; gap:6px;">
+                                    <input type="hidden" name="livroId" value="${item.livroId}">
+                                    <input type="hidden" name="acao" value="atualizar">
+                                    <input type="number" name="quantidade" value="${item.quantidade}" min="1"
+                                           max="${item.livro.estoque}"
+                                           style="width:60px; padding:6px; border:1px solid #ccc; border-radius:4px; text-align:center;">
+                                    <button type="submit" class="btn" style="font-size:12px; padding:6px 10px;">✓</button>
+                                </form>
                             </td>
                             <td style="padding:12px; border-bottom:1px solid #eee; text-align:center;">
                                 R$ <fmt:formatNumber value="${item.subtotal}" minFractionDigits="2" maxFractionDigits="2"/>

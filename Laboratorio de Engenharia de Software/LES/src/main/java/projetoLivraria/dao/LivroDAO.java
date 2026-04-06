@@ -59,13 +59,15 @@ public class LivroDAO {
         l.setCodigoBarras(rs.getString("codigo_barras"));
         l.setStatus(rs.getString("status"));
         l.setEstoque(rs.getObject("estoque_qtd") != null ? rs.getInt("estoque_qtd") : 0);
+        l.setImagemUrl(rs.getString("imagem_url"));
 
+        // preço de custo e venda calculada pela margem
         java.math.BigDecimal custo = rs.getBigDecimal("preco_custo");
         l.setPrecoCusto(custo);
         if (custo != null) {
             double margem = rs.getDouble("margem_lucro");
             java.math.BigDecimal venda = custo.multiply(
-                    java.math.BigDecimal.valueOf(1 + margem)
+                    java.math.BigDecimal.valueOf(1 + margem / 100)
             ).setScale(2, java.math.RoundingMode.HALF_UP);
             l.setPrecoVenda(venda);
         }

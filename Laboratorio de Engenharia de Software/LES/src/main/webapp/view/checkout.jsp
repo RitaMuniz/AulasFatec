@@ -80,7 +80,7 @@
 
                 <c:if test="${empty cartoes}">
                     <p>Você não tem cartões cadastrados.
-                       <a href="${pageContext.request.contextPath}/view/cartoes.jsp">Cadastrar cartão</a>
+                       <a href="${pageContext.request.contextPath}/cartao?action=listar">Cadastrar cartão</a>
                     </p>
                 </c:if>
 

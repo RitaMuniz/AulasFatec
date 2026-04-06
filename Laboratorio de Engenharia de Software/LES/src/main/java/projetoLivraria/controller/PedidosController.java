@@ -49,7 +49,6 @@ public class PedidosController extends HttpServlet {
             } else {
                 // lista todos os pedidos do cliente
                 List<Pedido> pedidos = pedidoDAO.listarPorCliente(cliente.getId());
-                System.out.println("Pedidos encontrados: " + pedidos.size() + " para cliente id: " + cliente.getId());
                 req.setAttribute("pedidos", pedidos);
                 req.getRequestDispatcher("/view/pedidos.jsp").forward(req, resp);
             }

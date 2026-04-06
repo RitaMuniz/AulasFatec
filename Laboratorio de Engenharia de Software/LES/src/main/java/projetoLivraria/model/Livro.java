@@ -24,6 +24,7 @@ public class Livro {
     private BigDecimal precoVenda;
     private Integer estoque;
     private String status;
+    private String imagemUrl;
 
     public Livro() {
     }
@@ -205,5 +206,13 @@ public class Livro {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public String getImagemUrl() {
+        return imagemUrl;
+    }
+
+    public void setImagemUrl(String imagemUrl) {
+        this.imagemUrl = imagemUrl;
     }
 }

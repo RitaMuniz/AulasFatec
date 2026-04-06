@@ -18,7 +18,7 @@
         <a href="${pageContext.request.contextPath}/view/index.jsp">Início</a>
         <a href="${pageContext.request.contextPath}/livros">Livros</a>
         <c:choose>
-            <c:when test="${not empty sessionScope.clienteLogado}">
+            <c:when test="${not empty sessionScope.cliente}">
                 <a href="${pageContext.request.contextPath}/view/cliente.jsp">${sessionScope.cliente.nome}</a>
                 <a href="${pageContext.request.contextPath}/logout">Sair</a>
             </c:when>
@@ -45,6 +45,9 @@
     <div class="grid">
         <c:forEach var="l" items="${livros}">
             <div class="card">
+                <c:if test="${not empty l.imagemUrl}">
+                    <img src="${l.imagemUrl}" alt="${l.titulo}" style="width:100%; height:200px; object-fit:cover; border-radius:4px; margin-bottom:10px;">
+                </c:if>
                 <h3>${l.titulo}</h3>
                 <p><strong>Autor:</strong> ${l.autor}</p>
                 <p><strong>Editora:</strong> ${l.editora}</p>

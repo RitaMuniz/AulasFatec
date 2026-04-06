@@ -23,26 +23,47 @@ public class Carrinho {
     public Carrinho() {}
 
     /**
-     * Adiciona um livro ao carrinho (sessão).
-     * Se o livro já existir, incrementa a quantidade.
+     * Adiciona um livro ao carrinho com quantidade especificada.
+     * Se o livro já existir, soma a quantidade (respeitando o estoque).
      */
-    public void adicionarItem(Livro livro) {
+    public void adicionarItem(Livro livro, int quantidade) {
+        int estoqueMax = livro.getEstoque() != null ? livro.getEstoque() : 0;
         for (ItemCarrinho item : itens) {
             if (item.getLivroId() == livro.getId()) {
-                item.setQuantidade(item.getQuantidade() + 1);
-                item.setSubtotal(livro.getPrecoVenda().multiply(BigDecimal.valueOf(item.getQuantidade())));
+                int novaQtd = Math.min(item.getQuantidade() + quantidade, estoqueMax);
+                item.setQuantidade(novaQtd);
+                item.setSubtotal(livro.getPrecoVenda().multiply(BigDecimal.valueOf(novaQtd)));
                 recalcularTotais();
                 return;
             }
         }
+        quantidade = Math.min(quantidade, estoqueMax);
+        if (quantidade < 1) return;
         ItemCarrinho novo = new ItemCarrinho();
         novo.setLivroId(livro.getId());
         novo.setLivro(livro);
-        novo.setQuantidade(1);
+        novo.setQuantidade(quantidade);
         novo.setPrecoUnitario(livro.getPrecoVenda());
-        novo.setSubtotal(livro.getPrecoVenda());
+        novo.setSubtotal(livro.getPrecoVenda().multiply(BigDecimal.valueOf(quantidade)));
         itens.add(novo);
         recalcularTotais();
+    }
+
+    /** Mantido por compatibilidade — adiciona 1 unidade */
+    public void adicionarItem(Livro livro) {
+        adicionarItem(livro, 1);
+    }
+
+    /** Atualiza a quantidade de um item já no carrinho */
+    public void atualizarQuantidade(int livroId, int quantidade) {
+        for (ItemCarrinho item : itens) {
+            if (item.getLivroId() == livroId) {
+                item.setQuantidade(quantidade);
+                item.setSubtotal(item.getPrecoUnitario().multiply(BigDecimal.valueOf(quantidade)));
+                recalcularTotais();
+                return;
+            }
+        }
     }
 
     public void removerItem(int livroId) {

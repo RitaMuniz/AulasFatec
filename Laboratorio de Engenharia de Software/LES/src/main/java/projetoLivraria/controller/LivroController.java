@@ -23,7 +23,6 @@ public class LivroController extends HttpServlet {
             if (path.equals("/livros")) {
 
                 List<Livro> livros = livroDAO.listarTodos();
-                System.out.println("Livros encontrados: " + livros.size());
                 req.setAttribute("livros", livros);
                 req.getRequestDispatcher("/view/livros.jsp").forward(req, resp);
 
