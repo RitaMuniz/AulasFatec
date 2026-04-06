@@ -39,6 +39,12 @@ public class EnderecoController extends HttpServlet {
         String action = req.getParameter("action");
         if (action == null) action = "listar";
 
+        // guarda origem na sessão para redirecionar corretamente após salvar
+        String origem = req.getParameter("origem");
+        if (origem != null) {
+            req.getSession().setAttribute("enderecoOrigem", origem);
+        }
+
         try {
             switch (action) {
                 case "listar":
@@ -88,16 +94,12 @@ public class EnderecoController extends HttpServlet {
 
                     if (cidadeNome != null && !cidadeNome.isEmpty() &&
                             estadoId != null && !estadoId.isEmpty()) {
-                        int cidadeId = cidadeDAO.buscarOuCriar(
-                                cidadeNome,
-                                Integer.parseInt(estadoId)
-                        );
-
+                        int cidadeId = cidadeDAO.buscarOuCriar(cidadeNome, Integer.parseInt(estadoId));
                         novo.setCidadeId(cidadeId);
                     }
 
                     service.adicionarEndereco(novo);
-                    resp.sendRedirect(req.getContextPath() + "/endereco?action=listar");
+                    resp.sendRedirect(resolverRedirect(req, "/endereco?action=listar"));
                     break;
 
                 case "editar":
@@ -118,22 +120,18 @@ public class EnderecoController extends HttpServlet {
 
                     if (cidadeNomeEdit != null && !cidadeNomeEdit.isEmpty() &&
                             estadoIdEdit != null && !estadoIdEdit.isEmpty()) {
-                        int cidadeIdEdit = cidadeDAO.buscarOuCriar(
-                                cidadeNomeEdit,
-                                Integer.parseInt(estadoIdEdit)
-                        );
-
+                        int cidadeIdEdit = cidadeDAO.buscarOuCriar(cidadeNomeEdit, Integer.parseInt(estadoIdEdit));
                         edit.setCidadeId(cidadeIdEdit);
                     }
 
                     service.editarEndereco(edit);
-                    resp.sendRedirect(req.getContextPath() + "/endereco?action=listar");
+                    resp.sendRedirect(resolverRedirect(req, "/endereco?action=listar"));
                     break;
 
                 case "excluir":
                     int id = Integer.parseInt(req.getParameter("id"));
                     service.excluirEndereco(id);
-                    resp.sendRedirect(req.getContextPath() + "/endereco?action=listar");
+                    resp.sendRedirect(resolverRedirect(req, "/endereco?action=listar"));
                     break;
 
                 default:
@@ -143,5 +141,16 @@ public class EnderecoController extends HttpServlet {
             e.printStackTrace();
             resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Erro ao processar endereço.");
         }
+    }
+
+    /** Redireciona para /pedido se veio do checkout, senão para o destino padrão */
+    private String resolverRedirect(HttpServletRequest req, String padrao) {
+        HttpSession session = req.getSession();
+        String origem = (String) session.getAttribute("enderecoOrigem");
+        if ("checkout".equals(origem)) {
+            session.removeAttribute("enderecoOrigem");
+            return req.getContextPath() + "/pedido";
+        }
+        return req.getContextPath() + padrao;
     }
 }

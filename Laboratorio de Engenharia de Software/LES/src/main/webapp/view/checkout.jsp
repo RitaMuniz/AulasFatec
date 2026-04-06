@@ -52,7 +52,7 @@
                 <c:choose>
                     <c:when test="${empty enderecos}">
                         <p>Você não tem endereços cadastrados.
-                           <a href="${pageContext.request.contextPath}/view/enderecos.jsp">Cadastrar endereço</a>
+                           <a href="${pageContext.request.contextPath}/endereco?action=listar&amp;origem=checkout">Cadastrar endereço</a>
                         </p>
                     </c:when>
                     <c:otherwise>
@@ -68,6 +68,7 @@
                         </div>
                     </c:otherwise>
                 </c:choose>
+                <p style="margin-top:8px; font-size:13px;"><a href="${pageContext.request.contextPath}/endereco?action=listar&amp;origem=checkout">+ Cadastrar novo endereço</a></p>
                 <div class="campo">
                     <label>Frete:</label>
                     <p><strong>R$ 20,00</strong> – Entrega padrão (até 7 dias úteis)</p>
@@ -80,7 +81,7 @@
 
                 <c:if test="${empty cartoes}">
                     <p>Você não tem cartões cadastrados.
-                       <a href="${pageContext.request.contextPath}/cartao?action=listar">Cadastrar cartão</a>
+                       <a href="${pageContext.request.contextPath}/cartao?action=listar&amp;origem=checkout">Cadastrar cartão</a>
                     </p>
                 </c:if>
 
@@ -143,6 +144,7 @@
                         ⚠️ A soma dos cartões deve ser igual ao total do pedido.
                     </div>
                 </c:if>
+                <p style="margin-top:8px; font-size:13px;"><a href="${pageContext.request.contextPath}/cartao?action=listar&amp;origem=checkout">+ Cadastrar novo cartão</a></p>
             </div>
 
             <%-- CUPOM --%>

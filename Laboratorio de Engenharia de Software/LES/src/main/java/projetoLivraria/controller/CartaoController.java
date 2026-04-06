@@ -38,13 +38,18 @@ public class CartaoController extends HttpServlet {
         String action = req.getParameter("action");
         if (action == null) action = "listar";
 
+        // guarda origem na sessão para redirecionar corretamente após salvar
+        String origem = req.getParameter("origem");
+        if (origem != null) {
+            req.getSession().setAttribute("cartaoOrigem", origem);
+        }
+
         try {
             switch (action) {
                 case "listar":
                     try (Connection conn = ConexaoSQL.getInstance().getConnection()) {
                         List<Cartao> cartoes = cartaoDAO.listarPorCliente(conn, clienteLogado.getId());
                         List<Bandeira> bandeiras = bandeiraDAO.listarTodas(conn);
-
                         req.setAttribute("cartoes", cartoes);
                         req.setAttribute("bandeiras", bandeiras);
                         req.getRequestDispatcher("/view/cartoes.jsp").forward(req, resp);
@@ -86,7 +91,7 @@ public class CartaoController extends HttpServlet {
                         cartaoDAO.inserir(connAdd, novo);
                     }
 
-                    resp.sendRedirect(req.getContextPath() + "/cartao?action=listar");
+                    resp.sendRedirect(resolverRedirect(req, "/cartao?action=listar"));
                     break;
 
                 case "excluir":
@@ -94,8 +99,7 @@ public class CartaoController extends HttpServlet {
                     try (Connection connDel = ConexaoSQL.getInstance().getConnection()) {
                         cartaoDAO.excluir(connDel, id);
                     }
-
-                    resp.sendRedirect(req.getContextPath() + "/cartao?action=listar");
+                    resp.sendRedirect(resolverRedirect(req, "/cartao?action=listar"));
                     break;
 
                 default:
@@ -105,5 +109,16 @@ public class CartaoController extends HttpServlet {
             e.printStackTrace();
             resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Erro ao processar cartão.");
         }
+    }
+
+    /** Redireciona para /pedido se veio do checkout, senão para o destino padrão */
+    private String resolverRedirect(HttpServletRequest req, String padrao) {
+        HttpSession session = req.getSession();
+        String origem = (String) session.getAttribute("cartaoOrigem");
+        if ("checkout".equals(origem)) {
+            session.removeAttribute("cartaoOrigem");
+            return req.getContextPath() + "/pedido";
+        }
+        return req.getContextPath() + padrao;
     }
 }
