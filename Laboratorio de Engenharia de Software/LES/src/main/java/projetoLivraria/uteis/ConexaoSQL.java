@@ -8,6 +8,7 @@ import java.sql.Statement;
 public class ConexaoSQL {
 
     private static final String URL = "jdbc:sqlite:/home/usuario/Área de trabalho/GitHub/AulasFatec/Laboratorio de Engenharia de Software/LES/livraria.db";
+//    private static final String URL = "jdbc:sqlite:C:/Users/Caique FATEC/Documents/Trabalho LES Livraria/AulasFatec/Laboratorio de Engenharia de Software/LES/livraria.db";
 
     private static ConexaoSQL instance;
 
