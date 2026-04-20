@@ -20,11 +20,11 @@
     <h2 style="text-align:center; margin-bottom:24px;">Entrar</h2>
 
     <% if ("1".equals(request.getParameter("erro"))) { %>
-    <p style="color:#b00020; text-align:center; margin-bottom:16px;">
+    <p style="color:#b00020; text-align:center; margin-bottom:16px;" data-test="erro_login_errado">
         E-mail ou senha inválidos.
     </p>
     <% } else if ("2".equals(request.getParameter("erro"))) { %>
-    <p style="color:#b00020; text-align:center; margin-bottom:16px;">
+    <p style="color:#b00020; text-align:center; margin-bottom:16px;" data-test="erro_cliente_inativo">
         Sua conta está inativa. Entre em contato com o suporte.
     </p>
     <% } %>
@@ -32,12 +32,12 @@
     <form action="${pageContext.request.contextPath}/login" method="post">
 
         <label for="email">E-mail</label>
-        <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+        <input type="email" id="email" name="email" placeholder="seu@email.com" data-test="email" required>
 
         <label for="senha">Senha</label>
-        <input type="password" id="senha" name="senha" placeholder="Sua senha" required>
+        <input type="password" id="senha" name="senha" placeholder="Sua senha" data-test="senha" required>
 
-        <button type="submit" class="btn" style="width:100%; margin-top:16px;">Entrar</button>
+        <button type="submit" class="btn" data-test="entrar" style="width:100%; margin-top:16px;">Entrar</button>
 
     </form>
 
