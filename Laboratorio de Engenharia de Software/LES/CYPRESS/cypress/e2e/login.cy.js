@@ -1,4 +1,61 @@
 describe('Login', () => {
+    // Cliente tenta logar sem preencher senha
+    it('Realizar login sem preencher senha', () => {
+        // arrange
+        cy.visit('http://localhost:8080/LES/view/login.jsp')
+
+        // act
+        cy.get('[data-test="email"]').type('ritamuniz1995@gmail.com')
+        cy.get('[data-test="entrar"]').click()
+
+        // assert
+        cy.get('[data-test="senha"]').then(($input) => {
+            expect($input[0].checkValidity()).to.be.false
+        })
+
+        cy.get('[data-test="senha"]:invalid').should('exist')
+        cy.url().should('eq', 'http://localhost:8080/LES/view/login.jsp')
+    })
+
+    // Cliente tenta logar sem preencher email
+    it('Realizar login sem preencher email', () => {
+        // arrange
+        cy.visit('http://localhost:8080/LES/view/login.jsp')
+
+        // act
+        cy.get('[data-test="senha"]').type('123456')
+        cy.get('[data-test="entrar"]').click()
+
+        // assert
+        cy.get('[data-test="email"]').then(($input) => {
+            expect($input[0].checkValidity()).to.be.false
+        })
+
+        cy.get('[data-test="email"]:invalid').should('exist')
+        cy.url().should('eq', 'http://localhost:8080/LES/view/login.jsp')
+    })
+
+    // Cliente tenta logar sem preencher nenhum campo
+    it('Realizar login sem preencher nenhum campo', () => {
+        // arrange
+        cy.visit('http://localhost:8080/LES/view/login.jsp')
+
+        // act
+        cy.get('[data-test="entrar"]').click()
+
+        // assert
+        cy.get('[data-test="email"]').then(($input) => {
+            expect($input[0].checkValidity()).to.be.false
+        })
+
+        cy.get('[data-test="senha"]').then(($input) => {
+            expect($input[0].checkValidity()).to.be.false
+        })
+
+        cy.get('[data-test="email"]:invalid').should('exist')
+        cy.get('[data-test="senha"]:invalid').should('exist')
+        cy.url().should('eq', 'http://localhost:8080/LES/view/login.jsp')
+    })
 
     // Cliente preenche email e senha errado
     it('Realizar login com credenciais invalidas', () => {
