@@ -1,133 +1,92 @@
+import home from "../pages/home";
+import login from "../pages/login/index";
+
 describe('Login', () => {
+
+    beforeEach(() => {
+        // arrange
+        login.visitarPagina()
+    })
+
     // Cliente tenta logar sem preencher senha
     it('Realizar login sem preencher senha', () => {
-        // arrange
-        cy.visit('http://localhost:8080/LES/view/login.jsp')
 
         // act
-        cy.get('[data-test="email"]').type('ritamuniz1995@gmail.com')
-        cy.get('[data-test="entrar"]').click()
+        login.preencherCredenciaisSemSenha()
 
         // assert
-        cy.get('[data-test="senha"]').then(($input) => {
-            expect($input[0].checkValidity()).to.be.false
-        })
-
-        cy.get('[data-test="senha"]:invalid').should('exist')
-        cy.url().should('eq', 'http://localhost:8080/LES/view/login.jsp')
+        login.validarCredenciasSemSenha()
     })
 
     // Cliente tenta logar sem preencher email
     it('Realizar login sem preencher email', () => {
-        // arrange
-        cy.visit('http://localhost:8080/LES/view/login.jsp')
 
         // act
-        cy.get('[data-test="senha"]').type('123456')
-        cy.get('[data-test="entrar"]').click()
+        login.preencherCredenciaisSemEmail()
 
         // assert
-        cy.get('[data-test="email"]').then(($input) => {
-            expect($input[0].checkValidity()).to.be.false
-        })
-
-        cy.get('[data-test="email"]:invalid').should('exist')
-        cy.url().should('eq', 'http://localhost:8080/LES/view/login.jsp')
+        login.validarCredenciaisSemEmail()
     })
 
     // Cliente tenta logar sem preencher nenhum campo
     it('Realizar login sem preencher nenhum campo', () => {
-        // arrange
-        cy.visit('http://localhost:8080/LES/view/login.jsp')
+
 
         // act
-        cy.get('[data-test="entrar"]').click()
+        login.preencherCredenciaisComCampoVazio()
 
         // assert
-        cy.get('[data-test="email"]').then(($input) => {
-            expect($input[0].checkValidity()).to.be.false
-        })
-
-        cy.get('[data-test="senha"]').then(($input) => {
-            expect($input[0].checkValidity()).to.be.false
-        })
-
-        cy.get('[data-test="email"]:invalid').should('exist')
-        cy.get('[data-test="senha"]:invalid').should('exist')
-        cy.url().should('eq', 'http://localhost:8080/LES/view/login.jsp')
+        login.validarCredenciaisCampoVazio()
     })
 
     // Cliente preenche email e senha errado
     it('Realizar login com credenciais invalidas', () => {
-        // arrange
-        cy.visit('http://localhost:8080/LES/view/login.jsp')
+
 
         // act
-        cy.get('[data-test="email"]').type('caiqueemailerrado@gmail.com')
-        cy.get('[data-test="senha"]').type('Caique123senhaerrada.')
-        cy.get('[data-test="entrar"]').click()
+        login.preencherCredenciaisEmaileSenhaErrado()
 
         // assert
-        cy.get('[data-test="erro_login_errado"]').should('contain.text', 'E-mail ou senha inválidos.')
-        cy.url().should('eq', 'http://localhost:8080/LES/view/login.jsp?erro=1')
+        login.validarCredenciaisInvalidas()
     })
 
     // Cliente preenche senha errado
     it('Realizar login com senha errada', () => {
-        // arrange
-        cy.visit('http://localhost:8080/LES/view/login.jsp')
 
         // act
-        cy.get('[data-test="email"]').type('ritamuniz1995@gmail.com')
-        cy.get('[data-test="senha"]').type('SenhaErrada.')
-        cy.get('[data-test="entrar"]').click()
+        login.preencherCredenciaisSenhaErrada()
 
         // assert
-        cy.get('[data-test="erro_login_errado"]').should('contain.text', 'E-mail ou senha inválidos.')
-        cy.url().should('eq', 'http://localhost:8080/LES/view/login.jsp?erro=1')
+        login.validarCredenciaisInvalidas()
     })
 
     // Cliente preenche email inexistente com senha no banco
     it('Realizar login com email inexistente e senha no banco', () => {
-        // arrange
-        cy.visit('http://localhost:8080/LES/view/login.jsp')
 
         // act
-        cy.get('[data-test="email"]').type('ritamunizemailerrado@gmail.com')
-        cy.get('[data-test="senha"]').type('Rita123.')
-        cy.get('[data-test="entrar"]').click()
+        login.preencherCredenciaisEmailErrado()
 
         // assert
-        cy.get('[data-test="erro_login_errado"]').should('contain.text', 'E-mail ou senha inválidos.')
-        cy.url().should('eq', 'http://localhost:8080/LES/view/login.jsp?erro=1')
+        login.validarCredenciaisInvalidas()
     })
 
     // cliente esta inativo
     it('Realizar login com cliente inativo', () => {
-        // arrange
-        cy.visit('http://localhost:8080/LES/view/login.jsp')
-
         // act
-        cy.get('[data-test="email"]').type('odeteroitman@gmail.com')
-        cy.get('[data-test="senha"]').type('odete123')
-        cy.get('[data-test="entrar"]').click()
+        login.preencherCredenciaisInativas()
 
         // assert
-        cy.get('[data-test="erro_cliente_inativo"]').should('contain.text', 'Sua conta está inativa. Entre em contato com o suporte.')
-        cy.url().should('eq', 'http://localhost:8080/LES/view/login.jsp?erro=2')
+        login.validarCredenciaisClienteInativo()
     })
+
 
     // cliente logado com sucesso
     it('Realizar login com sucesso', () => {
-        // arrange
-        cy.visit('http://localhost:8080/LES/view/login.jsp')
-
         // act
-        cy.get('[data-test="email"]').type('ritamuniz1995@gmail.com')
-        cy.get('[data-test="senha"]').type('Rita123.')
-        cy.get('[data-test="entrar"]').click()
+        login.preencherCredenciaisValidas()
+
         // assert
-        cy.url().should('eq','http://localhost:8080/LES/view/index.jsp')
+        home.validarAcessoPagina()
     })
 
 
