@@ -91,10 +91,9 @@
 
             <div class="card" style="text-align:right; max-width:350px; margin-left:auto;">
                 <p>Subtotal: <strong>R$ <fmt:formatNumber value="${sessionScope.carrinho.subtotal}" minFractionDigits="2" maxFractionDigits="2"/></strong></p>
-                <p>Frete: <strong>R$ 20,00</strong></p>
                 <hr style="margin:10px 0;">
-                <p style="font-size:18px;">Total estimado: <strong>R$ <fmt:formatNumber value="${sessionScope.carrinho.subtotal + 20}" minFractionDigits="2" maxFractionDigits="2"/></strong></p>
-                <small style="color:#888;">(desconto e cupom aplicados no checkout)</small>
+                <p style="font-size:18px;">Total estimado: <strong>R$ <fmt:formatNumber value="${sessionScope.carrinho.subtotal}" minFractionDigits="2" maxFractionDigits="2"/></strong></p>
+                <small style="color:#888;">(frete, desconto e cupom aplicados no checkout)</small>
             </div>
 
             <div style="display:flex; justify-content:space-between; margin-top:30px;">

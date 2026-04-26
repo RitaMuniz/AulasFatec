@@ -234,3 +234,149 @@ footer {
     padding: 30px;
     margin-top: 60px;
 }
+
+table {
+    width:100%;
+    border-collapse:collapse;
+    background:#fff; border-radius:8px;
+    overflow:hidden;
+}
+
+th {
+    background:#6b4c2a;
+    color:#fff;
+    padding:12px;
+    text-align:left;
+    font-size:14px;
+}
+
+td {
+    padding:12px;
+    border-bottom:1px solid #eee;
+    font-size:14px;
+}
+
+tr:last-child td {
+    border-bottom:none;
+}
+
+.badge {
+    padding:3px 10px;
+    border-radius:12px;
+    font-size:12px;
+    font-weight:bold;
+}
+
+.SOLICITADA {
+    background:#fff3cd;
+    color:#856404;
+}
+
+.APROVADA {
+    background:#cff4fc;
+    color:#055160;
+}
+
+.RECEBIDA {
+    background:#d1e7dd;
+    color:#0f5132;
+}
+
+.CONCLUIDA {
+    background:#d1e7dd;
+    color:#0f5132;
+}
+
+.RECUSADA {
+    background:#f8d7da;
+    color:#842029;
+}
+
+.aviso-sucesso {
+    background:#d1e7dd;
+    border:1px solid #badbcc;
+    border-radius:6px;
+    padding:12px;
+    margin-bottom:20px;
+    color:#0f5132;
+}
+
+.secao {
+    background:#fff;
+    border:1px solid #e0d6c8;
+    border-radius:8px;
+    padding:25px;
+    margin-bottom:20px;
+    max-width:700px;
+}
+
+.secao h3 {
+    font-size:18px;
+    border-bottom:1px solid #eee;
+    padding-bottom:10px;
+    margin-bottom:15px;
+}
+
+.item-card {
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:15px;
+    border:2px solid transparent;
+    border-radius:8px; margin-bottom:10px;
+    cursor:pointer;
+    transition:border-color .2s;
+}
+
+.item-card:hover {
+    border-color:#c4a67a;
+}
+
+.item-card.selecionado {
+    border-color:#6b4c2a;
+    background:#fdf5ec;
+}
+
+.item-card input[type=radio] {
+    width:20px;
+    height:20px;
+}
+
+.item-info {
+    flex:1;
+}
+
+.item-info strong {
+    display:block;
+    font-size:15px;
+}
+
+.item-info span {
+    font-size:13px;
+    color:#666;
+}
+
+.campo label {
+    display:block;
+    font-weight:bold;
+    margin-bottom:5px;
+}
+
+.campo textarea {
+    width:100%;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:4px;
+    font-size:14px;
+    resize:vertical;
+    box-sizing:border-box;
+}
+
+.aviso {
+    background:#fff3cd;
+    border:1px solid #ffc107;
+    border-radius:4px;
+    padding:12px;
+    margin-bottom:15px;
+    font-size:14px;
+}
