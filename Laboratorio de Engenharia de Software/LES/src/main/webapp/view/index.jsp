@@ -13,8 +13,8 @@
     <div class="logo">Livraria</div>
     <nav>
         <a href="${pageContext.request.contextPath}/view/index.jsp">Home</a>
-        <a href="${pageContext.request.contextPath}/livros">Livros</a>
-        <a href="${pageContext.request.contextPath}/view/carrinho.jsp">Carrinho</a>
+        <a href="${pageContext.request.contextPath}/livros" data-test="menu_livros">Livros</a>
+        <a data-test="icon-carrinho" href="${pageContext.request.contextPath}/view/carrinho.jsp">Carrinho</a>
         <% if (session.getAttribute("clienteLogado") != null) { %>
             <a href="${pageContext.request.contextPath}/cliente?action=buscar">Meu Perfil</a>
             <a href="${pageContext.request.contextPath}/logout">Sair</a>
