@@ -84,7 +84,7 @@
                     <c:otherwise>
                         <div class="campo">
                             <label>Selecione o endereço:</label>
-                            <select name="endereco_id" id="endereco_id" required onchange="calcularFrete()">
+                            <select name="endereco_id" id="endereco_id" data-test="endereco_id" required onchange="calcularFrete()">
                                 <c:forEach var="e" items="${enderecos}">
                                     <option value="${e.id}" data-cep="${e.cep}">
                                         ${e.tipoLogradouro} ${e.logradouro}, ${e.numero}
@@ -96,11 +96,11 @@
                     </c:otherwise>
                 </c:choose>
                 <p style="margin-top:8px; font-size:13px;">
-                    <a href="${pageContext.request.contextPath}/endereco?action=listar&amp;origem=checkout">+ Cadastrar novo endereço</a>
+                    <a data-test="botao_cadastrar_endereco" href="${pageContext.request.contextPath}/endereco?action=listar&amp;origem=checkout">+ Cadastrar novo endereço</a>
                 </p>
                 <div class="campo">
                     <label>Frete estimado:</label>
-                    <p id="r-frete"><strong>Calculando...</strong></p>
+                    <p id="r-frete" data-test="valor_frete_calculado"><strong>Calculando...</strong></p>
                 </div>
             </div>
 
@@ -119,9 +119,9 @@
                         <p style="font-weight:bold; margin-bottom:10px;">Cartão 1 (obrigatório)</p>
                         <div class="campo">
                             <label>Cartão:</label>
-                            <select name="cartao1_id" id="cartao1_id" required onchange="atualizarResumo()">
+                            <select name="cartao1_id" id="cartao1_id" data-test="cartao1_id" required onchange="atualizarResumo()">
                                 <c:forEach var="c" items="${cartoes}">
-                                    <option value="${c.id}">
+                                    <option value="${c.id}" data-test="opcao-cartao-${c.id}">
                                         **** **** **** ${c.numero.length() > 4 ? c.numero.substring(c.numero.length()-4) : c.numero}
                                         – ${c.nomeImpresso}
                                     </option>
@@ -130,7 +130,7 @@
                         </div>
                         <div class="campo">
                             <label>Valor neste cartão (R$):</label>
-                            <input type="number" name="valor_cartao1" id="valor_cartao1"
+                            <input type="number" name="valor_cartao1" data-test="input-valor-cartao-1" id="valor_cartao1"
                                    step="0.01" min="0.01" placeholder="Ex: 50.00"
                                    required oninput="atualizarResumo()">
                         </div>
@@ -138,7 +138,7 @@
 
                     <div style="margin-bottom:10px;">
                         <label>
-                            <input type="checkbox" id="ativarCartao2" onchange="toggleCartao2()">
+                            <input type="checkbox" id="ativarCartao2" data-test="checkbox-cartao-2" onchange="toggleCartao2()">
                             Usar um segundo cartão
                         </label>
                     </div>
@@ -147,7 +147,7 @@
                         <p style="font-weight:bold; margin-bottom:10px;">Cartão 2 (opcional)</p>
                         <div class="campo">
                             <label>Cartão:</label>
-                            <select name="cartao2_id" id="cartao2_id" onchange="atualizarResumo()">
+                            <select name="cartao2_id" id="cartao2_id" data-test="select-cartao-2" onchange="atualizarResumo()">
                                 <option value="">— Selecione —</option>
                                 <c:forEach var="c" items="${cartoes}">
                                     <option value="${c.id}">
@@ -159,18 +159,18 @@
                         </div>
                         <div class="campo">
                             <label>Valor neste cartão (R$):</label>
-                            <input type="number" name="valor_cartao2" id="valor_cartao2"
+                            <input type="number" name="valor_cartao2" id="valor_cartao2" data-test="input-valor-cartao-2"
                                    step="0.01" min="0" placeholder="Ex: 30.00"
                                    oninput="atualizarResumo()">
                         </div>
                     </div>
 
-                    <div id="aviso-valor"  class="aviso warn"  style="display:none;"></div>
-                    <div id="aviso-minimo" class="aviso erro"  style="display:none;"></div>
+                    <div id="aviso-valor"  class="aviso warn" data-test="alerta-valor-cartoes" style="display:none;"></div>
+                    <div id="aviso-minimo" class="aviso erro" data-test="alerta-minimo-cartao" style="display:none;"></div>
                 </c:if>
 
                 <p style="margin-top:8px; font-size:13px;">
-                    <a href="${pageContext.request.contextPath}/cartao?action=listar&amp;origem=checkout">+ Cadastrar novo cartão</a>
+                    <a data-test="botao_cadastrar_cartao" href="${pageContext.request.contextPath}/cartao?action=listar&amp;origem=checkout">+ Cadastrar novo cartão</a>
                 </p>
             </div>
 
@@ -187,8 +187,8 @@
                         </p>
                         <div class="cupom-lista" id="cupom-lista">
                             <c:forEach var="cup" items="${cupons}">
-                                <div class="cupom-item" id="cupom-item-${cup.id}" onclick="toggleCupom(${cup.id})">
-                                    <input type="checkbox" name="cupom_id" value="${cup.id}"
+                                <div class="cupom-item" id="cupom-item-${cup.id}"  data-test="item-cupom-${cup.id}" onclick="toggleCupom(${cup.id})">
+                                    <input type="checkbox" name="cupom_id" value="${cup.id}"  data-test="cupom-${cup.id}"
                                            id="chk-cupom-${cup.id}"
                                            data-valor="${cup.valor}"
                                            data-tipo="${cup.tipo}"
@@ -204,7 +204,7 @@
                                 </div>
                             </c:forEach>
                         </div>
-                        <div id="aviso-cupom" class="aviso warn" style="display:none;"></div>
+                        <div id="aviso-cupom" class="aviso warn" data-test="alerta-cupom" style="display:none;"></div>
                     </c:otherwise>
                 </c:choose>
             </div>
@@ -228,27 +228,27 @@
             </div>
             <div class="resumo-linha">
                 <span>Frete</span>
-                <span id="r-frete-resumo">—</span>
+                <span id="r-frete-resumo" data-test="resumo-frete">—</span>
             </div>
             <div class="resumo-linha">
                 <span>Desconto (cupons)</span>
-                <span id="r-desconto">R$ 0,00</span>
+                <span id="r-desconto" data-test="resumo-desconto">R$ 0,00</span>
             </div>
             <div class="resumo-linha total">
                 <span>Total</span>
-                <span id="r-total">—</span>
+                <span id="r-total" data-test="resumo-total">—</span>
             </div>
 
-            <div id="aviso-troco" class="aviso info" style="display:none;">
+            <div id="aviso-troco" class="aviso info" data-test="alerta-cupom-troco" style="display:none;">
                 💡 Seus cupons cobrem mais que o total. O valor excedente virará um <strong>cupom de troca</strong>!
             </div>
 
-            <button type="submit" class="btn btn-finalizar" id="btn-finalizar"
+            <button type="submit" class="btn btn-finalizar" data-test="botao_finalizar" id="btn-finalizar"
                     <c:if test="${empty cartoes or empty enderecos}">disabled title="Cadastre endereço e cartão para continuar"</c:if>>
                 Confirmar Pedido
             </button>
 
-            <a href="${pageContext.request.contextPath}/carrinho" class="btn"
+            <a href="${pageContext.request.contextPath}/carrinho" class="btn"  data-test="voltar-carrinho"
                style="width:100%; text-align:center; margin-top:10px; display:block;
                       box-sizing:border-box; background:#888;">
                 Voltar ao Carrinho
