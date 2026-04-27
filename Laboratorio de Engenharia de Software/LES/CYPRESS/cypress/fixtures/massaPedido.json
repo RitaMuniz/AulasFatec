@@ -1,0 +1,29 @@
+{
+  "compra1ItemMastercard": {
+    "usuario": "maria",
+    "livros": [
+      {
+        "id": 1,
+        "quantidade": 1
+      }
+    ],
+    "endereco": 5,
+    "cartao": 10
+  },
+
+  "compra2ItensVisa": {
+    "usuario": "maria",
+    "livros": [
+      {
+        "id": 1,
+        "quantidade": 1
+      },
+      {
+        "id": 2,
+        "quantidade": 1
+      }
+    ],
+    "endereco": 5,
+    "cartao": 8
+  }
+}
