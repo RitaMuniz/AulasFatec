@@ -70,21 +70,7 @@ describe('Carrinho', () => {
     });
 
 
-    // Carrinho feito com sucesso
-    it('Adicionar Produto ao carrinho com sucesso ', () => {
 
-
-        // act
-        home.navBarLivros()
-        livros.buttonVerDetalhesDoLivro(1)
-        livro.preencherQuantidade(1,3)
-        livro.buttonAdicionarAoCarrinho()
-
-        // assert
-
-        carrinho.validarAcessoPagina()
-        carrinho.validarCampoQuantidade(1,3)
-    });
 
     // Adicionando itens diferentes do carrinho
     it('Continuando comprando item diferente', () => {
@@ -272,6 +258,22 @@ describe('Carrinho', () => {
         carrinho.validarAcessoPagina()
         carrinho.validarCampoQuantidade(1,44)
         carrinho.validarCampoQuantidade(2,10)
+    });
+
+    // Carrinho feito com sucesso
+    it('Adicionar Produto ao carrinho com sucesso ', () => {
+
+
+        // act
+        home.navBarLivros()
+        livros.buttonVerDetalhesDoLivro(1)
+        livro.preencherQuantidade(1,3)
+        livro.buttonAdicionarAoCarrinho()
+
+        // assert
+
+        carrinho.validarAcessoPagina()
+        carrinho.validarCampoQuantidade(1,3)
     });
 
 

@@ -2,7 +2,7 @@ import {elements as el} from "./elements";
 
 class carrinho{
     validarAcessoPagina(){
-        cy.url().should('eq',el.telaCarrinho)
+        cy.url().should('match', el.telaCarrinhoRegex)
     }
 
     validarCampoQuantidade(item,quantidade){
@@ -29,6 +29,14 @@ class carrinho{
 
     buttonRemover(item){
         cy.get(`${el.botao_remover}${item}`).click()
+    }
+
+    buttonLogar(){
+        cy.get(el.botao_logar).click()
+    }
+
+    buttonFinalizar(){
+        cy.get(el.botao_finalizar).click()
     }
 
 
