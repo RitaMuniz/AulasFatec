@@ -118,6 +118,15 @@
         <url-pattern>/admin/pedidos</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>TrocaController</servlet-name>
+        <servlet-class>projetoLivraria.controller.TrocaController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TrocaController</servlet-name>
+        <url-pattern>/troca</url-pattern>
+    </servlet-mapping>
+
 
     <welcome-file-list>
         <welcome-file>/view/index.jsp</welcome-file>
