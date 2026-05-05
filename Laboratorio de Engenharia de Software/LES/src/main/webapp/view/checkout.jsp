@@ -183,7 +183,8 @@
                     </c:when>
                     <c:otherwise>
                         <p style="font-size:13px; margin-bottom:10px; color:#555;">
-                            Selecione um ou mais cupons. O valor não pode ultrapassar o total do pedido.
+                            Apenas <strong>1 cupom promocional</strong> por compra. Cupons de troca podem ser acumulados.
+                            O valor total não pode ultrapassar o total do pedido.
                         </p>
                         <div class="cupom-lista" id="cupom-lista">
                             <c:forEach var="cup" items="${cupons}">
@@ -192,7 +193,6 @@
                                            id="chk-cupom-${cup.id}"
                                            data-valor="${cup.valor}"
                                            data-tipo="${cup.tipo}"
-                                           onchange="atualizarResumo()"
                                            onclick="event.stopPropagation()">
                                     <label for="chk-cupom-${cup.id}">
                                         <strong>${cup.codigo}</strong> —
@@ -313,9 +313,25 @@ function calcularFrete() {
 
 // Toggle visual do cupom
 function toggleCupom(id) {
-    const chk = document.getElementById("chk-cupom-" + id);
+    const chk  = document.getElementById("chk-cupom-" + id);
     const item = document.getElementById("cupom-item-" + id);
-    chk.checked = !chk.checked;
+
+    // Estado ATUAL (antes de mudar)
+    const estaMarcado = chk.checked;
+
+    // Se está DESMARCADO e vai marcar, e é PROMOCIONAL → valida
+    if (!estaMarcado && chk.getAttribute("data-tipo") === "PROMOCIONAL") {
+        const jaTemPromocional = [...document.querySelectorAll("input[name='cupom_id']:checked")]
+            .some(c => c.value !== String(id) && c.getAttribute("data-tipo") === "PROMOCIONAL");
+
+        if (jaTemPromocional) {
+            alert("Apenas 1 cupom promocional pode ser usado por compra.");
+            return;
+        }
+    }
+
+    // Aplica a mudança
+    chk.checked = !estaMarcado;
     item.classList.toggle("selecionado", chk.checked);
     atualizarResumo();
 }

@@ -121,6 +121,16 @@ public class PedidoService {
             }
         }
 
+        //1 cupom promocional por pedido
+        if (cupons != null) {
+            long qtdPromocionais = cupons.stream()
+                    .filter(c -> c != null && "PROMOCIONAL".equals(c.getTipo()))
+                    .count();
+            if (qtdPromocionais > 1) {
+                throw new Exception("Apenas 1 cupom promocional pode ser utilizado por compra.");
+            }
+        }
+
         // Cupons não podem ultrapassar o total bruto
         // (a UI já deve impedir, mas validamos aqui também)
         if (totalCupons.compareTo(totalBruto) > 0) {
