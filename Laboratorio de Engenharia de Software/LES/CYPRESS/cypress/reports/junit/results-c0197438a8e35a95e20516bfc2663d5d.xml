@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="6.106" tests="8" failures="0">
+  <testsuite name="Root Suite" timestamp="2026-04-30T06:52:28" tests="0" file="cypress\e2e\login.cy.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Login" timestamp="2026-04-30T06:52:28" tests="8" time="6.106" failures="0">
+    <testcase name="Login Realizar login sem preencher senha" time="0.997" classname="Realizar login sem preencher senha">
+    </testcase>
+    <testcase name="Login Realizar login sem preencher email" time="0.361" classname="Realizar login sem preencher email">
+    </testcase>
+    <testcase name="Login Realizar login sem preencher nenhum campo" time="0.139" classname="Realizar login sem preencher nenhum campo">
+    </testcase>
+    <testcase name="Login Realizar login com credenciais invalidas" time="0.971" classname="Realizar login com credenciais invalidas">
+    </testcase>
+    <testcase name="Login Realizar login com senha errada" time="0.834" classname="Realizar login com senha errada">
+    </testcase>
+    <testcase name="Login Realizar login com email inexistente e senha no banco" time="0.836" classname="Realizar login com email inexistente e senha no banco">
+    </testcase>
+    <testcase name="Login Realizar login com cliente inativo" time="0.757" classname="Realizar login com cliente inativo">
+    </testcase>
+    <testcase name="Login Realizar login com sucesso" time="1.058" classname="Realizar login com sucesso">
+    </testcase>
+  </testsuite>
+</testsuites>

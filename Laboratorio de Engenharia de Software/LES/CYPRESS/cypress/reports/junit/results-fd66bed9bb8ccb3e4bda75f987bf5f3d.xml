@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="12.291" tests="9" failures="0">
+  <testsuite name="Root Suite" timestamp="2026-04-30T07:09:14" tests="0" file="cypress\e2e\TesteLogin.cy.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Login" timestamp="2026-04-30T07:09:14" tests="9" time="12.290" failures="0">
+    <testcase name="Login Realizar login sem preencher senha" time="0.728" classname="Realizar login sem preencher senha">
+    </testcase>
+    <testcase name="Login Realizar login sem preencher email" time="0.417" classname="Realizar login sem preencher email">
+    </testcase>
+    <testcase name="Login Realizar login sem preencher nenhum campo" time="0.185" classname="Realizar login sem preencher nenhum campo">
+    </testcase>
+    <testcase name="Login Realizar login com email em formato inválido" time="0.687" classname="Realizar login com email em formato inválido">
+    </testcase>
+    <testcase name="Login Realizar login com credenciais inválidas" time="0.816" classname="Realizar login com credenciais inválidas">
+    </testcase>
+    <testcase name="Login Realizar login com senha errada" time="0.834" classname="Realizar login com senha errada">
+    </testcase>
+    <testcase name="Login Realizar login com email errado" time="0.776" classname="Realizar login com email errado">
+    </testcase>
+    <testcase name="Login Realizar login com cliente inativo" time="0.792" classname="Realizar login com cliente inativo">
+    </testcase>
+    <testcase name="Login Realizar login com sucesso" time="0.831" classname="Realizar login com sucesso">
+    </testcase>
+  </testsuite>
+</testsuites>

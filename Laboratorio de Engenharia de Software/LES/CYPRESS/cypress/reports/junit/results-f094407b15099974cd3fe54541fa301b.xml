@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="24.965" tests="11" failures="0">
+  <testsuite name="Root Suite" timestamp="2026-04-30T06:28:45" tests="0" file="cypress\e2e\TestePedidos.cy.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Fluxo completo de pedido" timestamp="2026-04-30T06:28:45" tests="11" time="24.963" failures="0">
+    <testcase name="Fluxo completo de pedido Comprar 1 item com Mastercard" time="3.023" classname="Comprar 1 item com Mastercard">
+    </testcase>
+    <testcase name="Fluxo completo de pedido Comprar 2 itens com VISA" time="2.644" classname="Comprar 2 itens com VISA">
+    </testcase>
+    <testcase name="Fluxo completo de pedido Não finalizar sem preencher valor do cartão" time="2.041" classname="Não finalizar sem preencher valor do cartão">
+    </testcase>
+    <testcase name="Fluxo completo de pedido Exibir erro quando valor do cartão for menor que o total" time="2.099" classname="Exibir erro quando valor do cartão for menor que o total">
+    </testcase>
+    <testcase name="Fluxo completo de pedido Exibir erro quando valor do cartão for maior que o total" time="2.151" classname="Exibir erro quando valor do cartão for maior que o total">
+    </testcase>
+    <testcase name="Fluxo completo de pedido Não aceitar valor negativo no cartão" time="1.799" classname="Não aceitar valor negativo no cartão">
+    </testcase>
+    <testcase name="Fluxo completo de pedido Não aceitar valor zero no cartão" time="1.815" classname="Não aceitar valor zero no cartão">
+    </testcase>
+    <testcase name="Fluxo completo de pedido Exibir erro quando soma dos dois cartões for diferente do total" time="2.716" classname="Exibir erro quando soma dos dois cartões for diferente do total">
+    </testcase>
+    <testcase name="Fluxo completo de pedido Exibir erro quando cartão tiver valor abaixo do mínimo" time="2.709" classname="Exibir erro quando cartão tiver valor abaixo do mínimo">
+    </testcase>
+    <testcase name="Fluxo completo de pedido Aplicar cupom de desconto e validar resumo" time="2.416" classname="Aplicar cupom de desconto e validar resumo">
+    </testcase>
+    <testcase name="Fluxo completo de pedido Voltar para carrinho pelo checkout" time="1.309" classname="Voltar para carrinho pelo checkout">
+    </testcase>
+  </testsuite>
+</testsuites>

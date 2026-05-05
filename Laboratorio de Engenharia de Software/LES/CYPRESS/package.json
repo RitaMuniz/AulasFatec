@@ -5,12 +5,17 @@
   "main": "index.js",
   "scripts": {
     "cy:open:electron": "npx cypress open --browser electron",
-    "cy:run:electron": "npx cypress run --browser electron"
+    "cy:run:electron": "npx cypress run --browser electron",
+    "cypress:open:dev": "cypress open --config-file config-dev.js --browser electron",
+    "cypress:open:qa": "cypress open --config-file config-qa.js --browser electron"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^15.13.1"
+    "cypress": "^15.13.1",
+    "cypress-mochawesome-reporter": "^4.0.2",
+    "cypress-multi-reporters": "^2.0.5",
+    "mocha-junit-reporter": "^2.2.1"
   }
 }

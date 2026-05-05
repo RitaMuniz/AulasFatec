@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="15.317" tests="1" failures="0">
+  <testsuite name="Root Suite" timestamp="2026-04-30T06:51:53" tests="0" file="cypress\e2e\compra_deslogado.cy.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Fluxo Completo Compra" timestamp="2026-04-30T06:51:53" tests="1" time="15.306" failures="0">
+    <testcase name="Fluxo Completo Compra Jornada completa do cliente com erros de login e carrinho" time="15.247" classname="Jornada completa do cliente com erros de login e carrinho">
+    </testcase>
+  </testsuite>
+</testsuites>

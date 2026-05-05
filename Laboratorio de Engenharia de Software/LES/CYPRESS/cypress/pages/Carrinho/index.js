@@ -5,12 +5,13 @@ class carrinho{
         cy.url().should('match', el.telaCarrinhoRegex)
     }
 
-    validarCampoQuantidade(item,quantidade){
-        cy.get(`${el.campoQuantidade}${item}`).should('have.value', quantidade)
+    validarCampoQuantidade(item, quantidade){
+        cy.get(el.campoQuantidade(item))
+            .should('have.value', String(quantidade))
     }
 
     validarCampoQuantidadeInvalida(item){
-        cy.get(`${el.campoQuantidade}${item}`).then(($input) => {
+        cy.get(el.campoQuantidade(item)).then(($input) => {
             expect($input[0].checkValidity()).to.be.false
         })
     }
@@ -20,15 +21,17 @@ class carrinho{
     }
 
     alterarCampoQuantidade(item, quantidade){
-        cy.get(`${el.campoQuantidade}${item}`).clear().type(quantidade)
+        cy.get(el.campoQuantidade(item))
+            .clear()
+            .type(String(quantidade))
     }
 
     buttonAtualizar(item){
-        cy.get(`${el.botao_atualizar}${item}`).click()
+        cy.get(el.botao_atualizar(item)).click()
     }
 
     buttonRemover(item){
-        cy.get(`${el.botao_remover}${item}`).click()
+        cy.get(el.botao_remover(item)).click()
     }
 
     buttonLogar(){
@@ -38,7 +41,6 @@ class carrinho{
     buttonFinalizar(){
         cy.get(el.botao_finalizar).click()
     }
-
-
 }
+
 export default new carrinho()

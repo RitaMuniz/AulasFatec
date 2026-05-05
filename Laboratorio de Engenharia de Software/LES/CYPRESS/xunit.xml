@@ -1,0 +1,10 @@
+<testsuite name="Mocha Tests" tests="8" failures="0" errors="0" skipped="0" timestamp="Thu, 30 Apr 2026 04:58:09 GMT" time="6.22">
+<testcase classname="Login" name="Realizar login sem preencher senha" time="1.03"/>
+<testcase classname="Login" name="Realizar login sem preencher email" time="0.393"/>
+<testcase classname="Login" name="Realizar login sem preencher nenhum campo" time="0.163"/>
+<testcase classname="Login" name="Realizar login com credenciais invalidas" time="0.999"/>
+<testcase classname="Login" name="Realizar login com senha errada" time="0.818"/>
+<testcase classname="Login" name="Realizar login com email inexistente e senha no banco" time="0.885"/>
+<testcase classname="Login" name="Realizar login com cliente inativo" time="0.787"/>
+<testcase classname="Login" name="Realizar login com sucesso" time="0.949"/>
+</testsuite>

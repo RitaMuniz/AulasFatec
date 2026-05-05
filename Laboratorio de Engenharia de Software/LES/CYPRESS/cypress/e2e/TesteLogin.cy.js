@@ -10,9 +10,9 @@ describe('Login', () => {
         login.validar('atributos')
     })
 
-    afterEach(() => {
-        // assert
+    afterEach(function () {
         login.validar()
+        login.print(this)
     })
 
     it('Realizar login sem preencher senha', () => {
@@ -118,5 +118,17 @@ describe('Login', () => {
         login.validar()
         home.validarAcessoPagina()
     })
+    /*// cypress:open:dev funciona somente quando aberto assim
+    it('Realizar login com sucesso .env', () => {
+
+        // act
+        login.preencherCampo('username', Cypress.env('username'))
+        login.preencherCampo('password', Cypress.env('password'))
+        login.clicarBotao('entrar')
+
+        // assert
+        login.validar()
+        home.validarAcessoPagina()
+    })*/
 
 })

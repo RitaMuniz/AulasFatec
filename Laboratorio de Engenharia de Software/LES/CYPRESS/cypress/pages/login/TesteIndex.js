@@ -11,6 +11,21 @@ class Login {
         cy.visit(el.urls.telaLogin)
     }
 
+    print(ctx){
+        const titulo = ctx.currentTest.title
+        const status = ctx.currentTest.state
+
+        const nome = `${status}-${titulo}`
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/[^a-zA-Z0-9]/g, '_')
+
+        cy.get('body').should('be.visible')
+        cy.wait(200)
+
+        cy.screenshot(`teste-${nome}`)
+    }
+
     preencherCampo(nome, valor){
         cy.fixture('usuarios').then(dados => {
             const valorFinal = this.obterValorCampo(nome, valor, dados)

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="1.288" tests="9" failures="1">
+  <testsuite name="Root Suite" timestamp="2026-04-30T06:50:44" tests="0" file="cypress\e2e\TesteLogin.cy.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Login" timestamp="2026-04-30T06:50:44" tests="9" time="1.285" failures="1">
+    <testcase name="Login &quot;after each&quot; hook for &quot;Realizar login sem preencher senha&quot;" time="0.000" classname="&quot;after each&quot; hook for &quot;Realizar login sem preencher senha&quot;">
+      <failure message="Cannot read properties of undefined (reading &apos;title&apos;)
+
+Because this error occurred during a `after each` hook we are skipping the remaining tests in the current suite: `Login`" type="TypeError"><![CDATA[TypeError: Cannot read properties of undefined (reading 'title')
+
+Because this error occurred during a `after each` hook we are skipping the remaining tests in the current suite: `Login`
+    at Login.print (webpack://les/./cypress/pages/login/TesteIndex.js:19:48)
+    at Context.eval (webpack://les/./cypress/e2e/TesteLogin.cy.js:16:14)
+    at runnable.fn (http://localhost:8080/__cypress/runner/cypress_runner.js:146581:19)
+    at callFn (http://localhost:8080/__cypress/runner/cypress_runner.js:165745:21)
+    at Runnable.run (http://localhost:8080/__cypress/runner/cypress_runner.js:165732:7)
+    at <unknown> (http://localhost:8080/__cypress/runner/cypress_runner.js:171830:30)
+    at PassThroughHandlerContext.finallyHandler (http://localhost:8080/__cypress/runner/cypress_runner.js:4042:23)
+    at PassThroughHandlerContext.tryCatcher (http://localhost:8080/__cypress/runner/cypress_runner.js:1777:23)
+    at Promise._settlePromiseFromHandler (http://localhost:8080/__cypress/runner/cypress_runner.js:1489:31)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>
