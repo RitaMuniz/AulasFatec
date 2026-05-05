@@ -79,6 +79,22 @@ public class EnderecoDAO {
         }
     }
 
+    public List<Endereco> listarEntregaPorCliente(Connection conn, int clienteId) throws Exception {
+        String sql = "SELECT * FROM endereco WHERE cliente_id=? AND tipo_endereco='ENTREGA'";
+
+        try (PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setInt(1, clienteId);
+
+            try (ResultSet rs = stmt.executeQuery()) {
+                List<Endereco> lista = new ArrayList<>();
+                while (rs.next()) {
+                    lista.add(mapear(rs));
+                }
+                return lista;
+            }
+        }
+    }
+
     public Endereco buscarPorId(Connection conn, int id) throws Exception {
         String sql = "SELECT * FROM endereco WHERE id=?";
 
