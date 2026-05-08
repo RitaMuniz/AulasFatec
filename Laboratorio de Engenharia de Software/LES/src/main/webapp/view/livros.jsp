@@ -26,7 +26,7 @@
                 <a href="${pageContext.request.contextPath}/view/login.jsp">Login</a>
             </c:otherwise>
         </c:choose>
-        <a href="${pageContext.request.contextPath}/carrinho">
+        <a data-test="icon-carrinho" href="${pageContext.request.contextPath}/carrinho">
             Carrinho
             <c:if test="${not empty sessionScope.carrinho and sessionScope.carrinho.totalItens > 0}">
                 (${sessionScope.carrinho.totalItens})
@@ -60,7 +60,7 @@
                 <c:if test="${not empty l.precoVenda}">
                     <p class="preco">R$ <fmt:formatNumber value="${l.precoVenda}" minFractionDigits="2" maxFractionDigits="2"/></p>
                 </c:if>
-                <a href="${pageContext.request.contextPath}/livro?id=${l.id}" class="btn">Ver Detalhes</a>
+                <a href="${pageContext.request.contextPath}/livro?id=${l.id}" class="btn" data-test="btn-ver-detalhes-${l.id}">Ver Detalhes</a>
             </div>
         </c:forEach>
     </div>
