@@ -3,11 +3,18 @@ package projetoLivraria.model;
 import java.math.BigDecimal;
 
 public class Cupom {
+
+    public static final String TIPO_PROMOCIONAL = "PROMOCIONAL";
+    public static final String TIPO_TROCA       = "TROCA";
+
+    public static final String STATUS_DISPONIVEL = "DISPONIVEL";
+    public static final String STATUS_USADO      = "USADO";
+
     private int id;
     private String codigo;
     private BigDecimal valor;
-    private String tipo;
-    private String status;
+    private String tipo;   // PROMOCIONAL | TROCA
+    private String status; // DISPONIVEL  | USADO
     private int clienteId;
 
     public Cupom() {}
@@ -56,7 +63,21 @@ public class Cupom {
         return clienteId;
     }
 
-    public void setClienteId(int clienteId) {
-        this.clienteId = clienteId;
+    public void setClienteId(int id) {
+        this.clienteId = id;
     }
+
+    //helpers
+    public boolean isPromocional() {
+        return TIPO_PROMOCIONAL.equals(tipo);
+    }
+
+    public boolean isTroca() {
+        return TIPO_TROCA.equals(tipo);
+    }
+
+    public boolean isDisponivel() {
+        return STATUS_DISPONIVEL.equals(status);
+    }
+
 }
