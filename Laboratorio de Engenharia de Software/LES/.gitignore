@@ -39,3 +39,20 @@ build/
 
 #env
 .env.dev
+
+
+# IntelliJ local configs
+.idea/
+
+# SmartTomcat
+.smarttomcat/
+
+# ZIPs
+*.zip
+
+# Cypress artifacts
+cypress/screenshots/
+cypress/videos/
+
+CYPRESS/cypress/screenshots/
+CYPRESS/cypress/videos/
