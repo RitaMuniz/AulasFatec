@@ -243,7 +243,7 @@ table {
 }
 
 th {
-    background:#6b4c2a;
+    background:#013a63;
     color:#fff;
     padding:12px;
     text-align:left;
@@ -333,7 +333,7 @@ tr:last-child td {
 }
 
 .item-card.selecionado {
-    border-color:#6b4c2a;
+    border-color:#013a63;
     background:#fdf5ec;
 }
 
