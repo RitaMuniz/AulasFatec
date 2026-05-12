@@ -28,7 +28,7 @@
             <a href="${pageContext.request.contextPath}/view/admin-pedidos.html">Pedidos</a>
             <a href="${pageContext.request.contextPath}/view/admin-livros.html">Livros</a>
             <a href="${pageContext.request.contextPath}/view/cliente?action=listar" class="active">Clientes</a>
-            <a href="${pageContext.request.contextPath}/view/admin-devolucoes.html">Devoluções</a>
+            <a href="${pageContext.request.contextPath}/troca?action=admin">Devoluções</a>
             <a href="${pageContext.request.contextPath}/view/admin-relatorios.html">Relatórios</a>
         </nav>
     </aside>

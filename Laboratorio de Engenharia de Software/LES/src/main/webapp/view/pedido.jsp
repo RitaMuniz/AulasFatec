@@ -66,23 +66,48 @@
         </div>
     </div>
 
-    <%-- Devolução --%>
+    <%-- Troca por item --%>
     <div class="pedidos-card">
-        <h3>Solicitar Devolução</h3>
+        <h3>Solicitar Troca</h3>
         <c:choose>
             <c:when test="${pedido.status == 'ENTREGUE'}">
-                <form action="${pageContext.request.contextPath}/devolucao" method="post">
-                    <input type="hidden" name="pedido_id" value="${pedido.id}">
-                    <p>
-                        <label><input type="radio" name="motivo" value="DANIFICADO" required> Produto danificado</label><br>
-                        <label><input type="radio" name="motivo" value="ARREPENDIMENTO"> Arrependimento</label><br>
-                        <label><input type="radio" name="motivo" value="INCORRETO"> Pedido incorreto</label>
-                    </p>
-                    <button type="submit" class="btn">Enviar Solicitação</button>
-                </form>
+                <p style="font-size:13px; color:#555; margin-bottom:12px;">
+                    Selecione o item que deseja trocar. Um cupom de troca com o valor do item
+                    será gerado assim que a devolução for concluída pela loja.
+                </p>
+                <c:forEach var="item" items="${itens}">
+                    <div style="display:flex; justify-content:space-between; align-items:center;
+                                padding:10px 0; border-bottom:1px solid #eee;">
+                        <div>
+                            <strong>${item.livro.titulo}</strong><br>
+                            <small>Qtd: ${item.quantidade} —
+                                R$ <fmt:formatNumber value="${item.subtotal}"
+                                    minFractionDigits="2" maxFractionDigits="2"/>
+                            </small>
+                        </div>
+                        <div>
+                            <c:choose>
+                                <%-- Item já em processo de troca --%>
+                                <c:when test="${not empty item.statusTroca}">
+                                    <span style="font-size:12px; font-weight:bold; color:#e65100;">
+                                        ${item.statusTroca}
+                                    </span>
+                                </c:when>
+                                <%-- Item disponível para troca --%>
+                                <c:otherwise>
+                                    <a href="${pageContext.request.contextPath}/troca?action=solicitar&pedidoId=${pedido.id}&itemPedidoId=${item.id}"
+                                       class="btn"
+                                       style="font-size:13px; padding:6px 14px;">
+                                        Solicitar Troca
+                                    </a>
+                                </c:otherwise>
+                            </c:choose>
+                        </div>
+                    </div>
+                </c:forEach>
             </c:when>
             <c:otherwise>
-                <p style="color:#888;">A solicitação de devolução estará disponível após a entrega do pedido.</p>
+                <p style="color:#888;">A solicitação de troca estará disponível após a entrega do pedido.</p>
             </c:otherwise>
         </c:choose>
     </div>

@@ -39,9 +39,9 @@ public class PedidoController extends HttpServlet {
         }
 
         try (Connection con = ConexaoSQL.getInstance().getConnection()) {
-            List<Endereco> enderecos = enderecoDAO.listarPorCliente(con, cliente.getId());
-            List<Cartao>   cartoes   = cartaoDAO.listarPorCliente(con, cliente.getId());
-            List<Cupom>    cupons    = cupomDAO.listarDisponiveisPorCliente(cliente.getId());
+            List<Endereco> enderecos = enderecoDAO.listarEntregaPorCliente(con, cliente.getId());
+            List<Cartao> cartoes = cartaoDAO.listarPorCliente(con, cliente.getId());
+            List<Cupom> cupons = cupomDAO.listarDisponiveisPorCliente(cliente.getId());
 
             // Calcula subtotal para exibir frete estimado na UI
             // (frete definitivo é calculado no POST quando o CEP é conhecido)
