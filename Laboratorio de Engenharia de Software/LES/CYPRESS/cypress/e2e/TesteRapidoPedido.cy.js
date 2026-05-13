@@ -79,7 +79,7 @@ describe('Fluxo de pedido', () => {
         // passo 3
         checkout.preencherCampo(
             'endereco',
-            '5'
+            '13'
         )
 
         checkout.preencherCampo(
@@ -204,7 +204,7 @@ describe('Fluxo de pedido', () => {
 
         checkout.preencherCampo(
             'endereco',
-            '5'
+            '13'
         )
 
         checkout.preencherCampo(

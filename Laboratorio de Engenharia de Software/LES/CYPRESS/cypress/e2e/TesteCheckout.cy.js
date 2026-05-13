@@ -4,6 +4,7 @@ import livro from "../pages/Livro/TesteIndex"
 import carrinho from "../pages/Carrinho/TesteIndex"
 import checkout from "../pages/Checkout/TesteIndex"
 import login from "../pages/login/TesteIndex"
+import cupons from "../fixtures/cupons.json";
 
 describe('Checkout', () => {
 
@@ -110,7 +111,7 @@ describe('Checkout', () => {
         // act
         checkout.preencherCampo(
             'endereco',
-            '5'
+            '13'
         )
 
         // assert
@@ -194,7 +195,7 @@ describe('Checkout', () => {
         // act
         checkout.preencherCampo(
             'endereco',
-            '5'
+            '13'
         )
 
         checkout.limparCampo(
@@ -217,7 +218,7 @@ describe('Checkout', () => {
         // act
         checkout.preencherCampo(
             'endereco',
-            '5'
+            '13'
         )
 
         checkout.preencherCampo(
@@ -241,7 +242,7 @@ describe('Checkout', () => {
         // act
         checkout.preencherCampo(
             'endereco',
-            '5'
+            '13'
         )
 
         checkout.preencherCampo(
@@ -265,7 +266,7 @@ describe('Checkout', () => {
         // act
         checkout.preencherCampo(
             'endereco',
-            '5'
+            '13'
         )
 
         checkout.preencherCampo(
@@ -285,7 +286,7 @@ describe('Checkout', () => {
         // act
         checkout.preencherCampo(
             'endereco',
-            '5'
+            '13'
         )
 
         checkout.preencherCampo(
@@ -305,7 +306,7 @@ describe('Checkout', () => {
         // act
         checkout.preencherCampo(
             'endereco',
-            '5'
+            '13'
         )
 
         checkout.preencherCartoes(
@@ -329,7 +330,7 @@ describe('Checkout', () => {
         // act
         checkout.preencherCampo(
             'endereco',
-            '5'
+            '13'
         )
 
         checkout.preencherCartoes(
@@ -351,9 +352,12 @@ describe('Checkout', () => {
     it('Aplicar cupom de desconto', () => {
 
         // act
-        checkout.selecionarCupom(
-            6
+        checkout.preencherCampo(
+            'endereco',
+            '13'
         )
+
+        checkout.selecionarCupom(cupons.maria["20"].id)
 
         // assert
         checkout.validar(
@@ -385,7 +389,7 @@ describe('Checkout', () => {
         // arrange
         checkout.preencherCampo(
             'endereco',
-            '5'
+            '13'
         )
 
         checkout.validar(

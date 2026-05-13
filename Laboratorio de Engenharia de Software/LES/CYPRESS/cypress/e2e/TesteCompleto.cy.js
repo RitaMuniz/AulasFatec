@@ -47,7 +47,7 @@ describe('Fluxo completo de pedido', () => {
         checkout.validar('estrutura')
 
         // act
-        checkout.preencherCampo('endereco', enderecos.maria.principal)
+        checkout.preencherCampo('endereco', enderecos.maria.entrega)
         checkout.preencherCampo('cartao1', cartoes.maria.mastercard.id)
         checkout.validar('cartaoSelecionado', String(cartoes.maria.mastercard.id))
 
@@ -98,7 +98,7 @@ describe('Fluxo completo de pedido', () => {
         checkout.validar('estrutura')
 
         // act
-        checkout.preencherCampo('endereco', enderecos.maria.principal)
+        checkout.preencherCampo('endereco', enderecos.maria.entrega)
         checkout.preencherCampo('cartao1', cartoes.maria.elo.id)
         checkout.validar('cartaoSelecionado', String(cartoes.maria.elo.id))
 
@@ -152,7 +152,7 @@ describe('Fluxo completo de pedido', () => {
         carrinho.clicarBotao('finalizar')
 
         checkout.validar('estrutura')
-        checkout.preencherCampo('endereco', enderecos.maria.principal)
+        checkout.preencherCampo('endereco', enderecos.maria.entrega)
         checkout.preencherCampo('cartao1', cartoes.maria.mastercard.id)
         checkout.validar('cartaoSelecionado', String(cartoes.maria.mastercard.id))
 
@@ -192,7 +192,7 @@ describe('Fluxo completo de pedido', () => {
         checkout.validar('estrutura')
 
         // act
-        checkout.preencherCampo('endereco', enderecos.maria.principal)
+        checkout.preencherCampo('endereco', enderecos.maria.entrega)
         checkout.preencherCampo('cartao1', cartoes.maria.mastercard.id)
         checkout.limparCampo('valorCartao1')
         checkout.clicarBotao('finalizarForcado')
@@ -221,7 +221,7 @@ describe('Fluxo completo de pedido', () => {
         checkout.validar('estrutura')
 
         // act
-        checkout.preencherCampo('endereco', enderecos.maria.principal)
+        checkout.preencherCampo('endereco', enderecos.maria.entrega)
         checkout.preencherCampo('cartao1', cartoes.maria.mastercard.id)
         checkout.preencherCampo('valorCartao1', '10.00')
 
@@ -250,7 +250,7 @@ describe('Fluxo completo de pedido', () => {
         checkout.validar('estrutura')
 
         // act
-        checkout.preencherCampo('endereco', enderecos.maria.principal)
+        checkout.preencherCampo('endereco', enderecos.maria.entrega)
         checkout.preencherCampo('cartao1', cartoes.maria.mastercard.id)
         checkout.preencherCampo('valorCartao1', '9999.00')
 
@@ -279,7 +279,7 @@ describe('Fluxo completo de pedido', () => {
         checkout.validar('estrutura')
 
         // act
-        checkout.preencherCampo('endereco', enderecos.maria.principal)
+        checkout.preencherCampo('endereco', enderecos.maria.entrega)
         checkout.preencherCampo('cartao1', cartoes.maria.mastercard.id)
         checkout.preencherCampo('valorCartao1', '-10')
 
@@ -307,7 +307,7 @@ describe('Fluxo completo de pedido', () => {
         checkout.validar('estrutura')
 
         // act
-        checkout.preencherCampo('endereco', enderecos.maria.principal)
+        checkout.preencherCampo('endereco', enderecos.maria.entrega)
         checkout.preencherCampo('cartao1', cartoes.maria.mastercard.id)
         checkout.preencherCampo('valorCartao1', '0')
 
@@ -342,7 +342,7 @@ describe('Fluxo completo de pedido', () => {
         checkout.validar('estrutura')
 
         // act
-        checkout.preencherCampo('endereco', enderecos.maria.principal)
+        checkout.preencherCampo('endereco', enderecos.maria.entrega)
         checkout.preencherCampo('cartao1', cartoes.maria.mastercard.id)
         checkout.preencherCartoes('10.00', '10.00')
 
@@ -378,7 +378,7 @@ describe('Fluxo completo de pedido', () => {
         checkout.validar('estrutura')
 
         // act
-        checkout.preencherCampo('endereco', enderecos.maria.principal)
+        checkout.preencherCampo('endereco', enderecos.maria.entrega)
         checkout.preencherCampo('cartao1', cartoes.maria.mastercard.id)
         checkout.preencherCartoes('5.00', '50.00')
 
@@ -414,7 +414,7 @@ describe('Fluxo completo de pedido', () => {
         checkout.validar('estrutura')
 
         // act
-        checkout.preencherCampo('endereco', enderecos.maria.principal)
+        checkout.preencherCampo('endereco', enderecos.maria.entrega)
         checkout.selecionarCupom(cupons.maria["20"].id)
 
         // assert

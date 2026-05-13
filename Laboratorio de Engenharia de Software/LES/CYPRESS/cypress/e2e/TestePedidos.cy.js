@@ -8,7 +8,7 @@ import pedidos from "../pages/Pedidos/TesteIndex"
 
 describe('Fluxo completo de pedido', () => {
 
-    const ENDERECO_VALIDO = '5'
+    const ENDERECO_VALIDO = '13'
     const CARTAO_MASTERCARD = '10'
     const CARTAO_VISA = '8'
     const CUPOM_DESCONTO = 6

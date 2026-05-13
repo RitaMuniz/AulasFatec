@@ -91,11 +91,18 @@ class Checkout {
     }
 
     selecionarCupom(id){
+
         cy.get(
-            this.montarSeletorComId(el.cupons.checkbox, id)
+            this.montarSeletorComId(el.cupons.item, id)
         )
-            .check({ force: true })
-            .trigger('change')
+            .should('exist')
+            .should('be.visible')
+            .click()
+
+        cy.get(
+            this.montarSeletorComId(el.cupons.item, id)
+        )
+            .should('have.class', 'selecionado')
     }
 
     clicarBotao(botao){

@@ -70,7 +70,6 @@ class Carrinho {
 
     validarEstrutura(){
         cy.get(el.textos.subtotal).should('exist').and('be.visible')
-        cy.get(el.textos.valorFrete).should('exist').and('be.visible')
         cy.get(el.textos.totalEstimado).should('exist').and('be.visible')
     }
 
@@ -86,22 +85,21 @@ class Carrinho {
 
     validarResumo(){
         cy.get(el.textos.subtotal).should('contain.text', 'R$')
-        cy.get(el.textos.valorFrete).should('contain.text', el.textosEsperados.fretePadrao)
         cy.get(el.textos.totalEstimado).should('contain.text', 'R$')
     }
 
     validarTotalEstimado(){
         cy.get(el.textos.subtotal).invoke('text').then(subtotalTexto => {
-            cy.get(el.textos.valorFrete).invoke('text').then(freteTexto => {
+
                 cy.get(el.textos.totalEstimado).invoke('text').then(totalTexto => {
 
                     const subtotal = this.converterMoedaParaNumero(subtotalTexto)
-                    const frete = this.converterMoedaParaNumero(freteTexto)
+
                     const total = this.converterMoedaParaNumero(totalTexto)
 
-                    expect(total).to.be.closeTo(subtotal + frete, 0.01)
+                    expect(total).to.be.closeTo(subtotal, 0.01)
                 })
-            })
+
         })
     }
 
