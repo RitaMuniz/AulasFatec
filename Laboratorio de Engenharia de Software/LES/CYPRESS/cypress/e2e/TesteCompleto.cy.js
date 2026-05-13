@@ -421,6 +421,13 @@ describe('Fluxo completo de pedido', () => {
         checkout.validar('cupomAplicado')
         checkout.validar('resumo')
         checkout.validar('total')
+        checkout.clicarBotao('finalizar')
+        pedidos.validar('confirmacao')
+        pedidos.clicarBotao('meusPedidos')
+        pedidos.validar('pedidoCadastrado')
+        pedidos.clicarBotao('detalhesPedido')
+        pedidos.validar('detalhePedido')
+        pedidos.validar('statusConfirmado')
     })
 
 })
