@@ -400,12 +400,12 @@ function atualizarResumo() {
     showAviso("aviso-minimo", erroMinimo);
 
     // Habilita/desabilita botão
-    const podeFinalizarCartoes = !erroCartao && !erroMinimo;
+    /*const podeFinalizarCartoes = !erroCartao && !erroMinimo;
     const btn = document.getElementById("btn-finalizar");
     if (btn && !btn.disabled) {
         btn.disabled = !podeFinalizarCartoes;
         btn.title = podeFinalizarCartoes ? "" : "Corrija os valores antes de finalizar.";
-    }
+    }*/
 }
 
 // Toggle cartão 2
