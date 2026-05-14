@@ -17,7 +17,7 @@
         <a href="${pageContext.request.contextPath}/view/index.jsp">Início</a>
         <a href="${pageContext.request.contextPath}/livros">Livros</a>
         <a href="${pageContext.request.contextPath}/carrinho">Carrinho</a>
-        <a href="${pageContext.request.contextPath}/logout">Sair</a>
+        <a href="${pageContext.request.contextPath}/logout" data-test="btn-sair">Sair</a>
     </div>
 </header>
 

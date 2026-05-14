@@ -99,6 +99,13 @@ class Checkout {
             .should('be.visible')
             .click()
 
+            cy.get(
+            this.montarSeletorComId(el.cupons.checkbox, id)
+        )
+            .should('exist')
+            .should('be.visible')
+            .click()
+
         cy.get(
             this.montarSeletorComId(el.cupons.item, id)
         )

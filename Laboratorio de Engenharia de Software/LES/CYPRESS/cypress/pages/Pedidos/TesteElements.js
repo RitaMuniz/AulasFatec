@@ -18,6 +18,7 @@ export const elements = {
 
     botoes: {
         meusPedidos: '[data-test="btn-meus-pedidos"]',
-        detalhesPedido: '[data-test^="botao-detalhes-pedido-"]'
+        detalhesPedido: '[data-test^="botao-detalhes-pedido-"]',
+        sair: '[data-test="btn-sair"]',
     }
 }

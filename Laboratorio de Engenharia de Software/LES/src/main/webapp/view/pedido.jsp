@@ -112,7 +112,7 @@
         </c:choose>
     </div>
 
-    <a href="${pageContext.request.contextPath}/pedidos" class="btn" style="margin-top:20px; display:inline-block;">
+    <a href="${pageContext.request.contextPath}/pedidos" class="btn" data-test="btn-voltar" style="margin-top:20px; display:inline-block;">
         ← Voltar aos Pedidos
     </a>
 

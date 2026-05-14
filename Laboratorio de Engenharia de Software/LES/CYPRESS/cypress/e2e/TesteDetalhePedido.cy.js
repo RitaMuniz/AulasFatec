@@ -5,6 +5,7 @@ import carrinho from "../pages/Carrinho/TesteIndex"
 import checkout from "../pages/Checkout/TesteIndex"
 import login from "../pages/login/TesteIndex"
 import pedidos from "../pages/Pedidos/TesteIndex"
+import pedidoDetalhe from "../pages/Pedido/TesteIndex"
 
 import usuarios from "../fixtures/usuarios.json"
 import livrosDados from "../fixtures/livros.json"
@@ -70,6 +71,23 @@ describe('Fluxo completo de pedido', () => {
         pedidos.clicarBotao('detalhesPedido')
         pedidos.validar('detalhePedido')
         pedidos.validar('statusConfirmado')
+
+        pedidoDetalhe.validarStatus('confirmado', true)
+        pedidoDetalhe.validarStatus('separando', false)
+        pedidoDetalhe.validarStatus('enviado', false)
+        pedidoDetalhe.validarStatus('entregue', false)
+        pedidoDetalhe.validar('detalhePedido')
+        pedidoDetalhe.validar()
+        pedidoDetalhe.clicarBotao('voltar')
+
+        pedidos.clicarBotao('sair')
+
+        login.visitarPagina()
+        login.preencherCampo('username', usuarios.admin.email)
+        login.preencherCampo('password', usuarios.admin.senha)
+        login.clicarBotao('entrar')
+
+
     })
 
 })
