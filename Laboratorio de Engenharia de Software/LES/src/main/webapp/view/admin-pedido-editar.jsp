@@ -14,8 +14,8 @@
 <header class="topbar">
     <h1>Editar Pedido #<fmt:formatNumber value="${pedido.id}" minIntegerDigits="4"/></h1>
     <div>
-        <a href="${pageContext.request.contextPath}/admin/pedidos">Voltar</a>
-        <a href="${pageContext.request.contextPath}/logout">Sair</a>
+        <a href="${pageContext.request.contextPath}/admin/pedidos" data-test="button-voltar">Voltar</a>
+        <a href="${pageContext.request.contextPath}/logout"  data-test="button-sair">Sair</a>
     </div>
 </header>
 
@@ -23,12 +23,12 @@
     <aside class="sidebar">
         <h2>Admin</h2>
         <nav>
-            <a href="${pageContext.request.contextPath}/admin">Dashboard</a>
-            <a href="${pageContext.request.contextPath}/admin/pedidos" class="active">Pedidos</a>
-            <a href="${pageContext.request.contextPath}/view/admin-livros.html">Livros</a>
-            <a href="${pageContext.request.contextPath}/view/admin-clientes.jsp">Clientes</a>
-            <a href="${pageContext.request.contextPath}/troca?action=admin">Devoluções</a>
-            <a href="${pageContext.request.contextPath}/view/admin-relatorios.html">Relatórios</a>
+            <a href="${pageContext.request.contextPath}/admin" data-test="button-dashboard">Dashboard</a>
+            <a href="${pageContext.request.contextPath}/admin/pedidos" class="active" data-test="button-pedidos">Pedidos</a>
+            <a href="${pageContext.request.contextPath}/view/admin-livros.html" data-test="button-livros">Livros</a>
+            <a href="${pageContext.request.contextPath}/view/admin-clientes.jsp" data-test="button-clientes">Clientes</a>
+            <a href="${pageContext.request.contextPath}/troca?action=admin" data-test="button-devolucoes">Devoluções</a>
+            <a href="${pageContext.request.contextPath}/view/admin-relatorios.html" data-test="button-relatorio">Relatórios</a>
         </nav>
     </aside>
 
@@ -41,27 +41,27 @@
             <div class="form-grid">
                 <div>
                     <label>Nome:</label>
-                    <input type="text" value="${pedido.cliente.nome}" readonly>
+                    <input data-test="pedido-cliente-nome-${pedido.cliente.nome}" type="text" value="${pedido.cliente.nome}" readonly>
                 </div>
                 <div>
                     <label>Email:</label>
-                    <input type="email" value="${pedido.cliente.email}" readonly>
+                    <input data-test="pedido-cliente-email-${pedido.cliente.email}" type="email" value="${pedido.cliente.email}" readonly>
                 </div>
                 <div>
                     <label>CPF:</label>
-                    <input type="text" value="${pedido.cliente.cpf}" readonly>
+                    <input data-test="pedido-cliente-cpf-${pedido.cliente.cpf}" type="text" value="${pedido.cliente.cpf}" readonly>
                 </div>
             </div>
 
             <h2>Status do Pedido</h2>
             <label>Status:</label>
-            <select name="status">
-                <option value="EM_PROCESSAMENTO" ${pedido.status == 'EM_PROCESSAMENTO' ? 'selected' : ''}>Em Processamento</option>
-                <option value="CONFIRMADO"        ${pedido.status == 'CONFIRMADO'        ? 'selected' : ''}>Confirmado</option>
-                <option value="SEPARANDO"         ${pedido.status == 'SEPARANDO'         ? 'selected' : ''}>Separando</option>
-                <option value="ENVIADO"           ${pedido.status == 'ENVIADO'           ? 'selected' : ''}>Enviado</option>
-                <option value="ENTREGUE"          ${pedido.status == 'ENTREGUE'          ? 'selected' : ''}>Entregue</option>
-                <option value="CANCELADO"         ${pedido.status == 'CANCELADO'         ? 'selected' : ''}>Cancelado</option>
+            <select data-test="pedido-status" name="status">
+                <option data-test="pedido-status-${pedido.status == 'EM_PROCESSAMENTO'  ? 'selected' : ''}" value="EM_PROCESSAMENTO"  ${pedido.status == 'EM_PROCESSAMENTO'  ? 'selected' : ''}>Em Processamento</option>
+                <option data-test="pedido-status-${pedido.status == 'CONFIRMADO'        ? 'selected' : ''}" value="CONFIRMADO"        ${pedido.status == 'CONFIRMADO'        ? 'selected' : ''}>Confirmado</>
+                <option data-test="pedido-status-${pedido.status == 'SEPARANDO'        ? 'selected' : ''}" value="SEPARANDO"         ${pedido.status == 'SEPARANDO'         ? 'selected' : ''}>Separando</option>
+                <option data-test="pedido-status-${pedido.status == 'ENVIADO'        ? 'selected' : ''}" value="ENVIADO"           ${pedido.status == 'ENVIADO'           ? 'selected' : ''}>Enviado</option>
+                <option data-test="pedido-status-${pedido.status == 'ENTREGUE'        ? 'selected' : ''}" value="ENTREGUE"          ${pedido.status == 'ENTREGUE'          ? 'selected' : ''}>Entregue</option>
+                <option data-test="pedido-status-${pedido.status == 'CANCELADO'        ? 'selected' : ''}" value="CANCELADO"         ${pedido.status == 'CANCELADO'         ? 'selected' : ''}>Cancelado</option>
             </select>
 
             <h2>Itens do Pedido</h2>
@@ -77,21 +77,21 @@
                 <tbody>
                 <c:forEach var="item" items="${pedido.itens}">
                     <tr>
-                        <td>${item.livro.titulo}</td>
-                        <td>${item.quantidade}</td>
-                        <td>R$ <fmt:formatNumber value="${item.precoUnitario}" minFractionDigits="2" maxFractionDigits="2"/></td>
-                        <td>R$ <fmt:formatNumber value="${item.subtotal}" minFractionDigits="2" maxFractionDigits="2"/></td>
+                        <td data-test="pedido-item-titulo-${item.livro.titulo}">${item.livro.titulo}</td>
+                        <td data-test="pedido-item-quantidade-${item.quantidade}">${item.quantidade}</td>
+                        <td data-test="pedido-item-precoUnitario-${item.precoUnitario}">R$ <fmt:formatNumber value="${item.precoUnitario}" minFractionDigits="2" maxFractionDigits="2"/></td>
+                        <td data-test="pedido-item-subtotal-${item.subtotal}">R$ <fmt:formatNumber value="${item.subtotal}" minFractionDigits="2" maxFractionDigits="2"/></td>
                     </tr>
                 </c:forEach>
                 </tbody>
             </table>
 
             <h2>Total</h2>
-            <p><strong>R$ <fmt:formatNumber value="${pedido.total}" minFractionDigits="2" maxFractionDigits="2"/></strong></p>
+            <p><strong data-test="pedido-total-${pedido.total}">R$ <fmt:formatNumber value="${pedido.total}" minFractionDigits="2" maxFractionDigits="2"/></strong></p>
 
             <div class="form-actions">
-                <button type="submit">Salvar Alterações</button>
-                <a href="${pageContext.request.contextPath}/admin/pedidos?id=${pedido.id}" class="btn-cancelar">Cancelar</a>
+                <button data-test="button-salvar" type="submit">Salvar Alterações</button>
+                <a data-test="button-cancelar" href="${pageContext.request.contextPath}/admin/pedidos?id=${pedido.id}" class="btn-cancelar">Cancelar</a>
             </div>
 
         </form>

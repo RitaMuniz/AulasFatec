@@ -17,6 +17,7 @@
         <a href="${pageContext.request.contextPath}/view/index.jsp">Início</a>
         <a href="${pageContext.request.contextPath}/livros">Livros</a>
         <a href="${pageContext.request.contextPath}/pedidos">Meus Pedidos</a>
+        <a href="${pageContext.request.contextPath}/view/troca.jsp">Minhas Trocas</a>
         <a href="${pageContext.request.contextPath}/logout">Sair</a>
     </div>
 </header>
@@ -95,7 +96,7 @@
                                 </c:when>
                                 <%-- Item disponível para troca --%>
                                 <c:otherwise>
-                                    <a href="${pageContext.request.contextPath}/troca?action=solicitar&pedidoId=${pedido.id}&itemPedidoId=${item.id}"
+                                    <a data-test="btn-trocar-${item.id}" href="${pageContext.request.contextPath}/troca?action=solicitar&pedidoId=${pedido.id}&itemPedidoId=${item.id}"
                                        class="btn"
                                        style="font-size:13px; padding:6px 14px;">
                                         Solicitar Troca

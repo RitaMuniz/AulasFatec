@@ -78,7 +78,7 @@
                 <c:choose>
                     <c:when test="${empty enderecos}">
                         <p>Você não tem endereços cadastrados.
-                           <a href="${pageContext.request.contextPath}/endereco?action=listar&amp;origem=checkout">Cadastrar endereço</a>
+                           <a data-test="Cadastrar-endereço" href="${pageContext.request.contextPath}/endereco?action=listar&amp;origem=checkout">Cadastrar endereço</a>
                         </p>
                     </c:when>
                     <c:otherwise>
@@ -110,7 +110,7 @@
 
                 <c:if test="${empty cartoes}">
                     <p>Você não tem cartões cadastrados.
-                       <a href="${pageContext.request.contextPath}/cartao?action=listar&amp;origem=checkout">Cadastrar cartão</a>
+                       <a data-test="Cadastrar-cartao" href="${pageContext.request.contextPath}/cartao?action=listar&amp;origem=checkout">Cadastrar cartão</a>
                     </p>
                 </c:if>
 

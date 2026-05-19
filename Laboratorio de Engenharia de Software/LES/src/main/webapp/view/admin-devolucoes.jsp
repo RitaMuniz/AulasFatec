@@ -54,8 +54,8 @@
 <header class="topbar">
     <h1>Devoluções / Trocas</h1>
     <div>
-        <a href="${pageContext.request.contextPath}/view/index.jsp">Ver Loja</a>
-        <a href="${pageContext.request.contextPath}/logout">Sair</a>
+        <a data-test="icon-loja" href="${pageContext.request.contextPath}/view/index.jsp">Ver Loja</a>
+        <a data-test="icon-sair" href="${pageContext.request.contextPath}/logout">Sair</a>
     </div>
 </header>
 
@@ -64,12 +64,12 @@
     <aside class="sidebar">
         <h2>Admin</h2>
         <nav>
-            <a href="${pageContext.request.contextPath}/admin">Dashboard</a>
-            <a href="${pageContext.request.contextPath}/admin/pedidos">Pedidos</a>
-            <a href="${pageContext.request.contextPath}/view/admin-livros.html">Livros</a>
-            <a href="${pageContext.request.contextPath}/view/admin-clientes.jsp">Clientes</a>
-            <a href="${pageContext.request.contextPath}/troca?action=admin" class="active">Devoluções</a>
-            <a href="${pageContext.request.contextPath}/view/admin-relatorios.html">Relatórios</a>
+            <a data-test="button-dashboard" href="${pageContext.request.contextPath}/admin">Dashboard</a>
+            <a data-test="button-pedidos" href="${pageContext.request.contextPath}/admin/pedidos">Pedidos</a>
+            <a data-test="button-livros" href="${pageContext.request.contextPath}/view/admin-livros.html">Livros</a>
+            <a data-test="button-clientes" href="${pageContext.request.contextPath}/view/admin-clientes.jsp">Clientes</a>
+            <a data-test="button-devolucoes" href="${pageContext.request.contextPath}/troca?action=admin" class="active">Devoluções</a>
+            <a data-test="button-relatorio" href="${pageContext.request.contextPath}/view/admin-relatorios.html">Relatórios</a>
         </nav>
     </aside>
 
@@ -77,19 +77,19 @@
 
         <%-- Mensagens de feedback --%>
         <c:if test="${param.sucesso == 'concluida'}">
-            <div class="aviso-sucesso">✅ Troca concluída e cupom de troca gerado com sucesso!</div>
+            <div data-test="mensagem-concluida" class="aviso-sucesso">✅ Troca concluída e cupom de troca gerado com sucesso!</div>
         </c:if>
         <c:if test="${param.sucesso == 'aprovada'}">
-            <div class="aviso-sucesso">✅ Troca aprovada com sucesso!</div>
+            <div data-test="mensagem-aprovada" class="aviso-sucesso">✅ Troca aprovada com sucesso!</div>
         </c:if>
         <c:if test="${param.sucesso == 'recusada'}">
-            <div class="aviso-sucesso">ℹ️ Troca recusada.</div>
+            <div data-test="mensagem-recusada" class="aviso-sucesso">ℹ️ Troca recusada.</div>
         </c:if>
         <c:if test="${param.sucesso == 'recebida'}">
-            <div class="aviso-sucesso">✅ Recebimento do item registrado!</div>
+            <div data-test="mensagem-sucesso" class="aviso-sucesso">✅ Recebimento do item registrado!</div>
         </c:if>
         <c:if test="${not empty param.erro}">
-            <div class="aviso-erro">⚠️ Erro: ${param.erro}</div>
+            <div data-test="mensagem-erro" class="aviso-erro">⚠️ Erro: ${param.erro}</div>
         </c:if>
 
         <%-- ===== SEÇÃO: Pendentes ===== --%>
@@ -104,7 +104,7 @@
 
         <c:choose>
             <c:when test="${!temPendentes}">
-                <p>Nenhuma solicitação pendente.</p>
+                <p data-test="mensagem-nenhuma-solicitacao">Nenhuma solicitação pendente.</p>
             </c:when>
             <c:otherwise>
                 <table>
@@ -122,31 +122,31 @@
                         <c:forEach var="t" items="${trocas}">
                             <c:if test="${t.status == 'SOLICITADA' || t.status == 'APROVADA' || t.status == 'RECEBIDA'}">
                                 <tr>
-                                    <td>${t.id}</td>
-                                    <td>#${t.pedidoId}</td>
-                                    <td>${t.dataSolicitacao}</td>
-                                    <td style="max-width:200px; word-break:break-word;">${t.motivo}</td>
-                                    <td><span class="badge ${t.status}">${t.status}</span></td>
-                                    <td class="acoes">
+                                    <td data-test="tabela-item-id-${t.id}">${t.id}</td>
+                                    <td data-test="tabela-item-pedido-${t.pedidoId}">#${t.pedidoId}</td>
+                                    <td data-test="tabela-item-dataSolicitacao-${t.dataSolicitacao}">${t.dataSolicitacao}</td>
+                                    <td style="max-width:200px; word-break:break-word;" data-test="tabela-item-motivo-${t.motivo}">${t.motivo}</td>
+                                    <td data-test="tabela-item-status-${t.status}"><span class="badge ${t.status}">${t.status}</span></td>
+                                    <td data-test="tabela-item-acoes" class="acoes">
 
                                         <%-- Ver pedido vinculado --%>
                                         <a href="${pageContext.request.contextPath}/admin/pedidos?id=${t.pedidoId}"
-                                           class="btn-visualizar">Ver Pedido</a>
+                                           class="btn-visualizar" data-test="tabela-item-button-visualizar-${t.pedidoId}" >Ver Pedido</a>
 
                                         <%-- Aprovar ou Recusar (SOLICITADA) --%>
                                         <c:if test="${t.status == 'SOLICITADA'}">
                                             <form action="${pageContext.request.contextPath}/troca" method="post">
-                                                <input type="hidden" name="action"  value="aprovar">
-                                                <input type="hidden" name="trocaId" value="${t.id}">
-                                                <button class="btn-aprovar" type="submit"
+                                                <input data-test="tabela-item-aprovar-${t.pedidoId}" type="hidden" name="action"  value="aprovar">
+                                                <input data-test="tabela-item-aprovar-${t.id}" type="hidden" name="trocaId" value="${t.id}">
+                                                <button data-test="tabela-item-button-aprovar-${t.id}" class="btn-aprovar" type="submit"
                                                         onclick="return confirm('Aprovar esta solicitação de troca?')">
                                                     Aprovar
                                                 </button>
                                             </form>
                                             <form action="${pageContext.request.contextPath}/troca" method="post">
-                                                <input type="hidden" name="action"  value="recusar">
-                                                <input type="hidden" name="trocaId" value="${t.id}">
-                                                <button class="btn-recusar" type="submit"
+                                                <input data-test="tabela-item-recusar-${t.pedidoId}" type="hidden" name="action"  value="recusar">
+                                                <input data-test="tabela-item-recusar-${t.id}" type="hidden" name="trocaId" value="${t.id}">
+                                                <button data-test="tabela-item-button-recusar-${t.id}" class="btn-recusar" type="submit"
                                                         onclick="return confirm('Recusar esta troca?')">
                                                     Recusar
                                                 </button>
@@ -156,18 +156,18 @@
                                         <%-- Marcar como recebido (APROVADA) --%>
                                         <c:if test="${t.status == 'APROVADA'}">
                                             <form action="${pageContext.request.contextPath}/troca" method="post">
-                                                <input type="hidden" name="action"  value="receber">
-                                                <input type="hidden" name="trocaId" value="${t.id}">
-                                                <button class="btn-receber" type="submit">Marcar Recebido</button>
+                                                <input data-test="tabela-item-receber-${t.pedidoId}" type="hidden" name="action"  value="receber">
+                                                <input data-test="tabela-item-receber-${t.id}" type="hidden" name="trocaId" value="${t.id}">
+                                                <button data-test="tabela-item-button-receber-${t.id}" class="btn-receber" type="submit">Marcar Recebido</button>
                                             </form>
                                         </c:if>
 
                                         <%-- Concluir + gerar cupom (RECEBIDA) --%>
                                         <c:if test="${t.status == 'RECEBIDA'}">
                                             <form action="${pageContext.request.contextPath}/troca" method="post">
-                                                <input type="hidden" name="action"  value="concluir">
-                                                <input type="hidden" name="trocaId" value="${t.id}">
-                                                <button class="btn-concluir" type="submit"
+                                                <input data-test="tabela-item-concluir-${t.pedidoId}" type="hidden" name="action"  value="concluir">
+                                                <input data-test="tabela-item-concluir-${t.id}" type="hidden" name="trocaId" value="${t.id}">
+                                                <button data-test="tabela-item-button-concluir-${t.id}" class="btn-concluir" type="submit"
                                                         onclick="return confirm('Concluir troca e gerar cupom para o cliente?')">
                                                     Concluir + Cupom
                                                 </button>
@@ -195,7 +195,7 @@
 
         <c:choose>
             <c:when test="${!temHistorico}">
-                <p>Nenhum registro no histórico.</p>
+                <p data-test="sem-historico" >Nenhum registro no histórico.</p>
             </c:when>
             <c:otherwise>
                 <table>
@@ -213,16 +213,16 @@
                         <c:forEach var="t" items="${trocas}">
                             <c:if test="${t.status == 'CONCLUIDA' || t.status == 'RECUSADA'}">
                                 <tr>
-                                    <td>${t.id}</td>
-                                    <td>
+                                    <td data-test="tabela-item-id-${t.id}">${t.id}</td>
+                                    <td data-test="tabela-item-pedidoid-${t.pedidoId}">
                                         <a href="${pageContext.request.contextPath}/admin/pedidos?id=${t.pedidoId}">
                                             #${t.pedidoId}
                                         </a>
                                     </td>
-                                    <td>${t.dataSolicitacao}</td>
-                                    <td style="max-width:200px; word-break:break-word;">${t.motivo}</td>
-                                    <td><span class="badge ${t.status}">${t.status}</span></td>
-                                    <td>
+                                    <td data-test="tabela-item-dataSolicitacao-${t.dataSolicitacao}">${t.dataSolicitacao}</td>
+                                    <td style="max-width:200px; word-break:break-word;" data-test="tabela-item-motivo-${t.motivo}" >${t.motivo}</td>
+                                    <td data-test="tabela-item-status-${t.status}" ><span class="badge ${t.status}">${t.status}</span></td>
+                                    <td data-test="tabela-item-cupom-${t.cupomGeradoId}">
                                         <c:choose>
                                             <c:when test="${t.status == 'CONCLUIDA'}">
                                                 <span style="color:#198754;">✅ Cupom #${t.cupomGeradoId}</span>
