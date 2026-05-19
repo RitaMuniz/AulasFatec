@@ -6,6 +6,7 @@ import checkout from "../pages/Checkout/TesteIndex"
 import login from "../pages/login/TesteIndex"
 import pedidos from "../pages/Pedidos/TesteIndex"
 import pedidoDetalhe from "../pages/Pedido/TesteIndex"
+import adminDashboard from "../pages/AdminDashboard/TesteIndex"
 
 import usuarios from "../fixtures/usuarios.json"
 import livrosDados from "../fixtures/livros.json"
@@ -86,6 +87,10 @@ describe('Fluxo completo de pedido', () => {
         login.preencherCampo('username', usuarios.admin.email)
         login.preencherCampo('password', usuarios.admin.senha)
         login.clicarBotao('entrar')
+
+        adminDashboard.validarAcessoPagina()
+        adminDashboard.validarDashboard()
+        adminDashboard.clicarBotao("pedidos")
 
 
     })

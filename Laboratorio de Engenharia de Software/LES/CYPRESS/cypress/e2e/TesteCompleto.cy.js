@@ -419,6 +419,7 @@ describe('Fluxo completo de pedido', () => {
 
         // assert
         checkout.validar('cupomAplicado')
+        checkout.preencherValorTotalNoCartao1()
         checkout.validar('resumo')
         checkout.validar('total')
         checkout.clicarBotao('finalizar')

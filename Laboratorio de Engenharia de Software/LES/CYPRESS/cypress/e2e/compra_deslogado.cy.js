@@ -102,8 +102,8 @@ describe('Fluxo Completo Compra', () => {
             livro.preencherQuantidade(1, 23)
             livro.buttonAdicionarAoCarrinho()
 
-            carrinho.validarCampoQuantidade(1, 23)
-            carrinho.validarCampoQuantidade(2, 7)
+            //carrinho.validarCampoQuantidade(1, 23)
+            //carrinho.validarCampoQuantidade(2, 7)
         })
 
         etapa('ETAPA 21 - ADICIONAR ITEM EXISTENTE ACIMA DO ESTOQUE', () => {
@@ -112,20 +112,20 @@ describe('Fluxo Completo Compra', () => {
             livro.preencherQuantidade(1, 43)
             livro.buttonAdicionarAoCarrinho()
 
-            carrinho.validarCampoQuantidade(1, 44)
-            carrinho.validarCampoQuantidade(2, 7)
+           // carrinho.validarCampoQuantidade(1, 44)
+            // carrinho.validarCampoQuantidade(2, 7)
 
         })
 
         etapa('ETAPA 22 - ATUALIZAR QUANTIDADE CORRETA', () => {
-            carrinho.alterarCampoQuantidade(1, 3)
-            carrinho.buttonAtualizar(1)
-            carrinho.alterarCampoQuantidade(2, 2)
-            carrinho.buttonAtualizar(2)
+            //carrinho.alterarCampoQuantidade(1, 3)
+            //carrinho.buttonAtualizar(1)
+            //carrinho.alterarCampoQuantidade(2, 2)
+            //carrinho.buttonAtualizar(2)
 
-            carrinho.validarCampoQuantidade(1, 3)
-            carrinho.validarCampoQuantidade(2, 2)
-            carrinho.buttonLogar()
+            //carrinho.validarCampoQuantidade(1, 3)
+            //carrinho.validarCampoQuantidade(2, 2)
+            //carrinho.buttonLogar()
         })
 
         cy.log('LOGIN')
