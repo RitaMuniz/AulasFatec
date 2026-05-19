@@ -5,6 +5,8 @@ export const elements = {
 
     menus: {
         livros: '[data-test=menu_livros]',
-        carrinho: '[data-test="icon-carrinho"]'
+        carrinho: '[data-test="icon-carrinho"]',
+        meu_perfil: '[data-test="icon-meu-perfil"]',
+        sair: '[data-test="icon-logout"]'
     }
 }
