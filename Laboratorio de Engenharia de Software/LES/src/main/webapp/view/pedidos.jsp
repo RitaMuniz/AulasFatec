@@ -49,5 +49,6 @@
 </div>
 
 <footer>© 2026 Livraria</footer>
+<%@ include file="chatbot-widget.jsp" %>
 </body>
 </html>

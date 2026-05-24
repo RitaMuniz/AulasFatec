@@ -139,7 +139,7 @@
 </div>
 
 <footer>Livraria © 2026</footer>
-
+<%@ include file="chatbot-widget.jsp" %>
 <script>
     function editarEndereco(id, tipoEndereco, tipoResidencia, tipoLogradouro,
                             logradouro, numero, bairro, cep, observacoes) {

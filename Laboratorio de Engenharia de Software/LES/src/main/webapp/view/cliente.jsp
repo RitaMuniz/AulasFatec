@@ -91,6 +91,6 @@
 </div>
 
 <footer>Livraria © 2026</footer>
-
+<%@ include file="chatbot-widget.jsp" %>
 </body>
 </html>
