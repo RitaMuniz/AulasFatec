@@ -1,0 +1,15 @@
+{
+  "maria": {
+    "principal": 5,
+    "entrega": 13
+  },
+
+  "rita": {
+    "principal": 8,
+    "cobranca": 9
+  },
+
+  "joao": {
+    "principal": 12
+  }
+}

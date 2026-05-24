@@ -14,8 +14,8 @@
 <header class="topbar">
     <h1>Painel Administrativo</h1>
     <div>
-        <a href="${pageContext.request.contextPath}/view/index.jsp">Ver Loja</a>
-        <a href="${pageContext.request.contextPath}/logout">Sair</a>
+        <a href="${pageContext.request.contextPath}/view/index.jsp" data-test="button-loja">Ver Loja</a>
+        <a href="${pageContext.request.contextPath}/logout" data-test="button-sair">Sair</a>
     </div>
 </header>
 
@@ -23,12 +23,12 @@
     <aside class="sidebar">
         <h2>Admin</h2>
         <nav>
-            <a href="${pageContext.request.contextPath}/admin" class="active">Dashboard</a>
-            <a href="${pageContext.request.contextPath}/admin/pedidos">Pedidos</a>
-            <a href="${pageContext.request.contextPath}/view/admin-livros.html">Livros</a>
-            <a href="${pageContext.request.contextPath}/view/admin-clientes.jsp">Clientes</a>
-            <a href="${pageContext.request.contextPath}/troca?action=admin">Devoluções</a>
-            <a href="${pageContext.request.contextPath}/view/admin-relatorios.html">Relatórios</a>
+            <a href="${pageContext.request.contextPath}/admin" class="active" data-test="button-dashboard">Dashboard</a>
+            <a href="${pageContext.request.contextPath}/admin/pedidos" data-test="button-pedidos">Pedidos</a>
+            <a href="${pageContext.request.contextPath}/view/admin-livros.html" data-test="button-livros">Livros</a>
+            <a href="${pageContext.request.contextPath}/view/admin-clientes.jsp" data-test="button-clientes">Clientes</a>
+            <a href="${pageContext.request.contextPath}/troca?action=admin" data-test="button-devolucoes">Devoluções</a>
+            <a href="${pageContext.request.contextPath}/view/admin-relatorios.html" data-test="button-relatorios">Relatórios</a>
         </nav>
     </aside>
 

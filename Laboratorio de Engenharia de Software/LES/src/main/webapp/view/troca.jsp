@@ -27,9 +27,9 @@
 <header>
     <h1>Livraria</h1>
     <div>
-        <a href="${pageContext.request.contextPath}/view/index.jsp">Início</a>
-        <a href="${pageContext.request.contextPath}/pedidos">Meus Pedidos</a>
-        <a href="${pageContext.request.contextPath}/troca">Minhas Trocas</a>
+        <a data-test="button-inicio" href="${pageContext.request.contextPath}/view/index.jsp">Início</a>
+        <a data-test="button-pedido" href="${pageContext.request.contextPath}/pedidos">Meus Pedidos</a>
+        <a data-test="button-troca" href="${pageContext.request.contextPath}/troca">Minhas Trocas</a>
     </div>
 </header>
 
@@ -37,14 +37,14 @@
     <h2 style="margin-bottom:24px;">Minhas Trocas</h2>
 
     <c:if test="${param.sucesso == '1'}">
-        <div class="aviso-sucesso">
+        <div data-test="aviso-sucesso" class="aviso-sucesso">
             ✅ Solicitação de troca enviada com sucesso! Acompanhe o status aqui.
         </div>
     </c:if>
 
     <c:choose>
         <c:when test="${empty trocas}">
-            <p>Você não possui solicitações de troca.</p>
+            <p data-test="aviso-solicitacao" >Você não possui solicitações de troca.</p>
         </c:when>
         <c:otherwise>
             <table>
@@ -58,12 +58,12 @@
                 </tr>
                 <c:forEach var="t" items="${trocas}">
                     <tr>
-                        <td>${t.id}</td>
-                        <td>#${t.pedidoId}</td>
-                        <td>${t.dataSolicitacao}</td>
-                        <td><span class="badge ${t.status}">${t.status}</span></td>
-                        <td>${not empty t.dataRecebimento ? t.dataRecebimento : '—'}</td>
-                        <td>${not empty t.cupomGeradoId ? '✅ Cupom #'.concat(t.cupomGeradoId) : '—'}</td>
+                        <td data-test="tabela-item-id-${t.id}">${t.id}</td>
+                        <td data-test="tabela-item-pedido-${t.pedidoId}">#${t.pedidoId}</td>
+                        <td data-test="tabela-item-dataSolicitacao-${t.dataSolicitacao}">${t.dataSolicitacao}</td>
+                        <td data-test="tabela-item-status-${t.status}"><span class="badge ${t.status}">${t.status}</span></td>
+                        <td data-test="tabela-item-dataRecebimento-${not empty t.dataRecebimento ? t.dataRecebimento : '—'}">${not empty t.dataRecebimento ? t.dataRecebimento : '—'}</td>
+                        <td data-test="tabela-item-cupom-${not empty t.cupomGeradoId ? '✅ Cupom #'.concat(t.cupomGeradoId) : '—'}">${not empty t.cupomGeradoId ? '✅ Cupom #'.concat(t.cupomGeradoId) : '—'}</td>
                     </tr>
                 </c:forEach>
             </table>
@@ -71,7 +71,7 @@
     </c:choose>
 
     <div style="margin-top:20px;">
-        <a href="${pageContext.request.contextPath}/pedidos" class="btn">← Meus Pedidos</a>
+        <a data-test="button-meus-pedidos" href="${pageContext.request.contextPath}/pedidos" class="btn">← Meus Pedidos</a>
     </div>
 </div>
 

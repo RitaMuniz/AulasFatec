@@ -17,29 +17,30 @@
         <a href="${pageContext.request.contextPath}/view/index.jsp">Início</a>
         <a href="${pageContext.request.contextPath}/livros">Livros</a>
         <a href="${pageContext.request.contextPath}/pedidos">Meus Pedidos</a>
+        <a href="${pageContext.request.contextPath}/view/troca.jsp">Minhas Trocas</a>
         <a href="${pageContext.request.contextPath}/logout">Sair</a>
     </div>
 </header>
 
 <div class="container">
 
-    <h2>Pedido #<fmt:formatNumber value="${pedido.id}" minIntegerDigits="4"/></h2>
+    <h2 data-test="detalhe-pedido-numero">Pedido #<fmt:formatNumber value="${pedido.id}" minIntegerDigits="4"/></h2>
 
     <%-- Barra de status --%>
-    <div class="status-bar">
-        <div class="step ${pedido.status == 'EM_PROCESSAMENTO' or pedido.status == 'CONFIRMADO' or pedido.status == 'SEPARANDO' or pedido.status == 'ENVIADO' or pedido.status == 'ENTREGUE' ? '' : 'inactive'}">
+    <div class="status-bar" data-test="status-bar-pedido">
+        <div class="step ${pedido.status == 'EM_PROCESSAMENTO' or pedido.status == 'CONFIRMADO' or pedido.status == 'SEPARANDO' or pedido.status == 'ENVIADO' or pedido.status == 'ENTREGUE' ? '' : 'inactive'}" data-test="status-confirmado">
             <div class="circle"></div>
             Confirmado
         </div>
-        <div class="step ${pedido.status == 'SEPARANDO' or pedido.status == 'ENVIADO' or pedido.status == 'ENTREGUE' ? '' : 'inactive'}">
+        <div class="step ${pedido.status == 'SEPARANDO' or pedido.status == 'ENVIADO' or pedido.status == 'ENTREGUE' ? '' : 'inactive'}" data-test="status-separando">
             <div class="circle"></div>
             Separando
         </div>
-        <div class="step ${pedido.status == 'ENVIADO' or pedido.status == 'ENTREGUE' ? '' : 'inactive'}">
+        <div class="step ${pedido.status == 'ENVIADO' or pedido.status == 'ENTREGUE' ? '' : 'inactive'}" data-test="status-enviado">
             <div class="circle"></div>
             Enviado
         </div>
-        <div class="step ${pedido.status == 'ENTREGUE' ? '' : 'inactive'}">
+        <div class="step ${pedido.status == 'ENTREGUE' ? '' : 'inactive'}" data-test="status-entregue">
             <div class="circle"></div>
             Entregue
         </div>
@@ -62,7 +63,7 @@
         </c:forEach>
 
         <div style="text-align:right; margin-top:15px;">
-            <p>Total do Pedido: <strong>R$ <fmt:formatNumber value="${pedido.total}" minFractionDigits="2" maxFractionDigits="2"/></strong></p>
+            <p data-test="detalhe-pedido-total">Total do Pedido: <strong>R$ <fmt:formatNumber value="${pedido.total}" minFractionDigits="2" maxFractionDigits="2"/></strong></p>
         </div>
     </div>
 
@@ -95,7 +96,7 @@
                                 </c:when>
                                 <%-- Item disponível para troca --%>
                                 <c:otherwise>
-                                    <a href="${pageContext.request.contextPath}/troca?action=solicitar&pedidoId=${pedido.id}&itemPedidoId=${item.id}"
+                                    <a data-test="btn-trocar-${item.id}" href="${pageContext.request.contextPath}/troca?action=solicitar&pedidoId=${pedido.id}&itemPedidoId=${item.id}"
                                        class="btn"
                                        style="font-size:13px; padding:6px 14px;">
                                         Solicitar Troca
@@ -112,7 +113,7 @@
         </c:choose>
     </div>
 
-    <a href="${pageContext.request.contextPath}/pedidos" class="btn" style="margin-top:20px; display:inline-block;">
+    <a href="${pageContext.request.contextPath}/pedidos" class="btn" data-test="btn-voltar" style="margin-top:20px; display:inline-block;">
         ← Voltar aos Pedidos
     </a>
 

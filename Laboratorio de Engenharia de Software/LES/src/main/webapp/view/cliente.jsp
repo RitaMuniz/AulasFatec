@@ -20,10 +20,10 @@
 <header class="navbar">
     <div class="logo">Livraria</div>
     <nav>
-        <a href="${pageContext.request.contextPath}/view/index.jsp">Home</a>
-        <a href="${pageContext.request.contextPath}/livros">Livros</a>
-        <a href="${pageContext.request.contextPath}/view/carrinho.jsp">Carrinho</a>
-        <a href="${pageContext.request.contextPath}/logout">Sair</a>
+        <a data-test="icon-home" href="${pageContext.request.contextPath}/view/index.jsp">Home</a>
+        <a data-test="icon-livros" href="${pageContext.request.contextPath}/livros">Livros</a>
+        <a data-test="icon-carrinho" href="${pageContext.request.contextPath}/view/carrinho.jsp">Carrinho</a>
+        <a data-test="icon-sair" href="${pageContext.request.contextPath}/logout">Sair</a>
     </nav>
 </header>
 
@@ -46,27 +46,27 @@
             <input type="hidden" name="id" value="<%= clienteLogado.getId() %>">
 
             <label for="nome">Nome Completo</label>
-            <input type="text" id="nome" name="nome"
+            <input data-test="campo-nome" type="text" id="nome" name="nome"
                    value="<%= clienteLogado.getNome() != null ? clienteLogado.getNome() : "" %>" required>
 
             <label for="genero">Gênero</label>
-            <select id="genero" name="genero" required style="width:100%; padding:12px; margin-bottom:15px; border:1px solid #ccc; border-radius:6px;">
-                <option value="">Selecione</option>
-                <option value="F" <%= "F".equals(clienteLogado.getGenero()) ? "selected" : "" %>>Feminino</option>
-                <option value="M" <%= "M".equals(clienteLogado.getGenero()) ? "selected" : "" %>>Masculino</option>
-                <option value="O" <%= "O".equals(clienteLogado.getGenero()) ? "selected" : "" %>>Outro</option>
-                <option value="N" <%= "N".equals(clienteLogado.getGenero()) ? "selected" : "" %>>Prefiro não informar</option>
+            <select data-test="campo-genero" id="genero" name="genero" required style="width:100%; padding:12px; margin-bottom:15px; border:1px solid #ccc; border-radius:6px;">
+                <option data-test="campo-selecione" value="">Selecione</option>
+                <option data-test="campo-feminino" value="F" <%= "F".equals(clienteLogado.getGenero()) ? "selected" : "" %>>Feminino</option>
+                <option data-test="campo-masculono" value="M" <%= "M".equals(clienteLogado.getGenero()) ? "selected" : "" %>>Masculino</option>
+                <option data-test="campo-outros" value="O" <%= "O".equals(clienteLogado.getGenero()) ? "selected" : "" %>>Outro</option>
+                <option data-test="campo-nao" value="N" <%= "N".equals(clienteLogado.getGenero()) ? "selected" : "" %>>Prefiro não informar</option>
             </select>
 
             <label for="dataNascimento">Data de Nascimento</label>
-            <input type="date" id="dataNascimento" name="dataNascimento"
+            <input data-test="campo-data" type="date" id="dataNascimento" name="dataNascimento"
                    value="<%= clienteLogado.getDataNascimento() != null ? clienteLogado.getDataNascimento().toString() : "" %>" required>
 
             <label for="email">E-mail</label>
-            <input type="email" id="email" name="email"
+            <input data-test="campo-email" type="email" id="email" name="email"
                    value="<%= clienteLogado.getEmail() != null ? clienteLogado.getEmail() : "" %>" required>
 
-            <button type="submit" class="btn" style="margin-top:10px;">Salvar Alterações</button>
+            <button data-test="button-salvar" type="submit" class="btn" style="margin-top:10px;">Salvar Alterações</button>
         </form>
     </div>
 
@@ -78,14 +78,14 @@
               onsubmit="return confirm('Tem certeza que deseja desativar sua conta?')">
             <input type="hidden" name="action" value="desativar">
             <input type="hidden" name="id" value="<%= clienteLogado.getId() %>">
-            <button type="submit" class="btn" style="background:#b00020;">Desativar Conta</button>
+            <button data-test="button-desativar" type="submit" class="btn" style="background:#b00020;">Desativar Conta</button>
         </form>
     </div>
 
     <div style="display:flex; gap:15px; justify-content:center; flex-wrap:wrap;">
-        <a href="${pageContext.request.contextPath}/endereco?action=listar" class="btn">Gerenciar Endereços</a>
-        <a href="${pageContext.request.contextPath}/cartao?action=listar" class="btn">Gerenciar Cartões</a>
-        <a href="${pageContext.request.contextPath}/pedidos" class="btn">Meus Pedidos</a>
+        <a data-test="button-gerenciar-endereco" href="${pageContext.request.contextPath}/endereco?action=listar" class="btn">Gerenciar Endereços</a>
+        <a data-test="button-gerenciar-cartoes" href="${pageContext.request.contextPath}/cartao?action=listar" class="btn">Gerenciar Cartões</a>
+        <a data-test="button-pedidos" href="${pageContext.request.contextPath}/pedidos" class="btn">Meus Pedidos</a>
     </div>
 
 </div>

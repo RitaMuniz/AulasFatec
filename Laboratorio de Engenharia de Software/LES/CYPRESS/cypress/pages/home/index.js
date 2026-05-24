@@ -12,6 +12,10 @@ class Home {
     navBarLivros(){
         cy.get(el.navBarLivros).click()
     }
+
+    navBarCarrinho(){
+        cy.get(el.navBarCarrinho).click()
+    }
 }
 
 export default new Home()

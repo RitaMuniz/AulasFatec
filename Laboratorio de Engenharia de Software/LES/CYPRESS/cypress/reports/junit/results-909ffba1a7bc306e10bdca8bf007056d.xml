@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="0.072" tests="1" failures="0">
+  <testsuite name="Root Suite" timestamp="2026-04-30T07:10:59" tests="0" file="cypress\e2e\env-variables.cy.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Variaveis de ambiente" timestamp="2026-04-30T07:10:59" tests="1" time="0.070" failures="0">
+    <testcase name="Variaveis de ambiente imprimir variavel de ambiente" time="0.043" classname="imprimir variavel de ambiente">
+    </testcase>
+  </testsuite>
+</testsuites>

@@ -1,0 +1,34 @@
+{
+  "maria": {
+    "mastercard": {
+      "id": 10,
+      "bandeira": "MasterCard",
+      "final": "7894"
+    },
+
+    "elo": {
+      "id": 8,
+      "bandeira": "Elo",
+      "final": "4567"
+    }
+  },
+
+  "rita": {
+    "mastercard": {
+      "id": 6,
+      "bandeira": "MasterCard"
+    },
+
+    "elo": {
+      "id": 7,
+      "bandeira": "Elo"
+    }
+  },
+
+  "joao": {
+    "elo": {
+      "id": 9,
+      "bandeira": "Elo"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="25.658" tests="11" failures="0">
+  <testsuite name="Root Suite" timestamp="2026-04-30T07:08:46" tests="0" file="cypress\e2e\TesteCompleto.cy.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Fluxo completo de pedido" timestamp="2026-04-30T07:08:46" tests="11" time="25.657" failures="0">
+    <testcase name="Fluxo completo de pedido Cliente logado compra 1 item com Mastercard" time="3.211" classname="Cliente logado compra 1 item com Mastercard">
+    </testcase>
+    <testcase name="Fluxo completo de pedido Cliente logado compra 2 itens com VISA/ELO" time="2.887" classname="Cliente logado compra 2 itens com VISA/ELO">
+    </testcase>
+    <testcase name="Fluxo completo de pedido Cliente deslogado adiciona item, precisa logar e finaliza pedido" time="2.504" classname="Cliente deslogado adiciona item, precisa logar e finaliza pedido">
+    </testcase>
+    <testcase name="Fluxo completo de pedido Não finalizar sem preencher valor do cartão" time="1.842" classname="Não finalizar sem preencher valor do cartão">
+    </testcase>
+    <testcase name="Fluxo completo de pedido Não finalizar com valor do cartão menor que o total" time="1.854" classname="Não finalizar com valor do cartão menor que o total">
+    </testcase>
+    <testcase name="Fluxo completo de pedido Não finalizar com valor do cartão maior que o total" time="1.883" classname="Não finalizar com valor do cartão maior que o total">
+    </testcase>
+    <testcase name="Fluxo completo de pedido Não aceitar valor negativo no cartão" time="1.841" classname="Não aceitar valor negativo no cartão">
+    </testcase>
+    <testcase name="Fluxo completo de pedido Não aceitar valor zero no cartão" time="1.861" classname="Não aceitar valor zero no cartão">
+    </testcase>
+    <testcase name="Fluxo completo de pedido Não finalizar quando soma dos dois cartões for diferente do total" time="2.722" classname="Não finalizar quando soma dos dois cartões for diferente do total">
+    </testcase>
+    <testcase name="Fluxo completo de pedido Não finalizar quando cartão tiver valor abaixo do mínimo" time="2.822" classname="Não finalizar quando cartão tiver valor abaixo do mínimo">
+    </testcase>
+    <testcase name="Fluxo completo de pedido Aplicar cupom de desconto e validar resumo" time="1.928" classname="Aplicar cupom de desconto e validar resumo">
+    </testcase>
+  </testsuite>
+</testsuites>

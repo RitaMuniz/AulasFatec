@@ -13,9 +13,9 @@
 <header class="navbar">
     <div class="logo">Livraria</div>
     <nav>
-        <a href="index.jsp">Home</a>
-        <a href="${pageContext.request.contextPath}/cliente?action=buscar">Perfil</a>
-        <a href="${pageContext.request.contextPath}/logout">Sair</a>
+        <a data-test="icon-home" href="index.jsp">Home</a>
+        <a data-test="icon-perfil" href="${pageContext.request.contextPath}/cliente?action=buscar">Perfil</a>
+        <a data-test="icon-sair" href="${pageContext.request.contextPath}/logout">Sair</a>
     </nav>
 </header>
 
@@ -28,29 +28,29 @@
         <h2 style="margin-bottom:20px;">Novo Cartão</h2>
 
         <form action="${pageContext.request.contextPath}/cartao" method="post">
-            <input type="hidden" name="action" value="adicionar">
+            <input data-test="button-adicionar" type="hidden" name="action" value="adicionar">
 
             <label>Nome Impresso no Cartão</label>
-            <input type="text" name="nomeImpresso" placeholder="Como aparece no cartão" required>
+            <input data-test="campo-nome" type="text" name="nomeImpresso" placeholder="Como aparece no cartão" required>
 
             <label>Número do Cartão</label>
-            <input type="text" name="numeroCartao" placeholder="0000 0000 0000 0000" maxlength="19" required>
+            <input data-test="campo-numero" type="text" name="numeroCartao" placeholder="0000 0000 0000 0000" maxlength="19" required>
 
             <label>Validade (MM/AA)</label>
-            <input type="text" name="validade" placeholder="MM/AA" maxlength="5" required>
+            <input data-test="campo-validade" type="text" name="validade" placeholder="MM/AA" maxlength="5" required>
 
             <label>Bandeira</label>
-            <select name="bandeiraId" required style="width:100%; padding:12px; margin-bottom:15px; border:1px solid #ccc; border-radius:6px;">
+            <select data-test="campo-bandeira" name="bandeiraId" required style="width:100%; padding:12px; margin-bottom:15px; border:1px solid #ccc; border-radius:6px;">
                 <option value="">Selecione</option>
                 <c:forEach var="b" items="${bandeiras}">
-                    <option value="${b.id}">${b.nome}</option>
+                    <option data-test="campo-opcao-${b.id}-${b.nome}" value="${b.id}">${b.nome}</option>
                 </c:forEach>
             </select>
 
             <label>CVV</label>
-            <input type="text" name="cvv" placeholder="000" maxlength="4" required>
+            <input data-test="campo-cvv" type="text" name="cvv" placeholder="000" maxlength="4" required>
 
-            <button type="submit" class="btn" style="margin-top:10px; width:100%;">Adicionar Cartão</button>
+            <button data-test="button-adicionar" type="submit" class="btn" style="margin-top:10px; width:100%;">Adicionar Cartão</button>
         </form>
     </div>
 
@@ -74,15 +74,15 @@
                 <tbody>
                 <c:forEach var="c" items="${cartoes}">
                     <tr>
-                        <td>${c.nomeImpresso}</td>
-                        <td>**** ${fn:substring(c.numero, fn:length(c.numero) - 4, fn:length(c.numero))}</td>
-                        <td>${c.bandeiraNome}</td>
-                        <td>${c.validade}</td>
+                        <td data-test="tabela-nome-${c.nomeImpresso}">${c.nomeImpresso}</td>
+                        <td data-test="tabela-numero-${fn:substring(c.numero, fn:length(c.numero) - 4, fn:length(c.numero))}">**** ${fn:substring(c.numero, fn:length(c.numero) - 4, fn:length(c.numero))}</td>
+                        <td data-test="tabela-bandeira-${c.bandeiraNome}">${c.bandeiraNome}</td>
+                        <td data-test="tabela-validade-${c.validade}">${c.validade}</td>
                         <td>
                             <form action="${pageContext.request.contextPath}/cartao" method="post" style="display:inline;">
-                                <input type="hidden" name="action" value="excluir">
-                                <input type="hidden" name="id" value="${c.id}">
-                                <button type="submit" class="btn" style="background:#b00020;"
+                                <input data-test="excluir" type="hidden" name="action" value="excluir">
+                                <input data-test="excluir-${c.id}" type="hidden" name="id" value="${c.id}">
+                                <button data-test="button-excluir" type="submit" class="btn" style="background:#b00020;"
                                         onclick="return confirm('Excluir este cartão?')">Excluir</button>
                             </form>
                         </td>

@@ -17,7 +17,8 @@
         <a href="${pageContext.request.contextPath}/view/index.jsp">Início</a>
         <a href="${pageContext.request.contextPath}/livros">Livros</a>
         <a href="${pageContext.request.contextPath}/carrinho">Carrinho</a>
-        <a href="${pageContext.request.contextPath}/logout">Sair</a>
+        <a href="${pageContext.request.contextPath}/view/troca.jsp">Minhas Trocas</a>
+        <a href="${pageContext.request.contextPath}/logout" data-test="btn-sair">Sair</a>
     </div>
 </header>
 
@@ -34,12 +35,13 @@
     <c:forEach var="p" items="${pedidos}">
         <div class="pedido-card">
             <div>
-                <p><strong>Pedido #<fmt:formatNumber value="${p.id}" minIntegerDigits="4"/></strong></p>
+                <p data-test="pedido-numero-${p.id}"><strong>Pedido #<fmt:formatNumber value="${p.id}" minIntegerDigits="4"/></strong></p>
                 <p>Data: <fmt:formatDate value="${p.dataCriacao}" pattern="dd/MM/yyyy"/></p>
-                <p>Total: <strong>R$ <fmt:formatNumber value="${p.total}" minFractionDigits="2" maxFractionDigits="2"/></strong></p>
-                <p class="status">Status: ${p.status}</p>
+                <p data-test="pedido-total-${p.id}">Total: <strong>R$ <fmt:formatNumber value="${p.total}" minFractionDigits="2" maxFractionDigits="2"/></strong></p>
+                <p class="status" data-test="pedido-status-${p.id}">Status: ${p.status}</p>
             </div>
-            <button onclick="window.location.href='${pageContext.request.contextPath}/pedidos?id=${p.id}'">
+            <button data-test="botao-detalhes-pedido-${p.id}"
+                    onclick="window.location.href='${pageContext.request.contextPath}/pedidos?id=${p.id}'">
                 Ver Detalhes
             </button>
         </div>

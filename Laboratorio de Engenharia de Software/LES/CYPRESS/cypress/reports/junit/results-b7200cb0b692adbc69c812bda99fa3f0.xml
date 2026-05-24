@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="75.496" tests="13" failures="1">
+  <testsuite name="Root Suite" timestamp="2026-04-30T06:43:56" tests="0" file="cypress\e2e\carrinho.cy.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Carrinho" timestamp="2026-04-30T06:43:56" tests="13" time="75.495" failures="1">
+    <testcase name="Carrinho ir até o produto e voltar carrinho" time="0.000" classname="ir até o produto e voltar carrinho">
+      <failure message="Timed out after waiting `60000ms` for your remote page to load.
+
+Your page did not fire its `load` event within `60000ms`.
+
+You can try increasing the `pageLoadTimeout` value in `Users\Caique FATEC\Documents\Trabalho LES Livraria\AulasFatec\Laboratorio de Engenharia de Software\LES\CYPRESS\cypress.config.js` to wait longer.
+
+Browsers will not fire the `load` event until all stylesheets and scripts are done downloading.
+
+When this `load` event occurs, Cypress will continue running commands." type="CypressError"><![CDATA[CypressError: Timed out after waiting `60000ms` for your remote page to load.
+
+Your page did not fire its `load` event within `60000ms`.
+
+You can try increasing the `pageLoadTimeout` value in `Users\Caique FATEC\Documents\Trabalho LES Livraria\AulasFatec\Laboratorio de Engenharia de Software\LES\CYPRESS\cypress.config.js` to wait longer.
+
+Browsers will not fire the `load` event until all stylesheets and scripts are done downloading.
+
+When this `load` event occurs, Cypress will continue running commands.
+    at timedOutWaitingForPageLoad (http://localhost:8080/__cypress/runner/cypress_runner.js:134171:64)
+    at <unknown> (http://localhost:8080/__cypress/runner/cypress_runner.js:134487:16)
+    at tryCatcher (http://localhost:8080/__cypress/runner/cypress_runner.js:1777:23)
+    at <unknown> (http://localhost:8080/__cypress/runner/cypress_runner.js:4156:41)
+    at tryCatcher (http://localhost:8080/__cypress/runner/cypress_runner.js:1777:23)
+    at Promise._settlePromiseFromHandler (http://localhost:8080/__cypress/runner/cypress_runner.js:1489:31)
+    at Promise._settlePromise (http://localhost:8080/__cypress/runner/cypress_runner.js:1546:18)
+    at Promise._settlePromise0 (http://localhost:8080/__cypress/runner/cypress_runner.js:1591:10)
+    at Promise._settlePromises (http://localhost:8080/__cypress/runner/cypress_runner.js:1667:18)
+    at _drainQueueStep (http://localhost:8080/__cypress/runner/cypress_runner.js:2377:12)
+    at _drainQueue (http://localhost:8080/__cypress/runner/cypress_runner.js:2370:9)
+    at Async._drainQueues (http://localhost:8080/__cypress/runner/cypress_runner.js:2386:5)
+    at Async.drainQueues (http://localhost:8080/__cypress/runner/cypress_runner.js:2256:14)
+From Your Spec Code:
+    at Livros.buttonVerDetalhesDoLivro (webpack://les/./cypress/pages/Livros/index.js:5:11)
+    at Context.eval (webpack://les/./cypress/e2e/carrinho.cy.js:19:15)]]></failure>
+    </testcase>
+    <testcase name="Carrinho Adicionar quantidade negativa ao carrinho" time="1.229" classname="Adicionar quantidade negativa ao carrinho">
+    </testcase>
+    <testcase name="Carrinho Adicionar quantidade zerada ao carrinho" time="0.532" classname="Adicionar quantidade zerada ao carrinho">
+    </testcase>
+    <testcase name="Carrinho Adicionar quantidade acima do estoque ao carrinho" time="0.555" classname="Adicionar quantidade acima do estoque ao carrinho">
+    </testcase>
+    <testcase name="Carrinho Continuando comprando item diferente" time="0.985" classname="Continuando comprando item diferente">
+    </testcase>
+    <testcase name="Carrinho Atualizar item com quantidade maior que estoque" time="1.321" classname="Atualizar item com quantidade maior que estoque">
+    </testcase>
+    <testcase name="Carrinho Atualizar item com quantidade zerada" time="1.326" classname="Atualizar item com quantidade zerada">
+    </testcase>
+    <testcase name="Carrinho Atualizar item com quantidade negativa" time="1.889" classname="Atualizar item com quantidade negativa">
+    </testcase>
+    <testcase name="Carrinho Atualizar item com quantidade certa" time="1.446" classname="Atualizar item com quantidade certa">
+    </testcase>
+    <testcase name="Carrinho Remover item do carrinho" time="1.239" classname="Remover item do carrinho">
+    </testcase>
+    <testcase name="Carrinho Adicionar item removido" time="1.854" classname="Adicionar item removido">
+    </testcase>
+    <testcase name="Carrinho Adicionar item ja existente acima do estoque" time="1.493" classname="Adicionar item ja existente acima do estoque">
+    </testcase>
+    <testcase name="Carrinho Adicionar Produto ao carrinho com sucesso " time="0.520" classname="Adicionar Produto ao carrinho com sucesso ">
+    </testcase>
+  </testsuite>
+</testsuites>

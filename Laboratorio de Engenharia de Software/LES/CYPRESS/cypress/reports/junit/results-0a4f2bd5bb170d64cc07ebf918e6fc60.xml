@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="5.442" tests="2" failures="0">
+  <testsuite name="Root Suite" timestamp="2026-04-30T07:09:56" tests="0" file="cypress\e2e\TesteRapidoPedido.cy.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Fluxo de pedido" timestamp="2026-04-30T07:09:56" tests="2" time="5.440" failures="0">
+    <testcase name="Fluxo de pedido Comprar 1 item com Mastercard" time="2.734" classname="Comprar 1 item com Mastercard">
+    </testcase>
+    <testcase name="Fluxo de pedido Comprar 2 itens com VISA" time="2.663" classname="Comprar 2 itens com VISA">
+    </testcase>
+  </testsuite>
+</testsuites>

@@ -1,0 +1,22 @@
+{
+  "livro1": {
+    "id": 1,
+    "titulo": "É Assim Que Acaba",
+    "estoque": 44,
+    "preco": 20.06
+  },
+
+  "livro2": {
+    "id": 2,
+    "titulo": "A Biblioteca da Meia-Noite",
+    "estoque": 34,
+    "preco": 22.07
+  },
+
+  "livro3": {
+    "id": 3,
+    "titulo": "O Homem Mais Rico da Babilônia",
+    "estoque": 30,
+    "preco": 19.50
+  }
+}

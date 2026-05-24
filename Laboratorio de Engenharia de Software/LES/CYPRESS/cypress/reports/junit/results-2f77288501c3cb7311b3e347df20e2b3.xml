@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="14.938" tests="13" failures="0">
+  <testsuite name="Root Suite" timestamp="2026-04-30T06:51:28" tests="0" file="cypress\e2e\carrinho.cy.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Carrinho" timestamp="2026-04-30T06:51:28" tests="13" time="14.936" failures="0">
+    <testcase name="Carrinho ir até o produto e voltar carrinho" time="0.990" classname="ir até o produto e voltar carrinho">
+    </testcase>
+    <testcase name="Carrinho Adicionar quantidade negativa ao carrinho" time="0.554" classname="Adicionar quantidade negativa ao carrinho">
+    </testcase>
+    <testcase name="Carrinho Adicionar quantidade zerada ao carrinho" time="0.595" classname="Adicionar quantidade zerada ao carrinho">
+    </testcase>
+    <testcase name="Carrinho Adicionar quantidade acima do estoque ao carrinho" time="0.552" classname="Adicionar quantidade acima do estoque ao carrinho">
+    </testcase>
+    <testcase name="Carrinho Continuando comprando item diferente" time="1.022" classname="Continuando comprando item diferente">
+    </testcase>
+    <testcase name="Carrinho Atualizar item com quantidade maior que estoque" time="1.627" classname="Atualizar item com quantidade maior que estoque">
+    </testcase>
+    <testcase name="Carrinho Atualizar item com quantidade zerada" time="1.329" classname="Atualizar item com quantidade zerada">
+    </testcase>
+    <testcase name="Carrinho Atualizar item com quantidade negativa" time="1.347" classname="Atualizar item com quantidade negativa">
+    </testcase>
+    <testcase name="Carrinho Atualizar item com quantidade certa" time="1.684" classname="Atualizar item com quantidade certa">
+    </testcase>
+    <testcase name="Carrinho Remover item do carrinho" time="1.066" classname="Remover item do carrinho">
+    </testcase>
+    <testcase name="Carrinho Adicionar item removido" time="1.549" classname="Adicionar item removido">
+    </testcase>
+    <testcase name="Carrinho Adicionar item ja existente acima do estoque" time="1.459" classname="Adicionar item ja existente acima do estoque">
+    </testcase>
+    <testcase name="Carrinho Adicionar Produto ao carrinho com sucesso " time="0.860" classname="Adicionar Produto ao carrinho com sucesso ">
+    </testcase>
+  </testsuite>
+</testsuites>

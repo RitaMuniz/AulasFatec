@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="41.261" tests="19" failures="0">
+  <testsuite name="Root Suite" timestamp="2026-04-30T06:49:31" tests="0" file="cypress\e2e\TesteCheckout.cy.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Checkout" timestamp="2026-04-30T06:49:31" tests="19" time="41.260" failures="0">
+    <testcase name="Checkout Validar estrutura do checkout" time="2.612" classname="Validar estrutura do checkout">
+    </testcase>
+    <testcase name="Checkout Exibir endereço de entrega" time="1.778" classname="Exibir endereço de entrega">
+    </testcase>
+    <testcase name="Checkout Selecionar endereço" time="2.195" classname="Selecionar endereço">
+    </testcase>
+    <testcase name="Checkout Validar resumo financeiro" time="1.685" classname="Validar resumo financeiro">
+    </testcase>
+    <testcase name="Checkout Validar frete calculado" time="1.730" classname="Validar frete calculado">
+    </testcase>
+    <testcase name="Checkout Validar cartão principal" time="1.680" classname="Validar cartão principal">
+    </testcase>
+    <testcase name="Checkout Validar segundo cartão" time="1.778" classname="Validar segundo cartão">
+    </testcase>
+    <testcase name="Checkout Validar botões auxiliares" time="1.718" classname="Validar botões auxiliares">
+    </testcase>
+    <testcase name="Checkout Preencher valor total no cartão" time="2.345" classname="Preencher valor total no cartão">
+    </testcase>
+    <testcase name="Checkout Não finalizar sem preencher valor do cartão" time="2.144" classname="Não finalizar sem preencher valor do cartão">
+    </testcase>
+    <testcase name="Checkout Exibir erro quando valor do cartão for menor que total" time="2.168" classname="Exibir erro quando valor do cartão for menor que total">
+    </testcase>
+    <testcase name="Checkout Exibir erro quando valor do cartão for maior que total" time="2.593" classname="Exibir erro quando valor do cartão for maior que total">
+    </testcase>
+    <testcase name="Checkout Não aceitar valor negativo no cartão" time="2.462" classname="Não aceitar valor negativo no cartão">
+    </testcase>
+    <testcase name="Checkout Não aceitar valor zero no cartão" time="2.159" classname="Não aceitar valor zero no cartão">
+    </testcase>
+    <testcase name="Checkout Exibir erro quando soma dos dois cartões for diferente do total" time="2.576" classname="Exibir erro quando soma dos dois cartões for diferente do total">
+    </testcase>
+    <testcase name="Checkout Exibir erro quando cartão tiver valor abaixo do mínimo" time="2.980" classname="Exibir erro quando cartão tiver valor abaixo do mínimo">
+    </testcase>
+    <testcase name="Checkout Aplicar cupom de desconto" time="2.072" classname="Aplicar cupom de desconto">
+    </testcase>
+    <testcase name="Checkout Voltar para carrinho" time="1.799" classname="Voltar para carrinho">
+    </testcase>
+    <testcase name="Checkout Finalizar pedido com sucesso" time="2.319" classname="Finalizar pedido com sucesso">
+    </testcase>
+  </testsuite>
+</testsuites>

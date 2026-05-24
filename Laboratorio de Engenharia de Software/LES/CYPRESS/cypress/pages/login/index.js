@@ -83,6 +83,10 @@ class Login {
         cy.get(el.password + ':invalid').should('exist')
         cy.url().should('eq', el.telaLogin)
     }
+
+    validarAcessoPagina(){
+        cy.url().should('eq', el.telaLogin)
+    }
 }
 
 export default new Login();

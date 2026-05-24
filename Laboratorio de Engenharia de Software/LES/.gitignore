@@ -36,3 +36,23 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+#env
+.env.dev
+
+
+# IntelliJ local configs
+.idea/dataSources.local.xml
+
+# SmartTomcat
+#.smarttomcat/
+
+# ZIPs
+*.zip
+
+# Cypress artifacts
+cypress/screenshots/
+cypress/videos/
+
+CYPRESS/cypress/screenshots/
+CYPRESS/cypress/videos/

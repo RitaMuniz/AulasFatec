@@ -14,8 +14,8 @@
 <header class="topbar">
     <h1>Gerenciar Pedidos</h1>
     <div>
-        <a href="${pageContext.request.contextPath}/view/index.jsp">Ver Loja</a>
-        <a href="${pageContext.request.contextPath}/logout">Sair</a>
+        <a href="${pageContext.request.contextPath}/view/index.jsp" data-test="button-loja">Ver Loja</a>
+        <a href="${pageContext.request.contextPath}/logout" data-test="button-sair">Sair</a>
     </div>
 </header>
 
@@ -23,12 +23,12 @@
     <aside class="sidebar">
         <h2>Admin</h2>
         <nav>
-            <a href="${pageContext.request.contextPath}/admin">Dashboard</a>
-            <a href="${pageContext.request.contextPath}/admin/pedidos" class="active">Pedidos</a>
-            <a href="${pageContext.request.contextPath}/view/admin-livros.html">Livros</a>
-            <a href="${pageContext.request.contextPath}/view/admin-clientes.jsp">Clientes</a>
-            <a href="${pageContext.request.contextPath}/troca?action=admin">Devoluções</a>
-            <a href="${pageContext.request.contextPath}/view/admin-relatorios.html">Relatórios</a>
+            <a href="${pageContext.request.contextPath}/admin" data-test="button-dashboard">Dashboard</a>
+            <a href="${pageContext.request.contextPath}/admin/pedidos" class="active" data-test="button-pedidos">Pedidos</a>
+            <a href="${pageContext.request.contextPath}/view/admin-livros.html" data-test="button-livros">Livros</a>
+            <a href="${pageContext.request.contextPath}/view/admin-clientes.jsp" data-test="button-clientes">Clientes</a>
+            <a href="${pageContext.request.contextPath}/troca?action=admin" data-test="button-devolucoes">Devoluções</a>
+            <a href="${pageContext.request.contextPath}/view/admin-relatorios.html" data-test="button-relatorios">Relatórios</a>
         </nav>
     </aside>
 
@@ -39,13 +39,13 @@
             <div class="form-grid">
                 <div>
                     <label>Buscar por número ou cliente</label>
-                    <input type="text" name="busca" placeholder="Ex: 1 ou Maria Silva"
+                    <input type="text" name="busca" data-test="campo-buscar" placeholder="Ex: 1 ou Maria Silva"
                            value="${not empty busca ? busca : ''}">
                 </div>
             </div>
             <div class="form-actions">
-                <button type="submit">Pesquisar</button>
-                <a href="${pageContext.request.contextPath}/admin/pedidos" class="btn-cancelar">Limpar</a>
+                <button type="submit" data-test="button-pesquisar">Pesquisar</button>
+                <a href="${pageContext.request.contextPath}/admin/pedidos" class="btn-cancelar" data-test="button-limpar">Limpar</a>
             </div>
         </form>
 
@@ -70,14 +70,14 @@
                 <tbody>
                 <c:forEach var="p" items="${pedidos}">
                     <tr>
-                        <td>#<fmt:formatNumber value="${p.id}" minIntegerDigits="4"/></td>
-                        <td>${not empty p.cliente ? p.cliente.nome : '—'}</td>
-                        <td><fmt:formatDate value="${p.dataCriacao}" pattern="dd/MM/yyyy"/></td>
-                        <td>R$ <fmt:formatNumber value="${p.total}" minFractionDigits="2" maxFractionDigits="2"/></td>
-                        <td>${p.status}</td>
+                        <td data-test="pedido-id-${p.id}">#<fmt:formatNumber value="${p.id}" minIntegerDigits="4"/></td>
+                        <td data-test="pedido-id-${p.id}-cliente-${p.cliente.nome}">${not empty p.cliente ? p.cliente.nome : '—'}</td>
+                        <td data-test="pedido-id-${p.id}-data-${p.dataCriacao}"><fmt:formatDate value="${p.dataCriacao}" pattern="dd/MM/yyyy"/></td>
+                        <td data-test="pedido-id-${p.id}-valor-${p.total}">R$ <fmt:formatNumber value="${p.total}" minFractionDigits="2" maxFractionDigits="2"/></td>
+                        <td data-test="pedido-id-${p.id}-status-${p.status}">${p.status}</td>
                         <td class="acoes">
-                            <a href="${pageContext.request.contextPath}/admin/pedidos?id=${p.id}" class="btn-visualizar">Visualizar</a>
-                            <a href="${pageContext.request.contextPath}/admin/pedidos?id=${p.id}&acao=editar" class="btn-editar">Editar</a>
+                            <a href="${pageContext.request.contextPath}/admin/pedidos?id=${p.id}" class="btn-visualizar" data-test="pedido-id-${p.id}-button-visualizar">Visualizar</a>
+                            <a href="${pageContext.request.contextPath}/admin/pedidos?id=${p.id}&acao=editar" class="btn-editar" data-test="pedido-id-${p.id}-button-editar">Editar</a>
                         </td>
                     </tr>
                 </c:forEach>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="4.315" tests="2" failures="0">
+  <testsuite name="Root Suite" timestamp="2026-04-30T07:10:21" tests="0" file="cypress\e2e\checkout.cy.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Checkout" timestamp="2026-04-30T07:10:21" tests="2" time="4.314" failures="0">
+    <testcase name="Checkout Deve exibir endereço de entrega" time="2.304" classname="Deve exibir endereço de entrega">
+    </testcase>
+    <testcase name="Checkout selecionar endereço" time="1.957" classname="selecionar endereço">
+    </testcase>
+  </testsuite>
+</testsuites>

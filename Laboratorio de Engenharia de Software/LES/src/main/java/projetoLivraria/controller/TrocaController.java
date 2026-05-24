@@ -74,7 +74,7 @@ public class TrocaController extends HttpServlet {
         try {
             List<Troca> trocas = trocaDAO.listarPorCliente(cliente.getId());
             req.setAttribute("trocas", trocas);
-            req.getRequestDispatcher("/view/trocas.jsp").forward(req, resp);
+            req.getRequestDispatcher("/view/troca.jsp").forward(req, resp);
         } catch (Exception e) {
             throw new ServletException(e);
         }

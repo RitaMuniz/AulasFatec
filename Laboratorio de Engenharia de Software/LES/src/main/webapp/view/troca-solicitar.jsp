@@ -30,10 +30,10 @@
 <header>
     <h1>Livraria</h1>
     <div>
-        <a href="${pageContext.request.contextPath}/view/index.jsp">Início</a>
-        <a href="${pageContext.request.contextPath}/pedidos">Meus Pedidos</a>
-        <a href="${pageContext.request.contextPath}/troca">Minhas Trocas</a>
-        <a href="${pageContext.request.contextPath}/logout">Sair</a>
+        <a data-test="icon-inicio" href="${pageContext.request.contextPath}/view/index.jsp">Início</a>
+        <a data-test="icon-pedido" href="${pageContext.request.contextPath}/pedidos">Meus Pedidos</a>
+        <a data-test="icon-troca" href="${pageContext.request.contextPath}/view/troca.jsp">Minhas Trocas</a>
+        <a data-test="icon-sair" href="${pageContext.request.contextPath}/logout">Sair</a>
     </div>
 </header>
 
@@ -57,7 +57,7 @@
             </span>
         </div>
 
-        <p style="font-size:13px; color:#555; margin-bottom:18px;">
+        <p data-test="mensagem-cupom" style="font-size:13px; color:#555; margin-bottom:18px;">
             Após o recebimento do item pela loja, um <strong>cupom de troca</strong>
             no valor de
             <strong>R$ <fmt:formatNumber value="${item.subtotal}"
@@ -72,13 +72,13 @@
 
             <div class="campo" style="margin-bottom:20px;">
                 <label for="motivo">Motivo da troca:</label>
-                <textarea name="motivo" id="motivo" rows="4" required
+                <textarea data-test="campo-troca" name="motivo" id="motivo" rows="4" required
                           placeholder="Ex: produto chegou danificado, edição diferente da anunciada..."></textarea>
             </div>
 
             <div style="display:flex; gap:12px;">
-                <button type="submit" class="btn">Confirmar Solicitação</button>
-                <a href="${pageContext.request.contextPath}/pedidos?id=${pedido.id}"
+                <button data-test="button-confirmar" type="submit" class="btn">Confirmar Solicitação</button>
+                <a data-test="button-cancelar" href="${pageContext.request.contextPath}/pedidos?id=${pedido.id}"
                    class="btn" style="background:#888;">Cancelar</a>
             </div>
         </form>
