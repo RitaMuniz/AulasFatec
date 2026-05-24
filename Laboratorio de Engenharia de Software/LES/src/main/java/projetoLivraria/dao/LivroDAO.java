@@ -27,6 +27,33 @@ public class LivroDAO {
         return livros;
     }
 
+    public List<Livro> listarMaisVendidos(int limite) throws Exception {
+        List<Livro> livros = new ArrayList<>();
+        String sql = """
+            SELECT l.*, gp.margem_lucro,
+                   e.quantidade AS estoque_qtd, e.custo AS preco_custo,
+                   SUM(ip.quantidade) AS total_vendido
+            FROM item_pedido ip
+            JOIN livro l ON l.id = ip.livro_id
+            LEFT JOIN grupo_precificacao gp ON gp.id = l.grupo_precificacao_id
+            LEFT JOIN estoque e ON e.livro_id = l.id
+            JOIN pedido p ON p.id = ip.pedido_id
+            WHERE l.status = 'ATIVO'
+              AND p.status NOT IN ('CANCELADO')
+            GROUP BY l.id
+            ORDER BY total_vendido DESC
+            LIMIT ?
+        """;
+        try (Connection con = ConexaoSQL.getInstance().getConnection();
+             PreparedStatement ps = con.prepareStatement(sql)) {
+            ps.setInt(1, limite);
+            try (ResultSet rs = ps.executeQuery()) {
+                while (rs.next()) livros.add(mapear(rs));
+            }
+        }
+        return livros;
+    }
+
     public Livro buscarPorId(int id) throws Exception {
         String sql = """
             SELECT l.*, gp.margem_lucro,

@@ -87,6 +87,11 @@
         <url-pattern>/livro</url-pattern>
     </servlet-mapping>
 
+    <servlet-mapping>
+        <servlet-name>LivroController</servlet-name>
+        <url-pattern>/home</url-pattern>
+    </servlet-mapping>
+
     <servlet>
         <servlet-name>CarrinhoController</servlet-name>
         <servlet-class>projetoLivraria.controller.CarrinhoController</servlet-class>

@@ -20,7 +20,13 @@ public class LivroController extends HttpServlet {
         String path = req.getServletPath();
 
         try {
-            if (path.equals("/livros")) {
+            if (path.equals("/home")) {
+
+                List<Livro> maisVendidos = livroDAO.listarMaisVendidos(8);
+                req.setAttribute("livros", maisVendidos);
+                req.getRequestDispatcher("/view/index.jsp").forward(req, resp);
+
+            } else if (path.equals("/livros")) {
 
                 List<Livro> livros = livroDAO.listarTodos();
                 req.setAttribute("livros", livros);

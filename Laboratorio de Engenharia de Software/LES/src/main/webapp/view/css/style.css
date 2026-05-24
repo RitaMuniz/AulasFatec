@@ -380,3 +380,45 @@ tr:last-child td {
     margin-bottom:15px;
     font-size:14px;
 }
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.section-subtitle {
+    color: #666;
+    margin-bottom: 28px;
+    font-size: 0.95rem;
+}
+
+.badge-vendido {
+    display: inline-block;
+    background: #1a3a2a;
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 20px;
+    margin-bottom: 8px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.card .preco {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #1a3a2a;
+    margin: 8px 0;
+}
+
+.card-estoque-ok  {
+    color: #2d6a4f;
+    font-size: 0.85rem;
+}
+
+.card-estoque-out {
+    color: #c0392b;
+    font-size: 0.85rem;
+}
