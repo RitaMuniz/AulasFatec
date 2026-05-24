@@ -1,4 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c"   uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"  %>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -12,15 +14,18 @@
 <header class="navbar">
     <div class="logo">Livraria</div>
     <nav>
-        <a href="${pageContext.request.contextPath}/view/index.jsp">Home</a>
+        <a href="${pageContext.request.contextPath}/home">Home</a>
         <a href="${pageContext.request.contextPath}/livros" data-test="menu_livros">Livros</a>
         <a data-test="icon-carrinho" href="${pageContext.request.contextPath}/view/carrinho.jsp">Carrinho</a>
-        <% if (session.getAttribute("clienteLogado") != null) { %>
-            <a data-test="icon-meu-perfil" href="${pageContext.request.contextPath}/cliente?action=buscar">Meu Perfil</a>
-            <a data-test="icon-logout" href="${pageContext.request.contextPath}/logout">Sair</a>
-        <% } else { %>
-            <a href="login.jsp">Login</a>
-        <% } %>
+        <c:choose>
+            <c:when test="${not empty sessionScope.clienteLogado}">
+                <a href="${pageContext.request.contextPath}/cliente?action=buscar">Meu Perfil</a>
+                <a href="${pageContext.request.contextPath}/logout">Sair</a>
+            </c:when>
+            <c:otherwise>
+                <a href="${pageContext.request.contextPath}/view/login.jsp">Login</a>
+            </c:otherwise>
+        </c:choose>
     </nav>
 </header>
 
@@ -31,62 +36,53 @@
 
 <main class="container">
 
-    <section style="margin-bottom:60px;">
-        <h2 style="margin-bottom:20px;">Buscar Livros</h2>
-
-        <div class="grid">
-            <input type="text" placeholder="Buscar por título">
-
-            <select>
-                <option>Categoria</option>
-                <option>Tecnologia</option>
-                <option>Romance</option>
-                <option>Ficção</option>
-            </select>
-
-            <a href="#" class="btn">Buscar</a>
-        </div>
-    </section>
-
-    <h2 style="margin-bottom:30px;">Destaques</h2>
+    <h2 class="section-title">Mais Vendidos</h2>
+    <p class="section-subtitle">Os títulos favoritos dos nossos clientes</p>
 
     <div class="grid">
+        <c:forEach var="l" items="${livros}">
+            <div class="card">
+                <span class="badge-vendido">🔥 Mais vendido</span>
 
-        <div class="card">
-            <img src="https://m.media-amazon.com/images/I/81Rnac2Fq+L._SY342_.jpg" alt="Clean Code">
-            <h3>Clean Code</h3>
-            <p style="font-size:14px; margin-top:5px;">Código: LIV001</p>
-            <p style="font-size:14px;">Categoria: Tecnologia</p>
-            <p style="font-size:14px; color:green;">Disponível: 12 unidades</p>
-            <p class="preco">R$ 79,90</p>
-            <div style="margin-top:10px;">
-                <a href="detalhe.html" class="btn">Ver Detalhes</a>
-            </div>
-            <div style="margin-top:10px;">
-                <a href="carrinho.html" class="btn">Adicionar ao Carrinho</a>
-            </div>
-        </div>
+                <c:if test="${not empty l.imagemUrl}">
+                    <img src="${l.imagemUrl}" alt="${l.titulo}"
+                         style="width:100%; height:200px; object-fit:cover; border-radius:4px; margin-bottom:10px;">
+                </c:if>
 
-        <div class="card">
-            <img src="https://tse3.mm.bing.net/th/id/OIP.WME8nDcRVHMw8xsk4aNBlwHaKN?rs=1&pid=ImgDetMain&o=7&rm=3" alt="JavaScript Moderno">
-            <h3>JavaScript Moderno</h3>
-            <p style="font-size:14px; margin-top:5px;">Código: LIV002</p>
-            <p style="font-size:14px;">Categoria: Tecnologia</p>
-            <p style="font-size:14px; color:green;">Disponível: 8 unidades</p>
-            <p class="preco">R$ 99,90</p>
-            <div style="margin-top:10px;">
-                <a href="detalhe.html" class="btn">Ver Detalhes</a>
-            </div>
-            <div style="margin-top:10px;">
-                <a href="carrinho.html" class="btn">Adicionar ao Carrinho</a>
-            </div>
-        </div>
+                <h3>${l.titulo}</h3>
+                <p><strong>Autor:</strong> ${l.autor}</p>
+                <p><strong>Editora:</strong> ${l.editora}</p>
 
+                <c:choose>
+                    <c:when test="${l.estoque > 0}">
+                        <p class="card-estoque-ok">✔ Em estoque</p>
+                    </c:when>
+                    <c:otherwise>
+                        <p class="card-estoque-out">✘ Indisponível</p>
+                    </c:otherwise>
+                </c:choose>
+
+                <c:if test="${not empty l.precoVenda}">
+                    <p class="preco">
+                        R$ <fmt:formatNumber value="${l.precoVenda}"
+                               minFractionDigits="2" maxFractionDigits="2"/>
+                    </p>
+                </c:if>
+
+                <a href="${pageContext.request.contextPath}/livro?id=${l.id}"
+                   class="btn" data-test="btn-ver-detalhes-${l.id}">Ver Detalhes</a>
+            </div>
+        </c:forEach>
+
+        <%-- Caso não haja vendas ainda --%>
+        <c:if test="${empty livros}">
+            <p style="color:#666;">Nenhum destaque disponível no momento.</p>
+        </c:if>
     </div>
 
 </main>
 
 <footer>© 2026 Livraria</footer>
-
+<%@ include file="chatbot-widget.jsp" %>
 </body>
 </html>
