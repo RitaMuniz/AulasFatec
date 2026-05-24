@@ -14,7 +14,7 @@
 <header>
     <h1>Livraria</h1>
     <div>
-        <a href="${pageContext.request.contextPath}/view/index.jsp">Início</a>
+        <a href="${pageContext.request.contextPath}/home">Início</a>
         <a href="${pageContext.request.contextPath}/livros">Livros</a>
         <a href="${pageContext.request.contextPath}/carrinho">Carrinho</a>
         <a href="${pageContext.request.contextPath}/view/troca.jsp">Minhas Trocas</a>

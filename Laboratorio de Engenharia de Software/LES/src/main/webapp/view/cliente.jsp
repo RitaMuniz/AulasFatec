@@ -20,7 +20,7 @@
 <header class="navbar">
     <div class="logo">Livraria</div>
     <nav>
-        <a data-test="icon-home" href="${pageContext.request.contextPath}/view/index.jsp">Home</a>
+        <a data-test="icon-home" href="${pageContext.request.contextPath}/home">Home</a>
         <a data-test="icon-livros" href="${pageContext.request.contextPath}/livros">Livros</a>
         <a data-test="icon-carrinho" href="${pageContext.request.contextPath}/view/carrinho.jsp">Carrinho</a>
         <a data-test="icon-sair" href="${pageContext.request.contextPath}/logout">Sair</a>

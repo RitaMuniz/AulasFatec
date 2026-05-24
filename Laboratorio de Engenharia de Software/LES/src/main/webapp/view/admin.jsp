@@ -14,7 +14,7 @@
 <header class="topbar">
     <h1>Painel Administrativo</h1>
     <div>
-        <a href="${pageContext.request.contextPath}/view/index.jsp" data-test="button-loja">Ver Loja</a>
+        <a href="${pageContext.request.contextPath}/home" data-test="button-loja">Ver Loja</a>
         <a href="${pageContext.request.contextPath}/logout" data-test="button-sair">Sair</a>
     </div>
 </header>

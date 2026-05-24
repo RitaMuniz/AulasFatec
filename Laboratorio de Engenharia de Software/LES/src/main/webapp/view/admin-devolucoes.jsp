@@ -54,7 +54,7 @@
 <header class="topbar">
     <h1>Devoluções / Trocas</h1>
     <div>
-        <a data-test="icon-loja" href="${pageContext.request.contextPath}/view/index.jsp">Ver Loja</a>
+        <a data-test="icon-loja" href="${pageContext.request.contextPath}/home">Ver Loja</a>
         <a data-test="icon-sair" href="${pageContext.request.contextPath}/logout">Sair</a>
     </div>
 </header>

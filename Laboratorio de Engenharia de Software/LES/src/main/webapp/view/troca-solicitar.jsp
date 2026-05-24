@@ -30,7 +30,7 @@
 <header>
     <h1>Livraria</h1>
     <div>
-        <a data-test="icon-inicio" href="${pageContext.request.contextPath}/view/index.jsp">Início</a>
+        <a data-test="icon-inicio" href="${pageContext.request.contextPath}/home">Início</a>
         <a data-test="icon-pedido" href="${pageContext.request.contextPath}/pedidos">Meus Pedidos</a>
         <a data-test="icon-troca" href="${pageContext.request.contextPath}/view/troca.jsp">Minhas Trocas</a>
         <a data-test="icon-sair" href="${pageContext.request.contextPath}/logout">Sair</a>

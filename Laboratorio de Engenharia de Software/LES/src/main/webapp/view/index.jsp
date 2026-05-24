@@ -14,7 +14,7 @@
 <header class="navbar">
     <div class="logo">Livraria</div>
     <nav>
-        <a href="${pageContext.request.contextPath}/home">Home</a>
+        <a href="${pageContext.request.contextPath}/home">Inicio</a>
         <a href="${pageContext.request.contextPath}/livros" data-test="menu_livros">Livros</a>
         <a data-test="icon-carrinho" href="${pageContext.request.contextPath}/view/carrinho.jsp">Carrinho</a>
         <c:choose>

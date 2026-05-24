@@ -12,7 +12,7 @@
 <header class="navbar">
     <div class="logo">Livraria</div>
     <nav>
-        <a href="index.jsp">Home</a>
+        <a href="${pageContext.request.contextPath}/home">Home</a>
         <a href="login.jsp">Entrar</a>
     </nav>
 </header>

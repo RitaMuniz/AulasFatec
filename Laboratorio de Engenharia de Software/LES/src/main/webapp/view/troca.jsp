@@ -27,7 +27,7 @@
 <header>
     <h1>Livraria</h1>
     <div>
-        <a data-test="button-inicio" href="${pageContext.request.contextPath}/view/index.jsp">Início</a>
+        <a data-test="button-inicio" href="${pageContext.request.contextPath}/home">Início</a>
         <a data-test="button-pedido" href="${pageContext.request.contextPath}/pedidos">Meus Pedidos</a>
         <a data-test="button-troca" href="${pageContext.request.contextPath}/troca">Minhas Trocas</a>
     </div>

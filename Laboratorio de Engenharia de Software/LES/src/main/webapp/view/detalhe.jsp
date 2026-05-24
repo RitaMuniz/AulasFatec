@@ -15,7 +15,7 @@
 <header>
     <h1>Livraria</h1>
     <div>
-        <a href="${pageContext.request.contextPath}/view/index.jsp">Início</a>
+        <a href="${pageContext.request.contextPath}/home">Início</a>
         <a href="${pageContext.request.contextPath}/livros">Livros</a>
         <c:choose>
             <c:when test="${not empty sessionScope.cliente}">
