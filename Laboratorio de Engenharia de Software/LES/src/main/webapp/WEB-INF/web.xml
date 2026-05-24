@@ -132,6 +132,14 @@
         <url-pattern>/troca</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>ChatbotController</servlet-name>
+        <servlet-class>projetoLivraria.controller.ChatbotController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ChatbotController</servlet-name>
+        <url-pattern>/chatbot</url-pattern>
+    </servlet-mapping>
 
     <welcome-file-list>
         <welcome-file>/view/index.jsp</welcome-file>
