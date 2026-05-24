@@ -1,6 +1,9 @@
 package projetoLivraria.model;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class Livro {
 
@@ -8,7 +11,7 @@ public class Livro {
     private String codigo;
     private String titulo;
     private String autor;
-    private String categoria;
+    private List<Categoria> categorias = new ArrayList<>(); // ← N:N
     private String editora;
     private String isbn;
     private Integer ano;
@@ -26,7 +29,18 @@ public class Livro {
     private String status;
     private String imagemUrl;
 
-    public Livro() {
+    public Livro() {}
+
+
+    public List<Categoria> getCategorias() { return categorias; }
+    public void setCategorias(List<Categoria> categorias) { this.categorias = categorias; }
+
+    /** Retorna os nomes das categorias separados por vírgula, útil no JSP. */
+    public String getCategoriasNomes() {
+        if (categorias == null || categorias.isEmpty()) return "";
+        return categorias.stream()
+                .map(Categoria::getNome)
+                .collect(Collectors.joining(", "));
     }
 
     public int getId() {
@@ -37,7 +51,6 @@ public class Livro {
         this.id = id;
     }
 
-
     public String getCodigo() {
         return codigo;
     }
@@ -45,7 +58,6 @@ public class Livro {
     public void setCodigo(String codigo) {
         this.codigo = codigo;
     }
-
 
     public String getTitulo() {
         return titulo;
@@ -55,7 +67,6 @@ public class Livro {
         this.titulo = titulo;
     }
 
-
     public String getAutor() {
         return autor;
     }
@@ -63,16 +74,6 @@ public class Livro {
     public void setAutor(String autor) {
         this.autor = autor;
     }
-
-
-    public String getCategoria() {
-        return categoria;
-    }
-
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
-    }
-
 
     public String getEditora() {
         return editora;
@@ -82,7 +83,6 @@ public class Livro {
         this.editora = editora;
     }
 
-
     public String getIsbn() {
         return isbn;
     }
@@ -90,7 +90,6 @@ public class Livro {
     public void setIsbn(String isbn) {
         this.isbn = isbn;
     }
-
 
     public Integer getAno() {
         return ano;
@@ -100,7 +99,6 @@ public class Livro {
         this.ano = ano;
     }
 
-
     public Integer getNumeroPaginas() {
         return numeroPaginas;
     }
@@ -108,7 +106,6 @@ public class Livro {
     public void setNumeroPaginas(Integer numeroPaginas) {
         this.numeroPaginas = numeroPaginas;
     }
-
 
     public String getSinopse() {
         return sinopse;
@@ -118,7 +115,6 @@ public class Livro {
         this.sinopse = sinopse;
     }
 
-
     public BigDecimal getAltura() {
         return altura;
     }
@@ -126,7 +122,6 @@ public class Livro {
     public void setAltura(BigDecimal altura) {
         this.altura = altura;
     }
-
 
     public BigDecimal getLargura() {
         return largura;
@@ -136,7 +131,6 @@ public class Livro {
         this.largura = largura;
     }
 
-
     public BigDecimal getPeso() {
         return peso;
     }
@@ -144,7 +138,6 @@ public class Livro {
     public void setPeso(BigDecimal peso) {
         this.peso = peso;
     }
-
 
     public BigDecimal getProfundidade() {
         return profundidade;
@@ -154,7 +147,6 @@ public class Livro {
         this.profundidade = profundidade;
     }
 
-
     public String getGrupoPrecificacao() {
         return grupoPrecificacao;
     }
@@ -162,7 +154,6 @@ public class Livro {
     public void setGrupoPrecificacao(String grupoPrecificacao) {
         this.grupoPrecificacao = grupoPrecificacao;
     }
-
 
     public String getCodigoBarras() {
         return codigoBarras;
@@ -172,7 +163,6 @@ public class Livro {
         this.codigoBarras = codigoBarras;
     }
 
-
     public BigDecimal getPrecoCusto() {
         return precoCusto;
     }
@@ -180,7 +170,6 @@ public class Livro {
     public void setPrecoCusto(BigDecimal precoCusto) {
         this.precoCusto = precoCusto;
     }
-
 
     public BigDecimal getPrecoVenda() {
         return precoVenda;
@@ -190,7 +179,6 @@ public class Livro {
         this.precoVenda = precoVenda;
     }
 
-
     public Integer getEstoque() {
         return estoque;
     }
@@ -198,7 +186,6 @@ public class Livro {
     public void setEstoque(Integer estoque) {
         this.estoque = estoque;
     }
-
 
     public String getStatus() {
         return status;

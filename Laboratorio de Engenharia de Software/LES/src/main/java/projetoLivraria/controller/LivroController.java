@@ -5,6 +5,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import projetoLivraria.dao.LivroDAO;
+import projetoLivraria.model.Categoria;
 import projetoLivraria.model.Livro;
 
 import java.io.IOException;
@@ -28,8 +29,23 @@ public class LivroController extends HttpServlet {
 
             } else if (path.equals("/livros")) {
 
-                List<Livro> livros = livroDAO.listarTodos();
+                String busca      = req.getParameter("busca");
+                String categoriaId = req.getParameter("categoriaId");
+
+                boolean temFiltro = (busca != null && !busca.trim().isEmpty())
+                        || (categoriaId != null && !categoriaId.trim().isEmpty());
+
+                List<Livro> livros = temFiltro
+                        ? livroDAO.buscarComFiltros(busca, categoriaId)
+                        : livroDAO.listarTodos();
+
+                List<Categoria> categorias = livroDAO.listarCategorias();
+
                 req.setAttribute("livros", livros);
+                req.setAttribute("categorias", categorias);
+                req.setAttribute("buscaAtual", busca != null ? busca : "");
+                req.setAttribute("categoriaIdAtual", categoriaId != null ? categoriaId : "");
+
                 req.getRequestDispatcher("/view/livros.jsp").forward(req, resp);
 
             } else if (path.equals("/livro")) {
