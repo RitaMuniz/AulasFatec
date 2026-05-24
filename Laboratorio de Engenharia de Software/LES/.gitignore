@@ -42,10 +42,10 @@ build/
 
 
 # IntelliJ local configs
-.idea/
+.idea/dataSources.local.xml
 
 # SmartTomcat
-.smarttomcat/
+#.smarttomcat/
 
 # ZIPs
 *.zip
