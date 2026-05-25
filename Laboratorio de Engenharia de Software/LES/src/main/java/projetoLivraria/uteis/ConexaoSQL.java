@@ -157,6 +157,7 @@ public class ConexaoSQL {
                     codigo_barras TEXT,
                     grupo_precificacao_id INTEGER,
                     status TEXT,
+                    imagem_url TEXT,
                     FOREIGN KEY(grupo_precificacao_id) REFERENCES grupo_precificacao(id)
                 );
                 """;
