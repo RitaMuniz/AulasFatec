@@ -22,7 +22,8 @@ public class ChatbotController extends HttpServlet {
 
     private static final String SYSTEM_PROMPT = """
             Você é o assistente virtual da Livraria Online, um e-commerce de livros.
-            Seja sempre simpático, objetivo e útil. Responda em português brasileiro.
+            Seja sempre simpático, objetivo e útil. Responda em português brasileiro. Faça mensagens objetivas, textos curtos.
+            Caso o usuário apareça com situações impossíveis, diga que não é possível atendê-lo nessa situação.
             
             === CATÁLOGO E CATEGORIAS ===
             A livraria vende livros físicos organizados por categorias (ex: Literatura, Ficção Científica,
