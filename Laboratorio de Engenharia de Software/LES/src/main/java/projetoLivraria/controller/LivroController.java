@@ -23,7 +23,7 @@ public class LivroController extends HttpServlet {
         try {
             if (path.equals("/home")) {
 
-                List<Livro> maisVendidos = livroDAO.listarMaisVendidos(8);
+                List<Livro> maisVendidos = livroDAO.listarMaisVendidos(5);
                 req.setAttribute("livros", maisVendidos);
                 req.getRequestDispatcher("/view/index.jsp").forward(req, resp);
 
