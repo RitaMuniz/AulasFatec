@@ -13,7 +13,7 @@
 <header class="navbar">
     <div class="logo">Livraria</div>
     <nav>
-        <a data-test="icon-home" href="index.jsp">Home</a>
+        <a data-test="icon-home" href="${pageContext.request.contextPath}/home">Home</a>
         <a data-test="icon-perfil" href="${pageContext.request.contextPath}/cliente?action=buscar">Perfil</a>
         <a data-test="icon-sair" href="${pageContext.request.contextPath}/logout">Sair</a>
     </nav>

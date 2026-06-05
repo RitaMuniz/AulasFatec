@@ -14,7 +14,7 @@
 <header class="topbar">
     <h1>Gerenciar Clientes</h1>
     <div>
-        <a href="index.jsp">Ver Loja</a>
+        <a href="${pageContext.request.contextPath}/home">Ver Loja</a>
         <a href="${pageContext.request.contextPath}/logout">Sair</a>
     </div>
 </header>
