@@ -49,8 +49,8 @@
                             <input type="date" id="dataFim">
                         </div>
                         <div class="form-actions">
-                            <button onclick="carregarGrafico()">Filtrar</button>
-                            <button onclick="limparFiltro()" class="btn-cancelar">Limpar</button>
+                            <button type="button" onclick="carregarGrafico()">Filtrar</button>
+                            <button type="button" onclick="limparFiltro()" class="btn-cancelar">Limpar</button>
                         </div>
                     </div>
                 </form>
