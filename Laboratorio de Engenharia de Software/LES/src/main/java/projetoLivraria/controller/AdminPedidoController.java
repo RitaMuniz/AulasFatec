@@ -9,6 +9,7 @@ import projetoLivraria.model.Admin;
 import projetoLivraria.model.Cliente;
 import projetoLivraria.model.ItemPedido;
 import projetoLivraria.model.Pedido;
+import projetoLivraria.service.LogService;      // ← NOVO
 import projetoLivraria.uteis.ConexaoSQL;
 
 import java.io.IOException;
@@ -30,11 +31,6 @@ public class AdminPedidoController extends HttpServlet {
         String path = req.getServletPath();
 
         try (Connection con = ConexaoSQL.getInstance().getConnection()) {
-
-            // /admin/pedidos?id=X → detalhe
-            // /admin/pedidos?id=X&acao=editar → tela de edição
-            // /admin/pedidos → lista
-            // /admin → dashboard
 
             if (path.equals("/admin")) {
                 List<Pedido> pedidos = pedidoDAO.listarTodos();
@@ -102,13 +98,35 @@ public class AdminPedidoController extends HttpServlet {
             int pedidoId = Integer.parseInt(req.getParameter("pedido_id"));
             String novoStatus = req.getParameter("status");
 
+            //LOG: busca status atual ANTES de alterar
+            Pedido pedidoAtual = pedidoDAO.buscarPorIdAdmin(pedidoId);
+            String statusAnterior = pedidoAtual != null ? pedidoAtual.getStatus() : "desconhecido";
+
             pedidoDAO.atualizarStatus(pedidoId, novoStatus);
+
+            //LOG: registra a alteração
+            String adminEmail = getAdminEmail(req);
+            LogService logService = new LogService(adminEmail);
+            logService.registrarAlteracao(
+                    "pedido",
+                    "id=" + pedidoId + " | status=" + statusAnterior,
+                    "id=" + pedidoId + " | status=" + novoStatus
+            );
 
             resp.sendRedirect(req.getContextPath() + "/admin/pedidos?id=" + pedidoId);
 
         } catch (Exception e) {
             throw new ServletException(e);
         }
+    }
+
+    // Extrai e-mail do admin logado na sessão
+    private String getAdminEmail(HttpServletRequest req) {
+        HttpSession session = req.getSession(false);
+        if (session == null) return "admin-desconhecido";
+        Admin admin = (Admin) session.getAttribute("adminLogado");
+        if (admin != null) return "admin:" + admin.getEmail();
+        return "admin-desconhecido";
     }
 
     private void carregarClientes(List<Pedido> pedidos, Connection con) throws Exception {

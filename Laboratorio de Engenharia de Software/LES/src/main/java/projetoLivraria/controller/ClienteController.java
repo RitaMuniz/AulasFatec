@@ -14,6 +14,7 @@ import projetoLivraria.model.Endereco;
 import projetoLivraria.model.Telefone;
 import projetoLivraria.service.ClienteException;
 import projetoLivraria.service.ClienteService;
+import projetoLivraria.service.LogService;
 
 import java.io.IOException;
 import java.sql.Date;
@@ -164,15 +165,20 @@ public class ClienteController extends HttpServlet {
                     }
 
                     if (adminLogado != null) {
+                        // LOG: admin cadastrou cliente
+                        new LogService("admin:" + adminLogado.getEmail())
+                                .registrarInsercao(
+                                        "cliente",
+                                        "nome=" + novoCliente.getNome()
+                                                + " | email=" + novoCliente.getEmail()
+                                );
                         resp.sendRedirect(req.getContextPath() + "/cliente?action=listar");
 
                     } else if (clienteLogado != null) {
                         resp.sendRedirect(req.getContextPath() + "/view/cliente.jsp");
-
                     } else {
                         resp.sendRedirect(req.getContextPath() + "/view/login.jsp");
                     }
-                    break;
                 }
 
                 case "editar": {
@@ -200,6 +206,18 @@ public class ClienteController extends HttpServlet {
 
                     HttpSession sessionDes = req.getSession(false);
                     if (sessionDes != null) {
+                        Admin adminLogado = (Admin) sessionDes.getAttribute("adminLogado");
+
+                        //LOG: só registra se foi o admin que desativou
+                        if (adminLogado != null) {
+                            new LogService("admin:" + adminLogado.getEmail())
+                                    .registrarAlteracao(
+                                            "cliente",
+                                            "id=" + desativarId + " | ativo=true",
+                                            "id=" + desativarId + " | ativo=false"
+                                    );
+                        }
+
                         Cliente logado = (Cliente) sessionDes.getAttribute("clienteLogado");
                         if (logado != null && logado.getId() == desativarId) {
                             sessionDes.invalidate();
@@ -214,6 +232,13 @@ public class ClienteController extends HttpServlet {
                 case "reativar": {
                     int reativarId = Integer.parseInt(req.getParameter("id"));
                     service.reativarCliente(reativarId);
+
+                    //LOG
+                    new LogService(getAdminEmail(req)).registrarAlteracao(
+                            "cliente",
+                            "id=" + reativarId + " | ativo=false",
+                            "id=" + reativarId + " | ativo=true"
+                    );
                     resp.sendRedirect(req.getContextPath() + "/cliente?action=listar");
                     break;
                 }
@@ -235,11 +260,18 @@ public class ClienteController extends HttpServlet {
         }
     }
 
+    private String getAdminEmail(HttpServletRequest req) {
+        HttpSession session = req.getSession(false);
+        if (session == null) return "admin-desconhecido";
+        Admin admin = (Admin) session.getAttribute("adminLogado");
+        return admin != null ? "admin:" + admin.getEmail() : "admin-desconhecido";
+    }
+
     private String resolverPaginaOrigem(String action) {
         return switch (action) {
             case "cadastrar" -> "/view/cadastro.jsp";
-            case "editar"    -> "/view/cliente.jsp";
-            default          -> "/view/index.jsp";
+            case "editar" -> "/view/cliente.jsp";
+            default -> "/view/index.jsp";
         };
     }
 }

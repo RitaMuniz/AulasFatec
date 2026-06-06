@@ -4,6 +4,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
 import projetoLivraria.dao.*;
 import projetoLivraria.model.*;
+import projetoLivraria.service.LogService;
 import projetoLivraria.uteis.ConexaoSQL;
 
 import java.io.IOException;
@@ -205,27 +206,38 @@ public class TrocaController extends HttpServlet {
             try (Connection con = ConexaoSQL.getInstance().getConnection()) {
                 con.setAutoCommit(false);
                 try {
+                    //LOG: busca status ANTES de alterar
+                    Troca troca = trocaDAO.buscarPorId(trocaId, con);
+                    String statusAnterior = troca != null ? troca.getStatus() : "desconhecido";
+
+
                     trocaDAO.atualizarStatus(trocaId, novoStatus, con);
 
-                    // Se recusado, libera o status do item
                     if (Troca.STATUS_RECUSADA.equals(novoStatus)) {
-                        Troca troca = trocaDAO.buscarPorId(trocaId, con);
                         if (troca != null) {
                             itemPedidoDAO.atualizarStatusTroca(troca.getItemPedidoId(), null, con);
                         }
                     }
 
                     con.commit();
+
+                    //LOG: registra após commit
+                    new LogService(getAdminEmail(req)).registrarAlteracao(
+                            "troca",
+                            "id=" + trocaId + " | status=" + statusAnterior,
+                            "id=" + trocaId + " | status=" + novoStatus
+                    );
+
                 } catch (Exception e) {
                     con.rollback();
                     throw e;
                 }
             }
             String sucesso = switch (novoStatus) {
-                case Troca.STATUS_APROVADA  -> "aprovada";
-                case Troca.STATUS_RECEBIDA  -> "recebida";
-                case Troca.STATUS_RECUSADA  -> "recusada";
-                default                     -> "";
+                case Troca.STATUS_APROVADA -> "aprovada";
+                case Troca.STATUS_RECEBIDA -> "recebida";
+                case Troca.STATUS_RECUSADA -> "recusada";
+                default -> "";
             };
             resp.sendRedirect(req.getContextPath() + "/troca?action=admin&sucesso=" + sucesso);
         } catch (Exception e) {
@@ -284,6 +296,13 @@ public class TrocaController extends HttpServlet {
                     // estoqueDAO.incrementar(item.getLivroId(), item.getQuantidade(), con);
 
                     con.commit();
+
+                    //LOG
+                    new LogService(getAdminEmail(req)).registrarAlteracao(
+                            "troca",
+                            "id=" + trocaId + " | status=" + Troca.STATUS_RECEBIDA,
+                            "id=" + trocaId + " | status=CONCLUIDA | cupom_id=" + cupomTroca.getId()
+                    );
                 } catch (Exception e) {
                     con.rollback();
                     throw e;
@@ -295,6 +314,13 @@ public class TrocaController extends HttpServlet {
         } catch (Exception e) {
             throw new ServletException(e);
         }
+    }
+
+    private String getAdminEmail(HttpServletRequest req) {
+        HttpSession session = req.getSession(false);
+        if (session == null) return "admin-desconhecido";
+        Admin admin = (Admin) session.getAttribute("adminLogado");
+        return admin != null ? "admin:" + admin.getEmail() : "admin-desconhecido";
     }
 
     private Cliente clienteLogado(HttpServletRequest req, HttpServletResponse resp) throws IOException {
