@@ -26,7 +26,7 @@ public class RelatorioDAO {
             JOIN categoria       c  ON c.id           = lc.categoria_id
             """);
 
-        // Converte YYYY-MM-DD para milissegundos em Java (muito mais confiável que strftime no JDBC)
+        // Converte YYYY-MM-DD para milissegundos em Java
         Long inicioMs = null;
         Long fimMs    = null;
 
