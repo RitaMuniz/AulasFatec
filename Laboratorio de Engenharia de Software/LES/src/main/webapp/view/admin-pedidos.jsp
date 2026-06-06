@@ -25,7 +25,7 @@
         <nav>
             <a href="${pageContext.request.contextPath}/admin" data-test="button-dashboard">Dashboard</a>
             <a href="${pageContext.request.contextPath}/admin/pedidos" class="active" data-test="button-pedidos">Pedidos</a>
-            <a href="${pageContext.request.contextPath}/view/admin-livros.html" data-test="button-livros">Livros</a>
+            <a href="${pageContext.request.contextPath}/admin-livros" data-test="button-livros">Livros</a>
             <a href="${pageContext.request.contextPath}/view/admin-clientes.jsp" data-test="button-clientes">Clientes</a>
             <a href="${pageContext.request.contextPath}/troca?action=admin" data-test="button-devolucoes">Devoluções</a>
             <a href="${pageContext.request.contextPath}/view/admin-relatorios.html" data-test="button-relatorios">Relatórios</a>

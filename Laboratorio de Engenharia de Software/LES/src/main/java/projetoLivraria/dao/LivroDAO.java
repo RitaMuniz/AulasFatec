@@ -21,6 +21,19 @@ public class LivroDAO {
         return executarConsulta(sql, ps -> {});
     }
 
+    /** Lista todos os livros sem filtrar por status (uso administrativo). */
+    public List<Livro> listarAdmin() throws Exception {
+        String sql = """
+            SELECT l.*, gp.margem_lucro,
+                   e.quantidade AS estoque_qtd, e.custo AS preco_custo
+            FROM livro l
+            LEFT JOIN grupo_precificacao gp ON gp.id = l.grupo_precificacao_id
+            LEFT JOIN estoque e ON e.livro_id = l.id
+            ORDER BY l.id
+        """;
+        return executarConsulta(sql, ps -> {});
+    }
+
     /**
      * Filtra por texto livre (título/autor) e/ou categoria (id).
      * Parâmetros nulos ou vazios são ignorados.
@@ -153,7 +166,7 @@ public class LivroDAO {
         return livros;
     }
 
-    //Carrega as categorias de todos os livros em uma única query (evita N+1).
+    // Carrega as categorias de todos os livros em uma única query (evita N+1).
     private void carregarCategorias(Connection con, List<Livro> livros) throws SQLException {
         if (livros.isEmpty()) return;
 

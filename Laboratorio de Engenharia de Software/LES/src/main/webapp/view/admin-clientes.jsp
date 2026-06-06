@@ -26,7 +26,7 @@
         <nav>
             <a href="${pageContext.request.contextPath}/view/admin.jsp">Dashboard</a>
             <a href="${pageContext.request.contextPath}/view/admin-pedidos.html">Pedidos</a>
-            <a href="${pageContext.request.contextPath}/view/admin-livros.html">Livros</a>
+            <a href="${pageContext.request.contextPath}/admin-livros">Livros</a>
             <a href="${pageContext.request.contextPath}/view/cliente?action=listar" class="active">Clientes</a>
             <a href="${pageContext.request.contextPath}/troca?action=admin">Devoluções</a>
             <a href="${pageContext.request.contextPath}/view/admin-relatorios.html">Relatórios</a>

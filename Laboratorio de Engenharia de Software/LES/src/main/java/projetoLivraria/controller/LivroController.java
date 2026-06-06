@@ -29,7 +29,7 @@ public class LivroController extends HttpServlet {
 
             } else if (path.equals("/livros")) {
 
-                String busca      = req.getParameter("busca");
+                String busca = req.getParameter("busca");
                 String categoriaId = req.getParameter("categoriaId");
 
                 boolean temFiltro = (busca != null && !busca.trim().isEmpty())
@@ -55,6 +55,13 @@ public class LivroController extends HttpServlet {
 
                 req.setAttribute("livro", livro);
                 req.getRequestDispatcher("/view/detalhe.jsp").forward(req, resp);
+
+            } else if (path.equals("/admin-livros")) {
+
+                List<Livro> livros = livroDAO.listarAdmin();
+                req.setAttribute("livros", livros);
+                req.getRequestDispatcher("/view/admin-livros.jsp").forward(req, resp);
+
             }
 
         } catch (Exception e) {

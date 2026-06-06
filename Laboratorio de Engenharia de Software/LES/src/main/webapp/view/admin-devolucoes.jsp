@@ -66,7 +66,7 @@
         <nav>
             <a data-test="button-dashboard" href="${pageContext.request.contextPath}/admin">Dashboard</a>
             <a data-test="button-pedidos" href="${pageContext.request.contextPath}/admin/pedidos">Pedidos</a>
-            <a data-test="button-livros" href="${pageContext.request.contextPath}/view/admin-livros.html">Livros</a>
+            <a data-test="button-livros" href="${pageContext.request.contextPath}/admin-livros">Livros</a>
             <a data-test="button-clientes" href="${pageContext.request.contextPath}/view/admin-clientes.jsp">Clientes</a>
             <a data-test="button-devolucoes" href="${pageContext.request.contextPath}/troca?action=admin" class="active">Devoluções</a>
             <a data-test="button-relatorio" href="${pageContext.request.contextPath}/view/admin-relatorios.html">Relatórios</a>
