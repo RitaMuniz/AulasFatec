@@ -19,10 +19,8 @@ public class AdminRelatoriosController extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
 
-        // -------------------------------------------------------------------
         // Proteção: só admin pode acessar
         // Ajuste o atributo de sessão conforme o seu LoginController usa
-        // -------------------------------------------------------------------
         HttpSession session = req.getSession(false);
         if (session == null || session.getAttribute("adminLogado") == null) {
             resp.sendRedirect(req.getContextPath() + "/view/login.jsp");
