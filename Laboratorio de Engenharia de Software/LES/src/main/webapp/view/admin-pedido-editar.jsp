@@ -28,7 +28,7 @@
             <a href="${pageContext.request.contextPath}/admin-livros" data-test="button-livros">Livros</a>
             <a href="${pageContext.request.contextPath}/view/admin-clientes.jsp" data-test="button-clientes">Clientes</a>
             <a href="${pageContext.request.contextPath}/troca?action=admin" data-test="button-devolucoes">Devoluções</a>
-            <a href="${pageContext.request.contextPath}/view/admin-relatorios.html" data-test="button-relatorio">Relatórios</a>
+            <a href="${pageContext.request.contextPath}/admin-relatorios" data-test="button-relatorio">Relatórios</a>
         </nav>
     </aside>
 

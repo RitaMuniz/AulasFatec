@@ -155,6 +155,15 @@
         <url-pattern>/relatorio-vendas</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>AdminRelatoriosController</servlet-name>
+        <servlet-class>projetoLivraria.controller.AdminRelatoriosController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminRelatoriosController</servlet-name>
+        <url-pattern>/admin-relatorios</url-pattern>
+    </servlet-mapping>
+
     <welcome-file-list>
         <welcome-file>/view/index.jsp</welcome-file>
     </welcome-file-list>

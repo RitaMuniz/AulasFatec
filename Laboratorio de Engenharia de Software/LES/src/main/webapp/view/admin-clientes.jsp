@@ -29,7 +29,7 @@
             <a href="${pageContext.request.contextPath}/admin-livros">Livros</a>
             <a href="${pageContext.request.contextPath}/view/cliente?action=listar" class="active">Clientes</a>
             <a href="${pageContext.request.contextPath}/troca?action=admin">Devoluções</a>
-            <a href="${pageContext.request.contextPath}/view/admin-relatorios.html">Relatórios</a>
+            <a href="${pageContext.request.contextPath}/admin-relatorios">Relatórios</a>
         </nav>
     </aside>
 

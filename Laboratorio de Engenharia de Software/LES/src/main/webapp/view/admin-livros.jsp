@@ -26,12 +26,12 @@
     <aside class="sidebar">
         <h2>Admin</h2>
         <nav>
-            <a href="admin.jsp">Dashboard</a>
-            <a href="admin-pedidos.jsp">Pedidos</a>
-            <a href="${pageContext.request.contextPath}/admin-livros" class="active">Livros</a>
-            <a href="admin-clientes.jsp">Clientes</a>
-            <a href="admin-devolucoes.jsp">Devoluções</a>
-            <a href="admin-relatorios.html">Relatórios</a>
+            <a href="${pageContext.request.contextPath}/admin" data-test="button-dashboard">Dashboard</a>
+            <a href="${pageContext.request.contextPath}/admin/pedidos" data-test="button-pedidos">Pedidos</a>
+            <a href="${pageContext.request.contextPath}/admin-livros" class="active"  data-test="button-livros">Livros</a>
+            <a href="${pageContext.request.contextPath}/view/admin-clientes.jsp" data-test="button-clientes">Clientes</a>
+            <a href="${pageContext.request.contextPath}/troca?action=admin" data-test="button-devolucoes">Devoluções</a>
+            <a href="${pageContext.request.contextPath}/admin-relatorios" data-test="button-relatorios">Relatórios</a>
         </nav>
     </aside>
 

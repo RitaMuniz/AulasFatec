@@ -69,7 +69,7 @@
             <a data-test="button-livros" href="${pageContext.request.contextPath}/admin-livros">Livros</a>
             <a data-test="button-clientes" href="${pageContext.request.contextPath}/view/admin-clientes.jsp">Clientes</a>
             <a data-test="button-devolucoes" href="${pageContext.request.contextPath}/troca?action=admin" class="active">Devoluções</a>
-            <a data-test="button-relatorio" href="${pageContext.request.contextPath}/view/admin-relatorios.html">Relatórios</a>
+            <a data-test="button-relatorio" href="${pageContext.request.contextPath}/admin-relatorios">Relatórios</a>
         </nav>
     </aside>
 
