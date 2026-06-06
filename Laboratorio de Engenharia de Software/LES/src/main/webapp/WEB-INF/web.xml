@@ -141,6 +141,15 @@
         <url-pattern>/chatbot</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>RelatorioVendasController</servlet-name>
+        <servlet-class>projetoLivraria.controller.RelatorioVendasController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RelatorioVendasController</servlet-name>
+        <url-pattern>/relatorio-vendas</url-pattern>
+    </servlet-mapping>
+
     <welcome-file-list>
         <welcome-file>/view/index.jsp</welcome-file>
     </welcome-file-list>
