@@ -119,7 +119,10 @@ public class ClienteDAO {
         c.setId(rs.getInt("id"));
         c.setNome(rs.getString("nome"));
         c.setGenero(rs.getString("genero"));
-        c.setDataNascimento(rs.getDate("data_nascimento"));
+        String data = rs.getString("data_nascimento");
+        if (data != null) {
+            c.setDataNascimento(java.sql.Date.valueOf(data));
+        }
         c.setCpf(rs.getString("cpf"));
         c.setEmail(rs.getString("email"));
         c.setSenha(rs.getString("senha"));
