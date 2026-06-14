@@ -203,6 +203,11 @@ Certifique-se de que o arquivo do banco esteja configurado corretamente na class
 ConexaoSQL.java
 ```
 
+O banco utilizado para os testes já está implementado no projeto, mas caso prefira, rode os seguintes arquivos: 
+
+* DDL_LES.sql: possuí todas as tabelas do banco e criação, mesmas disponíveis em ConexãoSQL.java
+* Inserts.sql: todos os dados inseridos para popular o banco.
+
 ### 4. Executar no Tomcat
 
 Realize o deploy da aplicação utilizando o Tomcat ou o plugin Smart Tomcat da IDE.
@@ -288,7 +293,7 @@ Projeto desenvolvido para a disciplina de Laboratório de Engenharia de Software
 
 ## 👥 Equipe
 
-Rita Muniz e Caíque Antunes
+@RitaMuniz e @Caique-Antunes
 
 ---
 
