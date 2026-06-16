@@ -27,7 +27,7 @@ class Login {
     }
 
     preencherCampo(nome, valor){
-        cy.fixture('usuarios').then(dados => {
+        cy.fixture('cliente').then(dados => {
             const valorFinal = this.obterValorCampo(nome, valor, dados)
 
             this.campos[nome] = valorFinal

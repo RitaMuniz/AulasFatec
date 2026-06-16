@@ -112,10 +112,10 @@ public class PedidoController extends HttpServlet {
             Integer cartao2Id = null;
             BigDecimal valor2 = null;
             String cartao2Str = req.getParameter("cartao2_id");
-            String valor2Str  = req.getParameter("valor_cartao2");
+            String valor2Str = req.getParameter("valor_cartao2");
             if (cartao2Str != null && !cartao2Str.isBlank()) {
                 cartao2Id = Integer.parseInt(cartao2Str);
-                valor2    = parseMoeda(valor2Str);
+                valor2 = parseMoeda(valor2Str);
             }
 
             //Cupons (múltiplos)

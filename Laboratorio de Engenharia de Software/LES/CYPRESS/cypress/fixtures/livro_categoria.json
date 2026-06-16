@@ -1,0 +1,122 @@
+{
+  "1984":{
+    "livro_id": 1,
+    "categoria_id": 1
+  },
+  "Dom Casmurro":{
+    "livro_id": 2,
+    "categoria_id": 1
+  },
+  "O Alienista":{
+    "livro_id": 3,
+    "categoria_id": 1
+  },
+  "Cem Anos de Solidão":{
+    "livro_id": 4,
+    "categoria_id": 1
+  },
+  "O Estrangeiro":{
+    "livro_id": 5,
+    "categoria_id": 1
+  },
+  "Harry Potter e a Pedra Filosofal":{
+    "livro_id": 6,
+    "categoria_id": 2
+  },
+  "O Senhor dos Anéis":{
+    "livro_id": 7,
+    "categoria_id": 2
+  },
+  "As Crônicas de Nárnia":{
+    "livro_id": 8,
+    "categoria_id": 2
+  },
+  "O Nome do Vento":{
+    "livro_id": 9,
+    "categoria_id": 2
+  },
+  "Mistborn":{
+    "livro_id": 10,
+    "categoria_id": 2
+  },
+  "O Homem Mais Rico da Babilônia":{
+    "livro_id": 11,
+    "categoria_id": 3
+  },
+  "Pai Rico, Pai Pobre":{
+    "livro_id": 12,
+    "categoria_id": 3
+  },
+  "A Arte da Guerra":{
+    "livro_id": 13,
+    "categoria_id": 3
+  },
+  "Startup Enxuta":{
+    "livro_id": 14,
+    "categoria_id": 3
+  },
+  "Como Fazer Amigos":{
+    "livro_id": 15,
+    "categoria_id": 3
+  },
+  "O Poder do Hábito":{
+    "livro_id": 16,
+    "categoria_id": 4
+  },
+  "Mindset":{
+    "livro_id": 17,
+    "categoria_id": 4
+  },
+  "Os Segredos da Mente Milionária":{
+    "livro_id": 18,
+    "categoria_id": 4
+  },
+  "A Coragem de Não Agradar":{
+    "livro_id": 19,
+    "categoria_id": 4
+  },
+  "Essencialismo":{
+    "livro_id": 20,
+    "categoria_id": 4
+  },
+  "É Assim Que Acaba":{
+    "livro_id": 21,
+    "categoria_id": 5
+  },
+  "Verity":{
+    "livro_id": 22,
+    "categoria_id": 5
+  },
+  "Orgulho e Preconceito":{
+    "livro_id": 23,
+    "categoria_id": 5
+  },
+  "O Morro dos Ventos Uivantes":{
+    "livro_id": 24,
+    "categoria_id": 5
+  },
+  "A Biblioteca da Meia-Noite":{
+    "livro_id": 25,
+    "categoria_id": 5
+  },
+  "A Revolução dos Bichos":{
+    "livro_id": 26,
+    "categoria_id": 1
+  },
+  "O Pequeno Príncipe":{
+    "livro_id": 27,
+    "categoria_id": 1
+  },
+  "O Alquimista":{
+    "livro_id": 28,
+    "categoria_id": 4
+  },
+  "Coraline":{
+    "livro_id": 29,
+    "categoria_id": 2
+  },
+  "A Sutil Arte de Ligar o Foda-se":{
+    "livro_id": 30,
+    "categoria_id": 4
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "Campinas":{
+    "id": 1,
+    "nome": "Campinas",
+    "estado_id": 25
+  },
+  "São Paulo":{
+    "id": 2,
+    "nome": "São Paulo",
+    "estado_id": 25
+  },
+  "Rio de Janeiro":{
+    "id": 3,
+    "nome": "Rio de Janeiro",
+    "estado_id": 19
+  },
+  "Belo Horizonte":{
+    "id": 4,
+    "nome": "Belo Horizonte",
+    "estado_id": 13
+  },
+  "Salvador":{
+    "id": 5,
+    "nome": "Salvador",
+    "estado_id": 5
+  }
+}

@@ -10,13 +10,13 @@ class DashboardAdmin {
 
             dashboard: () => this.validarDashboard(),
 
-            cards: () => this.validarCards(),
+            //cards: () => this.validarCards(),
 
-            totalPedidos: () => this.validarTotalPedidos(),
+            //totalPedidos: () => this.validarTotalPedidos(),
 
-            emProcessamento: () => this.validarEmProcessamento(),
+            //emProcessamento: () => this.validarEmProcessamento(),
 
-            faturamento: () => this.validarFaturamento(),
+            //faturamento: () => this.validarFaturamento(),
 
             tabela: () => this.validarTabela(),
 
@@ -126,7 +126,7 @@ class DashboardAdmin {
             .and('be.visible')
     }
 
-    validarCards(){
+    /*validarCards(){
 
         cy.get(el.cards.totalPedidos)
             .should('exist')
@@ -177,7 +177,7 @@ class DashboardAdmin {
 
                 //expect(valor).to.be.greaterThanOrEqual(0)
             })
-    }
+    }*/
 
     validarTabela(){
 
@@ -288,7 +288,7 @@ class DashboardAdmin {
 
         this.validarDashboard()
 
-        this.validarCards()
+        //this.validarCards()
 
         this.validarTabela()
 

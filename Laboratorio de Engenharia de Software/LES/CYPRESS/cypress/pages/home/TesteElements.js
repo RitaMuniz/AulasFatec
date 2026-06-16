@@ -1,6 +1,9 @@
 export const elements = {
     urls: {
-        home: 'http://localhost:8080/LES/view/index.jsp'
+        home: [
+            'http://localhost:8080/LES/view/index.jsp',
+            'http://localhost:8080/LES/home'
+        ]
     },
 
     menus: {

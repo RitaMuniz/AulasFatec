@@ -6,12 +6,12 @@ class Login {
     }
 
     preencherCredenciaisSemSenha(){
-        cy.get(el.username).type('ritamuniz1995@gmail.com')
+        cy.get(el.username).type('odete@email.com')
         cy.get(el.loginButton).click()
     }
 
     preencherCredenciaisSemEmail(){
-        cy.get(el.password).type('123456')
+        cy.get(el.password).type('Odete123!')
         cy.get(el.loginButton).click()
     }
 
@@ -26,26 +26,26 @@ class Login {
     }
 
     preencherCredenciaisSenhaErrada(){
-        cy.get(el.username).type('ritamuniz1995@gmail.com')
+        cy.get(el.username).type('odete@email.com')
         cy.get(el.password).type('SenhaErrada.')
         cy.get(el.loginButton).click()
     }
 
     preencherCredenciaisEmailErrado(){
         cy.get(el.username).type('ritamunizemailerrado@gmail.com')
-        cy.get(el.password).type('Rita123.')
+        cy.get(el.password).type('Odete123!')
         cy.get(el.loginButton).click()
     }
 
     preencherCredenciaisInativas(){
-        cy.get(el.username).type('odeteroitman@gmail.com')
-        cy.get(el.password).type('odete123')
+        cy.get(el.username).type('aline@email.com')
+        cy.get(el.password).type('Aline123!')
         cy.get(el.loginButton).click()
     }
 
     preencherCredenciaisValidas(){
-        cy.get(el.username).type('ritamuniz1995@gmail.com')
-        cy.get(el.password).type('Rita123.')
+        cy.get(el.username).type('odete@email.com')
+        cy.get(el.password).type('Odete123!')
         cy.get(el.loginButton).click()
     }
 

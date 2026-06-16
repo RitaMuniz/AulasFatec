@@ -1,0 +1,2387 @@
+{
+  "pedido_id_1": {
+    "id": 1,
+    "cliente_id": 1,
+    "endereco_entrega_id": 1,
+    "data": 1746057600000,
+    "valor_total": 95.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_2": {
+    "id": 2,
+    "cliente_id": 2,
+    "endereco_entrega_id": 2,
+    "data": 1746072000000,
+    "valor_total": 67.5,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_3": {
+    "id": 3,
+    "cliente_id": 3,
+    "endereco_entrega_id": 3,
+    "data": 1746086400000,
+    "valor_total": 116.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_4": {
+    "id": 4,
+    "cliente_id": 4,
+    "endereco_entrega_id": 4,
+    "data": 1746100800000,
+    "valor_total": 120.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_5": {
+    "id": 5,
+    "cliente_id": 5,
+    "endereco_entrega_id": 5,
+    "data": 1746115200000,
+    "valor_total": 45.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_6": {
+    "id": 6,
+    "cliente_id": 6,
+    "endereco_entrega_id": 6,
+    "data": 1746129600000,
+    "valor_total": 144.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_7": {
+    "id": 7,
+    "cliente_id": 7,
+    "endereco_entrega_id": 7,
+    "data": 1746144000000,
+    "valor_total": 84.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_8": {
+    "id": 8,
+    "cliente_id": 8,
+    "endereco_entrega_id": 8,
+    "data": 1746158400000,
+    "valor_total": 143.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_9": {
+    "id": 9,
+    "cliente_id": 9,
+    "endereco_entrega_id": 9,
+    "data": 1746172800000,
+    "valor_total": 96.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_10": {
+    "id": 10,
+    "cliente_id": 10,
+    "endereco_entrega_id": 10,
+    "data": 1746187200000,
+    "valor_total": 185.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_11": {
+    "id": 11,
+    "cliente_id": 11,
+    "endereco_entrega_id": 11,
+    "data": 1746201600000,
+    "valor_total": 82.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_12": {
+    "id": 12,
+    "cliente_id": 12,
+    "endereco_entrega_id": 12,
+    "data": 1746216000000,
+    "valor_total": 104.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_13": {
+    "id": 13,
+    "cliente_id": 13,
+    "endereco_entrega_id": 13,
+    "data": 1746230400000,
+    "valor_total": 88.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_14": {
+    "id": 14,
+    "cliente_id": 14,
+    "endereco_entrega_id": 14,
+    "data": 1746244800000,
+    "valor_total": 153.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_15": {
+    "id": 15,
+    "cliente_id": 15,
+    "endereco_entrega_id": 15,
+    "data": 1746259200000,
+    "valor_total": 118.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_16": {
+    "id": 16,
+    "cliente_id": 16,
+    "endereco_entrega_id": 16,
+    "data": 1746273600000,
+    "valor_total": 130.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_17": {
+    "id": 17,
+    "cliente_id": 17,
+    "endereco_entrega_id": 17,
+    "data": 1746288000000,
+    "valor_total": 89.5,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_18": {
+    "id": 18,
+    "cliente_id": 18,
+    "endereco_entrega_id": 18,
+    "data": 1746302400000,
+    "valor_total": 168.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_19": {
+    "id": 19,
+    "cliente_id": 19,
+    "endereco_entrega_id": 19,
+    "data": 1746316800000,
+    "valor_total": 67.5,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_20": {
+    "id": 20,
+    "cliente_id": 20,
+    "endereco_entrega_id": 20,
+    "data": 1746331200000,
+    "valor_total": 200.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_21": {
+    "id": 21,
+    "cliente_id": 21,
+    "endereco_entrega_id": 21,
+    "data": 1748736000000,
+    "valor_total": 87.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_22": {
+    "id": 22,
+    "cliente_id": 22,
+    "endereco_entrega_id": 22,
+    "data": 1748750400000,
+    "valor_total": 76.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_23": {
+    "id": 23,
+    "cliente_id": 23,
+    "endereco_entrega_id": 23,
+    "data": 1748764800000,
+    "valor_total": 107.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_24": {
+    "id": 24,
+    "cliente_id": 24,
+    "endereco_entrega_id": 24,
+    "data": 1748779200000,
+    "valor_total": 160.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_25": {
+    "id": 25,
+    "cliente_id": 25,
+    "endereco_entrega_id": 25,
+    "data": 1748793600000,
+    "valor_total": 119.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_26": {
+    "id": 26,
+    "cliente_id": 26,
+    "endereco_entrega_id": 26,
+    "data": 1748808000000,
+    "valor_total": 101.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_27": {
+    "id": 27,
+    "cliente_id": 27,
+    "endereco_entrega_id": 27,
+    "data": 1748822400000,
+    "valor_total": 112.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_28": {
+    "id": 28,
+    "cliente_id": 28,
+    "endereco_entrega_id": 28,
+    "data": 1748836800000,
+    "valor_total": 242.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_29": {
+    "id": 29,
+    "cliente_id": 29,
+    "endereco_entrega_id": 29,
+    "data": 1748851200000,
+    "valor_total": 136.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_30": {
+    "id": 30,
+    "cliente_id": 30,
+    "endereco_entrega_id": 30,
+    "data": 1748865600000,
+    "valor_total": 162.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_31": {
+    "id": 31,
+    "cliente_id": 1,
+    "endereco_entrega_id": 1,
+    "data": 1748880000000,
+    "valor_total": 74.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_32": {
+    "id": 32,
+    "cliente_id": 2,
+    "endereco_entrega_id": 2,
+    "data": 1748894400000,
+    "valor_total": 96.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_33": {
+    "id": 33,
+    "cliente_id": 3,
+    "endereco_entrega_id": 3,
+    "data": 1748908800000,
+    "valor_total": 108.5,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_34": {
+    "id": 34,
+    "cliente_id": 4,
+    "endereco_entrega_id": 4,
+    "data": 1748923200000,
+    "valor_total": 141.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_35": {
+    "id": 35,
+    "cliente_id": 5,
+    "endereco_entrega_id": 5,
+    "data": 1748937600000,
+    "valor_total": 77.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_36": {
+    "id": 36,
+    "cliente_id": 6,
+    "endereco_entrega_id": 6,
+    "data": 1748952000000,
+    "valor_total": 116.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_37": {
+    "id": 37,
+    "cliente_id": 7,
+    "endereco_entrega_id": 7,
+    "data": 1748966400000,
+    "valor_total": 89.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_38": {
+    "id": 38,
+    "cliente_id": 8,
+    "endereco_entrega_id": 8,
+    "data": 1748980800000,
+    "valor_total": 102.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_39": {
+    "id": 39,
+    "cliente_id": 9,
+    "endereco_entrega_id": 9,
+    "data": 1748995200000,
+    "valor_total": 99.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_40": {
+    "id": 40,
+    "cliente_id": 10,
+    "endereco_entrega_id": 10,
+    "data": 1749009600000,
+    "valor_total": 153.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_41": {
+    "id": 41,
+    "cliente_id": 11,
+    "endereco_entrega_id": 11,
+    "data": 1751328000000,
+    "valor_total": 78.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_42": {
+    "id": 42,
+    "cliente_id": 12,
+    "endereco_entrega_id": 12,
+    "data": 1751342400000,
+    "valor_total": 55.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_43": {
+    "id": 43,
+    "cliente_id": 13,
+    "endereco_entrega_id": 13,
+    "data": 1751356800000,
+    "valor_total": 121.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_44": {
+    "id": 44,
+    "cliente_id": 14,
+    "endereco_entrega_id": 14,
+    "data": 1751371200000,
+    "valor_total": 66.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_45": {
+    "id": 45,
+    "cliente_id": 15,
+    "endereco_entrega_id": 15,
+    "data": 1751385600000,
+    "valor_total": 90.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_46": {
+    "id": 46,
+    "cliente_id": 16,
+    "endereco_entrega_id": 16,
+    "data": 1751400000000,
+    "valor_total": 48.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_47": {
+    "id": 47,
+    "cliente_id": 17,
+    "endereco_entrega_id": 17,
+    "data": 1751414400000,
+    "valor_total": 83.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_48": {
+    "id": 48,
+    "cliente_id": 18,
+    "endereco_entrega_id": 18,
+    "data": 1751428800000,
+    "valor_total": 70.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_49": {
+    "id": 49,
+    "cliente_id": 19,
+    "endereco_entrega_id": 19,
+    "data": 1751443200000,
+    "valor_total": 105.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_50": {
+    "id": 50,
+    "cliente_id": 20,
+    "endereco_entrega_id": 20,
+    "data": 1751457600000,
+    "valor_total": 61.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_51": {
+    "id": 51,
+    "cliente_id": 21,
+    "endereco_entrega_id": 21,
+    "data": 1751472000000,
+    "valor_total": 96.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_52": {
+    "id": 52,
+    "cliente_id": 22,
+    "endereco_entrega_id": 22,
+    "data": 1751486400000,
+    "valor_total": 44.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_53": {
+    "id": 53,
+    "cliente_id": 23,
+    "endereco_entrega_id": 23,
+    "data": 1751500800000,
+    "valor_total": 112.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_54": {
+    "id": 54,
+    "cliente_id": 24,
+    "endereco_entrega_id": 24,
+    "data": 1751515200000,
+    "valor_total": 57.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_55": {
+    "id": 55,
+    "cliente_id": 25,
+    "endereco_entrega_id": 25,
+    "data": 1751529600000,
+    "valor_total": 84.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_56": {
+    "id": 56,
+    "cliente_id": 26,
+    "endereco_entrega_id": 26,
+    "data": 1751544000000,
+    "valor_total": 72.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_57": {
+    "id": 57,
+    "cliente_id": 27,
+    "endereco_entrega_id": 27,
+    "data": 1751558400000,
+    "valor_total": 101.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_58": {
+    "id": 58,
+    "cliente_id": 28,
+    "endereco_entrega_id": 28,
+    "data": 1751572800000,
+    "valor_total": 63.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_59": {
+    "id": 59,
+    "cliente_id": 29,
+    "endereco_entrega_id": 29,
+    "data": 1751587200000,
+    "valor_total": 89.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_60": {
+    "id": 60,
+    "cliente_id": 30,
+    "endereco_entrega_id": 30,
+    "data": 1751601600000,
+    "valor_total": 50.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_61": {
+    "id": 61,
+    "cliente_id": 1,
+    "endereco_entrega_id": 1,
+    "data": 1754006400000,
+    "valor_total": 79.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_62": {
+    "id": 62,
+    "cliente_id": 2,
+    "endereco_entrega_id": 2,
+    "data": 1754020800000,
+    "valor_total": 95.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_63": {
+    "id": 63,
+    "cliente_id": 3,
+    "endereco_entrega_id": 3,
+    "data": 1754035200000,
+    "valor_total": 58.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_64": {
+    "id": 64,
+    "cliente_id": 4,
+    "endereco_entrega_id": 4,
+    "data": 1754049600000,
+    "valor_total": 114.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_65": {
+    "id": 65,
+    "cliente_id": 5,
+    "endereco_entrega_id": 5,
+    "data": 1754064000000,
+    "valor_total": 67.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_66": {
+    "id": 66,
+    "cliente_id": 6,
+    "endereco_entrega_id": 6,
+    "data": 1754078400000,
+    "valor_total": 86.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_67": {
+    "id": 67,
+    "cliente_id": 7,
+    "endereco_entrega_id": 7,
+    "data": 1754092800000,
+    "valor_total": 53.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_68": {
+    "id": 68,
+    "cliente_id": 8,
+    "endereco_entrega_id": 8,
+    "data": 1754107200000,
+    "valor_total": 109.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_69": {
+    "id": 69,
+    "cliente_id": 9,
+    "endereco_entrega_id": 9,
+    "data": 1754121600000,
+    "valor_total": 74.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_70": {
+    "id": 70,
+    "cliente_id": 10,
+    "endereco_entrega_id": 10,
+    "data": 1754136000000,
+    "valor_total": 98.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_71": {
+    "id": 71,
+    "cliente_id": 11,
+    "endereco_entrega_id": 11,
+    "data": 1754150400000,
+    "valor_total": 62.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_72": {
+    "id": 72,
+    "cliente_id": 12,
+    "endereco_entrega_id": 12,
+    "data": 1754164800000,
+    "valor_total": 87.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_73": {
+    "id": 73,
+    "cliente_id": 13,
+    "endereco_entrega_id": 13,
+    "data": 1754179200000,
+    "valor_total": 71.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_74": {
+    "id": 74,
+    "cliente_id": 14,
+    "endereco_entrega_id": 14,
+    "data": 1754193600000,
+    "valor_total": 106.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_75": {
+    "id": 75,
+    "cliente_id": 15,
+    "endereco_entrega_id": 15,
+    "data": 1754208000000,
+    "valor_total": 55.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_76": {
+    "id": 76,
+    "cliente_id": 16,
+    "endereco_entrega_id": 16,
+    "data": 1754222400000,
+    "valor_total": 92.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_77": {
+    "id": 77,
+    "cliente_id": 17,
+    "endereco_entrega_id": 17,
+    "data": 1754236800000,
+    "valor_total": 68.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_78": {
+    "id": 78,
+    "cliente_id": 18,
+    "endereco_entrega_id": 18,
+    "data": 1754251200000,
+    "valor_total": 103.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_79": {
+    "id": 79,
+    "cliente_id": 19,
+    "endereco_entrega_id": 19,
+    "data": 1754265600000,
+    "valor_total": 49.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_80": {
+    "id": 80,
+    "cliente_id": 20,
+    "endereco_entrega_id": 20,
+    "data": 1754280000000,
+    "valor_total": 117.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_81": {
+    "id": 81,
+    "cliente_id": 21,
+    "endereco_entrega_id": 21,
+    "data": 1756684800000,
+    "valor_total": 82.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_82": {
+    "id": 82,
+    "cliente_id": 22,
+    "endereco_entrega_id": 22,
+    "data": 1756699200000,
+    "valor_total": 59.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_83": {
+    "id": 83,
+    "cliente_id": 23,
+    "endereco_entrega_id": 23,
+    "data": 1756713600000,
+    "valor_total": 123.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_84": {
+    "id": 84,
+    "cliente_id": 24,
+    "endereco_entrega_id": 24,
+    "data": 1756728000000,
+    "valor_total": 64.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_85": {
+    "id": 85,
+    "cliente_id": 25,
+    "endereco_entrega_id": 25,
+    "data": 1756742400000,
+    "valor_total": 91.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_86": {
+    "id": 86,
+    "cliente_id": 26,
+    "endereco_entrega_id": 26,
+    "data": 1756756800000,
+    "valor_total": 47.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_87": {
+    "id": 87,
+    "cliente_id": 27,
+    "endereco_entrega_id": 27,
+    "data": 1756771200000,
+    "valor_total": 85.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_88": {
+    "id": 88,
+    "cliente_id": 28,
+    "endereco_entrega_id": 28,
+    "data": 1756785600000,
+    "valor_total": 73.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_89": {
+    "id": 89,
+    "cliente_id": 29,
+    "endereco_entrega_id": 29,
+    "data": 1756800000000,
+    "valor_total": 108.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_90": {
+    "id": 90,
+    "cliente_id": 30,
+    "endereco_entrega_id": 30,
+    "data": 1756814400000,
+    "valor_total": 60.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_91": {
+    "id": 91,
+    "cliente_id": 1,
+    "endereco_entrega_id": 1,
+    "data": 1756828800000,
+    "valor_total": 97.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_92": {
+    "id": 92,
+    "cliente_id": 2,
+    "endereco_entrega_id": 2,
+    "data": 1756843200000,
+    "valor_total": 56.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_93": {
+    "id": 93,
+    "cliente_id": 3,
+    "endereco_entrega_id": 3,
+    "data": 1756857600000,
+    "valor_total": 88.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_94": {
+    "id": 94,
+    "cliente_id": 4,
+    "endereco_entrega_id": 4,
+    "data": 1756872000000,
+    "valor_total": 69.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_95": {
+    "id": 95,
+    "cliente_id": 5,
+    "endereco_entrega_id": 5,
+    "data": 1756886400000,
+    "valor_total": 102.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_96": {
+    "id": 96,
+    "cliente_id": 6,
+    "endereco_entrega_id": 6,
+    "data": 1756900800000,
+    "valor_total": 51.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_97": {
+    "id": 97,
+    "cliente_id": 7,
+    "endereco_entrega_id": 7,
+    "data": 1756915200000,
+    "valor_total": 94.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_98": {
+    "id": 98,
+    "cliente_id": 8,
+    "endereco_entrega_id": 8,
+    "data": 1756929600000,
+    "valor_total": 66.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_99": {
+    "id": 99,
+    "cliente_id": 9,
+    "endereco_entrega_id": 9,
+    "data": 1756944000000,
+    "valor_total": 119.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_100": {
+    "id": 100,
+    "cliente_id": 10,
+    "endereco_entrega_id": 10,
+    "data": 1756958400000,
+    "valor_total": 45.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_101": {
+    "id": 101,
+    "cliente_id": 11,
+    "endereco_entrega_id": 11,
+    "data": 1759363200000,
+    "valor_total": 75.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_102": {
+    "id": 102,
+    "cliente_id": 12,
+    "endereco_entrega_id": 12,
+    "data": 1759377600000,
+    "valor_total": 100.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_103": {
+    "id": 103,
+    "cliente_id": 13,
+    "endereco_entrega_id": 13,
+    "data": 1759392000000,
+    "valor_total": 63.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_104": {
+    "id": 104,
+    "cliente_id": 14,
+    "endereco_entrega_id": 14,
+    "data": 1759406400000,
+    "valor_total": 111.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_105": {
+    "id": 105,
+    "cliente_id": 15,
+    "endereco_entrega_id": 15,
+    "data": 1759420800000,
+    "valor_total": 54.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_106": {
+    "id": 106,
+    "cliente_id": 16,
+    "endereco_entrega_id": 16,
+    "data": 1759435200000,
+    "valor_total": 89.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_107": {
+    "id": 107,
+    "cliente_id": 17,
+    "endereco_entrega_id": 17,
+    "data": 1759449600000,
+    "valor_total": 77.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_108": {
+    "id": 108,
+    "cliente_id": 18,
+    "endereco_entrega_id": 18,
+    "data": 1759464000000,
+    "valor_total": 104.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_109": {
+    "id": 109,
+    "cliente_id": 19,
+    "endereco_entrega_id": 19,
+    "data": 1759478400000,
+    "valor_total": 61.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_110": {
+    "id": 110,
+    "cliente_id": 20,
+    "endereco_entrega_id": 20,
+    "data": 1759492800000,
+    "valor_total": 96.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_111": {
+    "id": 111,
+    "cliente_id": 21,
+    "endereco_entrega_id": 21,
+    "data": 1759507200000,
+    "valor_total": 48.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_112": {
+    "id": 112,
+    "cliente_id": 22,
+    "endereco_entrega_id": 22,
+    "data": 1759521600000,
+    "valor_total": 83.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_113": {
+    "id": 113,
+    "cliente_id": 23,
+    "endereco_entrega_id": 23,
+    "data": 1759536000000,
+    "valor_total": 70.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_114": {
+    "id": 114,
+    "cliente_id": 24,
+    "endereco_entrega_id": 24,
+    "data": 1759550400000,
+    "valor_total": 115.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_115": {
+    "id": 115,
+    "cliente_id": 25,
+    "endereco_entrega_id": 25,
+    "data": 1759564800000,
+    "valor_total": 52.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_116": {
+    "id": 116,
+    "cliente_id": 26,
+    "endereco_entrega_id": 26,
+    "data": 1759579200000,
+    "valor_total": 93.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_117": {
+    "id": 117,
+    "cliente_id": 27,
+    "endereco_entrega_id": 27,
+    "data": 1759593600000,
+    "valor_total": 68.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_118": {
+    "id": 118,
+    "cliente_id": 28,
+    "endereco_entrega_id": 28,
+    "data": 1759608000000,
+    "valor_total": 107.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_119": {
+    "id": 119,
+    "cliente_id": 29,
+    "endereco_entrega_id": 29,
+    "data": 1759622400000,
+    "valor_total": 59.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_120": {
+    "id": 120,
+    "cliente_id": 30,
+    "endereco_entrega_id": 30,
+    "data": 1759636800000,
+    "valor_total": 87.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_121": {
+    "id": 121,
+    "cliente_id": 1,
+    "endereco_entrega_id": 1,
+    "data": 1761955200000,
+    "valor_total": 80.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_122": {
+    "id": 122,
+    "cliente_id": 2,
+    "endereco_entrega_id": 2,
+    "data": 1761969600000,
+    "valor_total": 62.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_123": {
+    "id": 123,
+    "cliente_id": 3,
+    "endereco_entrega_id": 3,
+    "data": 1761984000000,
+    "valor_total": 118.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_124": {
+    "id": 124,
+    "cliente_id": 4,
+    "endereco_entrega_id": 4,
+    "data": 1761998400000,
+    "valor_total": 55.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_125": {
+    "id": 125,
+    "cliente_id": 5,
+    "endereco_entrega_id": 5,
+    "data": 1762012800000,
+    "valor_total": 99.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_126": {
+    "id": 126,
+    "cliente_id": 6,
+    "endereco_entrega_id": 6,
+    "data": 1762027200000,
+    "valor_total": 71.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_127": {
+    "id": 127,
+    "cliente_id": 7,
+    "endereco_entrega_id": 7,
+    "data": 1762041600000,
+    "valor_total": 86.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_128": {
+    "id": 128,
+    "cliente_id": 8,
+    "endereco_entrega_id": 8,
+    "data": 1762056000000,
+    "valor_total": 50.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_129": {
+    "id": 129,
+    "cliente_id": 9,
+    "endereco_entrega_id": 9,
+    "data": 1762070400000,
+    "valor_total": 113.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_130": {
+    "id": 130,
+    "cliente_id": 10,
+    "endereco_entrega_id": 10,
+    "data": 1762084800000,
+    "valor_total": 67.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_131": {
+    "id": 131,
+    "cliente_id": 11,
+    "endereco_entrega_id": 11,
+    "data": 1762099200000,
+    "valor_total": 92.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_132": {
+    "id": 132,
+    "cliente_id": 12,
+    "endereco_entrega_id": 12,
+    "data": 1762113600000,
+    "valor_total": 58.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_133": {
+    "id": 133,
+    "cliente_id": 13,
+    "endereco_entrega_id": 13,
+    "data": 1762128000000,
+    "valor_total": 105.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_134": {
+    "id": 134,
+    "cliente_id": 14,
+    "endereco_entrega_id": 14,
+    "data": 1762142400000,
+    "valor_total": 74.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_135": {
+    "id": 135,
+    "cliente_id": 15,
+    "endereco_entrega_id": 15,
+    "data": 1762156800000,
+    "valor_total": 89.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_136": {
+    "id": 136,
+    "cliente_id": 16,
+    "endereco_entrega_id": 16,
+    "data": 1762171200000,
+    "valor_total": 65.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_137": {
+    "id": 137,
+    "cliente_id": 17,
+    "endereco_entrega_id": 17,
+    "data": 1762185600000,
+    "valor_total": 97.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_138": {
+    "id": 138,
+    "cliente_id": 18,
+    "endereco_entrega_id": 18,
+    "data": 1762200000000,
+    "valor_total": 53.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_139": {
+    "id": 139,
+    "cliente_id": 19,
+    "endereco_entrega_id": 19,
+    "data": 1762214400000,
+    "valor_total": 110.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_140": {
+    "id": 140,
+    "cliente_id": 20,
+    "endereco_entrega_id": 20,
+    "data": 1762228800000,
+    "valor_total": 76.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_141": {
+    "id": 141,
+    "cliente_id": 21,
+    "endereco_entrega_id": 21,
+    "data": 1764633600000,
+    "valor_total": 145.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_142": {
+    "id": 142,
+    "cliente_id": 22,
+    "endereco_entrega_id": 22,
+    "data": 1764648000000,
+    "valor_total": 98.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_143": {
+    "id": 143,
+    "cliente_id": 23,
+    "endereco_entrega_id": 23,
+    "data": 1764662400000,
+    "valor_total": 167.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_144": {
+    "id": 144,
+    "cliente_id": 24,
+    "endereco_entrega_id": 24,
+    "data": 1764676800000,
+    "valor_total": 112.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_145": {
+    "id": 145,
+    "cliente_id": 25,
+    "endereco_entrega_id": 25,
+    "data": 1764691200000,
+    "valor_total": 89.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_146": {
+    "id": 146,
+    "cliente_id": 26,
+    "endereco_entrega_id": 26,
+    "data": 1764705600000,
+    "valor_total": 156.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_147": {
+    "id": 147,
+    "cliente_id": 27,
+    "endereco_entrega_id": 27,
+    "data": 1764720000000,
+    "valor_total": 73.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_148": {
+    "id": 148,
+    "cliente_id": 28,
+    "endereco_entrega_id": 28,
+    "data": 1764734400000,
+    "valor_total": 124.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_149": {
+    "id": 149,
+    "cliente_id": 29,
+    "endereco_entrega_id": 29,
+    "data": 1764748800000,
+    "valor_total": 101.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_150": {
+    "id": 150,
+    "cliente_id": 30,
+    "endereco_entrega_id": 30,
+    "data": 1764763200000,
+    "valor_total": 138.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_151": {
+    "id": 151,
+    "cliente_id": 1,
+    "endereco_entrega_id": 1,
+    "data": 1764777600000,
+    "valor_total": 95.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_152": {
+    "id": 152,
+    "cliente_id": 2,
+    "endereco_entrega_id": 2,
+    "data": 1764792000000,
+    "valor_total": 119.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_153": {
+    "id": 153,
+    "cliente_id": 3,
+    "endereco_entrega_id": 3,
+    "data": 1764806400000,
+    "valor_total": 82.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_154": {
+    "id": 154,
+    "cliente_id": 4,
+    "endereco_entrega_id": 4,
+    "data": 1764820800000,
+    "valor_total": 143.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_155": {
+    "id": 155,
+    "cliente_id": 5,
+    "endereco_entrega_id": 5,
+    "data": 1764835200000,
+    "valor_total": 107.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_156": {
+    "id": 156,
+    "cliente_id": 6,
+    "endereco_entrega_id": 6,
+    "data": 1764849600000,
+    "valor_total": 66.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_157": {
+    "id": 157,
+    "cliente_id": 7,
+    "endereco_entrega_id": 7,
+    "data": 1764864000000,
+    "valor_total": 131.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_158": {
+    "id": 158,
+    "cliente_id": 8,
+    "endereco_entrega_id": 8,
+    "data": 1764878400000,
+    "valor_total": 94.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_159": {
+    "id": 159,
+    "cliente_id": 9,
+    "endereco_entrega_id": 9,
+    "data": 1764892800000,
+    "valor_total": 115.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_160": {
+    "id": 160,
+    "cliente_id": 10,
+    "endereco_entrega_id": 10,
+    "data": 1764907200000,
+    "valor_total": 88.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_161": {
+    "id": 161,
+    "cliente_id": 11,
+    "endereco_entrega_id": 11,
+    "data": 1764921600000,
+    "valor_total": 149.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_162": {
+    "id": 162,
+    "cliente_id": 12,
+    "endereco_entrega_id": 12,
+    "data": 1764936000000,
+    "valor_total": 76.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_163": {
+    "id": 163,
+    "cliente_id": 13,
+    "endereco_entrega_id": 13,
+    "data": 1764950400000,
+    "valor_total": 128.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_164": {
+    "id": 164,
+    "cliente_id": 14,
+    "endereco_entrega_id": 14,
+    "data": 1764964800000,
+    "valor_total": 103.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_165": {
+    "id": 165,
+    "cliente_id": 15,
+    "endereco_entrega_id": 15,
+    "data": 1764979200000,
+    "valor_total": 91.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_166": {
+    "id": 166,
+    "cliente_id": 16,
+    "endereco_entrega_id": 16,
+    "data": 1767312000000,
+    "valor_total": 84.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_167": {
+    "id": 167,
+    "cliente_id": 17,
+    "endereco_entrega_id": 17,
+    "data": 1767326400000,
+    "valor_total": 60.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_168": {
+    "id": 168,
+    "cliente_id": 18,
+    "endereco_entrega_id": 18,
+    "data": 1767340800000,
+    "valor_total": 117.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_169": {
+    "id": 169,
+    "cliente_id": 19,
+    "endereco_entrega_id": 19,
+    "data": 1767355200000,
+    "valor_total": 69.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_170": {
+    "id": 170,
+    "cliente_id": 20,
+    "endereco_entrega_id": 20,
+    "data": 1767369600000,
+    "valor_total": 95.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_171": {
+    "id": 171,
+    "cliente_id": 21,
+    "endereco_entrega_id": 21,
+    "data": 1767384000000,
+    "valor_total": 56.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_172": {
+    "id": 172,
+    "cliente_id": 22,
+    "endereco_entrega_id": 22,
+    "data": 1767398400000,
+    "valor_total": 108.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_173": {
+    "id": 173,
+    "cliente_id": 23,
+    "endereco_entrega_id": 23,
+    "data": 1767412800000,
+    "valor_total": 73.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_174": {
+    "id": 174,
+    "cliente_id": 24,
+    "endereco_entrega_id": 24,
+    "data": 1767427200000,
+    "valor_total": 99.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_175": {
+    "id": 175,
+    "cliente_id": 25,
+    "endereco_entrega_id": 25,
+    "data": 1767441600000,
+    "valor_total": 64.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_176": {
+    "id": 176,
+    "cliente_id": 26,
+    "endereco_entrega_id": 26,
+    "data": 1767456000000,
+    "valor_total": 114.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_177": {
+    "id": 177,
+    "cliente_id": 27,
+    "endereco_entrega_id": 27,
+    "data": 1767470400000,
+    "valor_total": 51.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_178": {
+    "id": 178,
+    "cliente_id": 28,
+    "endereco_entrega_id": 28,
+    "data": 1767484800000,
+    "valor_total": 86.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_179": {
+    "id": 179,
+    "cliente_id": 29,
+    "endereco_entrega_id": 29,
+    "data": 1767499200000,
+    "valor_total": 78.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_180": {
+    "id": 180,
+    "cliente_id": 30,
+    "endereco_entrega_id": 30,
+    "data": 1767513600000,
+    "valor_total": 105.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_181": {
+    "id": 181,
+    "cliente_id": 1,
+    "endereco_entrega_id": 1,
+    "data": 1767528000000,
+    "valor_total": 62.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_182": {
+    "id": 182,
+    "cliente_id": 2,
+    "endereco_entrega_id": 2,
+    "data": 1767542400000,
+    "valor_total": 93.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_183": {
+    "id": 183,
+    "cliente_id": 3,
+    "endereco_entrega_id": 3,
+    "data": 1767556800000,
+    "valor_total": 70.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_184": {
+    "id": 184,
+    "cliente_id": 4,
+    "endereco_entrega_id": 4,
+    "data": 1767571200000,
+    "valor_total": 111.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_185": {
+    "id": 185,
+    "cliente_id": 5,
+    "endereco_entrega_id": 5,
+    "data": 1767585600000,
+    "valor_total": 57.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_186": {
+    "id": 186,
+    "cliente_id": 6,
+    "endereco_entrega_id": 6,
+    "data": 1769990400000,
+    "valor_total": 87.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_187": {
+    "id": 187,
+    "cliente_id": 7,
+    "endereco_entrega_id": 7,
+    "data": 1770004800000,
+    "valor_total": 63.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_188": {
+    "id": 188,
+    "cliente_id": 8,
+    "endereco_entrega_id": 8,
+    "data": 1770019200000,
+    "valor_total": 120.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_189": {
+    "id": 189,
+    "cliente_id": 9,
+    "endereco_entrega_id": 9,
+    "data": 1770033600000,
+    "valor_total": 68.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_190": {
+    "id": 190,
+    "cliente_id": 10,
+    "endereco_entrega_id": 10,
+    "data": 1770048000000,
+    "valor_total": 96.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_191": {
+    "id": 191,
+    "cliente_id": 11,
+    "endereco_entrega_id": 11,
+    "data": 1770062400000,
+    "valor_total": 55.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_192": {
+    "id": 192,
+    "cliente_id": 12,
+    "endereco_entrega_id": 12,
+    "data": 1770076800000,
+    "valor_total": 109.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_193": {
+    "id": 193,
+    "cliente_id": 13,
+    "endereco_entrega_id": 13,
+    "data": 1770091200000,
+    "valor_total": 74.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_194": {
+    "id": 194,
+    "cliente_id": 14,
+    "endereco_entrega_id": 14,
+    "data": 1770105600000,
+    "valor_total": 101.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_195": {
+    "id": 195,
+    "cliente_id": 15,
+    "endereco_entrega_id": 15,
+    "data": 1770120000000,
+    "valor_total": 66.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_196": {
+    "id": 196,
+    "cliente_id": 16,
+    "endereco_entrega_id": 16,
+    "data": 1770134400000,
+    "valor_total": 115.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_197": {
+    "id": 197,
+    "cliente_id": 17,
+    "endereco_entrega_id": 17,
+    "data": 1770148800000,
+    "valor_total": 52.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_198": {
+    "id": 198,
+    "cliente_id": 18,
+    "endereco_entrega_id": 18,
+    "data": 1770163200000,
+    "valor_total": 88.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_199": {
+    "id": 199,
+    "cliente_id": 19,
+    "endereco_entrega_id": 19,
+    "data": 1770177600000,
+    "valor_total": 79.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_200": {
+    "id": 200,
+    "cliente_id": 20,
+    "endereco_entrega_id": 20,
+    "data": 1770192000000,
+    "valor_total": 106.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_201": {
+    "id": 201,
+    "cliente_id": 21,
+    "endereco_entrega_id": 21,
+    "data": 1770206400000,
+    "valor_total": 61.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_202": {
+    "id": 202,
+    "cliente_id": 22,
+    "endereco_entrega_id": 22,
+    "data": 1770220800000,
+    "valor_total": 94.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_203": {
+    "id": 203,
+    "cliente_id": 23,
+    "endereco_entrega_id": 23,
+    "data": 1770235200000,
+    "valor_total": 72.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_204": {
+    "id": 204,
+    "cliente_id": 24,
+    "endereco_entrega_id": 24,
+    "data": 1770249600000,
+    "valor_total": 113.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_205": {
+    "id": 205,
+    "cliente_id": 25,
+    "endereco_entrega_id": 25,
+    "data": 1770264000000,
+    "valor_total": 58.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_206": {
+    "id": 206,
+    "cliente_id": 26,
+    "endereco_entrega_id": 26,
+    "data": 1772496000000,
+    "valor_total": 90.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_207": {
+    "id": 207,
+    "cliente_id": 27,
+    "endereco_entrega_id": 27,
+    "data": 1772510400000,
+    "valor_total": 65.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_208": {
+    "id": 208,
+    "cliente_id": 28,
+    "endereco_entrega_id": 28,
+    "data": 1772524800000,
+    "valor_total": 122.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_209": {
+    "id": 209,
+    "cliente_id": 29,
+    "endereco_entrega_id": 29,
+    "data": 1772539200000,
+    "valor_total": 71.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_210": {
+    "id": 210,
+    "cliente_id": 30,
+    "endereco_entrega_id": 30,
+    "data": 1772553600000,
+    "valor_total": 98.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_211": {
+    "id": 211,
+    "cliente_id": 1,
+    "endereco_entrega_id": 1,
+    "data": 1772568000000,
+    "valor_total": 54.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_212": {
+    "id": 212,
+    "cliente_id": 2,
+    "endereco_entrega_id": 2,
+    "data": 1772582400000,
+    "valor_total": 111.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_213": {
+    "id": 213,
+    "cliente_id": 3,
+    "endereco_entrega_id": 3,
+    "data": 1772596800000,
+    "valor_total": 76.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_214": {
+    "id": 214,
+    "cliente_id": 4,
+    "endereco_entrega_id": 4,
+    "data": 1772611200000,
+    "valor_total": 103.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_215": {
+    "id": 215,
+    "cliente_id": 5,
+    "endereco_entrega_id": 5,
+    "data": 1772625600000,
+    "valor_total": 67.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_216": {
+    "id": 216,
+    "cliente_id": 6,
+    "endereco_entrega_id": 6,
+    "data": 1772640000000,
+    "valor_total": 118.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_217": {
+    "id": 217,
+    "cliente_id": 7,
+    "endereco_entrega_id": 7,
+    "data": 1772654400000,
+    "valor_total": 59.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_218": {
+    "id": 218,
+    "cliente_id": 8,
+    "endereco_entrega_id": 8,
+    "data": 1772668800000,
+    "valor_total": 91.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_219": {
+    "id": 219,
+    "cliente_id": 9,
+    "endereco_entrega_id": 9,
+    "data": 1772683200000,
+    "valor_total": 80.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_220": {
+    "id": 220,
+    "cliente_id": 10,
+    "endereco_entrega_id": 10,
+    "data": 1772697600000,
+    "valor_total": 107.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_221": {
+    "id": 221,
+    "cliente_id": 11,
+    "endereco_entrega_id": 11,
+    "data": 1772712000000,
+    "valor_total": 62.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_222": {
+    "id": 222,
+    "cliente_id": 12,
+    "endereco_entrega_id": 12,
+    "data": 1772726400000,
+    "valor_total": 95.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_223": {
+    "id": 223,
+    "cliente_id": 13,
+    "endereco_entrega_id": 13,
+    "data": 1772740800000,
+    "valor_total": 73.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_224": {
+    "id": 224,
+    "cliente_id": 14,
+    "endereco_entrega_id": 14,
+    "data": 1772755200000,
+    "valor_total": 116.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_225": {
+    "id": 225,
+    "cliente_id": 15,
+    "endereco_entrega_id": 15,
+    "data": 1772769600000,
+    "valor_total": 56.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_226": {
+    "id": 226,
+    "cliente_id": 16,
+    "endereco_entrega_id": 16,
+    "data": 1775088000000,
+    "valor_total": 89.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_227": {
+    "id": 227,
+    "cliente_id": 17,
+    "endereco_entrega_id": 17,
+    "data": 1775102400000,
+    "valor_total": 64.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_228": {
+    "id": 228,
+    "cliente_id": 18,
+    "endereco_entrega_id": 18,
+    "data": 1775116800000,
+    "valor_total": 125.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_229": {
+    "id": 229,
+    "cliente_id": 19,
+    "endereco_entrega_id": 19,
+    "data": 1775131200000,
+    "valor_total": 72.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_230": {
+    "id": 230,
+    "cliente_id": 20,
+    "endereco_entrega_id": 20,
+    "data": 1775145600000,
+    "valor_total": 100.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_231": {
+    "id": 231,
+    "cliente_id": 21,
+    "endereco_entrega_id": 21,
+    "data": 1775160000000,
+    "valor_total": 57.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_232": {
+    "id": 232,
+    "cliente_id": 22,
+    "endereco_entrega_id": 22,
+    "data": 1775174400000,
+    "valor_total": 112.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_233": {
+    "id": 233,
+    "cliente_id": 23,
+    "endereco_entrega_id": 23,
+    "data": 1775188800000,
+    "valor_total": 77.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_234": {
+    "id": 234,
+    "cliente_id": 24,
+    "endereco_entrega_id": 24,
+    "data": 1775203200000,
+    "valor_total": 104.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_235": {
+    "id": 235,
+    "cliente_id": 25,
+    "endereco_entrega_id": 25,
+    "data": 1775217600000,
+    "valor_total": 68.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_236": {
+    "id": 236,
+    "cliente_id": 26,
+    "endereco_entrega_id": 26,
+    "data": 1775232000000,
+    "valor_total": 119.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_237": {
+    "id": 237,
+    "cliente_id": 27,
+    "endereco_entrega_id": 27,
+    "data": 1775246400000,
+    "valor_total": 60.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_238": {
+    "id": 238,
+    "cliente_id": 28,
+    "endereco_entrega_id": 28,
+    "data": 1775260800000,
+    "valor_total": 92.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_239": {
+    "id": 239,
+    "cliente_id": 29,
+    "endereco_entrega_id": 29,
+    "data": 1775275200000,
+    "valor_total": 81.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_240": {
+    "id": 240,
+    "cliente_id": 30,
+    "endereco_entrega_id": 30,
+    "data": 1775289600000,
+    "valor_total": 108.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_241": {
+    "id": 241,
+    "cliente_id": 1,
+    "endereco_entrega_id": 1,
+    "data": 1775304000000,
+    "valor_total": 63.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_242": {
+    "id": 242,
+    "cliente_id": 2,
+    "endereco_entrega_id": 2,
+    "data": 1775318400000,
+    "valor_total": 96.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_243": {
+    "id": 243,
+    "cliente_id": 3,
+    "endereco_entrega_id": 3,
+    "data": 1775332800000,
+    "valor_total": 74.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_244": {
+    "id": 244,
+    "cliente_id": 4,
+    "endereco_entrega_id": 4,
+    "data": 1775347200000,
+    "valor_total": 117.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_245": {
+    "id": 245,
+    "cliente_id": 5,
+    "endereco_entrega_id": 5,
+    "data": 1775361600000,
+    "valor_total": 59.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_246": {
+    "id": 246,
+    "cliente_id": 6,
+    "endereco_entrega_id": 6,
+    "data": 1777680000000,
+    "valor_total": 91.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_247": {
+    "id": 247,
+    "cliente_id": 7,
+    "endereco_entrega_id": 7,
+    "data": 1777694400000,
+    "valor_total": 66.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_248": {
+    "id": 248,
+    "cliente_id": 8,
+    "endereco_entrega_id": 8,
+    "data": 1777708800000,
+    "valor_total": 123.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_249": {
+    "id": 249,
+    "cliente_id": 9,
+    "endereco_entrega_id": 9,
+    "data": 1777723200000,
+    "valor_total": 73.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_250": {
+    "id": 250,
+    "cliente_id": 10,
+    "endereco_entrega_id": 10,
+    "data": 1777737600000,
+    "valor_total": 101.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_251": {
+    "id": 251,
+    "cliente_id": 11,
+    "endereco_entrega_id": 11,
+    "data": 1777752000000,
+    "valor_total": 58.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_252": {
+    "id": 252,
+    "cliente_id": 12,
+    "endereco_entrega_id": 12,
+    "data": 1777766400000,
+    "valor_total": 113.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_253": {
+    "id": 253,
+    "cliente_id": 13,
+    "endereco_entrega_id": 13,
+    "data": 1777780800000,
+    "valor_total": 78.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_254": {
+    "id": 254,
+    "cliente_id": 14,
+    "endereco_entrega_id": 14,
+    "data": 1777795200000,
+    "valor_total": 105.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_255": {
+    "id": 255,
+    "cliente_id": 15,
+    "endereco_entrega_id": 15,
+    "data": 1777809600000,
+    "valor_total": 69.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_256": {
+    "id": 256,
+    "cliente_id": 16,
+    "endereco_entrega_id": 16,
+    "data": 1777824000000,
+    "valor_total": 120.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_257": {
+    "id": 257,
+    "cliente_id": 17,
+    "endereco_entrega_id": 17,
+    "data": 1777838400000,
+    "valor_total": 61.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_258": {
+    "id": 258,
+    "cliente_id": 18,
+    "endereco_entrega_id": 18,
+    "data": 1777852800000,
+    "valor_total": 93.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_259": {
+    "id": 259,
+    "cliente_id": 19,
+    "endereco_entrega_id": 19,
+    "data": 1777867200000,
+    "valor_total": 82.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_260": {
+    "id": 260,
+    "cliente_id": 20,
+    "endereco_entrega_id": 20,
+    "data": 1777881600000,
+    "valor_total": 109.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_261": {
+    "id": 261,
+    "cliente_id": 21,
+    "endereco_entrega_id": 21,
+    "data": 1777896000000,
+    "valor_total": 64.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_262": {
+    "id": 262,
+    "cliente_id": 22,
+    "endereco_entrega_id": 22,
+    "data": 1777910400000,
+    "valor_total": 97.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_263": {
+    "id": 263,
+    "cliente_id": 23,
+    "endereco_entrega_id": 23,
+    "data": 1777924800000,
+    "valor_total": 75.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_264": {
+    "id": 264,
+    "cliente_id": 24,
+    "endereco_entrega_id": 24,
+    "data": 1777939200000,
+    "valor_total": 118.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  },
+  "pedido_id_265": {
+    "id": 265,
+    "cliente_id": 25,
+    "endereco_entrega_id": 25,
+    "data": 1777953600000,
+    "valor_total": 60.0,
+    "status": "ENTREGUE",
+    "frete": 0.0
+  }
+}

@@ -1,0 +1,281 @@
+{
+  "Odete Roitman Visa":{
+    "id": 1,
+    "cliente_id": 1,
+    "numero": "1111222233334444",
+    "nome_impresso": "Odete Roitman",
+    "bandeira_id": 1,
+    "cvv": "123",
+    "validade": "12/28"
+  },
+  "Jorge Tufao":{
+    "id": 2,
+    "cliente_id": 2,
+    "numero": "2222333344445555",
+    "nome_impresso": "Jorge Tufao",
+    "bandeira_id": 2,
+    "cvv": "456",
+    "validade": "10/29"
+  },
+  "Maria Silva":{
+    "id": 3,
+    "cliente_id": 3,
+    "numero": "3333444455556666",
+    "nome_impresso": "Maria Silva",
+    "bandeira_id": 3,
+    "cvv": "789",
+    "validade": "05/30"
+  },
+  "Rita Muniz":{
+    "id": 4,
+    "cliente_id": 4,
+    "numero": "4444555566667777",
+    "nome_impresso": "Rita Muniz",
+    "bandeira_id": 1,
+    "cvv": "321",
+    "validade": "08/27"
+  },
+  "Joao Silva":{
+    "id": 5,
+    "cliente_id": 5,
+    "numero": "5555666677778888",
+    "nome_impresso": "Joao Silva",
+    "bandeira_id": 2,
+    "cvv": "654",
+    "validade": "03/31"
+  },
+  "Ana Santos":{
+    "id": 6,
+    "cliente_id": 6,
+    "numero": "6666777788889999",
+    "nome_impresso": "Ana Santos",
+    "bandeira_id": 3,
+    "cvv": "987",
+    "validade": "12/29"
+  },
+  "Carlos Lima":{
+    "id": 7,
+    "cliente_id": 7,
+    "numero": "7777888899990000",
+    "nome_impresso": "Carlos Lima",
+    "bandeira_id": 1,
+    "cvv": "456",
+    "validade": "06/28"
+  },
+  "Fernanda Costa":{
+    "id": 8,
+    "cliente_id": 8,
+    "numero": "8888999900001111",
+    "nome_impresso": "Fernanda Costa",
+    "bandeira_id": 2,
+    "cvv": "123",
+    "validade": "09/30"
+  },
+  "Roberto Alves":{
+    "id": 9,
+    "cliente_id": 9,
+    "numero": "9999000011112222",
+    "nome_impresso": "Roberto Alves",
+    "bandeira_id": 3,
+    "cvv": "789",
+    "validade": "11/27"
+  },
+  "Patricia Souza":{
+    "id": 10,
+    "cliente_id": 10,
+    "numero": "0000111122223333",
+    "nome_impresso": "Patricia Souza",
+    "bandeira_id": 1,
+    "cvv": "654",
+    "validade": "04/29"
+  },
+  "Ricardo Mendes":{
+    "id": 11,
+    "cliente_id": 11,
+    "numero": "1111222233334445",
+    "nome_impresso": "Ricardo Mendes",
+    "bandeira_id": 2,
+    "cvv": "321",
+    "validade": "12/30"
+  },
+  "Juliana Ferreira":{
+    "id": 12,
+    "cliente_id": 12,
+    "numero": "2222333344445556",
+    "nome_impresso": "Juliana Ferreira",
+    "bandeira_id": 3,
+    "cvv": "987",
+    "validade": "10/28"
+  },
+  "Marcos Vinicius":{
+    "id": 13,
+    "cliente_id": 13,
+    "numero": "3333444455556667",
+    "nome_impresso": "Marcos Vinicius",
+    "bandeira_id": 1,
+    "cvv": "456",
+    "validade": "05/31"
+  },
+  "Tatiane Rocha":{
+    "id": 14,
+    "cliente_id": 14,
+    "numero": "4444555566667778",
+    "nome_impresso": "Tatiane Rocha",
+    "bandeira_id": 2,
+    "cvv": "123",
+    "validade": "08/29"
+  },
+  "Paulo Henrique":{
+    "id": 15,
+    "cliente_id": 15,
+    "numero": "5555666677778889",
+    "nome_impresso": "Paulo Henrique",
+    "bandeira_id": 3,
+    "cvv": "789",
+    "validade": "03/28"
+  },
+  "Camila Nunes":{
+    "id": 16,
+    "cliente_id": 16,
+    "numero": "6666777788889990",
+    "nome_impresso": "Camila Nunes",
+    "bandeira_id": 1,
+    "cvv": "654",
+    "validade": "12/27"
+  },
+  "Gustavo Ribeiro":{
+    "id": 17,
+    "cliente_id": 17,
+    "numero": "7777888899990001",
+    "nome_impresso": "Gustavo Ribeiro",
+    "bandeira_id": 2,
+    "cvv": "321",
+    "validade": "06/30"
+  },
+  "Larissa Martins":{
+    "id": 18,
+    "cliente_id": 18,
+    "numero": "8888999900001112",
+    "nome_impresso": "Larissa Martins",
+    "bandeira_id": 3,
+    "cvv": "987",
+    "validade": "09/29"
+  },
+  "Thiago Oliveira":{
+    "id": 19,
+    "cliente_id": 19,
+    "numero": "9999000011112223",
+    "nome_impresso": "Thiago Oliveira",
+    "bandeira_id": 1,
+    "cvv": "456",
+    "validade": "11/28"
+  },
+  "Bianca Lima":{
+    "id": 20,
+    "cliente_id": 20,
+    "numero": "0000111122223334",
+    "nome_impresso": "Bianca Lima",
+    "bandeira_id": 2,
+    "cvv": "123",
+    "validade": "04/30"
+  },
+  "Felipe Santos":{
+    "id": 21,
+    "cliente_id": 21,
+    "numero": "1111222233334446",
+    "nome_impresso": "Felipe Santos",
+    "bandeira_id": 3,
+    "cvv": "789",
+    "validade": "12/31"
+  },
+  "Aline Pereira":{
+    "id": 22,
+    "cliente_id": 22,
+    "numero": "2222333344445557",
+    "nome_impresso": "Aline Pereira",
+    "bandeira_id": 1,
+    "cvv": "654",
+    "validade": "10/27"
+  },
+  "Bruno Costa":{
+    "id": 23,
+    "cliente_id": 23,
+    "numero": "3333444455556668",
+    "nome_impresso": "Bruno Costa",
+    "bandeira_id": 2,
+    "cvv": "321",
+    "validade": "05/29"
+  },
+  "Carla Souza":{
+    "id": 24,
+    "cliente_id": 24,
+    "numero": "4444555566667779",
+    "nome_impresso": "Carla Souza",
+    "bandeira_id": 3,
+    "cvv": "987",
+    "validade": "08/30"
+  },
+  "Diego Rocha":{
+    "id": 25,
+    "cliente_id": 25,
+    "numero": "5555666677778890",
+    "nome_impresso": "Diego Rocha",
+    "bandeira_id": 1,
+    "cvv": "456",
+    "validade": "03/27"
+  },
+  "Elaine Martins":{
+    "id": 26,
+    "cliente_id": 26,
+    "numero": "6666777788889991",
+    "nome_impresso": "Elaine Martins",
+    "bandeira_id": 2,
+    "cvv": "123",
+    "validade": "12/28"
+  },
+  "Fabio Almeida":{
+    "id": 27,
+    "cliente_id": 27,
+    "numero": "7777888899990002",
+    "nome_impresso": "Fabio Almeida",
+    "bandeira_id": 3,
+    "cvv": "789",
+    "validade": "06/29"
+  },
+  "Gabriela Nunes":{
+    "id": 28,
+    "cliente_id": 28,
+    "numero": "8888999900001113",
+    "nome_impresso": "Gabriela Nunes",
+    "bandeira_id": 1,
+    "cvv": "654",
+    "validade": "09/30"
+  },
+  "Hugo Silva":{
+    "id": 29,
+    "cliente_id": 29,
+    "numero": "9999000011112224",
+    "nome_impresso": "Hugo Silva",
+    "bandeira_id": 2,
+    "cvv": "321",
+    "validade": "11/31"
+  },
+  "Isabela Lima":{
+    "id": 30,
+    "cliente_id": 30,
+    "numero": "0000111122223335",
+    "nome_impresso": "Isabela Lima",
+    "bandeira_id": 3,
+    "cvv": "987",
+    "validade": "04/28"
+  },
+  "Odete Roitman Mastercard":{
+    "id": 31,
+    "cliente_id": 1,
+    "numero": "9999 8888 7777 6666",
+    "nome_impresso": "Odete Roitman MasterCard",
+    "bandeira_id": 2,
+    "cvv": "123",
+    "validade": "11/30"
+  }
+}

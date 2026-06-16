@@ -131,7 +131,7 @@
                         <div class="campo">
                             <label>Valor neste cartão (R$):</label>
                             <input type="number" name="valor_cartao1" data-test="input-valor-cartao-1" id="valor_cartao1"
-                                   step="0.01" min="0.01" placeholder="Ex: 50.00"
+                                   step="0.01" min="0" placeholder="Ex: 50.00"
                                    required oninput="atualizarResumo()">
                         </div>
                     </div>
@@ -336,7 +336,7 @@ function toggleCupom(id) {
     atualizarResumo();
 }
 
-// Atualização do resumo
+// Atualização do resumo - CORRIGIDA
 function atualizarResumo() {
     const totalBruto = SUBTOTAL + freteAtual;
 
@@ -378,7 +378,13 @@ function atualizarResumo() {
     let erroCartao = "";
     let erroMinimo = "";
 
-    if (soma > 0 || totalLiquido > 0) {
+    // 🔧 CORREÇÃO: Caso especial quando totalLiquido é ZERO
+    if (totalLiquido === 0) {
+        // Pedido totalmente pago por cupons - cartão deve ser ZERO
+        if (Math.abs(soma - 0) > 0.02) {
+            erroCartao = "⚠️ Pedido já está totalmente pago pelos cupons. Os cartões devem ter valor R$ 0,00.";
+        }
+    } else {
         // Soma deve bater com total líquido (tolerância R$ 0,02)
         if (Math.abs(soma - totalLiquido) > 0.02) {
             erroCartao = "⚠️ A soma dos cartões (" + fmt(soma) + ") deve ser igual ao total: " + fmt(totalLiquido);
@@ -387,17 +393,17 @@ function atualizarResumo() {
         // Regra do mínimo por cartão
         if (ativo2 && totalLiquido >= 20 - 0.001) {
             // Dois cartões: cada um precisa de R$ 10,00 mínimo
-            if (v1 > 0 && v1 < MINIMO_CARTAO - 0.001) {
+            if (v1 >= 0 && v1 < MINIMO_CARTAO - 0.001) {
                 erroMinimo = "❌ O valor mínimo por cartão é R$ 10,00. Cartão 1 está com " + fmt(v1) + ".";
-            } else if (v2 > 0 && v2 < MINIMO_CARTAO - 0.001) {
+            } else if (v2 >= 0 && v2 < MINIMO_CARTAO - 0.001) {
                 erroMinimo = "❌ O valor mínimo por cartão é R$ 10,00. Cartão 2 está com " + fmt(v2) + ".";
             }
         }
-        // Se totalLiquido < 10 (cupons cobriram quase tudo), um cartão pode ter valor menor — permitido.
     }
 
     showAviso("aviso-valor",  erroCartao);
     showAviso("aviso-minimo", erroMinimo);
+
 
     // Habilita/desabilita botão
     /*const podeFinalizarCartoes = !erroCartao && !erroMinimo;
@@ -420,7 +426,7 @@ function toggleCartao2() {
     atualizarResumo();
 }
 
-// Validação no submit
+// Validação no submit - CORRIGIDA
 document.getElementById("formCheckout").addEventListener("submit", function(e) {
     const totalBruto = SUBTOTAL + freteAtual;
 
@@ -437,42 +443,30 @@ document.getElementById("formCheckout").addEventListener("submit", function(e) {
     const v2 = ativo2 ? (parseFloat(document.getElementById("valor_cartao2")?.value || "0") || 0) : 0;
     const soma = v1 + v2;
 
-    // Bloqueia se soma dos cartões ≠ total líquido
-    if (Math.abs(soma - totalLiquido) > 0.02) {
-        e.preventDefault();
-        alert("A soma dos valores nos cartões deve ser igual ao total do pedido: " + fmt(totalLiquido));
-        return;
-    }
-
-    // Bloqueia se dois cartões e algum < R$ 10 (exceto quando total < R$ 10)
-    if (ativo2 && totalLiquido >= 10 - 0.001) {
-        if (v1 < MINIMO_CARTAO - 0.001 || v2 < MINIMO_CARTAO - 0.001) {
+    // 🔧 CORREÇÃO: Caso especial quando totalLiquido é ZERO
+    if (totalLiquido === 0) {
+        if (Math.abs(soma - 0) > 0.02) {
             e.preventDefault();
-            alert("O valor mínimo por cartão é R$ 10,00.");
+            alert("Pedido já está totalmente pago pelos cupons. Os cartões devem ter valor R$ 0,00.");
             return;
         }
-    }
-});
-
-//Init
-document.addEventListener("DOMContentLoaded", function() {
-    calcularFrete();
-
-    // Sincroniza estilo dos cupons já marcados
-    document.querySelectorAll("input[name='cupom_id']").forEach(chk => {
-        const item = document.getElementById("cupom-item-" + chk.value);
-        if (item) item.classList.toggle("selecionado", chk.checked);
-    });
-
-    // Pré-preenche cartão 1 com o total ao carregar (após calcularFrete rodar)
-    setTimeout(() => {
-        const v1 = document.getElementById("valor_cartao1");
-        if (v1 && !v1.value && freteAtual > 0) {
-            const total = SUBTOTAL + freteAtual;
-            v1.value = total.toFixed(2);
-            atualizarResumo();
+    } else {
+        // Bloqueia se soma dos cartões ≠ total líquido
+        if (Math.abs(soma - totalLiquido) > 0.02) {
+            e.preventDefault();
+            alert("A soma dos valores nos cartões deve ser igual ao total do pedido: " + fmt(totalLiquido));
+            return;
         }
-    }, 100);
+
+        // Bloqueia se dois cartões e algum < R$ 10 (exceto quando total < R$ 10)
+        if (ativo2 && totalLiquido >= 10 - 0.001) {
+            if (v1 < MINIMO_CARTAO - 0.001 || v2 < MINIMO_CARTAO - 0.001) {
+                e.preventDefault();
+                alert("O valor mínimo por cartão é R$ 10,00.");
+                return;
+            }
+        }
+    }
 });
 </script>
 </body>
