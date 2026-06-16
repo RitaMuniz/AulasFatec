@@ -1,0 +1,14 @@
+{
+  "Visa":{
+    "id": 1,
+    "nome": "Visa"
+  },
+  "Mastercard":{
+    "id": 2,
+    "nome": "Mastercard"
+  },
+  "Elo":{
+    "id": 3,
+    "nome": "Elo"
+  }
+}

@@ -13,7 +13,7 @@ public class TrocaDAO {
     public int inserir(Troca troca, Connection con) throws Exception {
         String sql = """
             INSERT INTO troca (pedido_id, item_pedido_id, status, motivo, data_solicitacao)
-            VALUES (?, ?, ?, ?, date('now'))
+            VALUES (?, ?, ?, ?, datetime('now'))
         """;
         try (PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
             ps.setInt(1, troca.getPedidoId());
@@ -97,7 +97,7 @@ public class TrocaDAO {
     public void concluir(int trocaId, int cupomGeradoId, Connection con) throws Exception {
         String sql = """
             UPDATE troca
-            SET status = 'CONCLUIDA', data_recebimento = date('now'), cupom_gerado_id = ?
+            SET status = 'CONCLUIDA', data_recebimento = datetime('now'), cupom_gerado_id = ?
             WHERE id = ?
         """;
         try (PreparedStatement ps = con.prepareStatement(sql)) {
@@ -118,14 +118,18 @@ public class TrocaDAO {
         t.setStatus(rs.getString("status"));
         t.setMotivo(rs.getString("motivo"));
 
+        // CORREÇÃO: pegar só os 10 primeiros caracteres (YYYY-MM-DD)
         String dsStr = rs.getString("data_solicitacao");
-        if (dsStr != null) {
-            t.setDataSolicitacao(java.sql.Date.valueOf(dsStr));
+        if (dsStr != null && dsStr.length() >= 10) {
+            String dataApenas = dsStr.substring(0, 10);  // Pega só "2026-06-10"
+            t.setDataSolicitacao(java.sql.Date.valueOf(dataApenas));
         }
 
+        // CORREÇÃO para data_recebimento
         String drStr = rs.getString("data_recebimento");
-        if (drStr != null) {
-            t.setDataRecebimento(java.sql.Date.valueOf(drStr));
+        if (drStr != null && drStr.length() >= 10) {
+            String dataApenas = drStr.substring(0, 10);
+            t.setDataRecebimento(java.sql.Date.valueOf(dataApenas));
         }
 
         int cupomId = rs.getInt("cupom_gerado_id");

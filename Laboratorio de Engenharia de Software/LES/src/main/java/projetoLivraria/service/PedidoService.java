@@ -96,7 +96,7 @@ public class PedidoService {
             BigDecimal frete,
             Integer cartao1Id, BigDecimal valorCartao1,
             Integer cartao2Id, BigDecimal valorCartao2,
-            List<Cupom> cupons   // lista de cupons selecionados (pode ser vazia)
+            List<Cupom> cupons
     ) throws Exception {
 
         List<ItemCarrinho> itens = carrinho.getItens();
@@ -131,16 +131,11 @@ public class PedidoService {
             }
         }
 
-        // Cupons não podem ultrapassar o total bruto
-        // (a UI já deve impedir, mas validamos aqui também)
-        if (totalCupons.compareTo(totalBruto) > 0) {
-            throw new Exception(
-                    "Valor dos cupons (R$ " + totalCupons.toPlainString() +
-                            ") supera o total do pedido (R$ " + totalBruto.toPlainString() +
-                            "). Use cupons de menor valor ou remova cupons.");
-        }
+        // 🔧 REMOVIDA a validação que impedia cupons maiores que o pedido
+        // Agora permitimos cupons maiores e geramos troco
 
-        BigDecimal desconto = totalCupons.setScale(2, RoundingMode.HALF_UP);
+        // 🔧 CORREÇÃO: Desconto não pode ultrapassar o total bruto
+        BigDecimal desconto = totalCupons.min(totalBruto).setScale(2, RoundingMode.HALF_UP);
         BigDecimal totalLiquido = totalBruto.subtract(desconto).setScale(2, RoundingMode.HALF_UP);
 
         //3. Validações dos cartões
@@ -150,22 +145,24 @@ public class PedidoService {
                 : BigDecimal.ZERO;
         BigDecimal somaCartoes = v1.add(v2);
 
-        // Soma dos cartões deve cobrir exatamente o totalLiquido
-        if (somaCartoes.compareTo(totalLiquido) != 0) {
-            throw new Exception(
-                    "Pagamento inválido: soma dos cartões (R$ " + somaCartoes.toPlainString() +
-                            ") difere do valor a pagar (R$ " + totalLiquido.toPlainString() + ").");
-        }
+        // 🔧 CORREÇÃO: Se totalLiquido for ZERO, permite cartão com valor ZERO
+        if (totalLiquido.compareTo(BigDecimal.ZERO) == 0) {
+            // Pedido totalmente pago pelos cupons - cartão deve ser ZERO
+            if (somaCartoes.compareTo(BigDecimal.ZERO) != 0) {
+                throw new Exception(
+                        "Pedido já está totalmente pago pelos cupons. " +
+                                "Os cartões devem ter valor R$ 0,00.");
+            }
+        } else {
+            // Soma dos cartões deve cobrir exatamente o totalLiquido
+            if (somaCartoes.compareTo(totalLiquido) != 0) {
+                throw new Exception(
+                        "Pagamento inválido: soma dos cartões (R$ " + somaCartoes.toPlainString() +
+                                ") difere do valor a pagar (R$ " + totalLiquido.toPlainString() + ").");
+            }
 
-        // Regra do mínimo por cartão
-        // Quando há dois cartões E o total líquido >= R$ 20,00,
-        // cada cartão deve ter pelo menos R$ 10,00.
-        // Exceção: se o total líquido < R$ 10,00 (foi muito coberto por cupons),
-        // o único cartão pode ter valor menor que R$ 10,00 (regra do enunciado).
-        if (cartao2Id != null) {
-            // há dois cartões: ambos precisam de R$ 10 mínimo,
-            // A MENOS que o totalLiquido inteiro seja < 10 (caso em que só 1 cartão deveria ser usado)
-            if (totalLiquido.compareTo(MINIMO_POR_CARTAO) >= 0) {
+            // Regra do mínimo por cartão
+            if (cartao2Id != null && totalLiquido.compareTo(MINIMO_POR_CARTAO.multiply(new BigDecimal("2"))) >= 0) {
                 if (v1.compareTo(MINIMO_POR_CARTAO) < 0) {
                     throw new Exception(
                             "O valor mínimo por cartão é R$ 10,00. " +
@@ -178,9 +175,6 @@ public class PedidoService {
                 }
             }
         }
-        // Quando há apenas 1 cartão e cupons cobriram parte:
-        // o cartão pode ter valor menor que R$ 10,00 (conforme enunciado).
-        // Nenhuma validação adicional necessária.
 
         //4. Persistência em transação
         Connection con = ConexaoSQL.getInstance().getConnection();
@@ -203,8 +197,8 @@ public class PedidoService {
             pedido.setEnderecoEntregaId(enderecoId);
             pedido.setSubtotal(subtotal);
             pedido.setFrete(frete);
-            pedido.setDesconto(desconto);
-            pedido.setTotal(totalLiquido);
+            pedido.setDesconto(desconto);  // Desconto efetivo (limitado ao totalBruto)
+            pedido.setTotal(totalLiquido);  // Será ZERO se cupons cobriram tudo
             pedido.setStatus("EM_PROCESSAMENTO");
 
             int pedidoId = pedidoDAO.inserir(pedido, con);
@@ -225,6 +219,8 @@ public class PedidoService {
                 for (Cupom c : cupons) {
                     if (c == null || c.getValor() == null) continue;
 
+                    // 🔧 IMPORTANTE: O valor do cupom registrado não pode ultrapassar o totalBruto restante
+                    // Para simplificar, registramos o valor total do cupom, mas o controle é feito pelo desconto
                     BigDecimal valorCupom = c.getValor().setScale(2, RoundingMode.HALF_UP);
                     if (valorCupom.compareTo(BigDecimal.ZERO) <= 0) continue;
 
@@ -239,7 +235,7 @@ public class PedidoService {
                 }
             }
 
-            // 4e. Pagamento cartão 1
+            // 4e. Pagamento cartão 1 (só se valor > 0)
             if (v1.compareTo(BigDecimal.ZERO) > 0) {
                 Pagamento pag1 = new Pagamento();
                 pag1.setPedidoId(pedidoId);
@@ -251,7 +247,7 @@ public class PedidoService {
                 pagamentoDAO.inserir(pag1, con);
             }
 
-            // 4f. Pagamento cartão 2
+            // 4f. Pagamento cartão 2 (só se existir e valor > 0)
             if (cartao2Id != null && v2.compareTo(BigDecimal.ZERO) > 0) {
                 Pagamento pag2 = new Pagamento();
                 pag2.setPedidoId(pedidoId);

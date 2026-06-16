@@ -1,0 +1,212 @@
+{
+  "912341234":{
+    "id": 1,
+    "cliente_id": 1,
+    "tipo": "CELULAR",
+    "ddd": "11",
+    "numero": "912341234"
+  },
+  "912345678":{
+    "id": 2,
+    "cliente_id": 2,
+    "tipo": "CELULAR",
+    "ddd": "11",
+    "numero": "912345678"
+  },
+  "987654321":{
+    "id": 3,
+    "cliente_id": 3,
+    "tipo": "CELULAR",
+    "ddd": "11",
+    "numero": "987654321"
+  },
+  "976543210":{
+    "id": 4,
+    "cliente_id": 4,
+    "tipo": "CELULAR",
+    "ddd": "11",
+    "numero": "976543210"
+  },
+  "965432109":{
+    "id": 5,
+    "cliente_id": 5,
+    "tipo": "CELULAR",
+    "ddd": "11",
+    "numero": "965432109"
+  },
+  "954321098":{
+    "id": 6,
+    "cliente_id": 6,
+    "tipo": "CELULAR",
+    "ddd": "11",
+    "numero": "954321098"
+  },
+  "943210987":{
+    "id": 7,
+    "cliente_id": 7,
+    "tipo": "CELULAR",
+    "ddd": "11",
+    "numero": "943210987"
+  },
+  "932109876":{
+    "id": 8,
+    "cliente_id": 8,
+    "tipo": "CELULAR",
+    "ddd": "11",
+    "numero": "932109876"
+  },
+  "921098765":{
+    "id": 9,
+    "cliente_id": 9,
+    "tipo": "CELULAR",
+    "ddd": "11",
+    "numero": "921098765"
+  },
+  "910987654":{
+    "id": 10,
+    "cliente_id": 10,
+    "tipo": "CELULAR",
+    "ddd": "11",
+    "numero": "910987654"
+  },
+  "909876543":{
+    "id": 11,
+    "cliente_id": 11,
+    "tipo": "CELULAR",
+    "ddd": "11",
+    "numero": "909876543"
+  },
+  "898765432":{
+    "id": 12,
+    "cliente_id": 12,
+    "tipo": "CELULAR",
+    "ddd": "11",
+    "numero": "898765432"
+  },
+  "887654321":{
+    "id": 13,
+    "cliente_id": 13,
+    "tipo": "CELULAR",
+    "ddd": "11",
+    "numero": "887654321"
+  },
+  "876543210":{
+    "id": 14,
+    "cliente_id": 14,
+    "tipo": "CELULAR",
+    "ddd": "11",
+    "numero": "876543210"
+  },
+  "865432109":{
+    "id": 15,
+    "cliente_id": 15,
+    "tipo": "CELULAR",
+    "ddd": "11",
+    "numero": "865432109"
+  },
+  "854321098":{
+    "id": 16,
+    "cliente_id": 16,
+    "tipo": "CELULAR",
+    "ddd": "11",
+    "numero": "854321098"
+  },
+  "843210987":{
+    "id": 17,
+    "cliente_id": 17,
+    "tipo": "CELULAR",
+    "ddd": "11",
+    "numero": "843210987"
+  },
+  "832109876":{
+    "id": 18,
+    "cliente_id": 18,
+    "tipo": "CELULAR",
+    "ddd": "11",
+    "numero": "832109876"
+  },
+  "821098765":{
+    "id": 19,
+    "cliente_id": 19,
+    "tipo": "CELULAR",
+    "ddd": "11",
+    "numero": "821098765"
+  },
+  "810987654":{
+    "id": 20,
+    "cliente_id": 20,
+    "tipo": "CELULAR",
+    "ddd": "11",
+    "numero": "810987654"
+  },
+  "809876543":{
+    "id": 21,
+    "cliente_id": 21,
+    "tipo": "CELULAR",
+    "ddd": "11",
+    "numero": "809876543"
+  },
+  "798765432":{
+    "id": 22,
+    "cliente_id": 22,
+    "tipo": "CELULAR",
+    "ddd": "11",
+    "numero": "798765432"
+  },
+  "787654321":{
+    "id": 23,
+    "cliente_id": 23,
+    "tipo": "CELULAR",
+    "ddd": "11",
+    "numero": "787654321"
+  },
+  "776543210":{
+    "id": 24,
+    "cliente_id": 24,
+    "tipo": "CELULAR",
+    "ddd": "11",
+    "numero": "776543210"
+  },
+  "765432109":{
+    "id": 25,
+    "cliente_id": 25,
+    "tipo": "CELULAR",
+    "ddd": "11",
+    "numero": "765432109"
+  },
+  "754321098":{
+    "id": 26,
+    "cliente_id": 26,
+    "tipo": "CELULAR",
+    "ddd": "11",
+    "numero": "754321098"
+  },
+  "743210987":{
+    "id": 27,
+    "cliente_id": 27,
+    "tipo": "CELULAR",
+    "ddd": "11",
+    "numero": "743210987"
+  },
+  "732109876":{
+    "id": 28,
+    "cliente_id": 28,
+    "tipo": "CELULAR",
+    "ddd": "11",
+    "numero": "732109876"
+  },
+  "721098765":{
+    "id": 29,
+    "cliente_id": 29,
+    "tipo": "CELULAR",
+    "ddd": "11",
+    "numero": "721098765"
+  },
+  "710987654":{
+    "id": 30,
+    "cliente_id": 30,
+    "tipo": "CELULAR",
+    "ddd": "11",
+    "numero": "710987654"
+  }
+}

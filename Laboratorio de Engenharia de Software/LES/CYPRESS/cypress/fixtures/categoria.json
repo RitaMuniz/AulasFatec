@@ -1,0 +1,22 @@
+{
+  "Ficção":{
+    "id": 1,
+    "nome": "Ficção"
+  },
+  "Fantasia":{
+    "id": 2,
+    "nome": "Fantasia"
+  },
+  "Negócios":{
+    "id": 3,
+    "nome": "Negócios"
+  },
+  "Autoajuda":{
+    "id": 4,
+    "nome": "Autoajuda"
+  },
+  "Romance":{
+    "id": 5,
+    "nome": "Romance"
+  }
+}

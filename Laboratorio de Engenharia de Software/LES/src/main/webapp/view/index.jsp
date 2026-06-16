@@ -19,8 +19,8 @@
         <a data-test="icon-carrinho" href="${pageContext.request.contextPath}/view/carrinho.jsp">Carrinho</a>
         <c:choose>
             <c:when test="${not empty sessionScope.clienteLogado}">
-                <a href="${pageContext.request.contextPath}/cliente?action=buscar">Meu Perfil</a>
-                <a href="${pageContext.request.contextPath}/logout">Sair</a>
+                <a href="${pageContext.request.contextPath}/cliente?action=buscar" data-test="icon-meu-perfil">Meu Perfil</a>
+                <a href="${pageContext.request.contextPath}/logout" data-test="icon-logout" >Sair</a>
             </c:when>
             <c:otherwise>
                 <a href="${pageContext.request.contextPath}/view/login.jsp">Login</a>

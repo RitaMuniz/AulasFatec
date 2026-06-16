@@ -1,0 +1,8 @@
+{
+  "Administrador":{
+    "id": 1,
+    "nome": "Administrador",
+    "email": "admin@livraria.com",
+    "senha": "admin123"
+  }
+}

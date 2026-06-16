@@ -2,15 +2,15 @@ import { elements as el } from "./TesteElements";
 
 class Checkout {
 
-    constructor(){
+    constructor() {
         this.campos = {}
     }
 
-    montarSeletorComId(seletorBase, id){
+    montarSeletorComId(seletorBase, id) {
         return `${seletorBase}${id}${el.sufixoDataTest}`
     }
 
-    validar(tipo = 'automatico', valorEsperado = null){
+    validar(tipo = 'automatico', valorEsperado = null) {
         const validacoes = {
             estrutura: () => this.validarEstrutura(),
             endereco: () => this.validarEndereco(),
@@ -42,17 +42,17 @@ class Checkout {
             automatico: () => this.validarAutomatico()
         }
 
-        if(!validacoes[tipo]){
+        if (!validacoes[tipo]) {
             throw new Error(`Validação "${tipo}" não existe no Checkout/TesteIndex.js`)
         }
 
         validacoes[tipo]()
     }
 
-    preencherCampo(campo, valor){
+    preencherCampo(campo, valor) {
         this.campos[campo] = valor
 
-        if(campo === 'endereco' || campo === 'cartao1' || campo === 'selectCartao2'){
+        if (campo === 'endereco' || campo === 'cartao1' || campo === 'selectCartao2') {
 
             cy.get(el.campos[campo])
                 .should('exist')
@@ -75,22 +75,22 @@ class Checkout {
             .trigger('change')
     }
 
-    limparCampo(campo){
+    limparCampo(campo) {
         cy.get(el.campos[campo])
             .clear()
             .trigger('input')
             .trigger('change')
     }
 
-    marcarCampo(campo){
+    marcarCampo(campo) {
         this.campos[campo] = true
 
         cy.get(el.campos[campo])
-            .check({ force: true })
+            .check({force: true})
             .trigger('change')
     }
 
-    selecionarCupom(id){
+    selecionarCupom(id) {
 
         cy.get(
             this.montarSeletorComId(el.cupons.item, id)
@@ -99,7 +99,7 @@ class Checkout {
             .should('be.visible')
             .click()
 
-            cy.get(
+        cy.get(
             this.montarSeletorComId(el.cupons.checkbox, id)
         )
             .should('exist')
@@ -112,7 +112,7 @@ class Checkout {
             .should('have.class', 'selecionado')
     }
 
-    clicarBotao(botao){
+    clicarBotao(botao) {
         const botoes = {
             finalizar: () => {
                 cy.get(el.botoes.finalizar)
@@ -122,7 +122,7 @@ class Checkout {
 
             finalizarForcado: () => {
                 cy.get(el.botoes.finalizar)
-                    .click({ force: true })
+                    .click({force: true})
             },
 
             default: () => {
@@ -131,7 +131,7 @@ class Checkout {
             }
         }
 
-        if(botoes[botao]){
+        if (botoes[botao]) {
             botoes[botao]()
             return
         }
@@ -139,7 +139,7 @@ class Checkout {
         botoes.default()
     }
 
-    preencherValorTotalNoCartao1(){
+    preencherValorTotalNoCartao1() {
         cy.get(el.textos.resumoTotal)
             .should('not.contain', '—')
             .should('contain.text', 'R$')
@@ -154,7 +154,7 @@ class Checkout {
             })
     }
 
-    preencherCartoes(valor1, valor2){
+    preencherCartoes(valor1, valor2) {
         this.preencherCampo('valorCartao1', valor1)
 
         this.marcarCampo('checkboxCartao2')
@@ -162,12 +162,12 @@ class Checkout {
         this.preencherCampo('valorCartao2', valor2)
     }
 
-    converter(valor){
+    converter(valor) {
         const valorEncontrado = valor
             .replace(/\s/g, '')
             .match(/R\$\d{1,3}(\.\d{3})*,\d{2}|R\$\d+,\d{2}/)
 
-        if(!valorEncontrado){
+        if (!valorEncontrado) {
             return 0
         }
 
@@ -179,7 +179,7 @@ class Checkout {
         )
     }
 
-    validarEstrutura(){
+    validarEstrutura() {
         cy.get(el.campos.endereco).should('exist').and('be.visible')
         cy.get(el.campos.cartao1).should('exist').and('be.visible')
         cy.get(el.campos.valorCartao1).should('exist').and('be.visible')
@@ -191,27 +191,27 @@ class Checkout {
         cy.get(el.botoes.finalizar).should('exist').and('be.visible')
     }
 
-    validarEndereco(){
+    validarEndereco() {
         cy.get(el.campos.endereco)
             .should('be.visible')
             .and('not.be.disabled')
     }
 
-    validarEnderecoSelecionado(valorEsperado = null){
+    validarEnderecoSelecionado(valorEsperado = null) {
         const valor = valorEsperado || this.campos.endereco
 
         cy.get(el.campos.endereco)
             .should('have.value', valor)
     }
 
-    validarCartao1(){
+    validarCartao1() {
         cy.get(el.campos.cartao1)
             .should('exist')
             .and('be.visible')
             .and('not.be.disabled')
     }
 
-    validarCartaoSelecionado(valorEsperado){
+    validarCartaoSelecionado(valorEsperado) {
         cy.get(el.campos.cartao1)
             .should('have.value', valorEsperado)
 
@@ -222,7 +222,7 @@ class Checkout {
             })
     }
 
-    validarCartao2(){
+    validarCartao2() {
         cy.get(el.campos.checkboxCartao2)
             .should('exist')
             .and('be.visible')
@@ -236,7 +236,7 @@ class Checkout {
             .should('be.visible')
     }
 
-    validarResumo(){
+    validarResumo() {
         cy.get(el.textos.resumoFrete)
             .should('not.contain', '—')
             .and('contain.text', 'R$')
@@ -249,7 +249,7 @@ class Checkout {
             .and('contain.text', 'R$')
     }
 
-    validarTotal(){
+    validarTotal() {
         cy.get(el.textos.resumoTotal)
             .invoke('text')
             .then(total => {
@@ -259,7 +259,7 @@ class Checkout {
             })
     }
 
-    validarValorCartao(){
+    validarValorCartao() {
         cy.get(el.campos.valorCartao1)
             .invoke('val')
             .then(valor => {
@@ -267,19 +267,19 @@ class Checkout {
             })
     }
 
-    validarFrete(){
+    validarFrete() {
         cy.get(el.textos.valorFreteCalculado)
             .should('not.contain', 'Calculando')
             .and('contain.text', 'R$')
     }
 
-    validarBotoes(){
+    validarBotoes() {
         cy.get(el.botoes.voltarCarrinho).should('exist').and('be.visible')
         cy.get(el.botoes.cadastrarEndereco).should('exist').and('be.visible')
         cy.get(el.botoes.cadastrarCartao).should('exist').and('be.visible')
     }
 
-    validarCartaoObrigatorio(){
+    validarCartaoObrigatorio() {
         cy.get(el.campos.valorCartao1)
             .then(el.validarMensagemNavegador)
 
@@ -287,13 +287,13 @@ class Checkout {
             .should('exist')
     }
 
-    validarSomaCartoesInvalida(){
+    validarSomaCartoesInvalida() {
         cy.get(el.alertas.valorCartoes)
             .should('be.visible')
             .and('contain.text', 'A soma dos cartões')
     }
 
-    validarValorCartaoInvalido(){
+    validarValorCartaoInvalido() {
         cy.get(el.campos.valorCartao1)
             .then(el.validarMensagemNavegador)
 
@@ -301,28 +301,28 @@ class Checkout {
             .should('exist')
     }
 
-    validarValorMinimoCartao(){
+    validarValorMinimoCartao() {
         cy.get(el.alertas.minimoCartao)
             .should('be.visible')
             .and('contain.text', 'O valor mínimo por cartão')
     }
 
-    validarCupomAplicado(){
+    validarCupomAplicado() {
         cy.get(el.textos.resumoDesconto)
             .should('not.contain.text', 'R$ 0,00')
     }
 
-    validarCupomTroco(){
+    validarCupomTroco() {
         cy.get(el.alertas.cupomTroco)
             .should('be.visible')
     }
 
-    validarBotaoFinalizarDesabilitado(){
+    validarBotaoFinalizarDesabilitado() {
         cy.get(el.botoes.finalizar)
-            //.should('be.disabled')
+        //.should('be.disabled')
     }
 
-    validarCartaoBateComResumo(){
+    validarCartaoBateComResumo() {
         cy.get(el.textos.resumoTotal)
             .invoke('text')
             .then(totalTexto => {
@@ -339,10 +339,51 @@ class Checkout {
             })
     }
 
-    validarAutomatico(){
+    validarAutomatico() {
         cy.url()
             .should('not.eq', el.urls.checkout)
     }
-}
 
+    preencherValor(cartao = 'cartao1') {
+        // Aguarda o total ser atualizado
+        cy.get(el.textos.resumoTotal)
+            .should('not.contain', '—')
+            .should('contain.text', 'R$')
+            .invoke('text')
+            .then(totalTexto => {
+                const valorTotal = this.converter(totalTexto)
+
+                cy.log(`Total do pedido: R$ ${valorTotal.toFixed(2)}`)
+
+                if (cartao === 'cartao1') {
+                    // Ajusta o cartão 1 baseado no valor do cartão 2
+                    cy.get(el.campos.valorCartao2)
+                        .invoke('val')
+                        .then(valorCartao2 => {
+                            const valorCartao2Num = Number(valorCartao2) || 0
+                            const valorParaCartao1 = valorTotal - valorCartao2Num
+
+                            cy.log(`Cartão2 = R$ ${valorCartao2Num.toFixed(2)}`)
+                            cy.log(`Ajustando Cartão1 para = R$ ${valorParaCartao1.toFixed(2)}`)
+
+                            this.preencherCampo('valorCartao1', valorParaCartao1.toFixed(2))
+                        })
+                }
+                else if (cartao === 'cartao2') {
+                    // Ajusta o cartão 2 baseado no valor do cartão 1
+                    cy.get(el.campos.valorCartao1)
+                        .invoke('val')
+                        .then(valorCartao1 => {
+                            const valorCartao1Num = Number(valorCartao1) || 0
+                            const valorParaCartao2 = valorTotal - valorCartao1Num
+
+                            cy.log(`Cartão1 = R$ ${valorCartao1Num.toFixed(2)}`)
+                            cy.log(`Ajustando Cartão2 para = R$ ${valorParaCartao2.toFixed(2)}`)
+
+                            this.preencherCampo('valorCartao2', valorParaCartao2.toFixed(2))
+                        })
+                }
+            })
+    }
+}
 export default new Checkout()

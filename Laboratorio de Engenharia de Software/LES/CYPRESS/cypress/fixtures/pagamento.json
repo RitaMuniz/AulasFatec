@@ -1,0 +1,1857 @@
+{
+  "pedido_id_1": {
+    "id": 1,
+    "pedido_id": 1,
+    "cartao_id": 1,
+    "cupom_id": null,
+    "valor": 95.0
+  },
+  "pedido_id_2": {
+    "id": 2,
+    "pedido_id": 2,
+    "cartao_id": 2,
+    "cupom_id": null,
+    "valor": 67.5
+  },
+  "pedido_id_3": {
+    "id": 3,
+    "pedido_id": 3,
+    "cartao_id": 3,
+    "cupom_id": null,
+    "valor": 116.0
+  },
+  "pedido_id_4": {
+    "id": 4,
+    "pedido_id": 4,
+    "cartao_id": 4,
+    "cupom_id": null,
+    "valor": 120.0
+  },
+  "pedido_id_5": {
+    "id": 5,
+    "pedido_id": 5,
+    "cartao_id": 5,
+    "cupom_id": null,
+    "valor": 45.0
+  },
+  "pedido_id_6": {
+    "id": 6,
+    "pedido_id": 6,
+    "cartao_id": 6,
+    "cupom_id": null,
+    "valor": 144.0
+  },
+  "pedido_id_7": {
+    "id": 7,
+    "pedido_id": 7,
+    "cartao_id": 7,
+    "cupom_id": null,
+    "valor": 84.0
+  },
+  "pedido_id_8": {
+    "id": 8,
+    "pedido_id": 8,
+    "cartao_id": 8,
+    "cupom_id": null,
+    "valor": 143.0
+  },
+  "pedido_id_9": {
+    "id": 9,
+    "pedido_id": 9,
+    "cartao_id": 9,
+    "cupom_id": null,
+    "valor": 96.0
+  },
+  "pedido_id_10": {
+    "id": 10,
+    "pedido_id": 10,
+    "cartao_id": 10,
+    "cupom_id": null,
+    "valor": 185.0
+  },
+  "pedido_id_11": {
+    "id": 11,
+    "pedido_id": 11,
+    "cartao_id": 11,
+    "cupom_id": null,
+    "valor": 82.0
+  },
+  "pedido_id_12": {
+    "id": 12,
+    "pedido_id": 12,
+    "cartao_id": 12,
+    "cupom_id": null,
+    "valor": 104.0
+  },
+  "pedido_id_13": {
+    "id": 13,
+    "pedido_id": 13,
+    "cartao_id": 13,
+    "cupom_id": null,
+    "valor": 88.0
+  },
+  "pedido_id_14": {
+    "id": 14,
+    "pedido_id": 14,
+    "cartao_id": 14,
+    "cupom_id": null,
+    "valor": 153.0
+  },
+  "pedido_id_15": {
+    "id": 15,
+    "pedido_id": 15,
+    "cartao_id": 15,
+    "cupom_id": null,
+    "valor": 118.0
+  },
+  "pedido_id_16": {
+    "id": 16,
+    "pedido_id": 16,
+    "cartao_id": 16,
+    "cupom_id": null,
+    "valor": 130.0
+  },
+  "pedido_id_17": {
+    "id": 17,
+    "pedido_id": 17,
+    "cartao_id": 17,
+    "cupom_id": null,
+    "valor": 89.5
+  },
+  "pedido_id_18": {
+    "id": 18,
+    "pedido_id": 18,
+    "cartao_id": 18,
+    "cupom_id": null,
+    "valor": 168.0
+  },
+  "pedido_id_19": {
+    "id": 19,
+    "pedido_id": 19,
+    "cartao_id": 19,
+    "cupom_id": null,
+    "valor": 67.5
+  },
+  "pedido_id_20": {
+    "id": 20,
+    "pedido_id": 20,
+    "cartao_id": 20,
+    "cupom_id": null,
+    "valor": 200.0
+  },
+  "pedido_id_21": {
+    "id": 21,
+    "pedido_id": 21,
+    "cartao_id": 21,
+    "cupom_id": null,
+    "valor": 87.0
+  },
+  "pedido_id_22": {
+    "id": 22,
+    "pedido_id": 22,
+    "cartao_id": 22,
+    "cupom_id": null,
+    "valor": 76.0
+  },
+  "pedido_id_23": {
+    "id": 23,
+    "pedido_id": 23,
+    "cartao_id": 23,
+    "cupom_id": null,
+    "valor": 107.0
+  },
+  "pedido_id_24": {
+    "id": 24,
+    "pedido_id": 24,
+    "cartao_id": 24,
+    "cupom_id": null,
+    "valor": 160.0
+  },
+  "pedido_id_25": {
+    "id": 25,
+    "pedido_id": 25,
+    "cartao_id": 25,
+    "cupom_id": null,
+    "valor": 119.0
+  },
+  "pedido_id_26": {
+    "id": 26,
+    "pedido_id": 26,
+    "cartao_id": 26,
+    "cupom_id": null,
+    "valor": 101.0
+  },
+  "pedido_id_27": {
+    "id": 27,
+    "pedido_id": 27,
+    "cartao_id": 27,
+    "cupom_id": null,
+    "valor": 112.0
+  },
+  "pedido_id_28": {
+    "id": 28,
+    "pedido_id": 28,
+    "cartao_id": 28,
+    "cupom_id": null,
+    "valor": 242.0
+  },
+  "pedido_id_29": {
+    "id": 29,
+    "pedido_id": 29,
+    "cartao_id": 29,
+    "cupom_id": null,
+    "valor": 136.0
+  },
+  "pedido_id_30": {
+    "id": 30,
+    "pedido_id": 30,
+    "cartao_id": 30,
+    "cupom_id": null,
+    "valor": 162.0
+  },
+  "pedido_id_31": {
+    "id": 31,
+    "pedido_id": 31,
+    "cartao_id": 1,
+    "cupom_id": null,
+    "valor": 74.0
+  },
+  "pedido_id_32": {
+    "id": 32,
+    "pedido_id": 32,
+    "cartao_id": 2,
+    "cupom_id": null,
+    "valor": 96.0
+  },
+  "pedido_id_33": {
+    "id": 33,
+    "pedido_id": 33,
+    "cartao_id": 3,
+    "cupom_id": null,
+    "valor": 108.5
+  },
+  "pedido_id_34": {
+    "id": 34,
+    "pedido_id": 34,
+    "cartao_id": 4,
+    "cupom_id": null,
+    "valor": 141.0
+  },
+  "pedido_id_35": {
+    "id": 35,
+    "pedido_id": 35,
+    "cartao_id": 5,
+    "cupom_id": null,
+    "valor": 77.0
+  },
+  "pedido_id_36": {
+    "id": 36,
+    "pedido_id": 36,
+    "cartao_id": 6,
+    "cupom_id": null,
+    "valor": 116.0
+  },
+  "pedido_id_37": {
+    "id": 37,
+    "pedido_id": 37,
+    "cartao_id": 7,
+    "cupom_id": null,
+    "valor": 89.0
+  },
+  "pedido_id_38": {
+    "id": 38,
+    "pedido_id": 38,
+    "cartao_id": 8,
+    "cupom_id": null,
+    "valor": 102.0
+  },
+  "pedido_id_39": {
+    "id": 39,
+    "pedido_id": 39,
+    "cartao_id": 9,
+    "cupom_id": null,
+    "valor": 99.0
+  },
+  "pedido_id_40": {
+    "id": 40,
+    "pedido_id": 40,
+    "cartao_id": 10,
+    "cupom_id": null,
+    "valor": 153.0
+  },
+  "pedido_id_41": {
+    "id": 41,
+    "pedido_id": 41,
+    "cartao_id": 11,
+    "cupom_id": null,
+    "valor": 78.0
+  },
+  "pedido_id_42": {
+    "id": 42,
+    "pedido_id": 42,
+    "cartao_id": 12,
+    "cupom_id": null,
+    "valor": 55.0
+  },
+  "pedido_id_43": {
+    "id": 43,
+    "pedido_id": 43,
+    "cartao_id": 13,
+    "cupom_id": null,
+    "valor": 121.0
+  },
+  "pedido_id_44": {
+    "id": 44,
+    "pedido_id": 44,
+    "cartao_id": 14,
+    "cupom_id": null,
+    "valor": 66.0
+  },
+  "pedido_id_45": {
+    "id": 45,
+    "pedido_id": 45,
+    "cartao_id": 15,
+    "cupom_id": null,
+    "valor": 90.0
+  },
+  "pedido_id_46": {
+    "id": 46,
+    "pedido_id": 46,
+    "cartao_id": 16,
+    "cupom_id": null,
+    "valor": 48.0
+  },
+  "pedido_id_47": {
+    "id": 47,
+    "pedido_id": 47,
+    "cartao_id": 17,
+    "cupom_id": null,
+    "valor": 83.0
+  },
+  "pedido_id_48": {
+    "id": 48,
+    "pedido_id": 48,
+    "cartao_id": 18,
+    "cupom_id": null,
+    "valor": 70.0
+  },
+  "pedido_id_49": {
+    "id": 49,
+    "pedido_id": 49,
+    "cartao_id": 19,
+    "cupom_id": null,
+    "valor": 105.0
+  },
+  "pedido_id_50": {
+    "id": 50,
+    "pedido_id": 50,
+    "cartao_id": 20,
+    "cupom_id": null,
+    "valor": 61.0
+  },
+  "pedido_id_51": {
+    "id": 51,
+    "pedido_id": 51,
+    "cartao_id": 21,
+    "cupom_id": null,
+    "valor": 96.0
+  },
+  "pedido_id_52": {
+    "id": 52,
+    "pedido_id": 52,
+    "cartao_id": 22,
+    "cupom_id": null,
+    "valor": 44.0
+  },
+  "pedido_id_53": {
+    "id": 53,
+    "pedido_id": 53,
+    "cartao_id": 23,
+    "cupom_id": null,
+    "valor": 112.0
+  },
+  "pedido_id_54": {
+    "id": 54,
+    "pedido_id": 54,
+    "cartao_id": 24,
+    "cupom_id": null,
+    "valor": 57.0
+  },
+  "pedido_id_55": {
+    "id": 55,
+    "pedido_id": 55,
+    "cartao_id": 25,
+    "cupom_id": null,
+    "valor": 84.0
+  },
+  "pedido_id_56": {
+    "id": 56,
+    "pedido_id": 56,
+    "cartao_id": 26,
+    "cupom_id": null,
+    "valor": 72.0
+  },
+  "pedido_id_57": {
+    "id": 57,
+    "pedido_id": 57,
+    "cartao_id": 27,
+    "cupom_id": null,
+    "valor": 101.0
+  },
+  "pedido_id_58": {
+    "id": 58,
+    "pedido_id": 58,
+    "cartao_id": 28,
+    "cupom_id": null,
+    "valor": 63.0
+  },
+  "pedido_id_59": {
+    "id": 59,
+    "pedido_id": 59,
+    "cartao_id": 29,
+    "cupom_id": null,
+    "valor": 89.0
+  },
+  "pedido_id_60": {
+    "id": 60,
+    "pedido_id": 60,
+    "cartao_id": 30,
+    "cupom_id": null,
+    "valor": 50.0
+  },
+  "pedido_id_61": {
+    "id": 61,
+    "pedido_id": 61,
+    "cartao_id": 1,
+    "cupom_id": null,
+    "valor": 79.0
+  },
+  "pedido_id_62": {
+    "id": 62,
+    "pedido_id": 62,
+    "cartao_id": 2,
+    "cupom_id": null,
+    "valor": 95.0
+  },
+  "pedido_id_63": {
+    "id": 63,
+    "pedido_id": 63,
+    "cartao_id": 3,
+    "cupom_id": null,
+    "valor": 58.0
+  },
+  "pedido_id_64": {
+    "id": 64,
+    "pedido_id": 64,
+    "cartao_id": 4,
+    "cupom_id": null,
+    "valor": 114.0
+  },
+  "pedido_id_65": {
+    "id": 65,
+    "pedido_id": 65,
+    "cartao_id": 5,
+    "cupom_id": null,
+    "valor": 67.0
+  },
+  "pedido_id_66": {
+    "id": 66,
+    "pedido_id": 66,
+    "cartao_id": 6,
+    "cupom_id": null,
+    "valor": 86.0
+  },
+  "pedido_id_67": {
+    "id": 67,
+    "pedido_id": 67,
+    "cartao_id": 7,
+    "cupom_id": null,
+    "valor": 53.0
+  },
+  "pedido_id_68": {
+    "id": 68,
+    "pedido_id": 68,
+    "cartao_id": 8,
+    "cupom_id": null,
+    "valor": 109.0
+  },
+  "pedido_id_69": {
+    "id": 69,
+    "pedido_id": 69,
+    "cartao_id": 9,
+    "cupom_id": null,
+    "valor": 74.0
+  },
+  "pedido_id_70": {
+    "id": 70,
+    "pedido_id": 70,
+    "cartao_id": 10,
+    "cupom_id": null,
+    "valor": 98.0
+  },
+  "pedido_id_71": {
+    "id": 71,
+    "pedido_id": 71,
+    "cartao_id": 11,
+    "cupom_id": null,
+    "valor": 62.0
+  },
+  "pedido_id_72": {
+    "id": 72,
+    "pedido_id": 72,
+    "cartao_id": 12,
+    "cupom_id": null,
+    "valor": 87.0
+  },
+  "pedido_id_73": {
+    "id": 73,
+    "pedido_id": 73,
+    "cartao_id": 13,
+    "cupom_id": null,
+    "valor": 71.0
+  },
+  "pedido_id_74": {
+    "id": 74,
+    "pedido_id": 74,
+    "cartao_id": 14,
+    "cupom_id": null,
+    "valor": 106.0
+  },
+  "pedido_id_75": {
+    "id": 75,
+    "pedido_id": 75,
+    "cartao_id": 15,
+    "cupom_id": null,
+    "valor": 55.0
+  },
+  "pedido_id_76": {
+    "id": 76,
+    "pedido_id": 76,
+    "cartao_id": 16,
+    "cupom_id": null,
+    "valor": 92.0
+  },
+  "pedido_id_77": {
+    "id": 77,
+    "pedido_id": 77,
+    "cartao_id": 17,
+    "cupom_id": null,
+    "valor": 68.0
+  },
+  "pedido_id_78": {
+    "id": 78,
+    "pedido_id": 78,
+    "cartao_id": 18,
+    "cupom_id": null,
+    "valor": 103.0
+  },
+  "pedido_id_79": {
+    "id": 79,
+    "pedido_id": 79,
+    "cartao_id": 19,
+    "cupom_id": null,
+    "valor": 49.0
+  },
+  "pedido_id_80": {
+    "id": 80,
+    "pedido_id": 80,
+    "cartao_id": 20,
+    "cupom_id": null,
+    "valor": 117.0
+  },
+  "pedido_id_81": {
+    "id": 81,
+    "pedido_id": 81,
+    "cartao_id": 21,
+    "cupom_id": null,
+    "valor": 82.0
+  },
+  "pedido_id_82": {
+    "id": 82,
+    "pedido_id": 82,
+    "cartao_id": 22,
+    "cupom_id": null,
+    "valor": 59.0
+  },
+  "pedido_id_83": {
+    "id": 83,
+    "pedido_id": 83,
+    "cartao_id": 23,
+    "cupom_id": null,
+    "valor": 123.0
+  },
+  "pedido_id_84": {
+    "id": 84,
+    "pedido_id": 84,
+    "cartao_id": 24,
+    "cupom_id": null,
+    "valor": 64.0
+  },
+  "pedido_id_85": {
+    "id": 85,
+    "pedido_id": 85,
+    "cartao_id": 25,
+    "cupom_id": null,
+    "valor": 91.0
+  },
+  "pedido_id_86": {
+    "id": 86,
+    "pedido_id": 86,
+    "cartao_id": 26,
+    "cupom_id": null,
+    "valor": 47.0
+  },
+  "pedido_id_87": {
+    "id": 87,
+    "pedido_id": 87,
+    "cartao_id": 27,
+    "cupom_id": null,
+    "valor": 85.0
+  },
+  "pedido_id_88": {
+    "id": 88,
+    "pedido_id": 88,
+    "cartao_id": 28,
+    "cupom_id": null,
+    "valor": 73.0
+  },
+  "pedido_id_89": {
+    "id": 89,
+    "pedido_id": 89,
+    "cartao_id": 29,
+    "cupom_id": null,
+    "valor": 108.0
+  },
+  "pedido_id_90": {
+    "id": 90,
+    "pedido_id": 90,
+    "cartao_id": 30,
+    "cupom_id": null,
+    "valor": 60.0
+  },
+  "pedido_id_91": {
+    "id": 91,
+    "pedido_id": 91,
+    "cartao_id": 1,
+    "cupom_id": null,
+    "valor": 97.0
+  },
+  "pedido_id_92": {
+    "id": 92,
+    "pedido_id": 92,
+    "cartao_id": 2,
+    "cupom_id": null,
+    "valor": 56.0
+  },
+  "pedido_id_93": {
+    "id": 93,
+    "pedido_id": 93,
+    "cartao_id": 3,
+    "cupom_id": null,
+    "valor": 88.0
+  },
+  "pedido_id_94": {
+    "id": 94,
+    "pedido_id": 94,
+    "cartao_id": 4,
+    "cupom_id": null,
+    "valor": 69.0
+  },
+  "pedido_id_95": {
+    "id": 95,
+    "pedido_id": 95,
+    "cartao_id": 5,
+    "cupom_id": null,
+    "valor": 102.0
+  },
+  "pedido_id_96": {
+    "id": 96,
+    "pedido_id": 96,
+    "cartao_id": 6,
+    "cupom_id": null,
+    "valor": 51.0
+  },
+  "pedido_id_97": {
+    "id": 97,
+    "pedido_id": 97,
+    "cartao_id": 7,
+    "cupom_id": null,
+    "valor": 94.0
+  },
+  "pedido_id_98": {
+    "id": 98,
+    "pedido_id": 98,
+    "cartao_id": 8,
+    "cupom_id": null,
+    "valor": 66.0
+  },
+  "pedido_id_99": {
+    "id": 99,
+    "pedido_id": 99,
+    "cartao_id": 9,
+    "cupom_id": null,
+    "valor": 119.0
+  },
+  "pedido_id_100": {
+    "id": 100,
+    "pedido_id": 100,
+    "cartao_id": 10,
+    "cupom_id": null,
+    "valor": 45.0
+  },
+  "pedido_id_101": {
+    "id": 101,
+    "pedido_id": 101,
+    "cartao_id": 11,
+    "cupom_id": null,
+    "valor": 75.0
+  },
+  "pedido_id_102": {
+    "id": 102,
+    "pedido_id": 102,
+    "cartao_id": 12,
+    "cupom_id": null,
+    "valor": 100.0
+  },
+  "pedido_id_103": {
+    "id": 103,
+    "pedido_id": 103,
+    "cartao_id": 13,
+    "cupom_id": null,
+    "valor": 63.0
+  },
+  "pedido_id_104": {
+    "id": 104,
+    "pedido_id": 104,
+    "cartao_id": 14,
+    "cupom_id": null,
+    "valor": 111.0
+  },
+  "pedido_id_105": {
+    "id": 105,
+    "pedido_id": 105,
+    "cartao_id": 15,
+    "cupom_id": null,
+    "valor": 54.0
+  },
+  "pedido_id_106": {
+    "id": 106,
+    "pedido_id": 106,
+    "cartao_id": 16,
+    "cupom_id": null,
+    "valor": 89.0
+  },
+  "pedido_id_107": {
+    "id": 107,
+    "pedido_id": 107,
+    "cartao_id": 17,
+    "cupom_id": null,
+    "valor": 77.0
+  },
+  "pedido_id_108": {
+    "id": 108,
+    "pedido_id": 108,
+    "cartao_id": 18,
+    "cupom_id": null,
+    "valor": 104.0
+  },
+  "pedido_id_109": {
+    "id": 109,
+    "pedido_id": 109,
+    "cartao_id": 19,
+    "cupom_id": null,
+    "valor": 61.0
+  },
+  "pedido_id_110": {
+    "id": 110,
+    "pedido_id": 110,
+    "cartao_id": 20,
+    "cupom_id": null,
+    "valor": 96.0
+  },
+  "pedido_id_111": {
+    "id": 111,
+    "pedido_id": 111,
+    "cartao_id": 21,
+    "cupom_id": null,
+    "valor": 48.0
+  },
+  "pedido_id_112": {
+    "id": 112,
+    "pedido_id": 112,
+    "cartao_id": 22,
+    "cupom_id": null,
+    "valor": 83.0
+  },
+  "pedido_id_113": {
+    "id": 113,
+    "pedido_id": 113,
+    "cartao_id": 23,
+    "cupom_id": null,
+    "valor": 70.0
+  },
+  "pedido_id_114": {
+    "id": 114,
+    "pedido_id": 114,
+    "cartao_id": 24,
+    "cupom_id": null,
+    "valor": 115.0
+  },
+  "pedido_id_115": {
+    "id": 115,
+    "pedido_id": 115,
+    "cartao_id": 25,
+    "cupom_id": null,
+    "valor": 52.0
+  },
+  "pedido_id_116": {
+    "id": 116,
+    "pedido_id": 116,
+    "cartao_id": 26,
+    "cupom_id": null,
+    "valor": 93.0
+  },
+  "pedido_id_117": {
+    "id": 117,
+    "pedido_id": 117,
+    "cartao_id": 27,
+    "cupom_id": null,
+    "valor": 68.0
+  },
+  "pedido_id_118": {
+    "id": 118,
+    "pedido_id": 118,
+    "cartao_id": 28,
+    "cupom_id": null,
+    "valor": 107.0
+  },
+  "pedido_id_119": {
+    "id": 119,
+    "pedido_id": 119,
+    "cartao_id": 29,
+    "cupom_id": null,
+    "valor": 59.0
+  },
+  "pedido_id_120": {
+    "id": 120,
+    "pedido_id": 120,
+    "cartao_id": 30,
+    "cupom_id": null,
+    "valor": 87.0
+  },
+  "pedido_id_121": {
+    "id": 121,
+    "pedido_id": 121,
+    "cartao_id": 1,
+    "cupom_id": null,
+    "valor": 80.0
+  },
+  "pedido_id_122": {
+    "id": 122,
+    "pedido_id": 122,
+    "cartao_id": 2,
+    "cupom_id": null,
+    "valor": 62.0
+  },
+  "pedido_id_123": {
+    "id": 123,
+    "pedido_id": 123,
+    "cartao_id": 3,
+    "cupom_id": null,
+    "valor": 118.0
+  },
+  "pedido_id_124": {
+    "id": 124,
+    "pedido_id": 124,
+    "cartao_id": 4,
+    "cupom_id": null,
+    "valor": 55.0
+  },
+  "pedido_id_125": {
+    "id": 125,
+    "pedido_id": 125,
+    "cartao_id": 5,
+    "cupom_id": null,
+    "valor": 99.0
+  },
+  "pedido_id_126": {
+    "id": 126,
+    "pedido_id": 126,
+    "cartao_id": 6,
+    "cupom_id": null,
+    "valor": 71.0
+  },
+  "pedido_id_127": {
+    "id": 127,
+    "pedido_id": 127,
+    "cartao_id": 7,
+    "cupom_id": null,
+    "valor": 86.0
+  },
+  "pedido_id_128": {
+    "id": 128,
+    "pedido_id": 128,
+    "cartao_id": 8,
+    "cupom_id": null,
+    "valor": 50.0
+  },
+  "pedido_id_129": {
+    "id": 129,
+    "pedido_id": 129,
+    "cartao_id": 9,
+    "cupom_id": null,
+    "valor": 113.0
+  },
+  "pedido_id_130": {
+    "id": 130,
+    "pedido_id": 130,
+    "cartao_id": 10,
+    "cupom_id": null,
+    "valor": 67.0
+  },
+  "pedido_id_131": {
+    "id": 131,
+    "pedido_id": 131,
+    "cartao_id": 11,
+    "cupom_id": null,
+    "valor": 92.0
+  },
+  "pedido_id_132": {
+    "id": 132,
+    "pedido_id": 132,
+    "cartao_id": 12,
+    "cupom_id": null,
+    "valor": 58.0
+  },
+  "pedido_id_133": {
+    "id": 133,
+    "pedido_id": 133,
+    "cartao_id": 13,
+    "cupom_id": null,
+    "valor": 105.0
+  },
+  "pedido_id_134": {
+    "id": 134,
+    "pedido_id": 134,
+    "cartao_id": 14,
+    "cupom_id": null,
+    "valor": 74.0
+  },
+  "pedido_id_135": {
+    "id": 135,
+    "pedido_id": 135,
+    "cartao_id": 15,
+    "cupom_id": null,
+    "valor": 89.0
+  },
+  "pedido_id_136": {
+    "id": 136,
+    "pedido_id": 136,
+    "cartao_id": 16,
+    "cupom_id": null,
+    "valor": 65.0
+  },
+  "pedido_id_137": {
+    "id": 137,
+    "pedido_id": 137,
+    "cartao_id": 17,
+    "cupom_id": null,
+    "valor": 97.0
+  },
+  "pedido_id_138": {
+    "id": 138,
+    "pedido_id": 138,
+    "cartao_id": 18,
+    "cupom_id": null,
+    "valor": 53.0
+  },
+  "pedido_id_139": {
+    "id": 139,
+    "pedido_id": 139,
+    "cartao_id": 19,
+    "cupom_id": null,
+    "valor": 110.0
+  },
+  "pedido_id_140": {
+    "id": 140,
+    "pedido_id": 140,
+    "cartao_id": 20,
+    "cupom_id": null,
+    "valor": 76.0
+  },
+  "pedido_id_141": {
+    "id": 141,
+    "pedido_id": 141,
+    "cartao_id": 21,
+    "cupom_id": null,
+    "valor": 145.0
+  },
+  "pedido_id_142": {
+    "id": 142,
+    "pedido_id": 142,
+    "cartao_id": 22,
+    "cupom_id": null,
+    "valor": 98.0
+  },
+  "pedido_id_143": {
+    "id": 143,
+    "pedido_id": 143,
+    "cartao_id": 23,
+    "cupom_id": null,
+    "valor": 167.0
+  },
+  "pedido_id_144": {
+    "id": 144,
+    "pedido_id": 144,
+    "cartao_id": 24,
+    "cupom_id": null,
+    "valor": 112.0
+  },
+  "pedido_id_145": {
+    "id": 145,
+    "pedido_id": 145,
+    "cartao_id": 25,
+    "cupom_id": null,
+    "valor": 89.0
+  },
+  "pedido_id_146": {
+    "id": 146,
+    "pedido_id": 146,
+    "cartao_id": 26,
+    "cupom_id": null,
+    "valor": 156.0
+  },
+  "pedido_id_147": {
+    "id": 147,
+    "pedido_id": 147,
+    "cartao_id": 27,
+    "cupom_id": null,
+    "valor": 73.0
+  },
+  "pedido_id_148": {
+    "id": 148,
+    "pedido_id": 148,
+    "cartao_id": 28,
+    "cupom_id": null,
+    "valor": 124.0
+  },
+  "pedido_id_149": {
+    "id": 149,
+    "pedido_id": 149,
+    "cartao_id": 29,
+    "cupom_id": null,
+    "valor": 101.0
+  },
+  "pedido_id_150": {
+    "id": 150,
+    "pedido_id": 150,
+    "cartao_id": 30,
+    "cupom_id": null,
+    "valor": 138.0
+  },
+  "pedido_id_151": {
+    "id": 151,
+    "pedido_id": 151,
+    "cartao_id": 1,
+    "cupom_id": null,
+    "valor": 95.0
+  },
+  "pedido_id_152": {
+    "id": 152,
+    "pedido_id": 152,
+    "cartao_id": 2,
+    "cupom_id": null,
+    "valor": 119.0
+  },
+  "pedido_id_153": {
+    "id": 153,
+    "pedido_id": 153,
+    "cartao_id": 3,
+    "cupom_id": null,
+    "valor": 82.0
+  },
+  "pedido_id_154": {
+    "id": 154,
+    "pedido_id": 154,
+    "cartao_id": 4,
+    "cupom_id": null,
+    "valor": 143.0
+  },
+  "pedido_id_155": {
+    "id": 155,
+    "pedido_id": 155,
+    "cartao_id": 5,
+    "cupom_id": null,
+    "valor": 107.0
+  },
+  "pedido_id_156": {
+    "id": 156,
+    "pedido_id": 156,
+    "cartao_id": 6,
+    "cupom_id": null,
+    "valor": 66.0
+  },
+  "pedido_id_157": {
+    "id": 157,
+    "pedido_id": 157,
+    "cartao_id": 7,
+    "cupom_id": null,
+    "valor": 131.0
+  },
+  "pedido_id_158": {
+    "id": 158,
+    "pedido_id": 158,
+    "cartao_id": 8,
+    "cupom_id": null,
+    "valor": 94.0
+  },
+  "pedido_id_159": {
+    "id": 159,
+    "pedido_id": 159,
+    "cartao_id": 9,
+    "cupom_id": null,
+    "valor": 115.0
+  },
+  "pedido_id_160": {
+    "id": 160,
+    "pedido_id": 160,
+    "cartao_id": 10,
+    "cupom_id": null,
+    "valor": 88.0
+  },
+  "pedido_id_161": {
+    "id": 161,
+    "pedido_id": 161,
+    "cartao_id": 11,
+    "cupom_id": null,
+    "valor": 149.0
+  },
+  "pedido_id_162": {
+    "id": 162,
+    "pedido_id": 162,
+    "cartao_id": 12,
+    "cupom_id": null,
+    "valor": 76.0
+  },
+  "pedido_id_163": {
+    "id": 163,
+    "pedido_id": 163,
+    "cartao_id": 13,
+    "cupom_id": null,
+    "valor": 128.0
+  },
+  "pedido_id_164": {
+    "id": 164,
+    "pedido_id": 164,
+    "cartao_id": 14,
+    "cupom_id": null,
+    "valor": 103.0
+  },
+  "pedido_id_165": {
+    "id": 165,
+    "pedido_id": 165,
+    "cartao_id": 15,
+    "cupom_id": null,
+    "valor": 91.0
+  },
+  "pedido_id_166": {
+    "id": 166,
+    "pedido_id": 166,
+    "cartao_id": 16,
+    "cupom_id": null,
+    "valor": 84.0
+  },
+  "pedido_id_167": {
+    "id": 167,
+    "pedido_id": 167,
+    "cartao_id": 17,
+    "cupom_id": null,
+    "valor": 60.0
+  },
+  "pedido_id_168": {
+    "id": 168,
+    "pedido_id": 168,
+    "cartao_id": 18,
+    "cupom_id": null,
+    "valor": 117.0
+  },
+  "pedido_id_169": {
+    "id": 169,
+    "pedido_id": 169,
+    "cartao_id": 19,
+    "cupom_id": null,
+    "valor": 69.0
+  },
+  "pedido_id_170": {
+    "id": 170,
+    "pedido_id": 170,
+    "cartao_id": 20,
+    "cupom_id": null,
+    "valor": 95.0
+  },
+  "pedido_id_171": {
+    "id": 171,
+    "pedido_id": 171,
+    "cartao_id": 21,
+    "cupom_id": null,
+    "valor": 56.0
+  },
+  "pedido_id_172": {
+    "id": 172,
+    "pedido_id": 172,
+    "cartao_id": 22,
+    "cupom_id": null,
+    "valor": 108.0
+  },
+  "pedido_id_173": {
+    "id": 173,
+    "pedido_id": 173,
+    "cartao_id": 23,
+    "cupom_id": null,
+    "valor": 73.0
+  },
+  "pedido_id_174": {
+    "id": 174,
+    "pedido_id": 174,
+    "cartao_id": 24,
+    "cupom_id": null,
+    "valor": 99.0
+  },
+  "pedido_id_175": {
+    "id": 175,
+    "pedido_id": 175,
+    "cartao_id": 25,
+    "cupom_id": null,
+    "valor": 64.0
+  },
+  "pedido_id_176": {
+    "id": 176,
+    "pedido_id": 176,
+    "cartao_id": 26,
+    "cupom_id": null,
+    "valor": 114.0
+  },
+  "pedido_id_177": {
+    "id": 177,
+    "pedido_id": 177,
+    "cartao_id": 27,
+    "cupom_id": null,
+    "valor": 51.0
+  },
+  "pedido_id_178": {
+    "id": 178,
+    "pedido_id": 178,
+    "cartao_id": 28,
+    "cupom_id": null,
+    "valor": 86.0
+  },
+  "pedido_id_179": {
+    "id": 179,
+    "pedido_id": 179,
+    "cartao_id": 29,
+    "cupom_id": null,
+    "valor": 78.0
+  },
+  "pedido_id_180": {
+    "id": 180,
+    "pedido_id": 180,
+    "cartao_id": 30,
+    "cupom_id": null,
+    "valor": 105.0
+  },
+  "pedido_id_181": {
+    "id": 181,
+    "pedido_id": 181,
+    "cartao_id": 1,
+    "cupom_id": null,
+    "valor": 62.0
+  },
+  "pedido_id_182": {
+    "id": 182,
+    "pedido_id": 182,
+    "cartao_id": 2,
+    "cupom_id": null,
+    "valor": 93.0
+  },
+  "pedido_id_183": {
+    "id": 183,
+    "pedido_id": 183,
+    "cartao_id": 3,
+    "cupom_id": null,
+    "valor": 70.0
+  },
+  "pedido_id_184": {
+    "id": 184,
+    "pedido_id": 184,
+    "cartao_id": 4,
+    "cupom_id": null,
+    "valor": 111.0
+  },
+  "pedido_id_185": {
+    "id": 185,
+    "pedido_id": 185,
+    "cartao_id": 5,
+    "cupom_id": null,
+    "valor": 57.0
+  },
+  "pedido_id_186": {
+    "id": 186,
+    "pedido_id": 186,
+    "cartao_id": 6,
+    "cupom_id": null,
+    "valor": 87.0
+  },
+  "pedido_id_187": {
+    "id": 187,
+    "pedido_id": 187,
+    "cartao_id": 7,
+    "cupom_id": null,
+    "valor": 63.0
+  },
+  "pedido_id_188": {
+    "id": 188,
+    "pedido_id": 188,
+    "cartao_id": 8,
+    "cupom_id": null,
+    "valor": 120.0
+  },
+  "pedido_id_189": {
+    "id": 189,
+    "pedido_id": 189,
+    "cartao_id": 9,
+    "cupom_id": null,
+    "valor": 68.0
+  },
+  "pedido_id_190": {
+    "id": 190,
+    "pedido_id": 190,
+    "cartao_id": 10,
+    "cupom_id": null,
+    "valor": 96.0
+  },
+  "pedido_id_191": {
+    "id": 191,
+    "pedido_id": 191,
+    "cartao_id": 11,
+    "cupom_id": null,
+    "valor": 55.0
+  },
+  "pedido_id_192": {
+    "id": 192,
+    "pedido_id": 192,
+    "cartao_id": 12,
+    "cupom_id": null,
+    "valor": 109.0
+  },
+  "pedido_id_193": {
+    "id": 193,
+    "pedido_id": 193,
+    "cartao_id": 13,
+    "cupom_id": null,
+    "valor": 74.0
+  },
+  "pedido_id_194": {
+    "id": 194,
+    "pedido_id": 194,
+    "cartao_id": 14,
+    "cupom_id": null,
+    "valor": 101.0
+  },
+  "pedido_id_195": {
+    "id": 195,
+    "pedido_id": 195,
+    "cartao_id": 15,
+    "cupom_id": null,
+    "valor": 66.0
+  },
+  "pedido_id_196": {
+    "id": 196,
+    "pedido_id": 196,
+    "cartao_id": 16,
+    "cupom_id": null,
+    "valor": 115.0
+  },
+  "pedido_id_197": {
+    "id": 197,
+    "pedido_id": 197,
+    "cartao_id": 17,
+    "cupom_id": null,
+    "valor": 52.0
+  },
+  "pedido_id_198": {
+    "id": 198,
+    "pedido_id": 198,
+    "cartao_id": 18,
+    "cupom_id": null,
+    "valor": 88.0
+  },
+  "pedido_id_199": {
+    "id": 199,
+    "pedido_id": 199,
+    "cartao_id": 19,
+    "cupom_id": null,
+    "valor": 79.0
+  },
+  "pedido_id_200": {
+    "id": 200,
+    "pedido_id": 200,
+    "cartao_id": 20,
+    "cupom_id": null,
+    "valor": 106.0
+  },
+  "pedido_id_201": {
+    "id": 201,
+    "pedido_id": 201,
+    "cartao_id": 21,
+    "cupom_id": null,
+    "valor": 61.0
+  },
+  "pedido_id_202": {
+    "id": 202,
+    "pedido_id": 202,
+    "cartao_id": 22,
+    "cupom_id": null,
+    "valor": 94.0
+  },
+  "pedido_id_203": {
+    "id": 203,
+    "pedido_id": 203,
+    "cartao_id": 23,
+    "cupom_id": null,
+    "valor": 72.0
+  },
+  "pedido_id_204": {
+    "id": 204,
+    "pedido_id": 204,
+    "cartao_id": 24,
+    "cupom_id": null,
+    "valor": 113.0
+  },
+  "pedido_id_205": {
+    "id": 205,
+    "pedido_id": 205,
+    "cartao_id": 25,
+    "cupom_id": null,
+    "valor": 58.0
+  },
+  "pedido_id_206": {
+    "id": 206,
+    "pedido_id": 206,
+    "cartao_id": 26,
+    "cupom_id": null,
+    "valor": 90.0
+  },
+  "pedido_id_207": {
+    "id": 207,
+    "pedido_id": 207,
+    "cartao_id": 27,
+    "cupom_id": null,
+    "valor": 65.0
+  },
+  "pedido_id_208": {
+    "id": 208,
+    "pedido_id": 208,
+    "cartao_id": 28,
+    "cupom_id": null,
+    "valor": 122.0
+  },
+  "pedido_id_209": {
+    "id": 209,
+    "pedido_id": 209,
+    "cartao_id": 29,
+    "cupom_id": null,
+    "valor": 71.0
+  },
+  "pedido_id_210": {
+    "id": 210,
+    "pedido_id": 210,
+    "cartao_id": 30,
+    "cupom_id": null,
+    "valor": 98.0
+  },
+  "pedido_id_211": {
+    "id": 211,
+    "pedido_id": 211,
+    "cartao_id": 1,
+    "cupom_id": null,
+    "valor": 54.0
+  },
+  "pedido_id_212": {
+    "id": 212,
+    "pedido_id": 212,
+    "cartao_id": 2,
+    "cupom_id": null,
+    "valor": 111.0
+  },
+  "pedido_id_213": {
+    "id": 213,
+    "pedido_id": 213,
+    "cartao_id": 3,
+    "cupom_id": null,
+    "valor": 76.0
+  },
+  "pedido_id_214": {
+    "id": 214,
+    "pedido_id": 214,
+    "cartao_id": 4,
+    "cupom_id": null,
+    "valor": 103.0
+  },
+  "pedido_id_215": {
+    "id": 215,
+    "pedido_id": 215,
+    "cartao_id": 5,
+    "cupom_id": null,
+    "valor": 67.0
+  },
+  "pedido_id_216": {
+    "id": 216,
+    "pedido_id": 216,
+    "cartao_id": 6,
+    "cupom_id": null,
+    "valor": 118.0
+  },
+  "pedido_id_217": {
+    "id": 217,
+    "pedido_id": 217,
+    "cartao_id": 7,
+    "cupom_id": null,
+    "valor": 59.0
+  },
+  "pedido_id_218": {
+    "id": 218,
+    "pedido_id": 218,
+    "cartao_id": 8,
+    "cupom_id": null,
+    "valor": 91.0
+  },
+  "pedido_id_219": {
+    "id": 219,
+    "pedido_id": 219,
+    "cartao_id": 9,
+    "cupom_id": null,
+    "valor": 80.0
+  },
+  "pedido_id_220": {
+    "id": 220,
+    "pedido_id": 220,
+    "cartao_id": 10,
+    "cupom_id": null,
+    "valor": 107.0
+  },
+  "pedido_id_221": {
+    "id": 221,
+    "pedido_id": 221,
+    "cartao_id": 11,
+    "cupom_id": null,
+    "valor": 62.0
+  },
+  "pedido_id_222": {
+    "id": 222,
+    "pedido_id": 222,
+    "cartao_id": 12,
+    "cupom_id": null,
+    "valor": 95.0
+  },
+  "pedido_id_223": {
+    "id": 223,
+    "pedido_id": 223,
+    "cartao_id": 13,
+    "cupom_id": null,
+    "valor": 73.0
+  },
+  "pedido_id_224": {
+    "id": 224,
+    "pedido_id": 224,
+    "cartao_id": 14,
+    "cupom_id": null,
+    "valor": 116.0
+  },
+  "pedido_id_225": {
+    "id": 225,
+    "pedido_id": 225,
+    "cartao_id": 15,
+    "cupom_id": null,
+    "valor": 56.0
+  },
+  "pedido_id_226": {
+    "id": 226,
+    "pedido_id": 226,
+    "cartao_id": 16,
+    "cupom_id": null,
+    "valor": 89.0
+  },
+  "pedido_id_227": {
+    "id": 227,
+    "pedido_id": 227,
+    "cartao_id": 17,
+    "cupom_id": null,
+    "valor": 64.0
+  },
+  "pedido_id_228": {
+    "id": 228,
+    "pedido_id": 228,
+    "cartao_id": 18,
+    "cupom_id": null,
+    "valor": 125.0
+  },
+  "pedido_id_229": {
+    "id": 229,
+    "pedido_id": 229,
+    "cartao_id": 19,
+    "cupom_id": null,
+    "valor": 72.0
+  },
+  "pedido_id_230": {
+    "id": 230,
+    "pedido_id": 230,
+    "cartao_id": 20,
+    "cupom_id": null,
+    "valor": 100.0
+  },
+  "pedido_id_231": {
+    "id": 231,
+    "pedido_id": 231,
+    "cartao_id": 21,
+    "cupom_id": null,
+    "valor": 57.0
+  },
+  "pedido_id_232": {
+    "id": 232,
+    "pedido_id": 232,
+    "cartao_id": 22,
+    "cupom_id": null,
+    "valor": 112.0
+  },
+  "pedido_id_233": {
+    "id": 233,
+    "pedido_id": 233,
+    "cartao_id": 23,
+    "cupom_id": null,
+    "valor": 77.0
+  },
+  "pedido_id_234": {
+    "id": 234,
+    "pedido_id": 234,
+    "cartao_id": 24,
+    "cupom_id": null,
+    "valor": 104.0
+  },
+  "pedido_id_235": {
+    "id": 235,
+    "pedido_id": 235,
+    "cartao_id": 25,
+    "cupom_id": null,
+    "valor": 68.0
+  },
+  "pedido_id_236": {
+    "id": 236,
+    "pedido_id": 236,
+    "cartao_id": 26,
+    "cupom_id": null,
+    "valor": 119.0
+  },
+  "pedido_id_237": {
+    "id": 237,
+    "pedido_id": 237,
+    "cartao_id": 27,
+    "cupom_id": null,
+    "valor": 60.0
+  },
+  "pedido_id_238": {
+    "id": 238,
+    "pedido_id": 238,
+    "cartao_id": 28,
+    "cupom_id": null,
+    "valor": 92.0
+  },
+  "pedido_id_239": {
+    "id": 239,
+    "pedido_id": 239,
+    "cartao_id": 29,
+    "cupom_id": null,
+    "valor": 81.0
+  },
+  "pedido_id_240": {
+    "id": 240,
+    "pedido_id": 240,
+    "cartao_id": 30,
+    "cupom_id": null,
+    "valor": 108.0
+  },
+  "pedido_id_241": {
+    "id": 241,
+    "pedido_id": 241,
+    "cartao_id": 1,
+    "cupom_id": null,
+    "valor": 63.0
+  },
+  "pedido_id_242": {
+    "id": 242,
+    "pedido_id": 242,
+    "cartao_id": 2,
+    "cupom_id": null,
+    "valor": 96.0
+  },
+  "pedido_id_243": {
+    "id": 243,
+    "pedido_id": 243,
+    "cartao_id": 3,
+    "cupom_id": null,
+    "valor": 74.0
+  },
+  "pedido_id_244": {
+    "id": 244,
+    "pedido_id": 244,
+    "cartao_id": 4,
+    "cupom_id": null,
+    "valor": 117.0
+  },
+  "pedido_id_245": {
+    "id": 245,
+    "pedido_id": 245,
+    "cartao_id": 5,
+    "cupom_id": null,
+    "valor": 59.0
+  },
+  "pedido_id_246": {
+    "id": 246,
+    "pedido_id": 246,
+    "cartao_id": 6,
+    "cupom_id": null,
+    "valor": 91.0
+  },
+  "pedido_id_247": {
+    "id": 247,
+    "pedido_id": 247,
+    "cartao_id": 7,
+    "cupom_id": null,
+    "valor": 66.0
+  },
+  "pedido_id_248": {
+    "id": 248,
+    "pedido_id": 248,
+    "cartao_id": 8,
+    "cupom_id": null,
+    "valor": 123.0
+  },
+  "pedido_id_249": {
+    "id": 249,
+    "pedido_id": 249,
+    "cartao_id": 9,
+    "cupom_id": null,
+    "valor": 73.0
+  },
+  "pedido_id_250": {
+    "id": 250,
+    "pedido_id": 250,
+    "cartao_id": 10,
+    "cupom_id": null,
+    "valor": 101.0
+  },
+  "pedido_id_251": {
+    "id": 251,
+    "pedido_id": 251,
+    "cartao_id": 11,
+    "cupom_id": null,
+    "valor": 58.0
+  },
+  "pedido_id_252": {
+    "id": 252,
+    "pedido_id": 252,
+    "cartao_id": 12,
+    "cupom_id": null,
+    "valor": 113.0
+  },
+  "pedido_id_253": {
+    "id": 253,
+    "pedido_id": 253,
+    "cartao_id": 13,
+    "cupom_id": null,
+    "valor": 78.0
+  },
+  "pedido_id_254": {
+    "id": 254,
+    "pedido_id": 254,
+    "cartao_id": 14,
+    "cupom_id": null,
+    "valor": 105.0
+  },
+  "pedido_id_255": {
+    "id": 255,
+    "pedido_id": 255,
+    "cartao_id": 15,
+    "cupom_id": null,
+    "valor": 69.0
+  },
+  "pedido_id_256": {
+    "id": 256,
+    "pedido_id": 256,
+    "cartao_id": 16,
+    "cupom_id": null,
+    "valor": 120.0
+  },
+  "pedido_id_257": {
+    "id": 257,
+    "pedido_id": 257,
+    "cartao_id": 17,
+    "cupom_id": null,
+    "valor": 61.0
+  },
+  "pedido_id_258": {
+    "id": 258,
+    "pedido_id": 258,
+    "cartao_id": 18,
+    "cupom_id": null,
+    "valor": 93.0
+  },
+  "pedido_id_259": {
+    "id": 259,
+    "pedido_id": 259,
+    "cartao_id": 19,
+    "cupom_id": null,
+    "valor": 82.0
+  },
+  "pedido_id_260": {
+    "id": 260,
+    "pedido_id": 260,
+    "cartao_id": 20,
+    "cupom_id": null,
+    "valor": 109.0
+  },
+  "pedido_id_261": {
+    "id": 261,
+    "pedido_id": 261,
+    "cartao_id": 21,
+    "cupom_id": null,
+    "valor": 64.0
+  },
+  "pedido_id_262": {
+    "id": 262,
+    "pedido_id": 262,
+    "cartao_id": 22,
+    "cupom_id": null,
+    "valor": 97.0
+  },
+  "pedido_id_263": {
+    "id": 263,
+    "pedido_id": 263,
+    "cartao_id": 23,
+    "cupom_id": null,
+    "valor": 75.0
+  },
+  "pedido_id_264": {
+    "id": 264,
+    "pedido_id": 264,
+    "cartao_id": 24,
+    "cupom_id": null,
+    "valor": 118.0
+  },
+  "pedido_id_265": {
+    "id": 265,
+    "pedido_id": 265,
+    "cartao_id": 25,
+    "cupom_id": null,
+    "valor": 60.0
+  }
+}

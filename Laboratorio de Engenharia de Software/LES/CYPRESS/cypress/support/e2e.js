@@ -1,18 +1,20 @@
-// ***********************************************************
-// This example support/e2e.js is processed and
-// loaded automatically before your test files.
-//
-// This is a great place to put global configuration and
-// behavior that modifies Cypress.
-//
-// You can change the location of this file or turn off
-// automatically serving support files with the
-// 'supportFile' configuration option.
-//
-// You can read more here:
-// https://on.cypress.io/configuration
-// ***********************************************************
-
-// Import commands.js using ES2015 syntax:
+// cypress/support/e2e.js
 import 'cypress-mochawesome-reporter/register'
 import './commands'
+import { slowCypressDown } from 'cypress-slow-down'
+
+const isSlowMode = Cypress.env('MODE') === 'lento'
+
+if (isSlowMode) {
+    // Delay de 120ms por caractere na digitação
+    Cypress.Commands.overwrite('type', (originalFn, element, text, options) => {
+        const slowOptions = { delay: 120, ...options }
+        return originalFn(element, text, slowOptions)
+    })
+
+    // Delay de 500ms entre comandos (cliques, navegação, etc)
+    slowCypressDown(500)
+
+} else {
+    console.log('🐇 Modo RÁPIDO')
+}

@@ -3,11 +3,11 @@ import { elements as el } from "./TesteElements";
 class Home {
 
     visitarPagina(){
-        cy.visit(el.urls.home)
+        cy.visit(el.urls.home[0])
     }
 
     validarAcessoPagina(){
-        cy.url().should('eq', el.urls.home)
+        cy.url().should('be.oneOf', el.urls.home)
     }
 
     clicarMenu(menu){

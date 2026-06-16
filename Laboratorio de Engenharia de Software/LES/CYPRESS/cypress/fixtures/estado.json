@@ -1,0 +1,137 @@
+{
+  "Acre":{
+    "id": 1,
+    "nome": "Acre",
+    "pais_id": 1
+  },
+  "Alagoas":{
+    "id": 2,
+    "nome": "Alagoas",
+    "pais_id": 1
+  },
+  "Amapá":{
+    "id": 3,
+    "nome": "Amapá",
+    "pais_id": 1
+  },
+  "Amazonas":{
+    "id": 4,
+    "nome": "Amazonas",
+    "pais_id": 1
+  },
+  "Bahia":{
+    "id": 5,
+    "nome": "Bahia",
+    "pais_id": 1
+  },
+  "Ceará":{
+    "id": 6,
+    "nome": "Ceará",
+    "pais_id": 1
+  },
+  "Distrito Federal":{
+    "id": 7,
+    "nome": "Distrito Federal",
+    "pais_id": 1
+  },
+  "Espírito Santo":{
+    "id": 8,
+    "nome": "Espírito Santo",
+    "pais_id": 1
+  },
+  "Goiás":{
+    "id": 9,
+    "nome": "Goiás",
+    "pais_id": 1
+  },
+  "Maranhão":{
+    "id": 10,
+    "nome": "Maranhão",
+    "pais_id": 1
+  },
+  "Mato Grosso":{
+    "id": 11,
+    "nome": "Mato Grosso",
+    "pais_id": 1
+  },
+  "Mato Grosso do Sul":{
+    "id": 12,
+    "nome": "Mato Grosso do Sul",
+    "pais_id": 1
+  },
+  "Minas Gerais":{
+    "id": 13,
+    "nome": "Minas Gerais",
+    "pais_id": 1
+  },
+  "Pará":{
+    "id": 14,
+    "nome": "Pará",
+    "pais_id": 1
+  },
+  "Paraíba":{
+    "id": 15,
+    "nome": "Paraíba",
+    "pais_id": 1
+  },
+  "Paraná":{
+    "id": 16,
+    "nome": "Paraná",
+    "pais_id": 1
+  },
+  "Pernambuco":{
+    "id": 17,
+    "nome": "Pernambuco",
+    "pais_id": 1
+  },
+  "Piauí":{
+    "id": 18,
+    "nome": "Piauí",
+    "pais_id": 1
+  },
+  "Rio de Janeiro":{
+    "id": 19,
+    "nome": "Rio de Janeiro",
+    "pais_id": 1
+  },
+  "Rio Grande do Norte":{
+    "id": 20,
+    "nome": "Rio Grande do Norte",
+    "pais_id": 1
+  },
+  "Rio Grande do Sul":{
+    "id": 21,
+    "nome": "Rio Grande do Sul",
+    "pais_id": 1
+  },
+  "Rondônia":{
+    "id": 22,
+    "nome": "Rondônia",
+    "pais_id": 1
+  },
+  "Roraima":{
+    "id": 23,
+    "nome": "Roraima",
+    "pais_id": 1
+  },
+  "Santa Catarina":{
+    "id": 24,
+    "nome": "Santa Catarina",
+    "pais_id": 1
+  },
+  "São Paulo":{
+    "id": 25,
+    "nome": "São Paulo",
+    "pais_id": 1
+  },
+  "Sergipe":{
+    "id": 26,
+    "nome": "Sergipe",
+    "pais_id": 1
+  },
+  "Tocantins":{
+    "id": 27,
+    "nome": "Tocantins",
+    "pais_id": 1
+  }
+}

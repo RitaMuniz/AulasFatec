@@ -120,9 +120,8 @@ public class ClienteDAO {
         c.setNome(rs.getString("nome"));
         c.setGenero(rs.getString("genero"));
         String data = rs.getString("data_nascimento");
-        if (data != null) {
-            c.setDataNascimento(java.sql.Date.valueOf(data));
-        }
+        c.setDataNascimento(converterData(data));
+
         c.setCpf(rs.getString("cpf"));
         c.setEmail(rs.getString("email"));
         c.setSenha(rs.getString("senha"));
@@ -138,6 +137,41 @@ public class ClienteDAO {
             try (ResultSet rs = stmt.executeQuery()) {
                 if (rs.next()) {
                     return mapear(rs);
+                }
+            }
+        }
+        return null;
+    }
+
+    private java.sql.Date converterData(String dataStr) {
+        if (dataStr == null || dataStr.isEmpty()) {
+            return null;
+        }
+
+        // Remove espaços extras
+        dataStr = dataStr.trim();
+
+        // Tenta formato yyyy-MM-dd
+        try {
+            return java.sql.Date.valueOf(dataStr);
+        } catch (IllegalArgumentException e1) {
+            // Tenta formato dd/MM/yyyy
+            try {
+                String[] partes = dataStr.split("/");
+                if (partes.length == 3) {
+                    String yyyyMMdd = partes[2] + "-" + partes[1] + "-" + partes[0];
+                    return java.sql.Date.valueOf(yyyyMMdd);
+                }
+            } catch (IllegalArgumentException e2) {
+                // Tenta formato dd-MM-yyyy
+                try {
+                    String[] partes = dataStr.split("-");
+                    if (partes.length == 3) {
+                        String yyyyMMdd = partes[2] + "-" + partes[1] + "-" + partes[0];
+                        return java.sql.Date.valueOf(yyyyMMdd);
+                    }
+                } catch (IllegalArgumentException e3) {
+                    System.err.println("Data inválida: " + dataStr);
                 }
             }
         }

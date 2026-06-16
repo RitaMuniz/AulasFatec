@@ -1,0 +1,207 @@
+{
+  "BEMVINDO10":{
+    "id": 1,
+    "codigo": "BEMVINDO10",
+    "valor": 10.0,
+    "status": "USADO",
+    "cliente_id": 1,
+    "tipo": "PROMOCIONAL"
+  },
+  "FIDELIDADE15":{
+    "id": 2,
+    "codigo": "FIDELIDADE15",
+    "valor": 15.0,
+    "status": "USADO",
+    "cliente_id": 3,
+    "tipo": "PROMOCIONAL"
+  },
+  "VERAO20":{
+    "id": 3,
+    "codigo": "VERAO20",
+    "valor": 20.0,
+    "status": "DISPONIVEL",
+    "cliente_id": 5,
+    "tipo": "PROMOCIONAL"
+  },
+  "NATAL30":{
+    "id": 4,
+    "codigo": "NATAL30",
+    "valor": 30.0,
+    "status": "USADO",
+    "cliente_id": 7,
+    "tipo": "PROMOCIONAL"
+  },
+  "ANIVERSARIO25":{
+    "id": 5,
+    "codigo": "ANIVERSARIO25",
+    "valor": 25.0,
+    "status": "DISPONIVEL",
+    "cliente_id": 9,
+    "tipo": "PROMOCIONAL"
+  },
+  "RELEITURAS10":{
+    "id": 6,
+    "codigo": "RELEITURAS10",
+    "valor": 10.0,
+    "status": "USADO",
+    "cliente_id": 11,
+    "tipo": "PROMOCIONAL"
+  },
+  "PROMO15":{
+    "id": 7,
+    "codigo": "PROMO15",
+    "valor": 15.0,
+    "status": "DISPONIVEL",
+    "cliente_id": 13,
+    "tipo": "PROMOCIONAL"
+  },
+  "BLACK20":{
+    "id": 8,
+    "codigo": "BLACK20",
+    "valor": 20.0,
+    "status": "USADO",
+    "cliente_id": 15,
+    "tipo": "PROMOCIONAL"
+  },
+  "VOLTA30":{
+    "id": 9,
+    "codigo": "VOLTA30",
+    "valor": 30.0,
+    "status": "DISPONIVEL",
+    "cliente_id": 17,
+    "tipo": "PROMOCIONAL"
+  },
+  "ESPECIAL50":{
+    "id": 10,
+    "codigo": "ESPECIAL50",
+    "valor": 50.0,
+    "status": "DISPONIVEL",
+    "cliente_id": 19,
+    "tipo": "PROMOCIONAL"
+  },
+  "TROCA10_1":{
+    "id": 11,
+    "codigo": "TROCA10_1",
+    "valor": 10.0,
+    "status": "DISPONIVEL",
+    "cliente_id": 10,
+    "tipo": "TROCA"
+  },
+  "TROCA15_1":{
+    "id": 12,
+    "codigo": "TROCA15_1",
+    "valor": 15.0,
+    "status": "DISPONIVEL",
+    "cliente_id": 25,
+    "tipo": "TROCA"
+  },
+  "TROCA20_1":{
+    "id": 13,
+    "codigo": "TROCA20_1",
+    "valor": 20.0,
+    "status": "DISPONIVEL",
+    "cliente_id": 8,
+    "tipo": "TROCA"
+  },
+  "TROCA25_1":{
+    "id": 14,
+    "codigo": "TROCA25_1",
+    "valor": 25.0,
+    "status": "DISPONIVEL",
+    "cliente_id": 23,
+    "tipo": "TROCA"
+  },
+  "TROCA30_1":{
+    "id": 15,
+    "codigo": "TROCA30_1",
+    "valor": 30.0,
+    "status": "DISPONIVEL",
+    "cliente_id": 15,
+    "tipo": "TROCA"
+  },
+  "TROCA48_10":{
+    "id": 16,
+    "codigo": "TROCA48_10",
+    "valor": 10.0,
+    "status": "DISPONIVEL",
+    "cliente_id": 8,
+    "tipo": "TROCA"
+  },
+  "TROCA110_15":{
+    "id": 17,
+    "codigo": "TROCA110_15",
+    "valor": 15.0,
+    "status": "DISPONIVEL",
+    "cliente_id": 10,
+    "tipo": "TROCA"
+  },
+  "TROCA170_20":{
+    "id": 18,
+    "codigo": "TROCA170_20",
+    "valor": 20.0,
+    "status": "DISPONIVEL",
+    "cliente_id": 18,
+    "tipo": "TROCA"
+  },
+  "TROCA215_25":{
+    "id": 19,
+    "codigo": "TROCA215_25",
+    "valor": 25.0,
+    "status": "DISPONIVEL",
+    "cliente_id": 24,
+    "tipo": "TROCA"
+  },
+  "TROCA240_30":{
+    "id": 20,
+    "codigo": "TROCA240_30",
+    "valor": 30.0,
+    "status": "DISPONIVEL",
+    "cliente_id": 20,
+    "tipo": "TROCA"
+  },
+
+  "TROCA-7AEFEAB2":{
+    "id": 21,
+    "codigo": "TROCA-7AEFEAB2",
+    "valor": 28.0,
+    "status": "DISPONIVEL",
+    "cliente_id": 1,
+    "tipo": "TROCA"
+  },
+
+  "VIP_FIDELIDADE_1":{
+    "id": 22,
+    "codigo": "VIP_FIDELIDADE_1",
+    "valor": 18.0,
+    "status": "DISPONIVEL",
+    "cliente_id": 1,
+    "tipo": "PROMOCIONAL"
+  },
+
+  "VIP_FIDELIDADE_2":{
+    "id": 23,
+    "codigo": "VIP_FIDELIDADE_2",
+    "valor": 22.0,
+    "status": "DISPONIVEL",
+    "cliente_id": 1,
+    "tipo": "PROMOCIONAL"
+  },
+
+  "SUPER_DESCONTO":{
+    "id": 24,
+    "codigo": "SUPER_DESCONTO",
+    "valor": 35.0,
+    "status": "DISPONIVEL",
+    "cliente_id": 1,
+    "tipo": "PROMOCIONAL"
+  },
+
+  "TROCA-EDD7417F":{
+    "id": 25,
+    "codigo": "TROCA-EDD7417F",
+    "valor": 72.0,
+    "status": "DISPONIVEL",
+    "cliente_id": 1,
+    "tipo": "TROCA"
+  }
+}

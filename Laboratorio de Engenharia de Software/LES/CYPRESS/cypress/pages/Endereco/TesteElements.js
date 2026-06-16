@@ -7,7 +7,7 @@ export const elements = {
     titulo: 'h1',
 
     navbar: {
-        home: 'a[href="index.jsp"]',
+        home: '[href="/LES/home"]',
         perfil: 'a[href*="/cliente?action=buscar"]',
         sair: 'a[href*="/logout"]'
     },

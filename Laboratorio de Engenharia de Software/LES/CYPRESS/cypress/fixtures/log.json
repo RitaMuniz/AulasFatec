@@ -1,0 +1,29 @@
+{
+  "2026-06-06 17:11:32":{
+    "id": 1,
+    "usuario": "admin:admin@livraria.com",
+    "acao": "ALTERAÇÃO",
+    "data": "2026-06-06 17:11:32",
+    "tabela": "pedido",
+    "dados_anteriores": "id=265 | status=ENTREGUE",
+    "dados_novos": "id=265 | status=ENVIADO"
+  },
+  "2026-06-06 17:11:56":{
+    "id": 2,
+    "usuario": "admin:admin@livraria.com",
+    "acao": "ALTERAÇÃO",
+    "data": "2026-06-06 17:11:56",
+    "tabela": "pedido",
+    "dados_anteriores": "id=265 | status=ENVIADO",
+    "dados_novos": "id=265 | status=ENTREGUE"
+  },
+  "2026-06-06 17:18:34":{
+    "id": 3,
+    "usuario": "admin:admin@livraria.com",
+    "acao": "ALTERAÇÃO",
+    "data": "2026-06-06 17:18:34",
+    "tabela": "cliente",
+    "dados_anteriores": "id=22 | ativo=false",
+    "dados_novos": "id=22 | ativo=true"
+  }
+}
