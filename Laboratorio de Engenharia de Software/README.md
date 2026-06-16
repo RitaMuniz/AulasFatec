@@ -4,6 +4,12 @@ Sistema web de e-commerce para venda de livros desenvolvido em Java utilizando S
 
 O sistema permite que clientes realizem compras de livros, gerenciem seus dados pessoais, acompanhem pedidos e solicitem trocas. Além disso, conta com uma área administrativa para gerenciamento de pedidos, trocas e relatórios de vendas.
 
+### Documentos Úteis!
+[Vídeo Mostrando o sistema](https://canva.link/5wos7hm3i911zk8)
+[Apresentação de slides](https://canva.link/up2gpyyhj6iolpg)
+[DVP](https://docs.google.com/document/d/117JeyiXJWYdyqaVhInKEbexXAgFWAK2ER89h9uBOk38/edit?usp=sharing)
+
+
 ---
 
 ## 🚀 Funcionalidades
@@ -208,6 +214,8 @@ O banco utilizado para os testes já está implementado no projeto, mas caso pre
 * DDL_LES.sql: possuí todas as tabelas do banco e criação, mesmas disponíveis em ConexãoSQL.java
 * Inserts.sql: todos os dados inseridos para popular o banco.
 
+Os sqls estão disponíveis na pasta Documentos.
+
 ### 4. Executar no Tomcat
 
 Realize o deploy da aplicação utilizando o Tomcat ou o plugin Smart Tomcat da IDE.
@@ -223,6 +231,7 @@ http://localhost:8080/LES
 ## 🧪 Testes Automatizados
 
 O projeto possui testes End-to-End desenvolvidos com Cypress.
+Para mais informações, consulte o documento CYPRESS EXPLICAÇÃO.pdf disponível na pasta de documentos.
 
 ### Instalação das dependências
 
